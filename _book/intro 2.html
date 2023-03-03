@@ -132,7 +132,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#極限" id="toc-極限" class="nav-link" data-scroll-target="#極限"><span class="toc-section-number">1.2</span>  極限</a></li>
   <li><a href="#収束" id="toc-収束" class="nav-link" data-scroll-target="#収束"><span class="toc-section-number">1.3</span>  収束</a></li>
   <li><a href="#商微分" id="toc-商微分" class="nav-link" data-scroll-target="#商微分"><span class="toc-section-number">1.4</span>  商微分</a></li>
-  <li><a href="#合成関数の微分法" id="toc-合成関数の微分法" class="nav-link" data-scroll-target="#合成関数の微分法"><span class="toc-section-number">1.5</span>  合成関数の微分法</a></li>
   </ul>
 </nav>
     </div>
@@ -159,10 +158,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="前説" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="前説"><span class="header-section-number">1.1</span> 前説</h2>
 <p>この章では物理の世界に入る前に知っておかなければならないことを説明します． <span class="math inline">\(\require{physics}\)</span></p>
-<p>物理学を始める際にして、初学者の方にはどうしてもある程度の数学の素養が求められます。物理学の発展と数学は決して離すことのできない物であり、例えばみなさんがこれかあら学ぶ力学の分野は、微分と積分の関係性を発見し、それを基礎にしてニュートンが発展させた分野です。</p>
-<p>ですがそこが最大の関門として高校生の皆様には立ちはだかることになると思います．ベクトルも微分も積分も，なんなら三角関数もまともにやったことがないのに，いきなり全部を使いこなせることを要求されてしまうからです．</p>
-<p>なので，この章では読者が高校1年生の途中くらいから読み始めているものだと想定して，数学について少しずつ勉強を進めながら，物理を始められるところまでやっていこうと思います．関数の定義や三角関数については流石にもう慣れてきたのではないかという時期ですね．もしもまだそこがあやふやであるのならば，まずは数学Iの教科書をある程度進ませてからこの本を読んでいただければ幸いと思っています．</p>
-<p>ですが，すでに一通り数学をやっている方ならば，この章を飛ばしていただいても構いません．そのための指標として，まずはこの章におけるゴールを一通り書いておきます．次の表に載せてあることを理解できるようになれば，ひとまずこの章は学び終えたという判定で考えてもらって構いません．</p>
+<p>物理学を始める際にして、初学者の方にはどうしてもある程度の数学の素養が求められます。物理学の発展と数学は決して離すことのできない物であり、例えばみなさんがこれかあら学ぶ力学の分野は、微分と積分の関係性を発見し、それを基礎にしてニュートンが発展させた分野です。 ですがそこが最大の関門として高校生の皆様には立ちはだかることになると思います．ベクトルも微分も積分も，なんなら三角関数もまともにやったことがないのに，いきなり全部を使いこなせることを要求されてしまうからです． なので，この章では読者が高校1年生の途中くらいから読み始めているものだと想定して，数学について少しずつ勉強を進めながら，物理を始められるところまでやっていこうと思います．関数の定義や三角関数については流石にもう慣れてきたのではないかという時期ですね．もしもまだそこがあやふやであるのならば，まずは数学Iの教科書をある程度進ませてからこの本を読んでいただければ幸いと思っています． ですが，すでに一通り数学をやっている方ならば，この章を飛ばしていただいても構いません．そのための指標として，まずはこの章におけるゴールを一通り書いておきます．次の表に載せてあることを理解できるようになれば，ひとまずこの章は学び終えたという判定で考えてもらって構いません．</p>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -207,8 +203,7 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="math display">\[x \to \infty \; \text{のとき，} \frac{1}{x} \to 0\]</span></p>
 <p>または，</p>
 <p><span class="math display">\[ \lim_{x\to\infty}\frac{1}{x}=0\]</span></p>
-<p>この本では後者の方にまとめて書くことにします．</p>
-<p>また同様にして，分母の値である <span class="math inline">\(x\)</span> が <span class="math inline">\(-1,-10,-100,...\)</span> と大きくなるにつれて，関数の値は <span class="math inline">\(-1,-0.1,-0.01,...\)</span> と <span class="math inline">\(0\)</span> に近づくことが確認されます．このような状態も次のように書く記すことにします．</p>
+<p>この本では後者の方にまとめて書くことにします． また同様にして，分母の値である <span class="math inline">\(x\)</span> が <span class="math inline">\(-1,-10,-100,...\)</span> と大きくなるにつれて，関数の値は <span class="math inline">\(-1,-0.1,-0.01,...\)</span> と <span class="math inline">\(0\)</span> に近づくことが確認されます．このような状態も次のように書く記すことにします．</p>
 <p><span class="math display">\[ \lim_{x\to-\infty}\frac{1}{x}=0\]</span></p>
 <p>次に，分母の値である <span class="math inline">\(x\)</span> が <span class="math inline">\(1,0.1,0.01,...\)</span> と正の値を保ちつつ小さくなる( <span class="math inline">\(0\)</span> に近づく)につれて，関数の値は <span class="math inline">\(1,10,100,...\)</span> と限りなく大きくなることが確認できます．このような状態も次のように書く記すことにします．</p>
 <p><span class="math display">\[ \lim_{x\to +0}\frac{1}{x}=\infty\]</span></p>
@@ -225,15 +220,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>分数の分子が <span class="math inline">\(0\)</span> でない定数の時，分母の絶対値が大きくなると分数の値は <span class="math inline">\(0\)</span> に限りなく近づき，分母が <span class="math inline">\(0\)</span> に近づくと分数の絶対値は限りなく大きくなる．</p>
+<p>分数の分子が <span class="math inline">\(0\)</span> でない定数の時，分母の絶対値が大きくなると分数の値は <span class="math inline">\(0\)</span> に限りなく近づき，分母が <span class="math inline">\(0\)</span> に近づくと分数の絶対値はに限りなく大きくなる．</p>
 </div>
 </div>
 <p>この定理の前半を証明するには <span class="math inline">\(\frac{c}{x}\)</span> についてどんなに小さな正の数 <span class="math inline">\(h\)</span> が指定されようとも， <span class="math inline">\(|\frac{c}{x}|&lt;h\)</span> となる <span class="math inline">\(x\)</span> が存在することを示せば良いです．例えば <span class="math inline">\(|x|&gt;\frac{|c|}{h}+1\)</span> などが存在します．後半については，<span class="math inline">\(\frac{c}{x}\)</span> についてどんなに大きな正の数 <span class="math inline">\(G\)</span> が指定されようとも， <span class="math inline">\(|\frac{c}{x}| &gt; G\)</span> となる <span class="math inline">\(x\)</span> が存在することを示せば良いです．例えば <span class="math inline">\(0&lt;|x|&lt;\frac{|c|}{G}\)</span> を満たす <span class="math inline">\(x\)</span> などが存在します．</p>
 </section>
 <section id="収束" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="収束"><span class="header-section-number">1.3</span> 収束</h2>
-<p>次に，大事な事項である収束について説明します．</p>
-<p>まず，次のような関数を考えましょう．</p>
+<p>次に，大事な事項である収束について説明します． まず，次のような関数を考えましょう．</p>
 <p><span class="math display">\[f(x) = \frac{x^2-1}{x-1}\]</span></p>
 <p>この関数は <span class="math inline">\(x=1\)</span> では定義されません．なぜなら，分母が <span class="math inline">\(0\)</span> になってしまうからです．では，この関数の <span class="math inline">\(x=1\)</span> 周辺での様子はどうなっているのでしょうか．周辺なので， <span class="math inline">\(x\neq 1\)</span> とすることができます．なので，その時に限り，</p>
 <p><span class="math display">\[f(x) = \frac{x^2-1}{x-1}=\frac{(x+1)(x-1)}{x-1}=x+1\]</span></p>
@@ -326,19 +320,16 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="1.4" class="anchored" data-anchor-id="商微分"><span class="header-section-number">1.4</span> 商微分</h2>
 <p>ある関数 <span class="math inline">\(f(x)\)</span> を考えてみることにしましょう．この関数の振る舞いを考える際には定義式自体の形を見て，対称性や式変形などを駆使することが多いと思われます．ここではその振る舞いを考える方法の一つを紹介してみたいと思います．</p>
 <p><img src="images/intro-1.png" class="img-fluid"></p>
-<p>上の図のように， <span class="math inline">\(f(x)\)</span> が <span class="math inline">\(x=a\)</span> から <span class="math inline">\(x=b=a+\Delta x\)</span> だけ変化して場合に， <span class="math inline">\(\Delta y\)</span> だけの変化が起きるものとします．<span class="math inline">\(\Delta x,\; \Delta y\)</span> は一つの変数であり，増分と呼ばれます．</p>
-<p>その時次の式が成り立つかと思われます．</p>
+<p>上の図のように， <span class="math inline">\(f(x)\)</span> が <span class="math inline">\(x=a\)</span> から <span class="math inline">\(x=b=a+\Delta x\)</span> だけ変化して場合に， <span class="math inline">\(\Delta y\)</span> だけの変化が起きるものとします．<span class="math inline">\(\Delta x,\; \Delta y\)</span> は一つの変数であり，増分と呼ばれます． その時次の式が成り立つかと思われます．</p>
 <p><span class="math display">\[\Delta y = \frac{f(b)-f(a)}{b-a} \Delta x\]</span></p>
 <p>この式を次のように変形することによって，この式の概要が見やすくなるでしょう．</p>
 <p><span class="math display">\[ f(b) = f(a) + \frac{\Delta y}{\Delta x}(b-a) \]</span></p>
-<p>この式が表すものとは， <span class="math inline">\(f(b)\)</span> の値が <span class="math inline">\(f(a)\)</span> の値から <span class="math inline">\(\frac{\Delta y}{\Delta x}(b-a)=\text{ABの傾き}\times a\text{と}b\text{の違いの分}\)</span> だけずれているということになるわけです．</p>
-<p>この時， <span class="math inline">\(\frac{\Delta y}{\Delta x}\)</span> の値を <span class="math inline">\(\Delta x\to 0\)</span> と極限をとって考えれば，ABの傾きは点Aにおける接線の傾きになるわけです．このとき，次のように書き記すことにします．</p>
+<p>この式が表すものとは， <span class="math inline">\(f(b)\)</span> の値が <span class="math inline">\(f(a)\)</span> の値から <span class="math inline">\(\frac{\Delta y}{\Delta x}(b-a)=\text{ABの傾き}\times a\text{と}b\text{の違いの分}\)</span> だけずれているということになるわけです． この時， <span class="math inline">\(\frac{\Delta y}{\Delta x}\)</span> の値を <span class="math inline">\(|Delta x\to 0\)</span> と極限をとって考えれば，ABの傾きは点Aにおける接線の傾きになるわけです．このとき，次のように書き記すことにします．</p>
 <p><span class="math display">\[\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}=\dv{y}{x}=y'=f'(x)\]</span></p>
-<p>この値のことを微分係数と呼んでいます．先ほどの式を微分係数を使って書き直してあげれば次のようになるわけです．</p>
+<p>この値のことを微分係数と呼んでいます．先ほどの式を微分系右羽を使って書き直してあげれば次のようになるわけです．</p>
 <p><span class="math display">\[ f(b) = f(a) + \frac{\Delta y}{\Delta x}(b-a) \]</span></p>
-<p><span class="math display">\[ \Delta y = \dv{y}{x} \Delta x\]</span></p>
+<p><span class="math display">\[ f(b) \approx f(a) + \dv{y}{x} \Delta x\]</span></p>
 <p>ここで近似値にしたのは， <span class="math inline">\(\Delta x\)</span> をしっかりと極限とっていないからですが，今までやってきたことが接線を使って近似をしているというのがわかりやすい形なので採用しました．</p>
-<p>この式の言わんとするところは，十分小さな <span class="math inline">\(\Delta x\)</span> に関して言えば <span class="math inline">\(\Delta y\)</span> は接戦の傾きで近似できるということです．</p>
 <p>以上のことを実際の具体的な関数でやってみましょう．例えば， <span class="math inline">\(f(x)=x^2\)</span> などを考えれば</p>
 <p><span class="math display">\[\Delta y = \frac{b^2-a^2}{b-a} \Delta x = (b+a) \Delta x = (2a+\Delta x) \Delta x\]</span></p>
 <p>と式変形がなされるわけです．これによって <span class="math inline">\(\Delta y,\; \Delta x\)</span> の比は次のように書き表され</p>
@@ -349,8 +340,7 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="math display">\[ \dv{y}{x}|_{x=a}=f'(a)=2a\]</span></p>
 <p>また， <span class="math inline">\(a\)</span> という具体的に代入した値ではなく，任意の <span class="math inline">\(x\)</span> についても同様なことが言えるため，</p>
 <p><span class="math display">\[ \dv{y}{x}=f'(x)=2x\]</span></p>
-<p>と書くことになります．この時， <span class="math inline">\(f(x)\)</span> の導関数は <span class="math inline">\(f'(x)=2x\)</span> などと呼びます．</p>
-<p>以上述べたように，微分を考える理由とは，接線で曲線を近似してみようという試みであり，また，曲線を非常に小さな部分で見てあげれば直線になると考えていることになります．</p>
+<p>と書くことになります． 以上述べたように，微分を考える理由とは，接線で曲線を近似してみようという試みであり，また，曲線を非常に小さな部分で見てあげれば直線になると考えていることになります．</p>
 <p>実際に問題を解いてみましょう．</p>
 <div class="callout-warning callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -362,7 +352,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>次の関数の導関数を求めよ． <span class="math display">\[f(x)=x^3+x+1\]</span></p>
+<p>次の関数の微分係数を求めよ． <span class="math display">\[f(x)=x^3+x+1\]</span></p>
 </div>
 </div>
 <details>
@@ -371,174 +361,7 @@ ul.task-list li input[type="checkbox"] {
 </summary>
 <p><span class="math inline">\(a=x,\;b=a+\Delta x\)</span> とする． <span class="math display">\[\Delta y = \frac{f(b)-f(a)}{b-a}\Delta x\]</span> <span class="math display">\[\frac{f(b)-f(a)}{b-a}=\frac{f(a+\Delta x)-f(a)}{a+\Delta x -a} \]</span> <span class="math display">\[= \frac{3x^2\Delta x + 3x\Delta x^2 + \Delta x ^3 + \Delta x}{\Delta x}\]</span> <span class="math display">\[=3x^2+ 3x\Delta x + \Delta x ^2 + 1 \to_{\Delta x \to 0} 3x^2+1\]</span> <span class="math display">\[\dv{y}{x}=3x^2+1\]</span></p>
 </details>
-<p>ここで注目して欲しいのは， <span class="math inline">\(\Delta y\)</span> を表す式の中で， <span class="math inline">\(\Delta x\)</span> の一次以上の項が消えていることです．導関数を求める極限の計算では完全に消滅しますが， <span class="math inline">\(\Delta x\)</span> が <span class="math inline">\(0\)</span> に比較的に近いだけの値を考えている時の近似計算でも同様に無視したりします．このことを一次近似と呼んでいます．具体的な問題は後半にあるので，手を動かしてやってみましょう．</p>
-<p>次に導関数に慣れてもらうために問題を置いておきます．</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-問題
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>次の関数の導関数を求めよ．</p>
-<table class="table">
-<tbody>
-<tr class="odd">
-<td><span class="math display">\[x^2\]</span></td>
-<td><span class="math display">\[\sqrt{x}\]</span></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[(x+1)(x+2)\]</span></td>
-<td><span class="math display">\[\frac{1}{x}\]</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[x\sqrt{x}\]</span></td>
-<td><span class="math display">\[x^6+x^5+x^4\]</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<details>
-<summary>
-解答
-</summary>
-<table class="table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><span class="math display">\[2x\]</span></td>
-<td><span class="math display">\[\frac{\sqrt{x+\Delta x}-\sqrt{x}}{\sqrt{x}}=\frac{\Delta x}{\Delta x (\sqrt{x+\Delta x}+\sqrt{x})}\]</span> <span class="math display">\[\frac{1}{2\sqrt{x}}\]</span></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[2x+3\]</span></td>
-<td><span class="math display">\[-\frac{1}{x^2}\]</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[\frac{3}{2}\sqrt{x}\]</span></td>
-<td><span class="math display">\[6x^5+5x^4+4x^3\]</span></td>
-</tr>
-</tbody>
-</table>
-</details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-問題
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>次の極限値を <span class="math inline">\(f,f'\)</span> を用いて表せ．</p>
-<p><span class="math display">\[\lim_{x\to a}\frac{x^nf(x)-a^nf(a)}{x^n-a^n}\]</span></p>
-</div>
-</div>
-<details>
-<summary>
-解答
-</summary>
-<p><span class="math display">\[f(a)+\frac{a}{n}f'(a)\]</span></p>
-</details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-問題
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>次の値を近似して解け．</p>
-<p><span class="math display">\[1024^2,\; \sqrt{74}\]</span></p>
-</div>
-</div>
-<details>
-<summary>
-解答
-</summary>
-<p><span class="math inline">\(f(x)=x^2\)</span> とする． <span class="math display">\[f(x+a) \approx f(x) + f'(x) \times a\]</span> なので， <span class="math inline">\(x=1000,\; a=24\)</span> を代入することによって <span class="math display">\[1000^2 + 1000 \times 24 \approx 10024000\]</span></p>
-<p>と近似できる．</p>
-<p>後半の問題も同じく， <span class="math inline">\(f(x)=\sqrt{x},\; x=64,\; a=10\)</span> とおいて解けば， <span class="math display">\[\sqrt{64+10} \approx \sqrt{64} + \frac{1}{2\sqrt{64}} \times 10 \approx 8.6 \]</span></p>
-</details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-問題
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>次の事実を証明せよ．</p>
-<p><span class="math display">\[(f+g)'=f'+g'\]</span></p>
-<p><span class="math display">\[ (fg)' = f'g+fg'\]</span></p>
-<p><span class="math display">\[\dv{x}\frac{1}{g}=-\frac{g'(x)}{\{g(x)\}^2}\]</span></p>
-<p><span class="math display">\[\left\{ \frac{f}{g} \right\} ' = \frac{f'g-fg'}{g^2}\]</span></p>
-<p><span class="math display">\[\dv{x} x^n = nx^{n-1}\]</span></p>
-</div>
-</div>
-<details>
-<summary>
-解答
-</summary>
-<p><span class="math inline">\((f+g)'=f'+g'\)</span> は自力でせよ．</p>
-<p>$ (fg)’ = f’g+fg’$ は厳密な証明ではなく，一次近似を駆使して説明する．厳密な証明は自ら調べよ．</p>
-<p><span class="math display">\[f(x+\Delta x)g(x+\Delta x) \approx (f(x)+f'(x)\Delta x)(g(x)+g'(x)\Delta x)\]</span></p>
-<p>ここで二次以上の変化量( <span class="math inline">\(\Delta\)</span> 付きの値)は無視されるので， <span class="math display">\[f(x+\Delta x)g(x+\Delta x) \approx f(x)g(x) + f'(x)g(x)\Delta x + f(x)g'(x)\Delta x\]</span> <span class="math display">\[\frac{f(x+\Delta x)g(x+\Delta x)-f(x)g(x)}{\Delta x} = f'(x)g(x)+f(x)g'(x)\]</span></p>
-<p>後半の問題は有名問題であり，今までの知識を使って自力で解決せよ．</p>
-最後の問題については二項定理を用いて自ら解決せよ．なおこの定理は <span class="math inline">\(n\)</span> が整数の時だけでなく，実数のときにも成り立つが，その証明は難しいのでここでは省略する．ただし，これからは使っていくので，知っておくこと．
-</details>
-<p>ここで，このテキストの特徴として，詳しい解答を書いていないことが多々あることでしょう．これは，特定の問題までの内容を理解した人ならば違和感なく解ける問題や，有名すぎるあまりにわざわざ書くこともないだろうと思われる問題について当てはまることになります．ただし，ぜひともこの考え方を習得してもらいたいと思われる際には，詳しい解答を書くように心がけています．</p>
-<p>また，この本では，読者が実際に手を動かして問題を解くことを前提にして書いており，問題と解答を読むだけではなかなか問題解決能力が身につかないのではないかと思われます．ご注意ください．</p>
-</section>
-<section id="合成関数の微分法" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="合成関数の微分法"><span class="header-section-number">1.5</span> 合成関数の微分法</h2>
-<p>次に次の問題を考えてみましょう．</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-問題
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>次の事実を証明せよ．</p>
-<p><span class="math display">\[y=x^2+x,\; z=y^3+1\]</span> としたとき，次の値をそれぞれ求めよ． <span class="math display">\[\dv{y}{x},\;\dv{z}{y},\;\dv{z}{x}\]</span></p>
-</div>
-</div>
-<p><span class="math display">\[\dv{y}{x}=2x+1,\; \dv{z}{y}=3y^2\]</span> これら二つは簡単でしょう．では， <span class="math inline">\(\dv{z}{x}\)</span> はどうしたらいいでしょうか．分数と同様にするべきでしょうか．はい，その通りです．</p>
-<p><span class="math display">\[\dv{z}{x}=3y^2(2x+1)=3(2x+1)(x^2+x)^2\]</span></p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-定理
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math display">\[\dv{y}{x}\cdot \dv{z}{y}=\dv{z}{x}\]</span></p>
-</div>
-</div>
-<p>証明は</p>
-<p><span class="math display">\[\lim_{\Delta x \to 0}\frac{\Delta z}{\Delta x}=\lim_{\Delta x \to 0}\frac{\Delta z}{\Delta y}\frac{\Delta y}{\Delta x}\]</span></p>
-<p>によって大まかに達成されます．ただし， <span class="math inline">\(\Delta y \neq 0\)</span> であることを前提にしている証明なので，厳密には証明になっていませんが，厳密な証明は難しいので省略させていただきます．</p>
-<p>そして，この問題のおかげで私たちは次の問題を解決したことになるのです．</p>
-<p><span class="math inline">\(z=(x^2+x)^3+1\)</span> の導関数を求めよ．</p>
-<p>これを合成関数の微分法と呼ばれるものとなります．</p>
+<p>次に微分係数に慣れてもらうために問題を置いておきます．</p>
 
 
 </section>
