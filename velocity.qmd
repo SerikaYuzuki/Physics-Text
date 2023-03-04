@@ -1,0 +1,19 @@
+速度や加速度は物理学で非常に重要な概念です。詳しいことはのちの章を読み進めればわかると思いますが、軽くまとめると、速度はエネルギーなどの保存則に、加速度は力と深いつながりがあります。ここでは軽く速度についてのまとめをした後に早速問題を解いていくこととしましょう。
+
+::: {.callout-note icon=false}
+
+## 定理
+
+とある物体の時刻 $t$ における位置ベクトルを $\boldsymbol{r}(t)$ とした時、
+
+その物体の速度を 
+$$\boldsymbol{v}(t)=\frac{d\boldsymbol{r}}{dt}=\dot{\boldsymbol{r}}$$
+
+加速度を 
+$$\boldsymbol{a}(t)=\frac{d^2\boldsymbol{r}}{dt^2}=\ddot{\boldsymbol{r}}=\dot{\boldsymbol{v}}$$
+
+ と定義する。また、 
+ $$\boldsymbol{r}(0),\boldsymbol{v}(0)$$
+ をそれぞれ初期位置、初速度と呼ぶ。
+
+:::

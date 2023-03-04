@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
+<link href="./velocity.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -111,7 +111,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  <a href="./velocity.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">定理</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./newton-mechanics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">newton-mechanics.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -133,6 +143,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#収束" id="toc-収束" class="nav-link" data-scroll-target="#収束"><span class="toc-section-number">1.3</span>  収束</a></li>
   <li><a href="#商微分" id="toc-商微分" class="nav-link" data-scroll-target="#商微分"><span class="toc-section-number">1.4</span>  商微分</a></li>
   <li><a href="#合成関数の微分法" id="toc-合成関数の微分法" class="nav-link" data-scroll-target="#合成関数の微分法"><span class="toc-section-number">1.5</span>  合成関数の微分法</a></li>
+  <li><a href="#増減" id="toc-増減" class="nav-link" data-scroll-target="#増減"><span class="toc-section-number">1.6</span>  増減</a></li>
   </ul>
 </nav>
     </div>
@@ -538,7 +549,131 @@ ul.task-list li input[type="checkbox"] {
 <p>によって大まかに達成されます．ただし， <span class="math inline">\(\Delta y \neq 0\)</span> であることを前提にしている証明なので，厳密には証明になっていませんが，厳密な証明は難しいので省略させていただきます．</p>
 <p>そして，この問題のおかげで私たちは次の問題を解決したことになるのです．</p>
 <p><span class="math inline">\(z=(x^2+x)^3+1\)</span> の導関数を求めよ．</p>
-<p>これを合成関数の微分法と呼ばれるものとなります．</p>
+<p>これを合成関数の微分法と呼ばれるもので，賢そうな人たちがチェーンルールと呼んでいるものです．</p>
+<p>では，この定理を使って問題を解いていきましょう．</p>
+<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+例題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>次の関数の導関数を求めよ． <span class="math display">\[f(x)=\sqrt[3]{\frac{x^2}{1-x}}\]</span></p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p><span class="math inline">\(y=f(x),\; u=\frac{x^2}{1-x}\)</span> とする．この時 <span class="math inline">\(y=\sqrt[3]{u}\)</span> となるため</p>
+<p><span class="math display">\[\dv{y}{x}=\dv{y}{u}\dv{u}{x}=\frac{1}{3u^{2/3}}\frac{2x-x^2}{(1-x)^2}=\frac{1}{3}\left(\frac{1-x}{x^2}\right)^{2/3}\frac{2x-x^2}{(1-x)^2}\]</span></p>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>次の関数の導関数を求めよ．</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[\sqrt{a^2-x^2}\]</span></td>
+<td><span class="math display">\[x+\sqrt{x^2-1}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\frac{x}{\sqrt{x^2+1}}\]</span></td>
+<td><span class="math display">\[\frac{\sqrt{a^2+x^2}-\sqrt{a^2-x^2}}{\sqrt{a^2+x^2}+\sqrt{a^2-x^2}}\]</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(x=y\sqrt{y+1}\)</span> の時， <span class="math inline">\(\dv{y}{x}\)</span> を求めよ．</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[-\frac{x}{\sqrt{a^2-x^2}}\]</span></td>
+<td><span class="math display">\[1+\frac{x}{\sqrt{x^2-1}}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\frac{1}{(x^2+1)\sqrt{x^2+1}}\]</span></td>
+<td><span class="math display">\[\frac{2a^2(a^2-\sqrt{a^4-x^4})}{x^3\sqrt{a^4-x^4}}\]</span></td>
+</tr>
+</tbody>
+</table>
+<p>次の問題については，</p>
+<p><span class="math display">\[\dv{x}{y}=\frac{3y+2}{2\sqrt{y+1}}\]</span> <span class="math display">\[\dv{y}{x}=\frac{2\sqrt{y+1}}{3y+2}\]</span></p>
+<p>これは逆関数の微分法と呼ばれるものだが，</p>
+<p><span class="math display">\[\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x \to 0}\frac{1}{\frac{\Delta y}{\Delta x}}\]</span></p>
+<p>を考えれば明らかである．ただしこの証明は連続性などの過程を飛ばした直感的なものに過ぎず，厳密な証明はここではしない．</p>
+</details>
+</section>
+<section id="増減" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="増減"><span class="header-section-number">1.6</span> 増減</h2>
+<p>まず，定理から述べようと思います．</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+定理
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>とある区間において，</p>
+<ul>
+<li><span class="math inline">\(f'(x) \geq 0\)</span> であれば，この区間では <span class="math inline">\(f(x)\)</span> は増加する．</li>
+<li><span class="math inline">\(f'(x) \leq 0\)</span> であれば，この区間では <span class="math inline">\(f(x)\)</span> は減少する．</li>
+</ul>
+</div>
+</div>
+<p>この定理については，ある区間の内で接戦の傾きが常に正ならば，関数は増加し続ける，また逆も然りということを述べているわけです．この定理がどのように使われるかは，次の問題で話すことにしましょう．</p>
+<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+例題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>次の関数のグラフの概形を描け． <span class="math display">\[f(x)=x^3-3x+1\]</span></p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p><span class="math display">\[f'(x)=3(x+1)(x-1)\]</span></p>
+<p>導関数の形から，次のことが言える．</p>
+<p>！<a href="images/intro-2.png"></a></p>
+<p>この表のことは増減表と呼ばれる．初学のうちは書いておくと混乱が少ないが，慣れてきたのならばわざわざ書かなくとも良い．</p>
+<p>上の増減表によってグラフの概形は次のようになる．</p>
+<p><img src="images/intro-3.png" class="img-fluid"></p>
+<p>また， <span class="math inline">\(x=-1,\; x=1\)</span> の場所は増減が変化する点であり，この点のことを極大点，極小点などと呼んでいる．</p>
+</details>
 
 
 </section>
@@ -799,8 +934,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./velocity.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">定理</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

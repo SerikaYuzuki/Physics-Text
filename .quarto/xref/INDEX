@@ -10,5 +10,11 @@
   },
   "references.qmd": {
     "references.html": "98515a82"
+  },
+  "newton-mechanics.qmd": {
+    "newton-mechanics.html": "f297bc46"
+  },
+  "velocity.qmd": {
+    "velocity.html": "7d9eb280"
   }
 }

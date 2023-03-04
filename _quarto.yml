@@ -9,6 +9,8 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - velocity.qmd
+    - newton-mechanics.qmd
     - summary.qmd
     - references.qmd
 
