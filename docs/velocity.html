@@ -156,6 +156,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p><span class="math inline">\(\require{physics}\)</span></p>
 <p>この章では主に速度とか速度についてお話しさせていただきます．</p>
 <p>まず，物理の話を始める際において，物理は何かということを明らかにしなければなりません．ところが物理とは何かという問題はあまりに大雑把で，人によってその定義が変わるものだし，専門とする分野によっても大きく姿を変えることでしょう．ですが，それらを全てまとめ上げ，最大公約数的な解答を一つ提示できるとすれば，私たちの身の回りで起きている，現象について語る学問だということになるのではないかと思います．</p>
 <p>例えば，皆さんがこの本をパソコン越しでみているとします．その時，パソコンに映る表示映像というのも何らかの現象でしょう．ではその現象を観察し，何か語れるものがあるのかと考えてみましょう．例えば，「あ」という文字と「あ」という文字は全くもって同じ形をしているという法則が見つけられるかもしれません．マウスホイールを回すとテキストが流れていくという法則も見えてくるでしょう．</p>
@@ -179,9 +180,152 @@ ul.task-list li input[type="checkbox"] {
 <p>とある物体の時刻 <span class="math inline">\(t\)</span> における位置ベクトルを <span class="math inline">\(\boldsymbol{r}(t)\)</span> とした時、</p>
 <p>その物体の速度を <span class="math display">\[\boldsymbol{v}(t)=\frac{d\boldsymbol{r}}{dt}=\dot{\boldsymbol{r}}\]</span></p>
 <p>加速度を <span class="math display">\[\boldsymbol{a}(t)=\frac{d^2\boldsymbol{r}}{dt^2}=\ddot{\boldsymbol{r}}=\dot{\boldsymbol{v}}\]</span></p>
-<p>と定義する。また、 <span class="math display">\[\boldsymbol{r}(0),\boldsymbol{v}(0)\]</span> をそれぞれ初期位置、初速度と呼ぶ。</p>
+<p>と定義する。また、 <span class="math display">\[\boldsymbol{r}(0),\boldsymbol{v}(0)\]</span> をそれぞれ初期位置、初速度と呼び，速度の絶対値を速さと呼ぶ．</p>
 </div>
 </div>
+<p>速度とは，わずかな時間における時間あたりの位置の変化です．つまり，そのわずかな時間をかけてやることによって，わずかな時間に起きた位置の変化を求めることができ，さらに，そのわずかな時間に起きた位置の変化を全て足し合わせることによって，位置を求めることができるのです．</p>
+<p>ここで， <span class="math inline">\(t=0\)</span> から <span class="math inline">\(t=T\)</span> までの時間を <span class="math inline">\(n\)</span> 個に区切り，その一区切りの時間の長さを <span class="math inline">\(\Delta t\)</span> ， <span class="math inline">\(i\)</span> 区切り目の時刻を <span class="math inline">\(t_i\)</span> としてやれば，</p>
+<p><span class="math display">\[\boldsymbol{r}(t)\approx\sum_{i=0}^n \boldsymbol{v}(t_i)\Delta t\]</span></p>
+<p>とすることができ，極限をとってあげることによって</p>
+<p><span class="math display">\[\boldsymbol{r}(t)= \lim_{\Delta t \to 0}\sum_{i=0}^n \boldsymbol{v}(t_i)\Delta t=\int \boldsymbol{v}(t_i)\dd t\]</span></p>
+<p>となるわけです．同様の話が加速度についても言えます．では，これからは実際に例題を用いて，今までの知識を深めていきましょう．</p>
+<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+例題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(x\)</span> 方向への一次元で，速度が一定 <span class="math inline">\(v\)</span> の物体の運動を考える．最初物体は <span class="math inline">\(x=x_0\)</span> にあったとして，時刻が <span class="math inline">\(t=T\)</span> になった時の位置を求めよ．</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p>まず， <span class="math inline">\(x=x_0\)</span> から <span class="math inline">\(t=T\)</span> だけ経った時に物体がどれだけ動いたか考えると</p>
+<p><span class="math display">\[\int_0^T v \dd t=vT\]</span></p>
+<p>なので， <span class="math inline">\(x_0+vT\)</span> が答えになる．</p>
+<p>次に別の方法を考えると，</p>
+<p><span class="math display">\[x=\int v \dd t = vt+C\]</span></p>
+<p>であるので，初期条件の <span class="math inline">\(t=0,\; x=x_0\)</span> を代入すると</p>
+<p><span class="math display">\[x = vt + x_0\]</span></p>
+<p>ここで，積分が定積分ではなく，不定積分であることに注目せよ．定積分でない理由は，この場合， <span class="math inline">\(x\)</span> を求めるのに，微分の逆演算をしているに過ぎず，ある定まった区間での積分として考えていない．</p>
+</details>
+<p>次の問題では，一次元の等加速度運動を全てまとめているものになります．</p>
+<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+例題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(x\)</span> 方向への一次元で，加速度が一定 <span class="math inline">\(a\)</span> の物体の運動を考える．時刻 <span class="math inline">\(t=t_0\)</span> 物体は <span class="math inline">\(x=x_0,\; v=v_0\)</span> だったとして，時刻が <span class="math inline">\(t\)</span> になった時の位置を求めよ．</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p>前の問題の結果を使えば，</p>
+<p><span class="math display">\[v=v_0+\int_{t_0}^{t}v\dd t = v_0 + a(t-t_0)\]</span></p>
+<p>この解答は <span class="math inline">\((t-t_o)\)</span> を一塊としてみて，先の問題の <span class="math inline">\(T\)</span> のように扱っている．塊として考えればこれからの問題も比較的楽に解決される．ここでは <span class="math inline">\(T=t-t_0\)</span> とすれば，</p>
+<p><span class="math display">\[v=v_0 + aT\]</span></p>
+<p><span class="math display">\[x-x_0=\int_{0}^{T}v\dd t =\frac{1}{2}aT^2+v_0T\]</span></p>
+<p><span class="math display">\[x = \frac{1}{2}aT^2+v_0T + x_0\]</span></p>
+<p>このように扱うことができるわけだが，読者が問題解決の際には <span class="math inline">\(T\)</span> をわざわざ定義しなくとも，塊のまま見てあげることによって，</p>
+<p><span class="math display">\[x = \frac{1}{2}a(t-t_0)^2+v_0(t-t_0) + x_0\]</span></p>
+<p>としてあげれば良い．</p>
+</details>
+<p>では，先述した，加速度が物理において重要な役割を持つ理由について少し話しましょう．</p>
+<p>地上において，支えをなくした物体が自由落下するという現象について，人類は長い間色々な議論を作り上げました．その中でもおそらく最も正確に現象に忠実な解釈は「自由落下する物体は常に鉛直方法下向きに一定の加速度を持つ」というものでしょう．その加速度の大きさは重力加速度といわれ， <span class="math inline">\(g=9.8\:\text{m}/\text{s}^2\)</span> と測定されています．この本ではこれから特に断りなく <span class="math inline">\(g\)</span> を重力加速度として扱っていくのでご注意ください．</p>
+<p>簡単な例として，鉛直上向きに <span class="math inline">\(y\)</span> 軸を設定し，初期位置が <span class="math inline">\(y=y_0\)</span> である物体の自由落下を記述してみましょう．</p>
+<p><span class="math display">\[\ddot{y}=-g\]</span> <span class="math display">\[\dot{y}=-gt\]</span> <span class="math display">\[y=y_0-\frac{1}{2}gt^2\]</span></p>
+<p>次に，相対位置の定義だけ少し説明します．ベクトルになれた読者の方にとって，あまり難しい概念ではないので，程度だけ載せます．</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+定義
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>とある２つの物体の位置ベクトルを <span class="math inline">\(\boldsymbol{r_1},\;\boldsymbol{r_2}\)</span> とした時、</p>
+<p>物体1から見た物体2の相対位置ベクトルを</p>
+<p><span class="math display">\[\boldsymbol{r_{21}}=\boldsymbol{r_2}-\boldsymbol{r_1}\]</span></p>
+<p>と定義し，相対速度，相対加速度も同様にして定義する．</p>
+</div>
+</div>
+<p>では，実際の問題を解きながら，加速度と速度について慣れていきましょう．</p>
+<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+例題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><img src="images/mondai2.png" class="img-fluid"></p>
+<p>図の通り <span class="math inline">\(O,A\)</span> に物体 <span class="math inline">\(o,a\)</span> があり、それらをそれぞれ違う速度で同時に射出する機構がある。全ての物体が鉛直下向きに大きさ <span class="math inline">\(g\)</span> の加速度を受ける状態にある。物体 <span class="math inline">\(o\)</span> を初速度の大きさ <span class="math inline">\(v_0\)</span> で射出し、射出される角度を水平方向から見て上方向に <span class="math inline">\(\theta\)</span> とする時、次の問いに答えよ。</p>
+<ol type="1">
+<li><p>物体 <span class="math inline">\(o\)</span> の軌跡を求めよ．</p></li>
+<li><p>物体 <span class="math inline">\(o\)</span> がはじめと同じ高さの地点を通過する際、最も水平方向遠方へと射出される <span class="math inline">\(\theta\)</span> の条件を求めよ。</p></li>
+<li><p>物体 <span class="math inline">\(a\)</span> が初速度0で射出された場合、物体 <span class="math inline">\(a\)</span> の物体 <span class="math inline">\(0\)</span> から見た相対位置ベクトルはどうなるか。</p></li>
+<li><p>物体 <span class="math inline">\(a\)</span> が初速度0で射出された場合、2物体が衝突する <span class="math inline">\(\theta\)</span> の条件を求めよ。</p></li>
+<li><p>物体 <span class="math inline">\(a\)</span> が鉛直下向きに大きさ <span class="math inline">\(v_1\)</span> 初速度で射出された場合、2物体が衝突する <span class="math inline">\(\theta\)</span> の条件を求めよ。</p></li>
+<li><p>全ての物体が鉛直下向きに大きさ <span class="math inline">\(g\)</span> の加速度を受ける状態にあるとして今までの問題を解いてきたが、その条件を取り払い、代わりに、全ての物体が水平右向きに大きさ<span class="math inline">\(h\)</span>の加速度を受ける状態にあるとすると、問題2,3の結果はどうなるか。</p></li>
+</ol>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<ol start="2" type="1">
+<li>時刻<span class="math inline">\(t\)</span>における物体 <span class="math inline">\(o\)</span> の加速度は <span class="math inline">\((0,-g)\)</span> となるので、これを積分すれば速度がもとまる．ベクトルの積分は各要素それぞれに対して行えばいいだけなので、 <span class="math inline">\(\boldsymbol{v}(t)=(C_1,C_2-gt)\)</span> となる。ここで積分定数である <span class="math inline">\(C_1,C_2\)</span> を決めていくこととなる．<span class="math display">\[ \]</span> 数学では不定積分は積分定数を放置したままやっていたことが多いと思われるが、物理では積分定数を決めなければならないことが多い。その理由は、数学では微分をすることによって元の関数に戻る関数群を求めていたと言う作業をしていたが、物理ではそのような関数群のうち、現実を記述していると思われる一つの関数を定めるからである。同時に二つ以上の速度を持つ物体というものは存在しないのだ。<span class="math display">\[ \]</span> では、どのようにして積分定数を求めていくかというと、前の0台と同じく，与えられた条件を代入すれば良い。同時に二つ以上の速度を持たない物体なのであれば、任意の時刻において一つの速度を持つはずである。この問題の場合、射出時に <span class="math inline">\((v_0\cos \theta, v_0 \sin \theta)\)</span> の速度を持つことが与えられた条件で，このときの時刻を <span class="math inline">\(t_0\)</span> とでもおいてやれば、 <span class="math inline">\(\boldsymbol{v}(t_0)=(v_0\cos \theta, v_0 \sin \theta)\)</span> という方程式になる。これによって <span class="math inline">\(\boldsymbol{v}(t_0)=(v_0\cos \theta, v_0 \sin \theta-g(t-t_0))\)</span> ともとまる。<span class="math display">\[ \]</span> 賢明な読者の方は開始時刻を　<span class="math inline">\(t_0\)</span> と置くのはエレファントな考え方であるというかもしれない。その通りである。開始時刻を <span class="math inline">\(0\)</span> にすればもっと単純な式になる。だが，せっかくの例題なので，あえて面倒な方で解いても解けることをまず示しておこうと思う．<span class="math display">\[ \]</span> さて、解答の続きに戻ると、<span class="math inline">\(\boldsymbol{v}\)</span> によって物体 <span class="math inline">\(o\)</span> の座標 <span class="math inline">\(\boldsymbol{r}\)</span> を求めないことには話は始まらない。ならば、 <span class="math inline">\(\boldsymbol{v}\)</span> を再び <span class="math inline">\(t\)</span> で積分してやって、時刻 <span class="math inline">\(t_0\)</span> における物体 <span class="math inline">\(o\)</span> の座標 <span class="math inline">\((x_0,y_0)\)</span> でもって積分定数を求めてやれと、そう考えるのが先の発想であった。ここでは <span class="math inline">\(t-t_0\)</span> という塊で考える。そうすれば自然と次が求める物体 <span class="math inline">\(o\)</span> の座標になるわけである． <span class="math display">\[\boldsymbol{r}(t)=(x_0+v_0\cos \theta (t-t_0), y_0+v_0 \sin \theta (t-t_0)-\frac{1}{2}g(t-t_0)^2)\]</span> 同様に， <span class="math inline">\(t-t_0\)</span> を塊としてみて，計算を続ければ軌跡は <span class="math display">\[y=y_0+(x-x_0)\tan\theta-\frac{g}{2}\frac{(x-x_0)^2}{v_0^2\cos^2\theta}\]</span></li>
+</ol>
+<p>と，求まる．</p>
+<ol start="2" type="1">
+<li><p>結論を言えば、 <span class="math inline">\(r_y=y_0\)</span> となる <span class="math inline">\(t\)</span> は　<span class="math inline">\(t-t_0=0,\frac{2v_o\sin\theta}{g}\)</span>　で、後者を　<span class="math inline">\(r_x\)</span>　に代入し、 <span class="math display">\[r_x=x_0+\frac{2v_0^2}{g}\sin \theta \cos \theta=x_0+\frac{v_0^2}{g}\sin 2\theta\]</span> となることから、求める条件は<span class="math inline">\(\theta = \pi /4\)</span>となる．とても直感にあった結果となったと思う．</p></li>
+<li><p>この問題の作業は問題1と同じなので、略解のみを書く。求めるベクトルは <span class="math inline">\(T=t-t_0\)</span> として， <span class="math display">\[\boldsymbol{r}_r=(x_1-x_0-v_0\cos\theta T,y_1-y_0-v_0\sin\theta T)\]</span></p></li>
+<li><p><span class="math inline">\(\boldsymbol{r}_r=\boldsymbol{0}\)</span> となる <span class="math inline">\(T\)</span> が存在することが条件なので、 <span class="math display">\[\theta = \tan ^{-1} \frac{y_1-y_0}{x_1-x_0}\]</span> すなわち、最初から物体 <span class="math inline">\(o\)</span> を物体 <span class="math inline">\(a\)</span> に向けて発射さえすれば良いというのが、結論である。この次の問題である問題2をやれば、この問題を相対運動で見てやればただの等速運動問題であるとわかっていただけるだろう．</p></li>
+<li><p>この場合の相対速度が <span class="math display">\[\boldsymbol{r}_r=(x_1-x_0-v_0\cos\theta T,y_1-y_0-(v_0\sin\theta +v_1) T)\]</span> であることは、容易にわかるではないかと思う。なので求める条件は <span class="math display">\[\frac{\sin\theta + v_1/v_0}{\cos\theta} = \frac{y_1-y_0}{x_1-x_0}\]</span> となります。</p></li>
+<li><p>実際に各物体の座標を計算してみるのもいいが、両物体の座標が共通して持つ項は、相対位置ベクトルを計算する際に相殺されてしまう．例えばこの問題で言えば、両物体がどの方向であろうとも、同じような加速度を受ける状態なんであれば、 <span class="math display">\[\boldsymbol{r}_r=(x_1-x_0-v_0\cos\theta T,y_1-y_0-v_0\sin\theta T)\]</span> は変わらないです。ゆえに結果は変わりはない。加速度のみならず、速度や変位に関しても同じことが言えることにも注意せよ。</p></li>
+</ol>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ある粒子が下の図のような加速度で移動したとする．初速を <span class="math inline">\(v_0\)</span> とした時， <span class="math inline">\(x=3x_0\)</span> の時の速さを求めよ．<strong>ただし，横軸が時間ではなく座標であることに注意せよ．</strong></p>
+<p><img src="./images/mondai1-re.png" class="img-fluid"></p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p><span class="math display">\[\int_{0}^{3x_0}a\dd x=\int_{0}^{T}\dot{v}\dv{x}{t}\dd t = \int_{0}^{T}\dot{v}v\dd t=\left[\frac{1}{2}v^2\right]_{0}^{T}=\frac{1}{2}(V^2-v_0^2)\]</span></p>
+<p>また，台形の面積により，</p>
+<p><span class="math display">\[\int_{0}^{3x_0}a\dd x = 2a_0x_0\]</span></p>
+<p><span class="math display">\[V=\sqrt{v_0^2+4a_0x_0}\]</span></p>
+</details>
 
 
 
