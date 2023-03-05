@@ -247,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
 <p>地上において，支えをなくした物体が自由落下するという現象について，人類は長い間色々な議論を作り上げました．その中でもおそらく最も正確に現象に忠実な解釈は「自由落下する物体は常に鉛直方法下向きに一定の加速度を持つ」というものでしょう．その加速度の大きさは重力加速度といわれ， <span class="math inline">\(g=9.8\:\text{m}/\text{s}^2\)</span> と測定されています．この本ではこれから特に断りなく <span class="math inline">\(g\)</span> を重力加速度として扱っていくのでご注意ください．</p>
 <p>簡単な例として，鉛直上向きに <span class="math inline">\(y\)</span> 軸を設定し，初期位置が <span class="math inline">\(y=y_0\)</span> である物体の自由落下を記述してみましょう．</p>
 <p><span class="math display">\[\ddot{y}=-g\]</span> <span class="math display">\[\dot{y}=-gt\]</span> <span class="math display">\[y=y_0-\frac{1}{2}gt^2\]</span></p>
-<p>次に，相対位置の定義だけ少し説明します．ベクトルになれた読者の方にとって，あまり難しい概念ではないので，程度だけ載せます．</p>
+<p>次に，相対位置の定義だけ少し説明します．ベクトルになれた読者の方にとって，あまり難しい概念ではないので，定義だけ載せます．</p>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -259,7 +259,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-body-container callout-body">
 <p>とある２つの物体の位置ベクトルを <span class="math inline">\(\boldsymbol{r_1},\;\boldsymbol{r_2}\)</span> とした時、</p>
-<p>物体1から見た物体2の相対位置ベクトルを</p>
+<p>物体2の，物体1から見た相対位置ベクトルを</p>
 <p><span class="math display">\[\boldsymbol{r_{21}}=\boldsymbol{r_2}-\boldsymbol{r_1}\]</span></p>
 <p>と定義し，相対速度，相対加速度も同様にして定義する．</p>
 </div>
@@ -291,17 +291,86 @@ ul.task-list li input[type="checkbox"] {
 <summary>
 解答
 </summary>
-<ol start="2" type="1">
-<li>時刻<span class="math inline">\(t\)</span>における物体 <span class="math inline">\(o\)</span> の加速度は <span class="math inline">\((0,-g)\)</span> となるので、これを積分すれば速度がもとまる．ベクトルの積分は各要素それぞれに対して行えばいいだけなので、 <span class="math inline">\(\boldsymbol{v}(t)=(C_1,C_2-gt)\)</span> となる。ここで積分定数である <span class="math inline">\(C_1,C_2\)</span> を決めていくこととなる．<span class="math display">\[ \]</span> 数学では不定積分は積分定数を放置したままやっていたことが多いと思われるが、物理では積分定数を決めなければならないことが多い。その理由は、数学では微分をすることによって元の関数に戻る関数群を求めていたと言う作業をしていたが、物理ではそのような関数群のうち、現実を記述していると思われる一つの関数を定めるからである。同時に二つ以上の速度を持つ物体というものは存在しないのだ。<span class="math display">\[ \]</span> では、どのようにして積分定数を求めていくかというと、前の0台と同じく，与えられた条件を代入すれば良い。同時に二つ以上の速度を持たない物体なのであれば、任意の時刻において一つの速度を持つはずである。この問題の場合、射出時に <span class="math inline">\((v_0\cos \theta, v_0 \sin \theta)\)</span> の速度を持つことが与えられた条件で，このときの時刻を <span class="math inline">\(t_0\)</span> とでもおいてやれば、 <span class="math inline">\(\boldsymbol{v}(t_0)=(v_0\cos \theta, v_0 \sin \theta)\)</span> という方程式になる。これによって <span class="math inline">\(\boldsymbol{v}(t_0)=(v_0\cos \theta, v_0 \sin \theta-g(t-t_0))\)</span> ともとまる。<span class="math display">\[ \]</span> 賢明な読者の方は開始時刻を　<span class="math inline">\(t_0\)</span> と置くのはエレファントな考え方であるというかもしれない。その通りである。開始時刻を <span class="math inline">\(0\)</span> にすればもっと単純な式になる。だが，せっかくの例題なので，あえて面倒な方で解いても解けることをまず示しておこうと思う．<span class="math display">\[ \]</span> さて、解答の続きに戻ると、<span class="math inline">\(\boldsymbol{v}\)</span> によって物体 <span class="math inline">\(o\)</span> の座標 <span class="math inline">\(\boldsymbol{r}\)</span> を求めないことには話は始まらない。ならば、 <span class="math inline">\(\boldsymbol{v}\)</span> を再び <span class="math inline">\(t\)</span> で積分してやって、時刻 <span class="math inline">\(t_0\)</span> における物体 <span class="math inline">\(o\)</span> の座標 <span class="math inline">\((x_0,y_0)\)</span> でもって積分定数を求めてやれと、そう考えるのが先の発想であった。ここでは <span class="math inline">\(t-t_0\)</span> という塊で考える。そうすれば自然と次が求める物体 <span class="math inline">\(o\)</span> の座標になるわけである． <span class="math display">\[\boldsymbol{r}(t)=(x_0+v_0\cos \theta (t-t_0), y_0+v_0 \sin \theta (t-t_0)-\frac{1}{2}g(t-t_0)^2)\]</span> 同様に， <span class="math inline">\(t-t_0\)</span> を塊としてみて，計算を続ければ軌跡は <span class="math display">\[y=y_0+(x-x_0)\tan\theta-\frac{g}{2}\frac{(x-x_0)^2}{v_0^2\cos^2\theta}\]</span></li>
-</ol>
-<p>と，求まる．</p>
-<ol start="2" type="1">
+<ol type="1">
+<li><p>時刻<span class="math inline">\(t\)</span>における物体 <span class="math inline">\(o\)</span> の加速度は <span class="math inline">\((0,-g)\)</span> となるので、これを積分すれば速度がもとまる．ベクトルの積分は各要素それぞれに対して行えばいいだけなので、 <span class="math inline">\(\boldsymbol{v}(t)=(C_1,C_2-gt)\)</span> となる。ここで積分定数である <span class="math inline">\(C_1,C_2\)</span> を決めていくこととなる．<span class="math display">\[ \]</span> 数学では不定積分は積分定数を放置したままやっていたことが多いと思われるが、物理では積分定数を決めなければならないことが多い。その理由は、数学では微分をすることによって元の関数に戻る関数群を求めていたと言う作業をしていたが、物理ではそのような関数群のうち、現実を記述していると思われる一つの関数を定めるからである。同時に二つ以上の速度を持つ物体というものは存在しないのだ。<span class="math display">\[ \]</span> では、どのようにして積分定数を求めていくかというと、前の0台と同じく，与えられた条件を代入すれば良い。同時に二つ以上の速度を持たない物体なのであれば、任意の時刻において一つの速度を持つはずである。この問題の場合、射出時に <span class="math inline">\((v_0\cos \theta, v_0 \sin \theta)\)</span> の速度を持つことが与えられた条件で，このときの時刻を <span class="math inline">\(t_0\)</span> とでもおいてやれば、 <span class="math inline">\(\boldsymbol{v}(t_0)=(v_0\cos \theta, v_0 \sin \theta)\)</span> という方程式になる。これによって <span class="math inline">\(\boldsymbol{v}(t_0)=(v_0\cos \theta, v_0 \sin \theta-g(t-t_0))\)</span> ともとまる。<span class="math display">\[ \]</span> 賢明な読者の方は開始時刻を　<span class="math inline">\(t_0\)</span> と置くのはエレファントな考え方であるというかもしれない。その通りである。開始時刻を <span class="math inline">\(0\)</span> にすればもっと単純な式になる。だが，せっかくの例題なので，あえて面倒な方で解いても解けることをまず示しておこうと思う．<span class="math display">\[ \]</span> さて、解答の続きに戻ると、<span class="math inline">\(\boldsymbol{v}\)</span> によって物体 <span class="math inline">\(o\)</span> の座標 <span class="math inline">\(\boldsymbol{r}\)</span> を求めないことには話は始まらない。ならば、 <span class="math inline">\(\boldsymbol{v}\)</span> を再び <span class="math inline">\(t\)</span> で積分してやって、時刻 <span class="math inline">\(t_0\)</span> における物体 <span class="math inline">\(o\)</span> の座標 <span class="math inline">\((x_0,y_0)\)</span> でもって積分定数を求めてやれと、そう考えるのが先の発想であった。ここでは <span class="math inline">\(t-t_0\)</span> という塊で考える。そうすれば自然と次が求める物体 <span class="math inline">\(o\)</span> の座標になるわけである． <span class="math display">\[\boldsymbol{r}(t)=(x_0+v_0\cos \theta (t-t_0), y_0+v_0 \sin \theta (t-t_0)-\frac{1}{2}g(t-t_0)^2)\]</span> 同様に， <span class="math inline">\(t-t_0\)</span> を塊としてみて，計算を続ければ軌跡は <span class="math display">\[y=y_0+(x-x_0)\tan\theta-\frac{g}{2}\frac{(x-x_0)^2}{v_0^2\cos^2\theta}\]</span> と，求まる．</p></li>
 <li><p>結論を言えば、 <span class="math inline">\(r_y=y_0\)</span> となる <span class="math inline">\(t\)</span> は　<span class="math inline">\(t-t_0=0,\frac{2v_o\sin\theta}{g}\)</span>　で、後者を　<span class="math inline">\(r_x\)</span>　に代入し、 <span class="math display">\[r_x=x_0+\frac{2v_0^2}{g}\sin \theta \cos \theta=x_0+\frac{v_0^2}{g}\sin 2\theta\]</span> となることから、求める条件は<span class="math inline">\(\theta = \pi /4\)</span>となる．とても直感にあった結果となったと思う．</p></li>
 <li><p>この問題の作業は問題1と同じなので、略解のみを書く。求めるベクトルは <span class="math inline">\(T=t-t_0\)</span> として， <span class="math display">\[\boldsymbol{r}_r=(x_1-x_0-v_0\cos\theta T,y_1-y_0-v_0\sin\theta T)\]</span></p></li>
 <li><p><span class="math inline">\(\boldsymbol{r}_r=\boldsymbol{0}\)</span> となる <span class="math inline">\(T\)</span> が存在することが条件なので、 <span class="math display">\[\theta = \tan ^{-1} \frac{y_1-y_0}{x_1-x_0}\]</span> すなわち、最初から物体 <span class="math inline">\(o\)</span> を物体 <span class="math inline">\(a\)</span> に向けて発射さえすれば良いというのが、結論である。この次の問題である問題2をやれば、この問題を相対運動で見てやればただの等速運動問題であるとわかっていただけるだろう．</p></li>
 <li><p>この場合の相対速度が <span class="math display">\[\boldsymbol{r}_r=(x_1-x_0-v_0\cos\theta T,y_1-y_0-(v_0\sin\theta +v_1) T)\]</span> であることは、容易にわかるではないかと思う。なので求める条件は <span class="math display">\[\frac{\sin\theta + v_1/v_0}{\cos\theta} = \frac{y_1-y_0}{x_1-x_0}\]</span> となります。</p></li>
 <li><p>実際に各物体の座標を計算してみるのもいいが、両物体の座標が共通して持つ項は、相対位置ベクトルを計算する際に相殺されてしまう．例えばこの問題で言えば、両物体がどの方向であろうとも、同じような加速度を受ける状態なんであれば、 <span class="math display">\[\boldsymbol{r}_r=(x_1-x_0-v_0\cos\theta T,y_1-y_0-v_0\sin\theta T)\]</span> は変わらないです。ゆえに結果は変わりはない。加速度のみならず、速度や変位に関しても同じことが言えることにも注意せよ。</p></li>
 </ol>
+<p>最後に放物運動についての重要な性質をいくつか書いておく．</p>
+<ul>
+<li>放物開始点から最高点に達するまでの時間と，最高点から下の高さまで戻る時間は等しい</li>
+<li>同じ高さでは同じ速さとなる</li>
+</ul>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ある車が静止から加速度 <span class="math inline">\(a\)</span> で動き出した．同時に，同じ開始地点に速さ <span class="math inline">\(v\)</span> のトラックが通過した．この時次の問を答えよ．</p>
+<ol type="1">
+<li><p>車とトラックが再びすれ違うまで，どれだけの時間がかかったか</p></li>
+<li><p>車とトラックが再びすれ違うまで，車はどれほど進んだか</p></li>
+<li><p>車とトラックが再びすれ違う際の車の速度はいかほどか</p></li>
+</ol>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p>車とトラックの原点から見た位置をそれぞれ <span class="math inline">\(x_1,\: x_2\)</span> とした時，次の式が成り立つ．</p>
+<p><span class="math display">\[x_1=\frac{1}{2}at^2,\;x_2=vt\]</span></p>
+<p>車とトラックがすれ違う時間は <span class="math inline">\(x_1=x_2\)</span> で求まるので， <span class="math display">\[\underline{t=\frac{2v}{a}}\]</span> 次に進んだ距離 <span class="math inline">\(s\)</span> は <span class="math display">\[s=\frac{2v^2}{a}\]</span> 車の速さ <span class="math inline">\(V\)</span> は <span class="math display">\[V=2v\]</span> となる．</p>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>次の等式を示せ．</li>
+</ol>
+<p><span class="math display">\[\int \ddot{x} dx = \frac{1}{2}v^2 + C\]</span> 特に <span class="math inline">\(\ddot{x}=a\)</span> と加速度が一定の際，初速度 <span class="math inline">\(v_0\)</span> から運動を始めて <span class="math inline">\(x\)</span> だけ進んだ物体の速さを <span class="math inline">\(V\)</span> として， <span class="math display">\[v^2-v_0^2=2ax\]</span> が成り立つことを示せ．</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p><span class="math display">\[\int　a\dd x=\int　\dot{v}\dv{x}{t}\dd t = \int　\dot{v}v\dd t=\frac{1}{2}v^2 +C\]</span> 問題後半については， <span class="math display">\[\int_{0}^{x}a\dd x=\int_{0}^{T}\dot{v}\dv{x}{t}\dd t = \int_{0}^{T}\dot{v}v\dd t=\left[\frac{1}{2}v^2\right]_{0}^{T}=\frac{1}{2}(V^2-v_0^2)\]</span> <span class="math display">\[\int_{0}^{x}a\dd x=ax\]</span> から導き出される．</p>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題 (アデレード大)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>鉛直上向き正の <span class="math inline">\(y\)</span> 軸の原点から<strong>下に離れた位置</strong>から，鉛直上向きにある物体を投げ上げた時，その物体の高さ <span class="math inline">\(y=-h\)</span> の時の速さが，高さ <span class="math inline">\(y=h\)</span> の時の速さの2倍になったという．この時，この物体の最高到達位置を求めよ．</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p>高さ <span class="math inline">\(y=0,\:h\)</span> の時の速さをそれぞれ <span class="math inline">\(u,v\)</span> とした時，次の式が成り立つ <span class="math display">\[v^2-u^2=-2gh\]</span> <span class="math display">\[(2v)^2-u^2=2gh\]</span> この式から <span class="math inline">\(v\)</span> を消すことによって次の式が成り立つ <span class="math display">\[u^2=\frac{10}{3}gh\]</span> 最後にこの物体がたどり着ける最高点の高さを <span class="math inline">\(H\)</span> とした時， <span class="math display">\[H=\frac{u^2}{2g}=\frac{5}{3}h\]</span> となることがわかる．</p>
 </details>
 <div class="callout-tip callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -325,6 +394,86 @@ ul.task-list li input[type="checkbox"] {
 <p>また，台形の面積により，</p>
 <p><span class="math display">\[\int_{0}^{3x_0}a\dd x = 2a_0x_0\]</span></p>
 <p><span class="math display">\[V=\sqrt{v_0^2+4a_0x_0}\]</span></p>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>一辺100メートルの正方形の各頂点に人A ,B ,C,Dが立っている。時刻0に秒速1メートルでAはBに向かい、BはC、CはD、DはAに向かって歩き始める。歩いている間は各々は自分が向かっていた相手を目指し続けて歩くとする。人を質点として考えるとき、彼らは出会うことはあるか。もしも出会うなら、彼らは何秒で出会い、どれだけの距離を歩き、最終地点の周りを何回周ったことになるか。また，正方形ではなく，正三角形だった場合はどうなるか．</p>
+</div>
+</div>
+<p>この問題に対する直感的な解決法は問題の解答の後半にあるので、前半の記述が難しいと感じられたのであれば、スキップしてお読みいただければ嬉しいです。</p>
+<details>
+<summary>
+解答
+</summary>
+<p>具体的にそれぞれの人の歩く軌跡をデカルト座標で考えていくとすれば非常な困難に立ちはだかることが予想される。では、人の動き方が、対称性から四人が常に四角形を成す位置にあり、ぐるぐる周っていくことから、極座標での解決の仕方はどうだろうか。 <img src="images/mondai3.png" class="img-fluid"> 以上の図によって、おおよそ人のいつ場所と速度を考えることができる。ここで、時間を追って <span class="math inline">\(r,\theta\)</span> がどのように動くかを考えてみると、次の図のようになる。 <img src="images/mondai4.png" class="img-fluid"> <span class="math inline">\(r,v\)</span> の作る角度などから、次の2つの式を求めることができる． <span class="math display">\[dr=-v\cos 45^\circ dt\]</span> <span class="math display">\[\tan 45 ^\circ = \frac{rd\theta}{dr}\]</span> <span class="math inline">\(t=0\)</span>の時、<span class="math inline">\(r=R,\theta=0\)</span>として、微分方程式を解いていくことによって、 <span class="math display">\[r=R-\frac{v}{\sqrt{2}}t\]</span> <span class="math display">\[d\theta=\frac{dr}{r}\]</span> <span class="math display">\[r=Re^{-\theta}\]</span> <span class="math display">\[\theta = \ln \frac{R}{R-\frac{v}{\sqrt{2}}t}\]</span> のように <span class="math inline">\(r,\theta\)</span> を <span class="math inline">\(t\)</span> の関数で表すことができる。これらの式からA ,B ,C,Dが出会う時刻は　<span class="math inline">\(\sqrt{2}R/v\)</span>　となり、無限回最終地点の周りを周ったことになる。では、彼らがどれだけ歩いたことになるのだろうか。この問題は次のように解決される。 <span class="math display">\[\int_0^\infty \sqrt{r^2+(\frac{dr}{d\theta})^2} d\theta=\sqrt{2}R\]</span> 正三角形の場合も似たような議論が可能であるが，省略する．</p>
+<p><strong>後半部分</strong></p>
+<p>Bから見たAの相対速さは，AとBの速度が常に垂直なので， <span class="math inline">\(1\)</span> メートル毎秒となり、 <span class="math inline">\(100\)</span> 秒後に <span class="math inline">\(100\)</span> メートルに歩いて出会うことになる。対称性から無限回回転するか、一回も回転しないかどちらかで、明らかに後者ではないということもわかる。</p>
+<p>正三角形の場合は別の考え方をする． <img src="images/mondai5.png" class="img-fluid"> 図のようにAは常に三角形の中心に向かって <span class="math inline">\(\sqrt{3}v/2\)</span> の速さで進むことになる．三角形の中心からAまでの最初の距離は <span class="math inline">\(100/\sqrt{3}\)</span> メートルなので，かかる時間は <span class="math inline">\(200/3\)</span> 秒であり，お互いに向かって歩いているので，進む距離は <span class="math inline">\(100\)</span> mである．</p>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>幅が<span class="math inline">\(L\)</span>で、ある地点から河岸までの両距離を <span class="math inline">\(\delta_1,\delta_2\)</span> とした時、その地点での流速が <span class="math inline">\(k\delta_1\delta_2\)</span> となる川があり、それを速さ <span class="math inline">\(v\)</span> の船で横断することを考える。船首は常に対岸に真っ直ぐ向いているとして、この船が描く軌跡はどうなるか。適当に座標を設定して答えよ。</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p>川の流れる方向を <span class="math inline">\(y\)</span> 軸，船の進む方向を <span class="math inline">\(x\)</span> 軸，船の最初いる場所を原点として、 <span class="math inline">\(xy\)</span> 座標を考える。船のいる座標は <span class="math inline">\(\boldsymbol{r}=(x,y)\)</span> である時、川の流れは <span class="math inline">\(kx(L-x)\)</span> となるので、 <span class="math inline">\(\boldsymbol{v}=(v,kx(L-x))\)</span> となる。ここで、 <span class="math inline">\(x=vt\)</span> から、 <span class="math inline">\(v_y=kvt(L-vt)\)</span> となり、実際に積分計算をしてやると、 <span class="math inline">\(y=kvL\frac{t^2}{2}-kv^2\frac{t^3}{3}\)</span> となり、軌跡を出さないといけないので <span class="math inline">\(t\)</span> を代入をしてやれば、 <span class="math display">\[y=\frac{kL}{2v}x^2-\frac{k}{3v}x^3\]</span> が答えになる。</p>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>2輌の燃料タンクが積まれた車A,Bがあり、それぞれ2種類のエンジンを搭載している。これらのエンジンの効率などを計測するために、2輌の車を同じ長さのテストコースで走らせる。Aは丁度コースの半分まで加速し続け、その後は等速でコースを走り去った。Bはコースの最後まで加速し続けた。奇しくもA,Bは同時刻に発射し、同時刻にゴールに達した。A,Bの加速度の比と、ゴール時の速度の比を求めよ。</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p>コースの長さを <span class="math inline">\(L\)</span> 、それぞれの車の加速度を <span class="math inline">\(a_A,a_B\)</span> 、最大速度に達する時間を <span class="math inline">\(t,T\)</span> とおくと次のような方程式が成り立つ． <span class="math display">\[L=\frac{1}{2}a_At^2+a_At(T-t)\]</span> <span class="math display">\[L=\frac{1}{2}a_BT^2\]</span> <span class="math display">\[\frac{1}{2}L=\frac{1}{2}a_At^2\]</span> これらの方程式は未知数が5つあるので、一見解決は無理そうに見えますが、全ての式が <span class="math inline">\(L\)</span> だけの変数を持つ左辺を持つ事実と、右辺の字数が全て揃っているところから解決が可能である。実際、1,2番目の式を3番目の式で割ってやれば、 <span class="math inline">\(a_A/a_B,T/t\)</span> の二つを未知数と見立てた方程式が出来上がり、実際に計算してやると、 <span class="math display">\[\frac{a_A}{a_B}=\frac{9}{8},\;\frac{a_At}{a_BT}=\frac{3}{4}\]</span> が求める比になる。</p>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(x=0\)</span> で固定された長さが最初 <span class="math inline">\(x=L\)</span> まである鉄板の端に車輪が立っており、鉄板は <span class="math inline">\(x\)</span> 軸プラス方向に無限に、均等に伸び続ける。また、車輪は鉄板に対して一定の速さ <span class="math inline">\(v\)</span> で <span class="math inline">\(x\)</span> 軸マイナス方向に進み続ける。この時、車輪が <span class="math inline">\(x=0\)</span> にまで辿り着く条件はどうなるか？</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p>鉄板と車輪の速さを <span class="math inline">\(v,c\)</span> とする。まず鉄板上を無数の点があると考える。鉄板が伸びるというのは、これらの無数の点の間隔が伸びることを意味する。次に、時刻 <span class="math inline">\(t\)</span> の時を考える。伸びる前における座標 <span class="math inline">\(x\)</span> の点上から座標 <span class="math inline">\(x-\dd x\)</span> の点まで、車輪がマイナス方向に転がる時間が <span class="math inline">\(\dd t\)</span> であるとする。二つの点の距離は鉄板の伸びから <span class="math inline">\(\frac{L+vt}{L}\dd x\)</span> で、これを <span class="math inline">\(\dd t\)</span> の時間で進むので、 <span class="math inline">\(c\dd t\)</span> となり、次の式が成り立つ。 <span class="math display">\[\frac{L+vt}{L}\dd x=c\dd t\]</span> <span class="math display">\[\dd x=\frac{c}{1+vt/L}\dd t\]</span> 両辺を <span class="math inline">\(0\)</span> から <span class="math inline">\(T\)</span> 積分してやれば <span class="math display">\[x=\frac{Lc}{v}\ln \frac{L+vT}{L}\]</span> ここで求めた <span class="math inline">\(x\)</span> とは、時間 <span class="math inline">\(T\)</span> までに車輪が進んだ距離の、伸びる前における座標の換算になります。つまり、 <span class="math inline">\(x=L\)</span> を代入して、求めた <span class="math inline">\(T\)</span> の <span class="math display">\[T=\frac{L}{v}(e^{\frac{v}{c}}-1)\]</span> が端にまで辿り着く時間となります。つまり、問題の答えとしては、伸びる速さがどれほどはやくとも、車輪がどれほどノロノロしていようと、鉄板が最初どれほど長かろうとも、有限の時間で絶対に車輪は端にたどり着くというのが答えになります。\ 一見不思議な結果のように思われるかもしれませんが、実は少しだけ考え方を変えてやればこの問題も秒で解ける問題となります。\ 車輪は常に <span class="math inline">\(x\)</span> 軸マイナス方向に進み続けているのですが、鉄板が伸びる速さがどれほどのものとなろうとも、伸びる前換算でプラス方向に進むことはあり得ません。なぜなら、車輪は常に鉄板に対して、その進む方向と逆方向に速さを持っているからです。なので、いつか絶対に端にたどり着くのです。</p>
 </details>
 
 
