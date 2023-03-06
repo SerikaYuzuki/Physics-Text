@@ -11,8 +11,6 @@ book:
     - intro.qmd
     - velocity.qmd
     - newton-mechanics.qmd
-    - summary.qmd
-    - references.qmd
 
 bibliography: references.bib
 

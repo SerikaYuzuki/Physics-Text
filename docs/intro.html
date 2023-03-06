@@ -119,16 +119,6 @@ ul.task-list li input[type="checkbox"] {
   <a href="./newton-mechanics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">newton-mechanics.html</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -360,7 +350,10 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="math display">\[ \dv{y}{x}|_{x=a}=f'(a)=2a\]</span></p>
 <p>また， <span class="math inline">\(a\)</span> という具体的に代入した値ではなく，任意の <span class="math inline">\(x\)</span> についても同様なことが言えるため，</p>
 <p><span class="math display">\[ \dv{y}{x}=f'(x)=2x\]</span></p>
-<p>と書くことになります．この時， <span class="math inline">\(f(x)\)</span> の導関数は <span class="math inline">\(f'(x)=2x\)</span> などと呼びます．</p>
+<p>と書くことになります．この時， <span class="math inline">\(f(x)\)</span> の導関数は <span class="math inline">\(f'(x)=2x\)</span> などと呼びます．以上の議論を最初から <span class="math inline">\(\Delta x,\: \Delta y\)</span> が微小分，つまり， <span class="math inline">\(\dd x,\: \dd y\)</span> としてすることもでき，その場合は</p>
+<p><span class="math display">\[\dd y = \frac{b^2-a^2}{b-a} \dd x = (b+a) \dd x = (2a+\dd x) \dd x = 2a \dd x + (\dd x)^2= 2a \dd x\]</span></p>
+<p><span class="math display">\[\dv{y}{x} = 2a\]</span></p>
+<p>ここで注目して欲しいのは， <span class="math inline">\(\dd y\)</span> を表す式の中で， <span class="math inline">\(\dd x\)</span> の一次以上の項が消えていることです．これは極限を取ると消えてしまうからですね．</p>
 <p>以上述べたように，微分を考える理由とは，接線で曲線を近似してみようという試みであり，また，曲線を非常に小さな部分で見てあげれば直線になると考えていることになります．</p>
 <p>実際に問題を解いてみましょう．</p>
 <div class="callout-warning callout callout-style-default no-icon callout-captioned">
@@ -382,7 +375,7 @@ ul.task-list li input[type="checkbox"] {
 </summary>
 <p><span class="math inline">\(a=x,\;b=a+\Delta x\)</span> とする． <span class="math display">\[\Delta y = \frac{f(b)-f(a)}{b-a}\Delta x\]</span> <span class="math display">\[\frac{f(b)-f(a)}{b-a}=\frac{f(a+\Delta x)-f(a)}{a+\Delta x -a} \]</span> <span class="math display">\[= \frac{3x^2\Delta x + 3x\Delta x^2 + \Delta x ^3 + \Delta x}{\Delta x}\]</span> <span class="math display">\[=3x^2+ 3x\Delta x + \Delta x ^2 + 1 \to_{\Delta x \to 0} 3x^2+1\]</span> <span class="math display">\[\dv{y}{x}=3x^2+1\]</span></p>
 </details>
-<p>ここで注目して欲しいのは， <span class="math inline">\(\Delta y\)</span> を表す式の中で， <span class="math inline">\(\Delta x\)</span> の一次以上の項が消えていることです．導関数を求める極限の計算では完全に消滅しますが， <span class="math inline">\(\Delta x\)</span> が <span class="math inline">\(0\)</span> に比較的に近いだけの値を考えている時の近似計算でも同様に無視したりします．このことを一次近似と呼んでいます．具体的な問題は後半にあるので，手を動かしてやってみましょう．</p>
+<p>ここで注目して欲しいのは， <span class="math inline">\(\Delta y\)</span> を表す式の中で， <span class="math inline">\(\Delta x\)</span> の2次以上の項が消えていることです．導関数を求める極限の計算では完全に消滅しますが， <span class="math inline">\(\Delta x\)</span> が <span class="math inline">\(0\)</span> に比較的に近いだけの値を考えている時の近似計算でも同様に無視したりします．このことを一次近似と呼んでいます．具体的な問題は後半にあるので，手を動かしてやってみましょう．</p>
 <p>次に導関数に慣れてもらうために問題を置いておきます．</p>
 <div class="callout-tip callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
