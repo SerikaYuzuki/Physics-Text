@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Physics Text – newton-mechanics</title>
+<title>Physics Text - 3&nbsp; ニュートンの第２法則（半分）</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./velocity.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -63,16 +62,17 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
-<body class="nav-sidebar floating fullcontent">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Physics Text</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ニュートンの第２法則（半分）</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -110,29 +110,109 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./newton-mechanics.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">newton-mechanics.html</span></a>
+  <a href="./velocity.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">位置，速度，加速度</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="./newton-mechanics.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ニュートンの第２法則（半分）</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ニュートンの第２法則（半分）</span></h1>
+</div>
 
 
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>これまでの章で皆さんが学んだ内容は運動学と呼ばれますが、運動学は物体の動き方（速度と加速度）を説明する学問です。</p>
+<p>これから皆さんが学ぶことになる力学は、力が物体や系の運動にどのように影響するかを研究する学問となります。力学の基礎は、アイザック・ニュートンによって法則としてまとめ上げられました。この法則は非常にシンプルなのにも関わらず、自然界をかなりの精度と範囲で記述することができています。また，この法則は、地球のみならず，惑星の動きなど，宇宙空間の状況に適用されるという点で、普遍的な法則でもあります。</p>
+<p>ニュートンの法則の発見は、ルネサンスから近代へと時代を変え，２０世紀初頭の現代物理学の登場までこの宇宙の須くを記述し切れるものだと考えられました．ただし，現代でも <span class="math inline">\(10^{-8}\)</span> m以下の世界を除けば，ニュートンの法則はかなりの精度をもって自然を記述することができます．また，逆にこの制約がニュートン力学の領域を定義することにもなります。20世紀初頭、アルベルト・アインシュタインは相対性理論を提唱し、他の多くの科学者と共に量子力学を発展させていきました。ゆくゆくはその領域にも話を進めるつもりでいますが，今の所はニュートン力学の理解を進めていきましょう．</p>
+<p>力学とは、物体や系の動きを引き起こす力についての学問です。このことを理解するためには、力の定義が必要です。力の直感的な定義ですが，まず手始めには「押す」や「引く」といったものとして考えてみましょう．台車を手のひらで押すとその感触がして，台車が動き始める．その感触を定義とするわけです．ここで，「押す」や「引く」には，向きと大きさが存在するわけで，ゆえにこれを記述するにはベクトルを使うことになります．</p>
+<p>もう少しこの直感に力の定義に従って自然界を観察してみることにしましょう．まず，私たちが実際に感じられる力のうちの一つが，重力であることは言うまでもないでしょう．では，重力の持つ特徴とはなんだったのでしょうか．ものを動かすこと？　では，ものを動かすとはどう言う意味でしょうか．物体の座標を変化させること？　では，それはどのようにでしょうか．</p>
+<p>落下運動を深く観察してやると，物体に一定の速度を持たせる，と言うのではなく，物体に一定の割合で速度を与えているとわかります．これは実験的事実であり，同時に前の章で私たちはすでに重力加速度として実際に問題を解いていたりもしました．</p>
+<p>では，この洞察を次のようにまとめることはできないでしょうか．</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>物体に力が働く時，その物体は加速度を持つ．</p>
+</div>
+</div>
+<p>では，この関係性はどのようになっているのでしょうか．つまり物体に働く力を <span class="math inline">\(\boldsymbol{F}\)</span> ，物体の位置を <span class="math inline">\(\boldsymbol{r}\)</span> として， <span class="math display">\[\begin{align*}
+    \boldsymbol{F} = f(\ddot{\boldsymbol{r}})
+\end{align*}\]</span> と言う関数 <span class="math inline">\(f\)</span> が存在すると言うことである．この関数の形を知ることができれば，私たちは力学の根本の大きな部分を理解することになるのですが，これについては偉大なる先人たちが導き出してくれました．なんとこの関数は一次関数だったのです．そして，その比例係数の逆数を，質量と呼ぶようになりました．</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+ニュートンの第２法則(運動方程式)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>物体の質量を <span class="math inline">\(m\)</span> ，物体の位置を <span class="math inline">\(\boldsymbol{r}\)</span> ，物体に働く力を <span class="math inline">\(\boldsymbol{F}\)</span> とした時，次の式が成り立つ．</p>
+<p><span class="math display">\[\ddot{\boldsymbol{r}}=\frac{1}{m}\boldsymbol{F}\]</span></p>
+</div>
+</div>
+<p>ここで，<span class="math display">\[m\ddot{\boldsymbol{r}}=\boldsymbol{F},\;\boldsymbol{F}=m\ddot{\boldsymbol{r}}\]</span> どちらがいいのかとか言う問題には立ち入らないことにします．式の順番に意義があると思われる方は自らの信念に従っていただければ嬉しいです．筆者の考えるところでは，とある視点に基づいて考えるよりかは，色々な視点で持って数式は見るべきであり，数式に意味を持たせるべきと言う意見よりも，数式に意味を見出すべきだと言う意見を採用したいと思っています．</p>
+<p>では，これから推察できる簡単な事実を考えましょう．すなわち，力の働いていない物体はどのような運動をするのか，です．これは非常に簡単で <span class="math inline">\(m\ddot{\boldsymbol{r}}=\boldsymbol{0},\;\dot{\boldsymbol{r}}=(\text{一定})\)</span> と言う非常にシンプルな結果となるわけです．つまり，次のようにまとめられるわけです．</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+ニュートンの第1法則(慣性の法則)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>力の働いていない物体は，常にその速度を保つ．</p>
+</div>
+</div>
+<p>そして最後に，力の持つ性質を述べようと思います．それは，作用反作用の法則と呼ばれるものです．</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+ニュートンの第３法則(作用反作用の法則)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>物体に働く力は，常にある２つの物体の間で及ぼしあうように働く．物体Aが物体Bに及ぼす力を <span class="math inline">\(\boldsymbol{F_{BA}}\)</span> ，物体Bが物体Aに及ぼす力を <span class="math inline">\(\boldsymbol{F_{AB}}\)</span> とした時，次の式が成り立つ． <span class="math display">\[\boldsymbol{F_{BA}}+\boldsymbol{F_{AB}}=\boldsymbol{0}\]</span></p>
+</div>
+</div>
+<p>つまり，地球があなたを引っ張っているのと同じくらい，あなたは地球を引っ張っているのです．非常に非直感的な法則です．同時に，壁があなたに押されていると同じくらい，あなたは壁に押されるというのも同じ作用反作用の法則です．こちらは直感的ですね．</p>
+<p>これらの法則を実際にどのようにして問題に応用するべきでしょうか．これからは実際に問題を解いていくことによって，それらを明らかにしていこうと思います．</p>
 
 
 
@@ -387,14 +467,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">数学的準備</span></span>
+      <a href="./velocity.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">位置，速度，加速度</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

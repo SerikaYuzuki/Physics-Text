@@ -124,7 +124,13 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#難問パート" id="toc-難問パート" class="nav-link active" data-scroll-target="#難問パート"><span class="toc-section-number">2.0.1</span>  難問パート</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -444,6 +450,8 @@ ul.task-list li input[type="checkbox"] {
 <p>流速とともに動く座標系で考える（もしこの考え方に馴染みがなければ，最初は飛ばしても良い）．この時，イカダは常に止まっており，モーターボードのみがイカダから離れては戻ってくる運動をする．この時，行きと戻りは，同じ距離を同じ速さで動いているので，ともに同じ時間 <span class="math inline">\(t\)</span> だけかかり，合計 <span class="math inline">\(2t\)</span> だけかかったことになる．ここで川に対してとまっている，地面に対して静止している座標系で考えた時，イカダは <span class="math inline">\(l\)</span> だけ動いたことになる．つまり，イカダは <span class="math inline">\(2t\)</span> の時間で <span class="math inline">\(l\)</span> だけ動いたことになり，流速は <span class="math inline">\(l/2t\)</span> と求まる．</p>
 <p>次に少しだけだが煩雑な考え方をする． <span class="math inline">\(AB=BC+l\)</span> なので，モーターボートが引き返したのちにイカダとすれ違うまでの時間を <span class="math inline">\(t'\)</span> ,ボートのかわに対する速さを <span class="math inline">\(V\)</span> とすると <span class="math display">\[(V+v)t=l+(V-v)t'\]</span> また，イカダは時間 <span class="math inline">\(t'\)</span> の間に <span class="math inline">\(l\)</span> だけ進んでいるので， <span class="math display">\[vt'=l\]</span> これらを連立することによって <span class="math display">\[v=\frac{l}{2t}\]</span> とわかる．</p>
 </details>
+<section id="難問パート" class="level3" data-number="2.0.1">
+<h3 data-number="2.0.1" class="anchored" data-anchor-id="難問パート"><span class="header-section-number">2.0.1</span> 難問パート</h3>
 <p>これからの問題に対する直感的な解決法は問題の解答の後半にあるので、前半の記述が難しいと感じられたのであれば、スキップしてお読みいただければ嬉しいです。</p>
 <div class="callout-tip callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -486,10 +494,13 @@ ul.task-list li input[type="checkbox"] {
 <p>具体的にそれぞれの人の歩く軌跡をデカルト座標で考えていくとすれば非常な困難に立ちはだかることが予想される。では、人の動き方が、対称性から四人が常に四角形を成す位置にあり、ぐるぐる周っていくことから、極座標での解決の仕方はどうだろうか。 <img src="images/mondai3.png" class="img-fluid"> 以上の図によって、おおよそ人のいつ場所と速度を考えることができる。ここで、時間を追って <span class="math inline">\(r,\theta\)</span> がどのように動くかを考えてみると、次の図のようになる。 <img src="images/mondai4.png" class="img-fluid"> <span class="math inline">\(r,v\)</span> の作る角度などから、次の2つの式を求めることができる． <span class="math display">\[dr=-v\cos 45^\circ dt\]</span> <span class="math display">\[\tan 45 ^\circ = \frac{rd\theta}{dr}\]</span> <span class="math inline">\(t=0\)</span>の時、<span class="math inline">\(r=R,\theta=0\)</span>として、微分方程式を解いていくことによって、 <span class="math display">\[r=R-\frac{v}{\sqrt{2}}t\]</span> <span class="math display">\[d\theta=\frac{dr}{r}\]</span> <span class="math display">\[r=Re^{-\theta}\]</span> <span class="math display">\[\theta = \ln \frac{R}{R-\frac{v}{\sqrt{2}}t}\]</span> のように <span class="math inline">\(r,\theta\)</span> を <span class="math inline">\(t\)</span> の関数で表すことができる。これらの式からA ,B ,C,Dが出会う時刻は　<span class="math inline">\(\sqrt{2}R/v\)</span>　となり、無限回最終地点の周りを周ったことになる。では、彼らがどれだけ歩いたことになるのだろうか。この問題は次のように解決される。 <span class="math display">\[\int_0^\infty \sqrt{r^2+(\frac{dr}{d\theta})^2} d\theta=\sqrt{2}R\]</span> 正三角形の場合も似たような議論が可能であるが，省略する．</p>
 <p><strong>後半部分</strong></p>
 <p>Bから見たAの相対速さは，AとBの速度が常に垂直なので， <span class="math inline">\(1\)</span> メートル毎秒となり、 <span class="math inline">\(100\)</span> 秒後に <span class="math inline">\(100\)</span> メートルに歩いて出会うことになる。対称性から無限回回転するか、一回も回転しないかどちらかで、明らかに後者ではないということもわかる。</p>
-<p>正三角形の場合は別の考え方をする． <img src="images/mondai5.png" class="img-fluid"> 図のようにAは常に三角形の中心に向かって <span class="math inline">\(\sqrt{3}v/2\)</span> の速さで進むことになる．三角形の中心からAまでの最初の距離は <span class="math inline">\(100/\sqrt{3}\)</span> メートルなので，かかる時間は <span class="math inline">\(200/3\)</span> 秒である．また，お互いに向かって歩いている割合は図からわかるように <span class="math inline">\(1:2\)</span> なので，進む距離は <span class="math inline">\(100\times 2/3=200/3\)</span> mである．</p>
+<p>正三角形の場合は別の考え方をする．</p>
+<p><img src="images/mondai5.png" class="img-fluid"></p>
+<p>図のようにAは常に三角形の中心に向かって <span class="math inline">\(\sqrt{3}v/2\)</span> の速さで進むことになる．三角形の中心からAまでの最初の距離は <span class="math inline">\(100/\sqrt{3}\)</span> メートルなので，かかる時間は <span class="math inline">\(200/3\)</span> 秒である．また，お互いに向かって歩いている割合は図からわかるように <span class="math inline">\(1:2\)</span> なので，進む距離は <span class="math inline">\(100\times 2/3=200/3\)</span> mである．</p>
 </details>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

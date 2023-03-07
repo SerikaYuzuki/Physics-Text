@@ -9,7 +9,9 @@ $\require{physics}$
 
 ですがそこが最大の関門として高校生の皆様には立ちはだかることになると思います．ベクトルも微分も積分も，なんなら三角関数もまともにやったことがないのに，いきなり全部を使いこなせることを要求されてしまうからです．
 
-なので，この章では読者が高校1年生の途中くらいから読み始めているものだと想定して，数学について少しずつ勉強を進めながら，物理を始められるところまでやっていこうと思います．関数の定義や三角関数については流石にもう慣れてきたのではないかという時期ですね．もしもまだそこがあやふやであるのならば，まずは数学Iの教科書をある程度進ませてからこの本を読んでいただければ幸いと思っています．
+なので，この章では読者が高校2年生の途中くらいから読み始めているものだと想定して，数学について少しずつ勉強を進めながら，物理を始められるところまでやっていこうと思います．関数の定義や三角関数については流石にもう慣れてきたのではないかという時期ですね．もしもまだそこがあやふやであるのならば，まずは数学の教科書をある程度進ませてからこの本を読んでいただければ幸いと思っています．
+
+また，初学者の方でもある程度は学びを進められるように配慮はしてありますが，もしもこの本の記述が難しい，ついていけないように感じられるのであれば，高等学校の教科書や市販の参考書などとともに読み進めていただくと良いかもしれません．
 
 ですが，すでに一通り数学をやっている方ならば，この章を飛ばしていただいても構いません．そのための指標として，まずはこの章におけるゴールを一通り書いておきます．次の表に載せてあることを理解できるようになれば，ひとまずこの章は学び終えたという判定で考えてもらって構いません．
 
@@ -470,5 +472,60 @@ $$f'(x)=3(x+1)(x-1)$$
 </details>
 
 
+## 面積と区分求積法
+
+小学校以来，何となく扱ってきた「面積」というものについて，少し詳しく述べていきます．
+
+まず，長方形の面積は「縦$\times$横」と決めましょう．このことについては特に異論はないと思います．この長方形の面積を手がかりに，いろいろな図形の面積，特にグラフと軸で囲われた部分の面積を考えていくことにしましょう．
+
+ $xy$ 平面上で， $y=f(x)$ のグラフと，直線$x=a,x=b$で囲まれる領域の面積$S$を考えます．ここでは $f(x)$ は区間 $[a,b]$ で連続な関数であるとします．
+
+（図）
+
+このように，区間 $[a,b]$ を $n$ 分割し，区間 $\left[a+\displaystyle\frac{k-1}{n}(b-a),a+\displaystyle\frac{k}{n}(b-a)\right]$ における $f(x)$の最大値を$M_k$ ，最小値を $m_k$ とします．このとき， $\displaystyle\sum_{k=1}^{n}\displaystyle\frac{M_k}{n}$ は $S$ より少し大きく， $\displaystyle\sum_{k=1}^{n}\displaystyle\frac{m_k}{n}$ は $S$ より少し小さいことが下の図から分かると思います．
+
+（図）
+
+そして，この分割をどんどん細かくしたとき，すなわち$n\to\infty$のとき，$\displaystyle\sum_{k=1}^{n}\displaystyle\frac{M_k}{n}$および，$\displaystyle\sum_{k=1}^{n}\displaystyle\frac{m_k}{n}$ は $S$ に限りなく近づくと考えられます．
+
+上では各区間における $f(x)$ の最大値，最小値をとって考えましたが，実は区間 $\left[a+\displaystyle\frac{k-1}{n}(b-a),a+\displaystyle\frac{k}{n}(b-a)\right]$ ごとに好きな代表点 $x_k$ をとって， $M_k,m_k$ の代わりに $f(x_k)$ を考えても問題ありません．以上を踏まえて，
+$$\displaystyle\lim_{n\to\infty} \displaystyle\sum_{k=1}^{n}\displaystyle\frac{b-a}{n}f(x_k)$$
+を， $y=f(x)$ のグラフと，直線$x=a,x=b$で囲まれる領域の面積 $S$ であると定めることにします．この考え方は，は区分求積法と呼ばれています．
+
+::: {.callout-note icon=false}
+
+## 定義
+
+$y=f(x)$ のグラフと，直線$x=a,x=b$で囲まれる領域の面積 $S$を 
+$$\displaystyle\lim_{n\to\infty} \displaystyle\sum_{k=1}^{n}\displaystyle\frac{b-a}{n}f(x_k)$$
+で定め，これを
+$$\displaystyle\int_{a}^{b}f(x)dx$$
+とかく．
+:::
 
 
+<details><summary>補足</summary>
+
+ここで述べた面積（ついては積分）の定義は，正確なものではありませんが，少なくとも連続関数についてはこの定義で問題を生じないので，このまま進めることにします．
+
+</details>
+
+::: {.callout-tip icon="false"}
+
+## 問題
+
+次の値を求めよ．ただし，代表点$x_k$は$\displaystyle\frac{k}{n}$とせよ．
+
+$$\displaystyle\int_{0}^{1} x^2dx$$
+
+:::
+<details><summary>解答</summary>
+
+\begin{align*}
+\displaystyle\int_{0}^{1} x^2dx　&= \displaystyle\lim_{n\to\infty} \displaystyle\sum_{k=1}^{n}\displaystyle\frac{1}{n}\cdot \left(\displaystyle\frac{k}{n}\right)^2\\
+&=\displaystyle\lim_{n\to\infty}\displaystyle\frac{1}{n^3}\displaystyle\sum_{k=1}^{n}k^2\\
+&=\displaystyle\lim_{n\to\infty}\displaystyle\frac{1}{n^3}\cdot \displaystyle\frac{n(n+1)(2n+1)}{6}\\
+&=\displaystyle\frac{1}{3}
+\end{align*}
+
+</details>

@@ -134,6 +134,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#商微分" id="toc-商微分" class="nav-link" data-scroll-target="#商微分"><span class="toc-section-number">1.4</span>  商微分</a></li>
   <li><a href="#合成関数の微分法" id="toc-合成関数の微分法" class="nav-link" data-scroll-target="#合成関数の微分法"><span class="toc-section-number">1.5</span>  合成関数の微分法</a></li>
   <li><a href="#増減" id="toc-増減" class="nav-link" data-scroll-target="#増減"><span class="toc-section-number">1.6</span>  増減</a></li>
+  <li><a href="#面積と区分求積法" id="toc-面積と区分求積法" class="nav-link" data-scroll-target="#面積と区分求積法"><span class="toc-section-number">1.7</span>  面積と区分求積法</a></li>
   </ul>
 </nav>
     </div>
@@ -666,6 +667,61 @@ ul.task-list li input[type="checkbox"] {
 <p>上の増減表によってグラフの概形は次のようになる．</p>
 <p><img src="images/intro-3.png" class="img-fluid"></p>
 <p>また， <span class="math inline">\(x=-1,\; x=1\)</span> の場所は増減が変化する点であり，この点のことを極大点，極小点などと呼んでいる．</p>
+</details>
+</section>
+<section id="面積と区分求積法" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="面積と区分求積法"><span class="header-section-number">1.7</span> 面積と区分求積法</h2>
+<p>小学校以来，何となく扱ってきた「面積」というものについて，少し詳しく述べていきます．</p>
+<p>まず，長方形の面積は「縦<span class="math inline">\(\times\)</span>横」と決めましょう．このことについては特に異論はないと思います．この長方形の面積を手がかりに，いろいろな図形の面積，特にグラフと軸で囲われた部分の面積を考えていくことにしましょう．</p>
+<p><span class="math inline">\(xy\)</span> 平面上で， <span class="math inline">\(y=f(x)\)</span> のグラフと，直線<span class="math inline">\(x=a,x=b\)</span>で囲まれる領域の面積<span class="math inline">\(S\)</span>を考えます．ここでは <span class="math inline">\(f(x)\)</span> は区間 <span class="math inline">\([a,b]\)</span> で連続な関数であるとします．</p>
+<p>（図）</p>
+<p>このように，区間 <span class="math inline">\([a,b]\)</span> を <span class="math inline">\(n\)</span> 分割し，区間 <span class="math inline">\(\left[a+\displaystyle\frac{k-1}{n}(b-a),a+\displaystyle\frac{k}{n}(b-a)\right]\)</span> における <span class="math inline">\(f(x)\)</span>の最大値を<span class="math inline">\(M_k\)</span> ，最小値を <span class="math inline">\(m_k\)</span> とします．このとき， <span class="math inline">\(\displaystyle\sum_{k=1}^{n}\displaystyle\frac{M_k}{n}\)</span> は <span class="math inline">\(S\)</span> より少し大きく， <span class="math inline">\(\displaystyle\sum_{k=1}^{n}\displaystyle\frac{m_k}{n}\)</span> は <span class="math inline">\(S\)</span> より少し小さいことが下の図から分かると思います．</p>
+<p>（図）</p>
+<p>そして，この分割をどんどん細かくしたとき，すなわち<span class="math inline">\(n\to\infty\)</span>のとき，<span class="math inline">\(\displaystyle\sum_{k=1}^{n}\displaystyle\frac{M_k}{n}\)</span>および，<span class="math inline">\(\displaystyle\sum_{k=1}^{n}\displaystyle\frac{m_k}{n}\)</span> は <span class="math inline">\(S\)</span> に限りなく近づくと考えられます．</p>
+<p>上では各区間における <span class="math inline">\(f(x)\)</span> の最大値，最小値をとって考えましたが，実は区間 <span class="math inline">\(\left[a+\displaystyle\frac{k-1}{n}(b-a),a+\displaystyle\frac{k}{n}(b-a)\right]\)</span> ごとに好きな代表点 <span class="math inline">\(x_k\)</span> をとって， <span class="math inline">\(M_k,m_k\)</span> の代わりに <span class="math inline">\(f(x_k)\)</span> を考えても問題ありません．以上を踏まえて， <span class="math display">\[\displaystyle\lim_{n\to\infty} \displaystyle\sum_{k=1}^{n}\displaystyle\frac{b-a}{n}f(x_k)\]</span> を， <span class="math inline">\(y=f(x)\)</span> のグラフと，直線<span class="math inline">\(x=a,x=b\)</span>で囲まれる領域の面積 <span class="math inline">\(S\)</span> であると定めることにします．この考え方は，は区分求積法と呼ばれています．</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+定義
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(y=f(x)\)</span> のグラフと，直線<span class="math inline">\(x=a,x=b\)</span>で囲まれる領域の面積 <span class="math inline">\(S\)</span>を <span class="math display">\[\displaystyle\lim_{n\to\infty} \displaystyle\sum_{k=1}^{n}\displaystyle\frac{b-a}{n}f(x_k)\]</span> で定め，これを <span class="math display">\[\displaystyle\int_{a}^{b}f(x)dx\]</span> とかく．</p>
+</div>
+</div>
+<details>
+<summary>
+補足
+</summary>
+<p>ここで述べた面積（ついては積分）の定義は，正確なものではありませんが，少なくとも連続関数についてはこの定義で問題を生じないので，このまま進めることにします．</p>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>次の値を求めよ．ただし，代表点<span class="math inline">\(x_k\)</span>は<span class="math inline">\(\displaystyle\frac{k}{n}\)</span>とせよ．</p>
+<p><span class="math display">\[\displaystyle\int_{0}^{1} x^2dx\]</span></p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p><span class="math display">\[\begin{align*}
+\displaystyle\int_{0}^{1} x^2dx　&amp;= \displaystyle\lim_{n\to\infty} \displaystyle\sum_{k=1}^{n}\displaystyle\frac{1}{n}\cdot \left(\displaystyle\frac{k}{n}\right)^2\\
+&amp;=\displaystyle\lim_{n\to\infty}\displaystyle\frac{1}{n^3}\displaystyle\sum_{k=1}^{n}k^2\\
+&amp;=\displaystyle\lim_{n\to\infty}\displaystyle\frac{1}{n^3}\cdot \displaystyle\frac{n(n+1)(2n+1)}{6}\\
+&amp;=\displaystyle\frac{1}{3}
+\end{align*}\]</span></p>
 </details>
 
 
