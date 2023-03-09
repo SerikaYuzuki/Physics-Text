@@ -530,7 +530,7 @@ $$\displaystyle\int_{0}^{1} x^2dx$$
 
 </details>
 
-## 不定積分と微分積分学の基本定理
+## 微分積分学の基本定理
 
 1.7でみたように，面積の値を定積分として定めました．ここで，$x$を変数とした
 $$\displaystyle\int_{a}^{x}f(t)dt$$
@@ -554,7 +554,7 @@ $$\displaystyle\frac{d}{dx}\displaystyle\int_{a}^{x}f(t)dt=f(x)$$
 
 ## 例題
 次の不定積分を求めよ．
-$$\displaystyle\int_{}^{}xdx $$
+$$\displaystyle\int_{}^{}x\ dx $$
 
 :::
 
@@ -562,7 +562,123 @@ $$\displaystyle\int_{}^{}xdx $$
 
 微分の知識を思い出せば， $\displaystyle\frac{1}{2}x^2$ の微分が $x$ になることはすぐにわかる．しかし，同様に $\displaystyle\frac{1}{2}x^2+1$ も，$\displaystyle\frac{1}{2}x^2-99$ も，
 $\displaystyle\frac{1}{2}x^2+\pi$ も， $\displaystyle\frac{1}{2}x^2$ に定数を足したものはすべて微分すれば$x$になる．これらをまとめて， $\displaystyle\frac{1}{2}x^2+C$とかき，$C$を積分定数という．もとの例題に対する答えは， 
-$$\displaystyle\int_{}^{}xdx =\displaystyle\frac{1}{2}x^2+C \mbox{($C$は積分定数)}$$
+$$\displaystyle\int_{}^{}x\ dx =\displaystyle\frac{1}{2}x^2+C~\mbox{($C$は積分定数)}$$
 である．
+
+</details>
+
+上の例題のように，不定積分の結果には積分定数がつくことになります．都度但し書きを書くのは煩雑なので，積分の説明の間は「 $C$ は積分定数」という説明は添えないことにします．
+
+::: {.callout-tip icon="false"}
+
+## 問題
+次の不定積分を求めよ．
+
+||||
+|---|---|
+| $$\displaystyle\int_{}^{}1\ dx$$ | $$\displaystyle\int_{}^{}x^k\ dx\ \ \  ( k\neq -1 )$$ | 
+| $$\displaystyle\int_{}^{}\displaystyle\frac{1}{x}\ dx$$ |  $$\displaystyle\int_{}^{} \sin x\ dx$$ |
+| $$\displaystyle\int_{}^{}\cos x\ dx$$ |  $$\displaystyle\int_{}^{} e^x\ dx$$ |
+
+
+:::
+
+<details><summary>解答</summary>
+
+</details>
+
+前の説で述べた定積分の値については，不定積分を用いて計算することができます．
+
+::: {.callout-note icon="false"}
+
+## 定理
+$F(x)$ を $f(x)$ の不定積分とすると
+$$\displaystyle\int_{a}^{b}f(x)\ dx=F(b)-F(a)$$
+また，簡単のため $F(b)-F(a)$ のことを $\left[F(x)\right]_{a}^{b}$ とかく．
+
+:::
+
+ここで，不定積分は積分定数がついていたことを思い出します．実は上の計算をするときは，積分定数の値について考慮する必要はなく，好きなもの(通常は0でしょう)を使って問題ありません．なぜなら，$F(x)$ の代わりに $F(x)+C$ を使って右辺の計算をすると，引き算で結局 $C$ が消えてしまうからです．
+
+::: {.callout-caution icon="false"}
+
+## 例題
+次の定積分を求めよ．
+$$\displaystyle\int_{0}^{8}x\ dx $$
+
+:::
+
+<details><summary>解答</summary>
+$$\displaystyle\int_{}^{}x\ dx = \left[\displaystyle\frac{1}{2}x^2\right]_{0}^{8}=32-0=0$$
+</details>
+
+::: {.callout-tip icon="false"}
+
+## 問題
+次の定積分を求めよ．
+
+||||
+|---|---|
+| $$\displaystyle\int_{1}^{4}1\ dx$$ | $$\displaystyle\int_{0}^{1}x^k\ dx\ \ \  ( k\neq -1 )$$ | 
+| $$\displaystyle\int_{1}^{e^2}\displaystyle\frac{1}{x}\ dx$$ |  $$\displaystyle\int_{0}^{\pi} \sin x\ dx$$ |
+| $$\displaystyle\int_{-\frac{\pi}{3}}^{0}\cos x\ dx$$ |  $$\displaystyle\int_{-1}^{1} e^x\ dx$$ |
+
+
+:::
+
+<details><summary>解答</summary>
+
+</details>
+
+## 積分の種々の性質
+
+この節では，不定積分や定積分の計算をする上で役に立つ色々な性質について説明し，それを使う練習をしていきます．
+
+::: {.callout-note icon="false"}
+
+## 定理
+$F(x)$ を $f(x)$ の不定積分，$G(x)$ を $g(x)$ の不定積分とし，$a,b$ は定数とする．このとき，
+
+$$\displaystyle\int_{}^{}(af(x)+bg(x))\ dx=aF(x)+bG(x)+C$$
+
+これを積分の線形性という．
+
+$$\displaystyle\int_{}^{}(af(x)+bg(x))\ dx=a\displaystyle\int_{}^{}f(x)\ dx+b\displaystyle\int_{}^{}g(x)\ dx$$ 
+
+ともかける．
+:::
+::: {.callout-caution icon="false"}
+## 例題
+次の定積分を求めよ．
+$$\displaystyle\int_{}^{}(2x+3x^2)\ dx $$
+
+:::
+<details><summary>解答</summary>
+
+\begin{align*}\displaystyle\int_{}^{}(2x+3x^2)\ dx &=2\displaystyle\int_{}^{}x\ dx+3\displaystyle\int_{}^{}x^2\ dx\\
+&=x^2+x^3+C
+\end{align*}
+
+このとき，2つの不定積分の和では積分定数は $C$ だけでよく，2つつける必要はない．2つの不定積分から出てくる積分定数の和を改めて定数としておいてしまえばよいからである．
+
+</details>
+
+定積分についても，同様の公式が成り立つ．
+
+::: {.callout-tip icon="false"}
+
+## 問題
+次の不定積分や定積分を求めよ．現在ある問題は仮です．
+
+||||
+|---|---|
+| $$\displaystyle\int_{1}^{4}1\ dx$$ | $$\displaystyle\int_{0}^{1}x^k\ dx\ \ \  ( k\neq -1 )$$ | 
+| $$\displaystyle\int_{1}^{e^2}\displaystyle\frac{1}{x}\ dx$$ |  $$\displaystyle\int_{0}^{\pi} \sin x\ dx$$ |
+| $$\displaystyle\int_{-\frac{\pi}{3}}^{0}\cos x\ dx$$ |  $$\displaystyle\int_{-1}^{1} e^x\ dx$$ |
+
+
+:::
+
+<details><summary>解答</summary>
 
 </details>
