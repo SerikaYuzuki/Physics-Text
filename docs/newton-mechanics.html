@@ -186,7 +186,15 @@ Note
 <details>
 筆者の考えるところでは，とある視点に基づいて考えるよりかは，色々な視点で持って数式は見るべきであり，数式に意味を持たせるべきと言う意見よりも，数式に意味を見出すべきだと言う意見を採用したいと思っています．
 </details>
-<p>では，これから推察できる簡単な事実を考えましょう．すなわち，力の働いていない物体はどのような運動をするのか，です．これは非常に簡単で <span class="math inline">\(m\ddot{\boldsymbol{r}}=\boldsymbol{0},\;\dot{\boldsymbol{r}}=(\text{一定})\)</span> と言う非常にシンプルな結果となるわけです．つまり，次のようにまとめられるわけです．</p>
+<p>例えば次のような簡単な例を考えてみましょう．</p>
+<p><img src="images/newton2.png" class="img-fluid"></p>
+<p>重力のみが働く小球を考えた時，鉛直下向き方向の運動方程式は，加速度を <span class="math inline">\(a\)</span> とした時，</p>
+<p><span class="math display">\[\begin{align*}
+ma&amp;=mg\\
+a&amp;=g
+\end{align*}\]</span></p>
+<p>というように，前の章で練習した内容と矛盾のない結果になるわけです．</p>
+<p>では，運動方程式から推察できる簡単な事実を考えましょう．すなわち，力の働いていない物体はどのような運動をするのか，です．これは非常に簡単で <span class="math inline">\(m\ddot{\boldsymbol{r}}=\boldsymbol{0},\;\dot{\boldsymbol{r}}=(\text{一定})\)</span> と言う非常にシンプルな結果となるわけです．つまり，次のようにまとめられるわけです．</p>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -217,7 +225,68 @@ Note
 <p>つまり，地球があなたを引っ張っているのと同じくらい，あなたは地球を引っ張っているのです．非常に非直感的な法則です．同時に，壁があなたに押されていると同じくらい，あなたは壁に押されるというのも同じ作用反作用の法則です．こちらは直感的ですね．</p>
 <p>では，具体的にはどのような力があるのでしょうか．ニュートンの発展させた古典力学という世界では，力は2種類のみです．それは，万有引力と，電磁気力です．高校で学ばれる物理の世界は，最後に学ぶ原子範囲を除き，須くこの二つの力を持ってして語り尽くされる世界で，これ以外に起因する力は一切存在し得ません．非常にシンプルですね．ただ，その力の表し方は一癖も二癖もあり，学ぶ人にとって少し難しく感じられることもあるかもしれません．</p>
 <p>まず，重力について話をしていきましょう．重力とは，地球上の物体が地球から受ける万有引力のことです．重力の大きさは地表においてはほぼ変わらず，質量に比例した値になり，その比例係数を重力加速度といいました．ここで重要なのは，ほぼ変わらないということであり，実際には場所によって少しずつ異なる値をとります．それはなぜかという理論については，ひとまずのところ置いておいて議論を進めることになります．後々，また学ぶことになります．</p>
-<p>これらの法則を実際にどのようにして問題に応用するべきでしょうか．これからは実際に問題を解いていくことによって，それらを明らかにしていこうと思います．続き描きます．</p>
+<p>次に話を避けて通れないのが，電磁気学です．電磁気学の具体的な様相についてはそれなりに高度な数学も必要で，今現状ではやらないことにしますが，少なくとも今のうちに語らなければならないことは語り尽くすことにしましょう．</p>
+<p>我々を含む，すべての物体を，原子と呼ばれる非常に小さな粒が構成しているところは，皆さんが小中学校を通して学んだ通りであり，またその原子は中心に＋に帯電した原子核，その周りにーに帯電した電子で出来上がっています．そして，その＋とーは引きつけ合う性質があります．同時に，＋同士やー同士では反発する性質があります．また，その力は距離が小さくなるほどに大きくなるという性質も持っています．</p>
+<p>”塊”になっている物体内では，＋とーがいい具合のバランスで固まっているのは高等学校の化学で学んだ通りであり，それらを共有結合やイオン結合などと呼んでいました．では，別々の”塊”ではどうなっているのでしょうか．それは，電子同士が非常に近い距離にまで近づき，その結果非常に大きいな反発力が働くようになるわけです．そのおかげで，私たちは，床に対して反発して立つことができるのです．そしてその，物体と物体が一体にならないように，別々の”塊”として独立して存在するように反発しあう力のことを反発力と言います．</p>
+<p>このアイデアを次の状態で理解することにしましょう．</p>
+<p><img src="./images/newton1.png" class="img-fluid"></p>
+<p>地面に立っている人間を考えてみましょう．この人間に働く力は基本的に２種類しかなく，それは万有引力と電磁気力です．まず，地球からの万有引力である重力の <span class="math inline">\(mg\)</span> があり，次に足と地面との距離が十分小さいために起きる電磁気力である反発力 <span class="math inline">\(R\)</span> があります．この時， <span class="math inline">\(R\)</span> がどのような値を取るのかというのは，この時点ではまだわかりません．なぜなら，地面と人間の足の境界には <span class="math inline">\(10^{23}\)</span> 個程度以上の原子の周りの電子が複雑に運動しており，その様相を語り尽くすことはとてもじゃないができないからです．ですが，この人間が加速度を持っていないという前提をつけてあげることによって <span class="math inline">\(R\)</span> の特定ができるわけです．問題を解決しやすくするために図のように <span class="math inline">\(R\)</span> を <span class="math inline">\(N,F\)</span> に分解して，それぞれの方向に対して運動方程式を立ててやることによって</p>
+<p><span class="math display">\[\begin{align*}
+0&amp;=mg-N\\
+0&amp;=F
+\end{align*}\]</span></p>
+<p>とのように，確定させることができるわけです．ここで， <span class="math inline">\(N,F\)</span> のことをそれぞれ垂直抗力，および，摩擦力と呼ばれます．</p>
+<p>初学者にありがちなミスとして， <span class="math inline">\(mg\)</span> があるから反発力があって <span class="math inline">\(N=mg\)</span> だと反射的に決めつけてしまうことがありますが，それは人が加速していない時に限るわけです．注意しましょう．</p>
+<p>では，これらの法則を実際にどのようにして問題に応用するべきでしょうか．これからは実際に問題を解いていくことによって，それらを明らかにしていこうと思います．</p>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+例題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>下の図のように仰角 <span class="math inline">\(\theta\)</span> の斜面に物体を置いている．摩擦力がない時，この物体の持つ加速度はどうなるか．</p>
+<p><img src="images/newton3.png" class="img-fluid"></p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p><img src="images/newton4.png" class="img-fluid"></p>
+<p><span class="math inline">\(x,y\)</span> 軸それぞれに対して運動方程式を立ててやると次のようになる．</p>
+<p><span class="math display">\[\begin{align*}
+m\ddot{x} &amp;= mg \sin \theta \\
+m\ddot{y} &amp;= -mg \cos \theta + N
+\end{align*}\]</span></p>
+<p>ここで，坂自体は形を変えてしまわないので， <span class="math inline">\(y=0\)</span> といえて，両辺を微分することによって <span class="math inline">\(\ddot{y}=0\)</span> となる．</p>
+<p><span class="math display">\[\begin{align*}
+\ddot{x} &amp;= g \sin \theta \\
+N &amp;= mg \cos \theta
+\end{align*}\]</span></p>
+<p>故に加速度の大きさは <span class="math inline">\(\sqrt{\ddot{x}^2+\ddot{y}^2}=g \sin \theta\)</span> で，方向は坂道の滑り落ちる方向である．</p>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+</details>
 
 
 
