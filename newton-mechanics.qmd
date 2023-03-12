@@ -116,14 +116,14 @@ $$\boldsymbol{F_{BA}}+\boldsymbol{F_{AB}}=\boldsymbol{0}$$
 
 ![](images/newton4.png)
 
-$x,y$ 軸それぞれに対して運動方程式を立ててやると次のようになる．
+物体と紐それぞれに対して運動方程式を立ててやると次のようになる．
 
 \begin{align*}
 m\ddot{x} &= mg \sin \theta \\
 m\ddot{y} &= -mg \cos \theta + N
 \end{align*}
 
-ここで，坂自体は形を変えてしまわないので， $y=0$ といえて，両辺を微分することによって $\ddot{y}=0$ となる．
+ここで，坂自体は形を変えてしまわないので， $y=0$ といえて，このような，運動の様相を縛る条件を束縛条件と呼ぶ．両辺を微分することによって $\ddot{y}=0$ となる．
 
 \begin{align*}
 \ddot{x} &= g \sin \theta \\
@@ -134,16 +134,78 @@ N &= mg \cos \theta
 
 </details>
 
-::: {.callout-tip icon=false}
+::: {.callout-caution icon="false"}
 
-## 問題
+## 例題
 
+下の図のように紐に繋がれた２つの物体があり，右側の物体を引っ張っている．紐は物体とくっついていて離れず，故に物体と紐の間には引きつけあう電磁気力である，張力が働くことに注意して，次の問いに答えよ．ただし，重力は無視せよ．
 
+![](images/newton5.png)
+
+1. 各物体の加速度を求めよ．
+1. 張力の大きさを求めよ．
+1. 紐の質量を無視した場合，左右の張力はどのような関係になるか．
 
 :::
 
 <details><summary>解答</summary>
 
+![](images/newton6.png)
 
+作用反作用の法則によって張力を図のように $t_1,\:T_2 $ と設定できる．物体それぞれに対して運動方程式を立ててやると次のようになる．
+\begin{align*}
+m_1a_1 &= T_1 \\
+m_2a_2 &= F-T_2 \\
+MA ＆= T_2-T_1
+\end{align*}
+ここで，３つの物体が同時に動くので，次のような束縛条件が科される．
+\begin{align*}
+a_1=a_2=A
+\end{align*}
+以上の条件で運動方程式を解いてしまうと
+\begin{align*}
+a_1=a_2=A=\frac{F}{m_1+m_2+M}\\
+T_1=\frac{m_1}{m_1+m_2+M}F\\
+T_2=\frac{m_1+M}{m_1+m_2+M}F
+\end{align*}
+ここで，紐の質量を $0$ にすることで，
+\begin{align*}
+T_1=T_2
+\end{align*}
+という関係がわかる．この関係は，今後も使うので注意すべし．ただし，紐の質量が無視できる場合に限ることを注意せよ．
+
+</details>
+
+::: {.callout-tip icon=false}
+
+## 問題
+
+下の図のように紐に繋がれた２つの物体があり，物体間には滑車がある．次の問いに答えよ．ただし，紐の質量と摩擦は無視せよ．
+
+![](images/newton7.png)
+
+1. 各物体の加速度を求めよ．
+1. 張力の大きさを求めよ．
+
+:::
+
+<details><summary>解答</summary>
+
+$m_1,m_2$ それぞれに働く張力の大きさを $T_1,T_2$ とする．右側を正としてそれぞれの斜面に沿った加速度を $a_1,a_2$ として，運動方程式を立てると
+\begin{align*}
+m_1a_1=T-m_1g\sin \theta_1\\
+m_2a_2=m_2g\sin \theta_2-T
+\end{align*}
+束縛条件は
+\begin{align*}
+a_1=a_2
+\end{align*}
+解いてやれば
+\begin{align*}
+a_1=a_2=\frac{-m_1\sin \theta_1+m_2\sin \theta_2}{m_1+m_2}g\\
+T=\frac{m_1m_2}{m_1+m_2}(\sin \theta_1+\sin \theta_2)g
+\end{align*}
+とわかる．この問題については，脳内で次のように変換すると楽かもしれない．
+![](images/newton8.png)
 
 </details>
