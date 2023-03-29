@@ -4,13 +4,14 @@ project:
 
 book:
   title: "Physics Text"
-  author: "Jane Doe"
+  author: "Serika Yuzuki, Akina"
   date: "3/2/2023"
   chapters:
     - index.qmd
-    - intro.qmd
-    - velocity.qmd
-    - newton-mechanics.qmd
+    - source/intro.qmd
+    - source/velocity.qmd
+    - source/newton-mechanics.qmd
+    - source/database.qmd
 
 bibliography: references.bib
 

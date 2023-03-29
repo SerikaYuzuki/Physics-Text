@@ -116,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./newton-mechanics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ニュートンの第２法則（半分）</span></a>
+  <a href="./newton-mechanics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ニュートンの法則</span></a>
   </div>
 </li>
     </ul>
@@ -271,7 +271,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><img src="images/mondai2.png" class="img-fluid"></p>
+<p><img src="images/velocity/mondai2.png" class="img-fluid"></p>
 <p>図の通り <span class="math inline">\(O,A\)</span> に物体 <span class="math inline">\(o,a\)</span> があり、それらをそれぞれ違う速度で同時に射出する機構がある。全ての物体が鉛直下向きに大きさ <span class="math inline">\(g\)</span> の加速度を受ける状態にある。物体 <span class="math inline">\(o\)</span> を初速度の大きさ <span class="math inline">\(v_0\)</span> で射出し、射出される角度を水平方向から見て上方向に <span class="math inline">\(\theta\)</span> とする時、次の問いに答えよ。</p>
 <ol type="1">
 <li><p>物体 <span class="math inline">\(o\)</span> の軌跡を求めよ．</p></li>
@@ -379,7 +379,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-body-container callout-body">
 <p>ある粒子が下の図のような加速度で移動したとする．初速を <span class="math inline">\(v_0\)</span> とした時， <span class="math inline">\(x=3x_0\)</span> の時の速さを求めよ．<strong>ただし，横軸が時間ではなく座標であることに注意せよ．</strong></p>
-<p><img src="./images/mondai1-re.png" class="img-fluid"></p>
+<p><img src="./images/velocity/mondai1-re.png" class="img-fluid"></p>
 </div>
 </div>
 <details>
@@ -491,11 +491,11 @@ ul.task-list li input[type="checkbox"] {
 <summary>
 解答
 </summary>
-<p>具体的にそれぞれの人の歩く軌跡をデカルト座標で考えていくとすれば非常な困難に立ちはだかることが予想される。では、人の動き方が、対称性から四人が常に四角形を成す位置にあり、ぐるぐる周っていくことから、極座標での解決の仕方はどうだろうか。 <img src="images/mondai3.png" class="img-fluid"> 以上の図によって、おおよそ人のいつ場所と速度を考えることができる。ここで、時間を追って <span class="math inline">\(r,\theta\)</span> がどのように動くかを考えてみると、次の図のようになる。 <img src="images/mondai4.png" class="img-fluid"> <span class="math inline">\(r,v\)</span> の作る角度などから、次の2つの式を求めることができる． <span class="math display">\[dr=-v\cos 45^\circ dt\]</span> <span class="math display">\[\tan 45 ^\circ = \frac{rd\theta}{dr}\]</span> <span class="math inline">\(t=0\)</span>の時、<span class="math inline">\(r=R,\theta=0\)</span>として、微分方程式を解いていくことによって、 <span class="math display">\[r=R-\frac{v}{\sqrt{2}}t\]</span> <span class="math display">\[d\theta=\frac{dr}{r}\]</span> <span class="math display">\[r=Re^{-\theta}\]</span> <span class="math display">\[\theta = \ln \frac{R}{R-\frac{v}{\sqrt{2}}t}\]</span> のように <span class="math inline">\(r,\theta\)</span> を <span class="math inline">\(t\)</span> の関数で表すことができる。これらの式からA ,B ,C,Dが出会う時刻は　<span class="math inline">\(\sqrt{2}R/v\)</span>　となり、無限回最終地点の周りを周ったことになる。では、彼らがどれだけ歩いたことになるのだろうか。この問題は次のように解決される。 <span class="math display">\[\int_0^\infty \sqrt{r^2+(\frac{dr}{d\theta})^2} d\theta=\sqrt{2}R\]</span> 正三角形の場合も似たような議論が可能であるが，省略する．</p>
+<p>具体的にそれぞれの人の歩く軌跡をデカルト座標で考えていくとすれば非常な困難に立ちはだかることが予想される。では、人の動き方が、対称性から四人が常に四角形を成す位置にあり、ぐるぐる周っていくことから、極座標での解決の仕方はどうだろうか。 <img src="images/velocity/mondai3.png" class="img-fluid"> 以上の図によって、おおよそ人のいつ場所と速度を考えることができる。ここで、時間を追って <span class="math inline">\(r,\theta\)</span> がどのように動くかを考えてみると、次の図のようになる。 <img src="images/velocity/mondai4.png" class="img-fluid"> <span class="math inline">\(r,v\)</span> の作る角度などから、次の2つの式を求めることができる． <span class="math display">\[dr=-v\cos 45^\circ dt\]</span> <span class="math display">\[\tan 45 ^\circ = \frac{rd\theta}{dr}\]</span> <span class="math inline">\(t=0\)</span>の時、<span class="math inline">\(r=R,\theta=0\)</span>として、微分方程式を解いていくことによって、 <span class="math display">\[r=R-\frac{v}{\sqrt{2}}t\]</span> <span class="math display">\[d\theta=\frac{dr}{r}\]</span> <span class="math display">\[r=Re^{-\theta}\]</span> <span class="math display">\[\theta = \ln \frac{R}{R-\frac{v}{\sqrt{2}}t}\]</span> のように <span class="math inline">\(r,\theta\)</span> を <span class="math inline">\(t\)</span> の関数で表すことができる。これらの式からA ,B ,C,Dが出会う時刻は　<span class="math inline">\(\sqrt{2}R/v\)</span>　となり、無限回最終地点の周りを周ったことになる。では、彼らがどれだけ歩いたことになるのだろうか。この問題は次のように解決される。 <span class="math display">\[\int_0^\infty \sqrt{r^2+(\frac{dr}{d\theta})^2} d\theta=\sqrt{2}R\]</span> 正三角形の場合も似たような議論が可能であるが，省略する．</p>
 <p><strong>後半部分</strong></p>
 <p>Bから見たAの相対速さは，AとBの速度が常に垂直なので， <span class="math inline">\(1\)</span> メートル毎秒となり、 <span class="math inline">\(100\)</span> 秒後に <span class="math inline">\(100\)</span> メートルに歩いて出会うことになる。対称性から無限回回転するか、一回も回転しないかどちらかで、明らかに後者ではないということもわかる。</p>
 <p>正三角形の場合は別の考え方をする．</p>
-<p><img src="images/mondai5.png" class="img-fluid"></p>
+<p><img src="images/velocity/mondai5.png" class="img-fluid"></p>
 <p>図のようにAは常に三角形の中心に向かって <span class="math inline">\(\sqrt{3}v/2\)</span> の速さで進むことになる．三角形の中心からAまでの最初の距離は <span class="math inline">\(100/\sqrt{3}\)</span> メートルなので，かかる時間は <span class="math inline">\(200/3\)</span> 秒である．また，お互いに向かって歩いている割合は図からわかるように <span class="math inline">\(1:2\)</span> なので，進む距離は <span class="math inline">\(100\times 2/3=200/3\)</span> mである．</p>
 </details>
 
@@ -759,7 +759,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./newton-mechanics.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ニュートンの第２法則（半分）</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ニュートンの法則</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
