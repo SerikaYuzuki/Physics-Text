@@ -11,6 +11,7 @@ book:
     - source/intro.qmd
     - source/velocity.qmd
     - source/newton-mechanics.qmd
+    - source/energy.qmd
     - source/database.qmd
 
 bibliography: references.bib

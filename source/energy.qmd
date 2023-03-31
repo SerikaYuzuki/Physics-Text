@@ -1,0 +1,420 @@
+# 運動量，エネルギー，２体問題
+
+## 運動量
+
+$\require{physics}$
+運動方程式はそれ単体でかなりの現象を説明するものですが，世の中にはあまりにも多くの粒子が複雑に互いに力を及ぼし合っているので，解析し切ることができることが難しいことが多いです．
+
+そんな中で，前章でも述べた通り，多粒子を考える方法はあり，これからはその方法の一つを考えることにしましょう．
+
+まず，言葉の定義として，運動量について紹介します．
+
+::: {.callout-note icon=false}
+
+## 定義
+
+とある物体が質量 $m$ ，速度 $\boldsymbol{v}$ を持っている時，その物体の運動量 $\boldsymbol{p}$ を次のように定義する．
+
+$$\boldsymbol{p}=m\boldsymbol{v}$$
+
+:::
+
+つまり，運動方程式は次のようにかけます．
+$$\dot{\boldsymbol{p}}=\boldsymbol{F}$$
+多粒子系について考えましょう．前章と同様，とある場所に $n$ 個の粒子があり，それらが互いに力を及ぼしながら，外からも力を受けているとしましょう．その時， $i$ 番目の粒子の運動方程式は
+\begin{align*}
+\dot{\boldsymbol{p}_i} = \sum_j \boldsymbol{F}_{ij} +  \boldsymbol{F}_{i\text{out}}
+\end{align*}
+ここで， $\boldsymbol{F}_{ij}$ は $j$ 番目の粒子が $i$ 番目の粒子に及ぼす力であり， $\boldsymbol{F}_{i\text{out}}$ は $i$ 番目の粒子が受ける外力です．この式を全ての $i$ について足し合わせることによって，
+\begin{align*}
+\sum_i \dot{\boldsymbol{p}_i} &= \sum_i\sum_j \boldsymbol{F}_{ij} +  \sum_i\boldsymbol{F}_{i\text{out}}
+\end{align*}
+作用反作用の法則によって， $\sum_i\sum_j \boldsymbol{F}_{ij}$ となるので，
+\begin{align*}
+\sum_i \dot{\boldsymbol{p}_i} &= \sum_i\boldsymbol{F}_{i\text{out}}
+\end{align*}
+ここで外力がないとすると，
+\begin{align*}
+\sum_i \dot{\boldsymbol{p}_i} &= \boldsymbol{0}\\
+\dv{t}\sum_i \boldsymbol{p}_i &= \boldsymbol{0}\\
+\sum_i \boldsymbol{p}_i &= \textbf{Const.}=M_{\text{tot}}\dot{\boldsymbol{r}}_{\text{G}}
+\end{align*}
+このような結果が得られるわけです．このようにある値が定数であり続けることを，値が保存していると呼ばれます．また，全運動量の合計は，全質量と重心速度の積によって表すことができることもわかりました．以上をまとめると，
+
+::: {.callout-note icon=false}
+
+## 定理
+
+外力の働かない系では，全運動量が保存する．また，系の全運動量 $\vb*{P}$ は
+
+$$\vb*{P}=M_{\text{tot}}\boldsymbol{v}_{\text{G}} $$
+
+で表すことができる．
+:::
+
+ここで，重心の定義を考えた時，
+\begin{align*}
+\sum_i m_i (\boldsymbol{r}_i-\boldsymbol{r}_\text{G})=\sum_i m_i \boldsymbol{r}_{i\text{G}}=\vb*{P}_{\text{in}}=\boldsymbol{0}
+\end{align*}
+
+ここで， $\vb*{P}_{\text{in}}$ 重心から見た物体内部の全運動量ということで，内部運動量と呼ばれています．つまり，
+
+::: {.callout-note icon=false}
+
+## 定理
+
+任意の系を，重心を原点とする座標系で見れば，全運動量は $\boldsymbol{0}$ となる．別の言い方をすれば，内部運動量は常に $\boldsymbol{0}$ となる．
+
+:::
+
+::: {.callout-caution icon="false"}
+
+## 例題
+
+宇宙の外力の及ばない場所に星がひとつあった．その星の中で何らかの現象が起き，その結果，二つの星が出来上がり，片方は質量 $m_1$ で速度 $\boldsymbol{v_1}$ だった．もう片方の質量が $m_2$ だった時の速度を求めよ．
+
+:::
+
+<details><summary>解答</summary>
+
+$$m_1\boldsymbol{v_1}+m_2\boldsymbol{v_2}=\boldsymbol{0}$$
+$$\boldsymbol{v_2}=-\frac{m_1}{m_2}\boldsymbol{v_1}$$
+
+</details>
+
+## 運動エネルギー
+
+運動方程式の両辺に $\vb*{v}$ を内積でかけてやることによって，
+$$m\dot{\boldsymbol{v}}\cdot \boldsymbol{v}=\boldsymbol{F}\cdot\vb*{v}$$
+この左辺は，
+$$m\dot{\boldsymbol{v}}\cdot \boldsymbol{v}=\dv{t}\left(\frac{1}{2}m\boldsymbol{v}\cdot \boldsymbol{v}\right)=\dv{t}\left(\frac{1}{2}mv^2\right)$$
+と計算されるので，
+$$\dv{t}\left(\frac{1}{2}mv^2\right)=\boldsymbol{F}\cdot\vb*{v}$$
+ここで，左辺の被微分部分の $mv^2/2$ は物体の運動エネルギーと呼ばれ，右辺は仕事率と呼ばれています．
+
+両辺を $t=t_0$ から $t=t_1$ で積分してやれば，それぞれの時刻における速度や位置を $\vb*{v_0},\:\vb*{v_1},\:\vb*{r_0},\:\vb*{r_1}$ などとおけば，
+\begin{align*}
+\frac{1}{2}mv_1^2-\frac{1}{2}mv_2^2&=\int_{t_0}^{t_1}\boldsymbol{F}\cdot\vb*{v}\dd{t}\\
+&=\int_{t_0}^{t_1}\boldsymbol{F}\cdot\dv{\vb*{r}}{t}\dd{t}\\
+&=\int_{\vb*{r}_0}^{\vb*{r}_1}\boldsymbol{F}\cdot \dd{\vb*{r}}
+\end{align*}
+この式の右辺は仕事と呼ばれています．以上のことをまとめると次のようになります．
+
+::: {.callout-note icon=false}
+
+## 法則
+
+\begin{align*}
+\frac{1}{2}mv_1^2-\frac{1}{2}mv_2^2&=\int_{\vb*{r}_0}^{\vb*{r}_1}\boldsymbol{F}\cdot \dd{\vb*{r}}
+\end{align*}
+上式の示す通り，運動エネルギーの変化の値は，仕事の値と等しい．
+
+:::
+
+では，実際にこの法則に従って，問題を解いてみることにしましょう．
+
+::: {.callout-caution icon="false"}
+
+## 例題
+
+鉛直下向きに速さ $v_1$ の物体が，高さ $d$ だけ落下した．この時の物体の速さを求めよ．
+
+:::
+
+<details><summary>解答</summary>
+
+\begin{align*}
+\frac{1}{2}mv_1^2-\frac{1}{2}mv_2^2&=\int_{y_0}^{y_1}mg \dd{y} = mg(y_1-y_0) = mgd\\
+v_2=\sqrt{v_1^2+2gd}
+\end{align*}
+
+</details>
+
+この問題は，運動方程式を解いてやれば解決するものです．ですが，その場合，物体の座標を時間の関数で表すことになるので，労力は大きく変わるでしょう．
+$$v^2-v_0^2=2\int a \dd{x}$$
+この式を使うと似たようなことができると気付いた方もいらっしゃるかもしれません．ですがこの式は実質的にエネルギーの式と同等なのです．前に導出した時と導出方法は少しばかり違うのですが，どちらの方法もできるようになりましょう．
+
+では，運動量と同様に多粒子系での運動エネルギーの様相を見てみましょう．
+
+$$\dv{t}\left(\frac{1}{2}mv_i^2\right)=\dv{K_i}{t}=\dot{K}_i=\sum_j \boldsymbol{F}_{ij}\cdot\vb*{v}_i+\boldsymbol{F}_{i\text{out}}\cdot\vb*{v}_i$$
+$$\sum_i \dot{K}_i=\sum_i\sum_j \boldsymbol{F}_{ij}\cdot\vb*{v}_i(=P_{\text{in}})+\sum_i\boldsymbol{F}_{i\text{out}}\cdot\vb*{v}_i(=P_{\text{out}})$$
+ここで， $P_{\text{in}},\:P_{\text{out}}$ はそれぞれ，内力による仕事率と外力による仕事率です．仕事率(Power)は運動量とは違うので注意してください．
+\begin{align*}
+P_{\text{in}}=\sum_i\sum_j \boldsymbol{F}_{ij}\cdot\vb*{v}_i
+\end{align*}
+\begin{align*}
+\boldsymbol{F}_{ij}\cdot\vb*{v}_i+\boldsymbol{F}_{ji}\cdot\vb*{v}_j&=\boldsymbol{F}_{ij}\cdot\vb*{v}_i-\boldsymbol{F}_{ij}\cdot\vb*{v}_j\\
+&=\boldsymbol{F}_{ij}\cdot(\boldsymbol{v}_{i}-\boldsymbol{v}_{j})=\boldsymbol{F}_{ij}\cdot\boldsymbol{v}_{ij}
+\end{align*}
+なので，
+$$
+P_{\text{in}}=\sum_i\sum_j \boldsymbol{F}_{ij}\cdot\vb*{v}_i=\sum_{i<j}\boldsymbol{F}_{ij}\cdot\boldsymbol{v}_{ij}
+$$
+この時， $P_{\text{out}}=0$ つまり，外力が仕事をしなければ，粒子間の相互作用の力による仕事率は，それらの相対運動で求めたものとなるのです．
+
+同時に，粒子間の相互作用による力，つまり，内力によっては重心速度が変わらないことは，運動量の
+
+この詳細については２体運動を説明する際に深掘り，再びこのトピックに戻って語ることになるので，今は法則としてだけまとめることとします．
+
+::: {.callout-note icon=false}
+
+## 法則
+
+$$\dot{K}=\sum_{i<j}\boldsymbol{F}_{ij}\cdot\boldsymbol{v}_{ij}$$
+
+系全体の運動エネルギー変化は，外力の仕事が $0$ の場合，粒子間の相互作用の力による仕事のみによって決定され，それらの相対運動で求めたものとなる．
+
+:::
+
+ここで注意しなければならないのは，系の内部運動は系の重心運動に対して影響を与えないことです．それは，系の全運動量は外力によってのみ変化し，全運動量の式 
+$$\vb*{P}=M_{\text{tot}}\boldsymbol{v}_{\text{G}} $$
+を考えれば，重心速度の変化はないことから理解されます．
+
+次に $P_{\text{out}}$ について考察すると，これはシンプルに外力が重心運動に対してなす仕事率と重心から見た内部運動に対してなす仕事率によって分解することができます．
+
+\begin{align*}
+P_{\text{out}} &= \sum_i\boldsymbol{F}_{i\text{out}}\cdot\vb*{v}_i\\
+&= \sum_i\boldsymbol{F}_{i\text{out}}\cdot(\vb*{v}_{\text{G}}+\vb*{v}_{i\text{G}})\\
+&=\sum_i\boldsymbol{F}_{i\text{out}}\cdot\vb*{v}_{\text{G}}+\sum_i\boldsymbol{F}_{i\text{out}}\cdot\vb*{v}_{i\text{G}}
+\end{align*}
+
+この分解の意味は，全運動エネルギー変化の $\sum_i \dot{K}_i$ の分解によって意味が生まれます．
+
+\begin{align*}
+K&=\sum_i K_i=\sum_i\left(\frac{1}{2} m_iv_i^2\right)=\sum_i\left(\frac{1}{2} m_i|\vb*{v}_{\text{G}}+\vb*{v}_{i\text{G}}|^2\right)\\
+&= \frac{1}{2}\left(\sum_im_i\right)v_{\text{G}}^2+\sum_i\left(\frac{1}{2} m_iv_{i\text{G}}^2\right)+\sum_im_i\vb*{v}_{\text{G}}\cdot \vb*{v}_{i\text{G}}
+\end{align*}
+
+ここで前に法則とした， $\sum_i m_i\boldsymbol{r}_{i\text{G}}=\boldsymbol{0}$ を考えれば，
+
+\begin{align*}
+K&=\frac{1}{2}M_{\text{tot}}v_{\text{G}}^2+\sum_i\left(\frac{1}{2} m_iv_{i\text{G}}^2\right)\\
+&=K_{\text{G}}+K_{\text{in}}
+\end{align*}
+
+と分解ができます．前の項を重心運動エネルギー，後ろの項を内部運動エネルギーと呼びます．ここで，
+
+\begin{align*}
+\dot{\vb*{P}}=\sum_i \dot{\boldsymbol{p}_i} &= \sum_i\boldsymbol{F}_{i\text{out}}\\
+&=M_{\text{tot}}\boldsymbol{v}_{\text{G}} 
+\end{align*}
+と言う式を思い出していただければ，
+\begin{align*}
+M_{\text{tot}}\dot{\boldsymbol{v}}_{\text{G}}&=\sum_i\boldsymbol{F}_{i\text{out}}\\
+M_{\text{tot}}\dot{\boldsymbol{v}}_{\text{G}}\cdot \boldsymbol{v}_{\text{G}}&=\sum_i\boldsymbol{F}_{i\text{out}}\cdot \boldsymbol{v}_{\text{G}}\\
+\dv{t}\left(\frac{1}{2}M_{\text{tot}}v_{\text{G}}^2 \right)&=\sum_i\boldsymbol{F}_{i\text{out}}\cdot \boldsymbol{v}_{\text{G}}\\
+\dot{K_{\text{G}}}&=\sum_i\boldsymbol{F}_{i\text{out}}\cdot \boldsymbol{v}_{\text{G}}
+\end{align*}
+
+この式の表す意味とは，重心運動エネルギーを変化させているのは，外力のみであり，内力は重心運動エネルギーを変化させないことです．つまり，ある系，例えば宇宙で孤立している星などを考えれば，内部でどんな大爆発が起きて粉々に砕け散ろうとも，重心運動エネルギーは変化しないのです．逆に，
+
+$$
+\dot{K_{\text{in}}}=\sum_{i<j}\boldsymbol{F}_{ij}\cdot\boldsymbol{v}_{ij}+\sum_i\boldsymbol{F}_{i\text{out}}\cdot\vb*{v}_{i\text{G}}
+$$
+
+となるために，内部運動エネルギーは内力の影響のみならず，外力からの影響を受けることになるわけです．
+
+これまでの事実をまとめると以下のようになるわけです．
+
+|状態|全部運動量|内部運動量|重心運動エネルギー|内部運動エネルギー|
+|---|---|---|---|---|
+|立式|$$\vb*{P}=M_{\text{tot}}\boldsymbol{v}_{\text{G}} $$|$$\vb*{P}_{\text{in}}=\sum_i m_i \boldsymbol{r}_{i\text{G}}(=\boldsymbol{0})$$|$$K_{\text{G}}=\frac{1}{2}M_{\text{tot}}v_{\text{G}}^2$$|$$K_{\text{in}}=\sum_i\left(\frac{1}{2} m_iv_{i\text{G}}^2\right)$$|
+|外力が働く|$$\dot{\vb*{P}}=\sum_i\boldsymbol{F}_{i\text{out}}$$|$$\dot{\vb*{P}}_{\text{in}}=\vb*{0}$$|$$\dot{K}_{\text{G}}=\sum_i\boldsymbol{F}_{i\text{out}}\cdot \boldsymbol{v}_{\text{G}}$$|$$\dot{K}_{\text{in}}=\sum_{i<j}\boldsymbol{F}_{ij}\cdot\boldsymbol{v}_{ij}+\sum_i\boldsymbol{F}_{i\text{out}}\cdot\vb*{v}_{i\text{G}}$$|
+|説明|運動方程式をすべて足し合わせただけである|内部運動量は常に $\vb*{0}$ であり，ゆえに重心速度も同じである|内部運動は重心運動エネルギーに働きかけないので，外力による仕事率のみ考えている|相対運動の仕事率と，外力による内部運動エネルギーへ働きかける仕事率を考えなければならない|
+|外力が働かない|$$\dot{\vb*{P}}=\vb*{0}$$|$$\dot{\vb*{P}}_{\text{in}}=\vb*{0}$$|$$\dot{K}_{\text{G}}=0$$|$$\dot{K}_{\text{in}}=\sum_{i<j}\boldsymbol{F}_{ij}\cdot\boldsymbol{v}_{ij}$$|
+|説明|外力が働かないので，運動方程式から明らかに変化がない|内部運動量は常に $\vb*{0}$|外力が働かないので，重心に働きかける仕事率がない|外力が働かない時は全運動エネルギーは内部運動エネルギーのみであり，その変化は相対運動の仕事率によって決定される|
+
+以上の事実は角運動量に対しても整理しておくと良いのですが，それは後に回すことにしましょう．まずは，これらの事実をふんだんに使う高校物理の花形である２体問題について考え，それに慣れましょう．まだまだ説明が続きますが，もう少しの辛抱です！
+
+## ２体問題
+
+とある孤立した（外力の働かない） $n$ 個の粒子に対して運動方程式を立ててみることにしましょう．
+
+\begin{align*}
+\sum_i \dot{\boldsymbol{p}_i} &= \sum_i\sum_j \boldsymbol{F}_{ij}
+\end{align*}
+
+この数式において，未知数はどれだけあるでしょうか．当然ですが，各粒子の加速度と位置なので， $6n$ 個あるわけです．ですが，方程式の数は $3n$ 個しかないのです．なので，  $n$ 個の粒子に対しての運動方程式を解き切ることが昔から知られています．
+
+<details><summary>解答</summary>
+
+物事は実はこんなに簡単なわけではなく，解析力学などの知識を駆使して初めてわかるものです．ここではこれ以上深く立ち入らないために，誤魔化した話し方をしています．気になるからは，自ら調べてみるといいかもしれません．
+
+</details>
+
+ところが，１体問題は単純な微分方程式であり，ゆえに高校で学ぶ程度の解析学の知識を使えばどうにかなる問題が多かったですね．実は２体問題に対しても，同じことが言えるのです．それは，２体問題の持つ数学的な特性によるものが大きく，３体問題に対しては使うことができないものです．
+
+皆さんが解くことになる入試問題の大半はこの２体問題に関するものになります．
+
+では，実際に２体問題について考えていきましょう．
+
+\begin{align*}
+m_1 \ddot{\boldsymbol{r}_1} &= \boldsymbol{F}_{12} +\boldsymbol{F}_{1\text{out}}\\
+m_2 \ddot{\boldsymbol{x}_2} &= \boldsymbol{F}_{21} +\boldsymbol{F}_{2\text{out}}
+\end{align*}
+
+これらの式を足し合わせることによって，２物体を１物体として看做したような，重心運動方程式ができるのは，皆さんがすでに学んだことですね．
+
+\begin{align*}
+M_{\text{tot}} \ddot{\boldsymbol{r}_{\text{G}}} = \boldsymbol{F}_{1\text{out}}+\boldsymbol{F}_{2\text{out}}
+\end{align*}
+
+ここで，二つの運動方程式を両辺その質量で割ったのちに差をとってみることにしましょう．
+
+\begin{align*}
+\ddot{\boldsymbol{r}_1}-\ddot{\boldsymbol{r}_2} = \left(\frac{1}{m_1}+\frac{1}{m_2}\right) \boldsymbol{F}_{12}+\frac{\boldsymbol{F}_{1\text{out}}}{m_1}-\frac{\boldsymbol{F}_{2\text{out}}}{m_2}
+\end{align*}
+この式を運動方程式のようにまとめると，
+\begin{align*}
+\frac{m_1m_2}{m_1+m_2}\ddot{\boldsymbol{r}_{12}}=\mu\ddot{\boldsymbol{r}_{12}}=\boldsymbol{F}_{12} +\frac{m_2\boldsymbol{F}_{1\text{out}}-m_1\boldsymbol{F}_{2\text{out}}}{m_1+m_2}
+\end{align*}
+ここで， $\boldsymbol{F}_{12}$ が $\boldsymbol{r}_{12}$ の関数であることを思い出せば，この運動方程式はあたかも１体問題の運動方程式と同等に見えるのではないでしょうか．そして，この運動方程式は相対運動を見た運動方程式ということで，相対運動方程式と呼ばれます．また特に $\mu = \dfrac{m_1m_2}{m_1+m_2}$ のことを換算質量と呼びます．
+
+つまり，今までやってきたことをまとめると，２体問題の運動方程式は，重心運動方程式と相対運動方程式に分けることができ，それらは１体問題と同じ形をしているので，解き切ることができるわけです．
+
+ここでも重心から物事を見ることの大事さがわかるでしょう．
+
+次に，２体問題の持つ特徴についてまとめてみましょう，
+
+\begin{equation*}
+\left\{ \,
+    \begin{aligned}
+    & \boldsymbol{r}_{1\text{G}}=\boldsymbol{r}_1-\boldsymbol{r}_{\text{G}}=\frac{m_2}{m_1+m_2}\boldsymbol{r}_{12} \\
+    & \boldsymbol{r}_{1\text{G}}=\boldsymbol{r}_1-\boldsymbol{r}_{\text{G}}=-\frac{m_1}{m_1+m_2}\boldsymbol{r}_{12}
+    \end{aligned}
+\right.
+\end{equation*}
+
+両辺を時間で微分すれば
+
+\begin{equation*}
+\left\{ \,
+    \begin{aligned}
+    & \boldsymbol{v}_{1\text{G}}=\boldsymbol{v}_1-\boldsymbol{v}_{\text{G}}=\frac{m_2}{m_1+m_2}\boldsymbol{v}_{12} \\
+    & \boldsymbol{v}_{1\text{G}}=\boldsymbol{v}_1-\boldsymbol{v}_{\text{G}}=-\frac{m_1}{m_1+m_2}\boldsymbol{v}_{12}
+    \end{aligned}
+\right.
+\end{equation*}
+
+以上のことをまとめれば，
+
+![](images/energy/energy2.png)
+
+::: {.callout-note icon=false}
+
+## 法則
+
+重心系から見た２物体までの距離は質量の逆比で決まり，速さについても同じである．
+
+:::
+
+また，全運動量は前に確認した通り，
+$$\vb*{P}=M_{\text{tot}}\boldsymbol{v}_{\text{G}} $$
+であり，運動エネルギーを重心運動エネルギーと内部運動エネルギーについて分解すると，
+\begin{align*}
+K_{\text{G}}&=\frac{1}{2}M_{\text{tot}}v_{\text{G}}^2\\
+K_{\text{in}}&=\sum_i\left(\frac{1}{2} m_iv_{i\text{G}}^2\right)=\frac{1}{2}\frac{m_1m_2}{m_1+m_2}v_{12}^2=\frac{1}{2}\mu v_{12}^2
+\end{align*}
+となることがわかります．この時，内部運動エネルギーを相対運動エネルギーと呼ぶこともあります．特に，外力の働かない状態では $\dot{K}_{\text{G}}=0,\;\dot{K}_{\text{in}}=\sum_{i<j}\boldsymbol{F}_{ij}\cdot\boldsymbol{v}_{ij}$ だったことを思い出していただければ，
+$$\dot{K}_{\text{all}}=\boldsymbol{F}_{12}\cdot\boldsymbol{v}_{12}$$
+$$\Delta K_{\text{all}} = \int \boldsymbol{F}_{12}\cdot\boldsymbol{v}_{12}\dd t = \int \boldsymbol{F}_{12}\cdot\dd{\boldsymbol{r}_{12}}$$
+ 
+とわかるでしょう．ではこれらの事実を確認するために，問題を解いていきましょう．
+
+::: {.callout-caution icon="false"}
+
+## 例題
+
+![](images/energy/energy3.png)
+
+宇宙に２物体 $m,M$ があり，それらはお互い退け合う力（斥力）が働く．最初( $t=0$ )， $m$ が真っ直ぐ $M$ に向かって速さ $v_0$ で進入していたが，斥力のために，最終的には $m$ は最初の速度の方向とは逆向きに速さ $v_1$ ， $M$ は速さ $V_1$ で運動することになった．この時，斥力はすでにその効力を失っており，両物体は加速度を持っていなかったという．この時最初の $m$ の進む向きを正として，次の問題に答えよ．ただし自ら解答しやすいように変数を定義して用いよ．
+
+1. 最初，物体 $m,M$ の距離は $L$ であり，お互いの距離が $l$ より小さくなった場合，両物体の距離によらない一定の斥力 $F$ が働くものとし，また，両物体は衝突することがないものとして，次の問いに答えよ．
+
+    1.  $t=0$ における，両物体の持つ運動エネルギーと，重心運動エネルギー，内部運動エネルギーをそれぞれ求めよ．
+    1. 両物体の速度を，時間の関数として求めよ．
+    1. 系全体の重心速度と運動量を時間の関数として求めよ．
+    1. 両物体の持つ運動エネルギーと，重心運動エネルギー，内部運動エネルギーをそれぞれ時間の関数として求めよ．
+
+1. 先の問題において $F$ が定数ではなく，時間や両物体の位置，速度による関数だった場合を考える．
+
+    1. 系全体の重心速度と運動量を時間の関数として求めよ．
+    1. 運動の最初と最後で重心運動エネルギー，内部運動エネルギーは一般的に変化しているか．また，変化していない場合はその理由を，変化している場合はその具体的な $F$ を一つ答えよ．
+
+1. **この問題は先ほどの２問とは独立していることに注意せよ．** 最初，物体 $m,M$ の距離は $L$ であり，両物体の距離を $r$ としたとき， $F=k/r^2$ であるという．この時次の問いに答えよ．
+    1. 次の文章の空欄（ア）〜（エ）に適切な言葉，もしくは，数式を書き入れよ．
+        - この問題を解析する場合，両物体の運動方程式を書き上げるよりも，重心運動方程式と相対運動方程式を立式することが優れていると考えられる．最初の $m$ の進む向きを正として $x$ 軸を設け， $x,\:X$ を両物体の位置として， $r=X-x$ とおく．この時，重心運動方程式は（ア），相対運動方程式は（イ）と立式することができる．これによって，この系の重心は（ウ）であることがわかる．また，（イ）を直接解かなくとも，両辺に $\dot{r}$ をかけることによって，両辺とも，ある関数の時間微分であるとすることができる．式を整理すれば， $\dv{t}(\text{エ})=0$ とすることができる．つまり，（エ）は時間によらず一定である（保存している）ことがわかるのだ．
+    1. 両物体が最も近づいた時の距離を求めよ．
+    1. $v_1,\:V_1$ を $m,\:M,\:v_0$ を用いて表せ．
+    1. 系全体の運動エネルギーははじめと，両物体が等速運動するようになった時とで保存しているか．保存している場合はその理由を，保存していない場合はその変化分を答えよ．
+
+:::
+
+<details><summary>解答</summary>
+
+1. 
+    1. 一覧にすると，
+    \begin{align*}
+    K_1&=\frac{1}{2}mv_0^2\\
+    K_2&=0\\
+    K_G&=\frac{1}{2}\frac{m^2}{m+M}v_0^2\\
+    K_{in}&=\frac{1}{2}\frac{mM}{m+m}v_0^2
+    \end{align*}
+    1. まず力が働くまでは簡単であり， $t_0=L-l/v_0$ として，
+    $$v=v_0,\:V=0\;(t=0 \sim t_0)$$
+    続いては，重心運動と重心から見た運動をわけて考える．相対運動方程式が
+    $$\mu \dot{v_r}=-F$$
+    であることから，相対加速度は $-F/\mu$ であり，相対速さは $v_0-F(t-t_0)/\mu$ となる．そして，外力が働かないため重心速度は常に $\frac{m}{m+M}v_0$ なので， $v_i=v_G+v_{iG}$ と， $v_{iG}$ が質量の逆比であることなどを使えば，
+    \begin{align*}
+    v&=\frac{m}{m+M}v_0-\frac{M}{m+M}\left(v_0-\frac{F}{\mu}(t-t_0)\right)\\
+    V&=\frac{m}{m+M}v_0+\frac{m}{m+M}\left(v_0-\frac{F}{\mu}(t-t_0)\right)
+    \end{align*}
+    ただしこれが当てはまる時間は，物体間の距離が $l$ に戻るまで，つまり，等加速度運動の特徴を考えれば，相対速度が反転するまでであり，ゆえに $t=t_0 \sim t_0 + 2\mu v_0/F$ である．最後に $t \geq t_0 + 2\mu v_0/F$ の時はどうなるかというと，常に等速運動をすることになり， $v=-v_1,\: V=V_1$ となる． $v_1,\:V_1$ の値は，先ほどの考え方を進めることによって簡単に決まり，
+    \begin{align*}
+    v&=\frac{m}{m+M}v_0-\frac{M}{m+M}v_0\\
+    V&=\frac{m}{m+M}v_0+\frac{m}{m+M}v_0
+    \end{align*}
+    となる．
+    1. 外力がないので，重心速度も運動量も不変であり，それぞれ，
+    \begin{align*}
+    v_G&=\frac{m}{m+M}v_0\\
+    P&=mv_0
+    \end{align*}
+    1. 外力がないので，重心運動エネルギーは不変であり，
+    \begin{align*}
+    K_G&=\frac{1}{2}\frac{m^2}{m+M}v_0^2
+    \end{align*}
+
+</details>
+
+
+::: {.callout-tip icon=false}
+
+## 問題
+
+地面に物体 $M$ と，その上に物体 $m$ を載せている．最初物体 $m$ は右向きに速さ $v$ を持っている．ある程度時間がたつと，物体 $m$ は坂を上り切って，飛び出した．この時， $m$ は最初の高さに比べて，どれほど高さまで飛んだか．ただし，摩擦はすべて無視せよ．
+
+![](images/energy/energy1.png)
+
+:::
+
+<details><summary>解答</summary>
+
+物体 $m$ の右向きの速さが $M$ の右向きの速さより大きいと，飛び出すことができないし，逆はあり得ないので，飛び出す際の $m,M$ の右の速さは同じであり，それを $v_x$ とする．
+$$v_x=\frac{m}{m+M}v$$
+ここで，飛び出す瞬間の $m$ の上向の速さを $v_y$ にすると，
+$$\frac{1}{2}mv^2=\frac{1}{2}(m+M)v_x^2+\frac{1}{2}mv_y^2+mgh_1$$
+$h_1$ は飛び出す地点の高さである．さらに，飛び出す地点から $m$ が到達する最高地点までの鉛直距離 $h_2$ は
+$$v_y^2=2gh_2$$
+と表せるので，全ての指揮を整理して連立すれば，
+$$h_1+h_2=\frac{M}{M+m}\frac{v^2}{2g}$$
+とわかる．
+
+だがこの問題を一瞬で解決する方法もある．
+
+この問題は，重心運動エネルギーが不変であるため，外部への仕事は全て内部運動エネルギーによってなされる．そして，物体 $m$ が最も高く飛び上がった瞬間，両物体の相対速さは0となるので，内部運動エネルギーは全て物体 $m$ の飛び上がりに使われたとして考えられるので，さらに２体問題であることを考慮して，換算質量を $\mu$ とすれば，
+$$\frac{1}{2}\mu v^2=mgh$$
+$$h=\frac{M}{M+m}\frac{v^2}{2g}$$
+とわかる．
+
+</details>

@@ -10,5 +10,20 @@
   },
   "newton-mechanics.qmd": {
     "newton-mechanics.html": "6e2a9965"
+  },
+  "source/newton-mechanics.qmd": {
+    "newton-mechanics.html": "939c2e31"
+  },
+  "source/velocity.qmd": {
+    "velocity.html": "b50c453d"
+  },
+  "source/intro.qmd": {
+    "intro.html": "cf8d3a16"
+  },
+  "source/database.qmd": {
+    "database.html": "6cf0588b"
+  },
+  "source/energy.qmd": {
+    "energy.html": "f6d9e8b0"
   }
 }

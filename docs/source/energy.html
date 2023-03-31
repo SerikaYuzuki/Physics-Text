@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Physics Text - 4&nbsp; 運動量，エネルギー，２体問題</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../source/database.html" rel="next">
+<link href="../source/newton-mechanics.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">運動量，エネルギー，２体問題</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Physics Text</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../source/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">数学的準備</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../source/velocity.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">位置，速度，加速度</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../source/newton-mechanics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ニュートンの法則</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../source/energy.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">運動量，エネルギー，２体問題</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../source/database.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#運動量" id="toc-運動量" class="nav-link active" data-scroll-target="#運動量"><span class="toc-section-number">4.1</span>  運動量</a></li>
+  <li><a href="#運動エネルギー" id="toc-運動エネルギー" class="nav-link" data-scroll-target="#運動エネルギー"><span class="toc-section-number">4.2</span>  運動エネルギー</a></li>
+  <li><a href="#体問題" id="toc-体問題" class="nav-link" data-scroll-target="#体問題"><span class="toc-section-number">4.3</span>  ２体問題</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">運動量，エネルギー，２体問題</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="運動量" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="運動量"><span class="header-section-number">4.1</span> 運動量</h2>
+<p><span class="math inline">\(\require{physics}\)</span> 運動方程式はそれ単体でかなりの現象を説明するものですが，世の中にはあまりにも多くの粒子が複雑に互いに力を及ぼし合っているので，解析し切ることができることが難しいことが多いです．</p>
+<p>そんな中で，前章でも述べた通り，多粒子を考える方法はあり，これからはその方法の一つを考えることにしましょう．</p>
+<p>まず，言葉の定義として，運動量について紹介します．</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+定義
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>とある物体が質量 <span class="math inline">\(m\)</span> ，速度 <span class="math inline">\(\boldsymbol{v}\)</span> を持っている時，その物体の運動量 <span class="math inline">\(\boldsymbol{p}\)</span> を次のように定義する．</p>
+<p><span class="math display">\[\boldsymbol{p}=m\boldsymbol{v}\]</span></p>
+</div>
+</div>
+<p>つまり，運動方程式は次のようにかけます． <span class="math display">\[\dot{\boldsymbol{p}}=\boldsymbol{F}\]</span> 多粒子系について考えましょう．前章と同様，とある場所に <span class="math inline">\(n\)</span> 個の粒子があり，それらが互いに力を及ぼしながら，外からも力を受けているとしましょう．その時， <span class="math inline">\(i\)</span> 番目の粒子の運動方程式は <span class="math display">\[\begin{align*}
+\dot{\boldsymbol{p}_i} = \sum_j \boldsymbol{F}_{ij} +  \boldsymbol{F}_{i\text{out}}
+\end{align*}\]</span> ここで， <span class="math inline">\(\boldsymbol{F}_{ij}\)</span> は <span class="math inline">\(j\)</span> 番目の粒子が <span class="math inline">\(i\)</span> 番目の粒子に及ぼす力であり， <span class="math inline">\(\boldsymbol{F}_{i\text{out}}\)</span> は <span class="math inline">\(i\)</span> 番目の粒子が受ける外力です．この式を全ての <span class="math inline">\(i\)</span> について足し合わせることによって， <span class="math display">\[\begin{align*}
+\sum_i \dot{\boldsymbol{p}_i} &amp;= \sum_i\sum_j \boldsymbol{F}_{ij} +  \sum_i\boldsymbol{F}_{i\text{out}}
+\end{align*}\]</span> 作用反作用の法則によって， <span class="math inline">\(\sum_i\sum_j \boldsymbol{F}_{ij}\)</span> となるので， <span class="math display">\[\begin{align*}
+\sum_i \dot{\boldsymbol{p}_i} &amp;= \sum_i\boldsymbol{F}_{i\text{out}}
+\end{align*}\]</span> ここで外力がないとすると， <span class="math display">\[\begin{align*}
+\sum_i \dot{\boldsymbol{p}_i} &amp;= \boldsymbol{0}\\
+\dv{t}\sum_i \boldsymbol{p}_i &amp;= \boldsymbol{0}\\
+\sum_i \boldsymbol{p}_i &amp;= \textbf{Const.}=M_{\text{tot}}\dot{\boldsymbol{r}}_{\text{G}}
+\end{align*}\]</span> このような結果が得られるわけです．このようにある値が定数であり続けることを，値が保存していると呼ばれます．また，全運動量の合計は，全質量と重心速度の積によって表すことができることもわかりました．以上をまとめると，</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+定理
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>外力の働かない系では，全運動量が保存する．また，系の全運動量 <span class="math inline">\(\vb*{P}\)</span> は</p>
+<p><span class="math display">\[\vb*{P}=M_{\text{tot}}\boldsymbol{v}_{\text{G}} \]</span></p>
+<p>で表すことができる．</p>
+</div>
+</div>
+<p>ここで，重心の定義を考えた時， <span class="math display">\[\begin{align*}
+\sum_i m_i (\boldsymbol{r}_i-\boldsymbol{r}_\text{G})=\sum_i m_i \boldsymbol{r}_{i\text{G}}=\vb*{P}_{\text{in}}=\boldsymbol{0}
+\end{align*}\]</span></p>
+<p>ここで， <span class="math inline">\(\vb*{P}_{\text{in}}\)</span> 重心から見た物体内部の全運動量ということで，内部運動量と呼ばれています．つまり，</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+定理
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>任意の系を，重心を原点とする座標系で見れば，全運動量は <span class="math inline">\(\boldsymbol{0}\)</span> となる．別の言い方をすれば，内部運動量は常に <span class="math inline">\(\boldsymbol{0}\)</span> となる．</p>
+</div>
+</div>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+例題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>宇宙の外力の及ばない場所に星がひとつあった．その星の中で何らかの現象が起き，その結果，二つの星が出来上がり，片方は質量 <span class="math inline">\(m_1\)</span> で速度 <span class="math inline">\(\boldsymbol{v_1}\)</span> だった．もう片方の質量が <span class="math inline">\(m_2\)</span> だった時の速度を求めよ．</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p><span class="math display">\[m_1\boldsymbol{v_1}+m_2\boldsymbol{v_2}=\boldsymbol{0}\]</span> <span class="math display">\[\boldsymbol{v_2}=-\frac{m_1}{m_2}\boldsymbol{v_1}\]</span></p>
+</details>
+</section>
+<section id="運動エネルギー" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="運動エネルギー"><span class="header-section-number">4.2</span> 運動エネルギー</h2>
+<p>運動方程式の両辺に <span class="math inline">\(\vb*{v}\)</span> を内積でかけてやることによって， <span class="math display">\[m\dot{\boldsymbol{v}}\cdot \boldsymbol{v}=\boldsymbol{F}\cdot\vb*{v}\]</span> この左辺は， <span class="math display">\[m\dot{\boldsymbol{v}}\cdot \boldsymbol{v}=\dv{t}\left(\frac{1}{2}m\boldsymbol{v}\cdot \boldsymbol{v}\right)=\dv{t}\left(\frac{1}{2}mv^2\right)\]</span> と計算されるので， <span class="math display">\[\dv{t}\left(\frac{1}{2}mv^2\right)=\boldsymbol{F}\cdot\vb*{v}\]</span> ここで，左辺の被微分部分の <span class="math inline">\(mv^2/2\)</span> は物体の運動エネルギーと呼ばれ，右辺は仕事率と呼ばれています．</p>
+<p>両辺を <span class="math inline">\(t=t_0\)</span> から <span class="math inline">\(t=t_1\)</span> で積分してやれば，それぞれの時刻における速度や位置を <span class="math inline">\(\vb*{v_0},\:\vb*{v_1},\:\vb*{r_0},\:\vb*{r_1}\)</span> などとおけば， <span class="math display">\[\begin{align*}
+\frac{1}{2}mv_1^2-\frac{1}{2}mv_2^2&amp;=\int_{t_0}^{t_1}\boldsymbol{F}\cdot\vb*{v}\dd{t}\\
+&amp;=\int_{t_0}^{t_1}\boldsymbol{F}\cdot\dv{\vb*{r}}{t}\dd{t}\\
+&amp;=\int_{\vb*{r}_0}^{\vb*{r}_1}\boldsymbol{F}\cdot \dd{\vb*{r}}
+\end{align*}\]</span> この式の右辺は仕事と呼ばれています．以上のことをまとめると次のようになります．</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+法則
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\frac{1}{2}mv_1^2-\frac{1}{2}mv_2^2&amp;=\int_{\vb*{r}_0}^{\vb*{r}_1}\boldsymbol{F}\cdot \dd{\vb*{r}}
+\end{align*}\]</span> 上式の示す通り，運動エネルギーの変化の値は，仕事の値と等しい．</p>
+</div>
+</div>
+<p>では，実際にこの法則に従って，問題を解いてみることにしましょう．</p>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+例題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>鉛直下向きに速さ <span class="math inline">\(v_1\)</span> の物体が，高さ <span class="math inline">\(d\)</span> だけ落下した．この時の物体の速さを求めよ．</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p><span class="math display">\[\begin{align*}
+\frac{1}{2}mv_1^2-\frac{1}{2}mv_2^2&amp;=\int_{y_0}^{y_1}mg \dd{y} = mg(y_1-y_0) = mgd\\
+v_2=\sqrt{v_1^2+2gd}
+\end{align*}\]</span></p>
+</details>
+<p>この問題は，運動方程式を解いてやれば解決するものです．ですが，その場合，物体の座標を時間の関数で表すことになるので，労力は大きく変わるでしょう． <span class="math display">\[v^2-v_0^2=2\int a \dd{x}\]</span> この式を使うと似たようなことができると気付いた方もいらっしゃるかもしれません．ですがこの式は実質的にエネルギーの式と同等なのです．前に導出した時と導出方法は少しばかり違うのですが，どちらの方法もできるようになりましょう．</p>
+<p>では，運動量と同様に多粒子系での運動エネルギーの様相を見てみましょう．</p>
+<p><span class="math display">\[\dv{t}\left(\frac{1}{2}mv_i^2\right)=\dv{K_i}{t}=\dot{K}_i=\sum_j \boldsymbol{F}_{ij}\cdot\vb*{v}_i+\boldsymbol{F}_{i\text{out}}\cdot\vb*{v}_i\]</span> <span class="math display">\[\sum_i \dot{K}_i=\sum_i\sum_j \boldsymbol{F}_{ij}\cdot\vb*{v}_i(=P_{\text{in}})+\sum_i\boldsymbol{F}_{i\text{out}}\cdot\vb*{v}_i(=P_{\text{out}})\]</span> ここで， <span class="math inline">\(P_{\text{in}},\:P_{\text{out}}\)</span> はそれぞれ，内力による仕事率と外力による仕事率です．仕事率(Power)は運動量とは違うので注意してください． <span class="math display">\[\begin{align*}
+P_{\text{in}}=\sum_i\sum_j \boldsymbol{F}_{ij}\cdot\vb*{v}_i
+\end{align*}\]</span> <span class="math display">\[\begin{align*}
+\boldsymbol{F}_{ij}\cdot\vb*{v}_i+\boldsymbol{F}_{ji}\cdot\vb*{v}_j&amp;=\boldsymbol{F}_{ij}\cdot\vb*{v}_i-\boldsymbol{F}_{ij}\cdot\vb*{v}_j\\
+&amp;=\boldsymbol{F}_{ij}\cdot(\boldsymbol{v}_{i}-\boldsymbol{v}_{j})=\boldsymbol{F}_{ij}\cdot\boldsymbol{v}_{ij}
+\end{align*}\]</span> なので， <span class="math display">\[
+P_{\text{in}}=\sum_i\sum_j \boldsymbol{F}_{ij}\cdot\vb*{v}_i=\sum_{i&lt;j}\boldsymbol{F}_{ij}\cdot\boldsymbol{v}_{ij}
+\]</span> この時， <span class="math inline">\(P_{\text{out}}=0\)</span> つまり，外力が仕事をしなければ，粒子間の相互作用の力による仕事率は，それらの相対運動で求めたものとなるのです．</p>
+<p>同時に，粒子間の相互作用による力，つまり，内力によっては重心速度が変わらないことは，運動量の</p>
+<p>この詳細については２体運動を説明する際に深掘り，再びこのトピックに戻って語ることになるので，今は法則としてだけまとめることとします．</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+法則
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\dot{K}=\sum_{i&lt;j}\boldsymbol{F}_{ij}\cdot\boldsymbol{v}_{ij}\]</span></p>
+<p>系全体の運動エネルギー変化は，外力の仕事が <span class="math inline">\(0\)</span> の場合，粒子間の相互作用の力による仕事のみによって決定され，それらの相対運動で求めたものとなる．</p>
+</div>
+</div>
+<p>ここで注意しなければならないのは，系の内部運動は系の重心運動に対して影響を与えないことです．それは，系の全運動量は外力によってのみ変化し，全運動量の式 <span class="math display">\[\vb*{P}=M_{\text{tot}}\boldsymbol{v}_{\text{G}} \]</span> を考えれば，重心速度の変化はないことから理解されます．</p>
+<p>次に <span class="math inline">\(P_{\text{out}}\)</span> について考察すると，これはシンプルに外力が重心運動に対してなす仕事率と重心から見た内部運動に対してなす仕事率によって分解することができます．</p>
+<p><span class="math display">\[\begin{align*}
+P_{\text{out}} &amp;= \sum_i\boldsymbol{F}_{i\text{out}}\cdot\vb*{v}_i\\
+&amp;= \sum_i\boldsymbol{F}_{i\text{out}}\cdot(\vb*{v}_{\text{G}}+\vb*{v}_{i\text{G}})\\
+&amp;=\sum_i\boldsymbol{F}_{i\text{out}}\cdot\vb*{v}_{\text{G}}+\sum_i\boldsymbol{F}_{i\text{out}}\cdot\vb*{v}_{i\text{G}}
+\end{align*}\]</span></p>
+<p>この分解の意味は，全運動エネルギー変化の <span class="math inline">\(\sum_i \dot{K}_i\)</span> の分解によって意味が生まれます．</p>
+<p><span class="math display">\[\begin{align*}
+K&amp;=\sum_i K_i=\sum_i\left(\frac{1}{2} m_iv_i^2\right)=\sum_i\left(\frac{1}{2} m_i|\vb*{v}_{\text{G}}+\vb*{v}_{i\text{G}}|^2\right)\\
+&amp;= \frac{1}{2}\left(\sum_im_i\right)v_{\text{G}}^2+\sum_i\left(\frac{1}{2} m_iv_{i\text{G}}^2\right)+\sum_im_i\vb*{v}_{\text{G}}\cdot \vb*{v}_{i\text{G}}
+\end{align*}\]</span></p>
+<p>ここで前に法則とした， <span class="math inline">\(\sum_i m_i\boldsymbol{r}_{i\text{G}}=\boldsymbol{0}\)</span> を考えれば，</p>
+<p><span class="math display">\[\begin{align*}
+K&amp;=\frac{1}{2}M_{\text{tot}}v_{\text{G}}^2+\sum_i\left(\frac{1}{2} m_iv_{i\text{G}}^2\right)\\
+&amp;=K_{\text{G}}+K_{\text{in}}
+\end{align*}\]</span></p>
+<p>と分解ができます．前の項を重心運動エネルギー，後ろの項を内部運動エネルギーと呼びます．ここで，</p>
+<p><span class="math display">\[\begin{align*}
+\dot{\vb*{P}}=\sum_i \dot{\boldsymbol{p}_i} &amp;= \sum_i\boldsymbol{F}_{i\text{out}}\\
+&amp;=M_{\text{tot}}\boldsymbol{v}_{\text{G}}
+\end{align*}\]</span> と言う式を思い出していただければ， <span class="math display">\[\begin{align*}
+M_{\text{tot}}\dot{\boldsymbol{v}}_{\text{G}}&amp;=\sum_i\boldsymbol{F}_{i\text{out}}\\
+M_{\text{tot}}\dot{\boldsymbol{v}}_{\text{G}}\cdot \boldsymbol{v}_{\text{G}}&amp;=\sum_i\boldsymbol{F}_{i\text{out}}\cdot \boldsymbol{v}_{\text{G}}\\
+\dv{t}\left(\frac{1}{2}M_{\text{tot}}v_{\text{G}}^2 \right)&amp;=\sum_i\boldsymbol{F}_{i\text{out}}\cdot \boldsymbol{v}_{\text{G}}\\
+\dot{K_{\text{G}}}&amp;=\sum_i\boldsymbol{F}_{i\text{out}}\cdot \boldsymbol{v}_{\text{G}}
+\end{align*}\]</span></p>
+<p>この式の表す意味とは，重心運動エネルギーを変化させているのは，外力のみであり，内力は重心運動エネルギーを変化させないことです．つまり，ある系，例えば宇宙で孤立している星などを考えれば，内部でどんな大爆発が起きて粉々に砕け散ろうとも，重心運動エネルギーは変化しないのです．逆に，</p>
+<p><span class="math display">\[
+\dot{K_{\text{in}}}=\sum_{i&lt;j}\boldsymbol{F}_{ij}\cdot\boldsymbol{v}_{ij}+\sum_i\boldsymbol{F}_{i\text{out}}\cdot\vb*{v}_{i\text{G}}
+\]</span></p>
+<p>となるために，内部運動エネルギーは内力の影響のみならず，外力からの影響を受けることになるわけです．</p>
+<p>これまでの事実をまとめると以下のようになるわけです．</p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>状態</th>
+<th>全部運動量</th>
+<th>内部運動量</th>
+<th>重心運動エネルギー</th>
+<th>内部運動エネルギー</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>立式</td>
+<td><span class="math display">\[\vb*{P}=M_{\text{tot}}\boldsymbol{v}_{\text{G}} \]</span></td>
+<td><span class="math display">\[\vb*{P}_{\text{in}}=\sum_i m_i \boldsymbol{r}_{i\text{G}}(=\boldsymbol{0})\]</span></td>
+<td><span class="math display">\[K_{\text{G}}=\frac{1}{2}M_{\text{tot}}v_{\text{G}}^2\]</span></td>
+<td><span class="math display">\[K_{\text{in}}=\sum_i\left(\frac{1}{2} m_iv_{i\text{G}}^2\right)\]</span></td>
+</tr>
+<tr class="even">
+<td>外力が働く</td>
+<td><span class="math display">\[\dot{\vb*{P}}=\sum_i\boldsymbol{F}_{i\text{out}}\]</span></td>
+<td><span class="math display">\[\dot{\vb*{P}}_{\text{in}}=\vb*{0}\]</span></td>
+<td><span class="math display">\[\dot{K}_{\text{G}}=\sum_i\boldsymbol{F}_{i\text{out}}\cdot \boldsymbol{v}_{\text{G}}\]</span></td>
+<td><span class="math display">\[\dot{K}_{\text{in}}=\sum_{i&lt;j}\boldsymbol{F}_{ij}\cdot\boldsymbol{v}_{ij}+\sum_i\boldsymbol{F}_{i\text{out}}\cdot\vb*{v}_{i\text{G}}\]</span></td>
+</tr>
+<tr class="odd">
+<td>説明</td>
+<td>運動方程式をすべて足し合わせただけである</td>
+<td>内部運動量は常に <span class="math inline">\(\vb*{0}\)</span> であり，ゆえに重心速度も同じである</td>
+<td>内部運動は重心運動エネルギーに働きかけないので，外力による仕事率のみ考えている</td>
+<td>相対運動の仕事率と，外力による内部運動エネルギーへ働きかける仕事率を考えなければならない</td>
+</tr>
+<tr class="even">
+<td>外力が働かない</td>
+<td><span class="math display">\[\dot{\vb*{P}}=\vb*{0}\]</span></td>
+<td><span class="math display">\[\dot{\vb*{P}}_{\text{in}}=\vb*{0}\]</span></td>
+<td><span class="math display">\[\dot{K}_{\text{G}}=0\]</span></td>
+<td><span class="math display">\[\dot{K}_{\text{in}}=\sum_{i&lt;j}\boldsymbol{F}_{ij}\cdot\boldsymbol{v}_{ij}\]</span></td>
+</tr>
+<tr class="odd">
+<td>説明</td>
+<td>外力が働かないので，運動方程式から明らかに変化がない</td>
+<td>内部運動量は常に <span class="math inline">\(\vb*{0}\)</span></td>
+<td>外力が働かないので，重心に働きかける仕事率がない</td>
+<td>外力が働かない時は全運動エネルギーは内部運動エネルギーのみであり，その変化は相対運動の仕事率によって決定される</td>
+</tr>
+</tbody>
+</table>
+<p>以上の事実は角運動量に対しても整理しておくと良いのですが，それは後に回すことにしましょう．まずは，これらの事実をふんだんに使う高校物理の花形である２体問題について考え，それに慣れましょう．まだまだ説明が続きますが，もう少しの辛抱です！</p>
+</section>
+<section id="体問題" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="体問題"><span class="header-section-number">4.3</span> ２体問題</h2>
+<p>とある孤立した（外力の働かない） <span class="math inline">\(n\)</span> 個の粒子に対して運動方程式を立ててみることにしましょう．</p>
+<p><span class="math display">\[\begin{align*}
+\sum_i \dot{\boldsymbol{p}_i} &amp;= \sum_i\sum_j \boldsymbol{F}_{ij}
+\end{align*}\]</span></p>
+<p>この数式において，未知数はどれだけあるでしょうか．当然ですが，各粒子の加速度と位置なので， <span class="math inline">\(6n\)</span> 個あるわけです．ですが，方程式の数は <span class="math inline">\(3n\)</span> 個しかないのです．なので， <span class="math inline">\(n\)</span> 個の粒子に対しての運動方程式を解き切ることが昔から知られています．</p>
+<details>
+<summary>
+解答
+</summary>
+<p>物事は実はこんなに簡単なわけではなく，解析力学などの知識を駆使して初めてわかるものです．ここではこれ以上深く立ち入らないために，誤魔化した話し方をしています．気になるからは，自ら調べてみるといいかもしれません．</p>
+</details>
+<p>ところが，１体問題は単純な微分方程式であり，ゆえに高校で学ぶ程度の解析学の知識を使えばどうにかなる問題が多かったですね．実は２体問題に対しても，同じことが言えるのです．それは，２体問題の持つ数学的な特性によるものが大きく，３体問題に対しては使うことができないものです．</p>
+<p>皆さんが解くことになる入試問題の大半はこの２体問題に関するものになります．</p>
+<p>では，実際に２体問題について考えていきましょう．</p>
+<p><span class="math display">\[\begin{align*}
+m_1 \ddot{\boldsymbol{r}_1} &amp;= \boldsymbol{F}_{12} +\boldsymbol{F}_{1\text{out}}\\
+m_2 \ddot{\boldsymbol{x}_2} &amp;= \boldsymbol{F}_{21} +\boldsymbol{F}_{2\text{out}}
+\end{align*}\]</span></p>
+<p>これらの式を足し合わせることによって，２物体を１物体として看做したような，重心運動方程式ができるのは，皆さんがすでに学んだことですね．</p>
+<p><span class="math display">\[\begin{align*}
+M_{\text{tot}} \ddot{\boldsymbol{r}_{\text{G}}} = \boldsymbol{F}_{1\text{out}}+\boldsymbol{F}_{2\text{out}}
+\end{align*}\]</span></p>
+<p>ここで，二つの運動方程式を両辺その質量で割ったのちに差をとってみることにしましょう．</p>
+<p><span class="math display">\[\begin{align*}
+\ddot{\boldsymbol{r}_1}-\ddot{\boldsymbol{r}_2} = \left(\frac{1}{m_1}+\frac{1}{m_2}\right) \boldsymbol{F}_{12}+\frac{\boldsymbol{F}_{1\text{out}}}{m_1}-\frac{\boldsymbol{F}_{2\text{out}}}{m_2}
+\end{align*}\]</span> この式を運動方程式のようにまとめると， <span class="math display">\[\begin{align*}
+\frac{m_1m_2}{m_1+m_2}\ddot{\boldsymbol{r}_{12}}=\mu\ddot{\boldsymbol{r}_{12}}=\boldsymbol{F}_{12} +\frac{m_2\boldsymbol{F}_{1\text{out}}-m_1\boldsymbol{F}_{2\text{out}}}{m_1+m_2}
+\end{align*}\]</span> ここで， <span class="math inline">\(\boldsymbol{F}_{12}\)</span> が <span class="math inline">\(\boldsymbol{r}_{12}\)</span> の関数であることを思い出せば，この運動方程式はあたかも１体問題の運動方程式と同等に見えるのではないでしょうか．そして，この運動方程式は相対運動を見た運動方程式ということで，相対運動方程式と呼ばれます．また特に <span class="math inline">\(\mu = \dfrac{m_1m_2}{m_1+m_2}\)</span> のことを換算質量と呼びます．</p>
+<p>つまり，今までやってきたことをまとめると，２体問題の運動方程式は，重心運動方程式と相対運動方程式に分けることができ，それらは１体問題と同じ形をしているので，解き切ることができるわけです．</p>
+<p>ここでも重心から物事を見ることの大事さがわかるでしょう．</p>
+<p>次に，２体問題の持つ特徴についてまとめてみましょう，</p>
+<p><span class="math display">\[\begin{equation*}
+\left\{ \,
+    \begin{aligned}
+    &amp; \boldsymbol{r}_{1\text{G}}=\boldsymbol{r}_1-\boldsymbol{r}_{\text{G}}=\frac{m_2}{m_1+m_2}\boldsymbol{r}_{12} \\
+    &amp; \boldsymbol{r}_{1\text{G}}=\boldsymbol{r}_1-\boldsymbol{r}_{\text{G}}=-\frac{m_1}{m_1+m_2}\boldsymbol{r}_{12}
+    \end{aligned}
+\right.
+\end{equation*}\]</span></p>
+<p>両辺を時間で微分すれば</p>
+<p><span class="math display">\[\begin{equation*}
+\left\{ \,
+    \begin{aligned}
+    &amp; \boldsymbol{v}_{1\text{G}}=\boldsymbol{v}_1-\boldsymbol{v}_{\text{G}}=\frac{m_2}{m_1+m_2}\boldsymbol{v}_{12} \\
+    &amp; \boldsymbol{v}_{1\text{G}}=\boldsymbol{v}_1-\boldsymbol{v}_{\text{G}}=-\frac{m_1}{m_1+m_2}\boldsymbol{v}_{12}
+    \end{aligned}
+\right.
+\end{equation*}\]</span></p>
+<p>以上のことをまとめれば，</p>
+<p><img src="images/energy/energy2.png" class="img-fluid"></p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+法則
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>重心系から見た２物体までの距離は質量の逆比で決まり，速さについても同じである．</p>
+</div>
+</div>
+<p>また，全運動量は前に確認した通り， <span class="math display">\[\vb*{P}=M_{\text{tot}}\boldsymbol{v}_{\text{G}} \]</span> であり，運動エネルギーを重心運動エネルギーと内部運動エネルギーについて分解すると， <span class="math display">\[\begin{align*}
+K_{\text{G}}&amp;=\frac{1}{2}M_{\text{tot}}v_{\text{G}}^2\\
+K_{\text{in}}&amp;=\sum_i\left(\frac{1}{2} m_iv_{i\text{G}}^2\right)=\frac{1}{2}\frac{m_1m_2}{m_1+m_2}v_{12}^2=\frac{1}{2}\mu v_{12}^2
+\end{align*}\]</span> となることがわかります．この時，内部運動エネルギーを相対運動エネルギーと呼ぶこともあります．特に，外力の働かない状態では <span class="math inline">\(\dot{K}_{\text{G}}=0,\;\dot{K}_{\text{in}}=\sum_{i&lt;j}\boldsymbol{F}_{ij}\cdot\boldsymbol{v}_{ij}\)</span> だったことを思い出していただければ， <span class="math display">\[\dot{K}_{\text{all}}=\boldsymbol{F}_{12}\cdot\boldsymbol{v}_{12}\]</span> <span class="math display">\[\Delta K_{\text{all}} = \int \boldsymbol{F}_{12}\cdot\boldsymbol{v}_{12}\dd t = \int \boldsymbol{F}_{12}\cdot\dd{\boldsymbol{r}_{12}}\]</span></p>
+<p>とわかるでしょう．ではこれらの事実を確認するために，問題を解いていきましょう．</p>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+例題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><img src="images/energy/energy3.png" class="img-fluid"></p>
+<p>宇宙に２物体 <span class="math inline">\(m,M\)</span> があり，それらはお互い退け合う力（斥力）が働く．最初( <span class="math inline">\(t=0\)</span> )， <span class="math inline">\(m\)</span> が真っ直ぐ <span class="math inline">\(M\)</span> に向かって速さ <span class="math inline">\(v_0\)</span> で進入していたが，斥力のために，最終的には <span class="math inline">\(m\)</span> は最初の速度の方向とは逆向きに速さ <span class="math inline">\(v_1\)</span> ， <span class="math inline">\(M\)</span> は速さ <span class="math inline">\(V_1\)</span> で運動することになった．この時，斥力はすでにその効力を失っており，両物体は加速度を持っていなかったという．この時最初の <span class="math inline">\(m\)</span> の進む向きを正として，次の問題に答えよ．ただし自ら解答しやすいように変数を定義して用いよ．</p>
+<ol type="1">
+<li><p>最初，物体 <span class="math inline">\(m,M\)</span> の距離は <span class="math inline">\(L\)</span> であり，お互いの距離が <span class="math inline">\(l\)</span> より小さくなった場合，両物体の距離によらない一定の斥力 <span class="math inline">\(F\)</span> が働くものとし，また，両物体は衝突することがないものとして，次の問いに答えよ．</p>
+<ol type="1">
+<li><span class="math inline">\(t=0\)</span> における，両物体の持つ運動エネルギーと，重心運動エネルギー，内部運動エネルギーをそれぞれ求めよ．</li>
+<li>両物体の速度を，時間の関数として求めよ．</li>
+<li>系全体の重心速度と運動量を時間の関数として求めよ．</li>
+<li>両物体の持つ運動エネルギーと，重心運動エネルギー，内部運動エネルギーをそれぞれ時間の関数として求めよ．</li>
+</ol></li>
+<li><p>先の問題において <span class="math inline">\(F\)</span> が定数ではなく，時間や両物体の位置，速度による関数だった場合を考える．</p>
+<ol type="1">
+<li>系全体の重心速度と運動量を時間の関数として求めよ．</li>
+<li>運動の最初と最後で重心運動エネルギー，内部運動エネルギーは一般的に変化しているか．また，変化していない場合はその理由を，変化している場合はその具体的な <span class="math inline">\(F\)</span> を一つ答えよ．</li>
+</ol></li>
+<li><p><strong>この問題は先ほどの２問とは独立していることに注意せよ．</strong> 最初，物体 <span class="math inline">\(m,M\)</span> の距離は <span class="math inline">\(L\)</span> であり，両物体の距離を <span class="math inline">\(r\)</span> としたとき， <span class="math inline">\(F=k/r^2\)</span> であるという．この時次の問いに答えよ．</p>
+<ol type="1">
+<li>次の文章の空欄（ア）〜（エ）に適切な言葉，もしくは，数式を書き入れよ．
+<ul>
+<li>この問題を解析する場合，両物体の運動方程式を書き上げるよりも，重心運動方程式と相対運動方程式を立式することが優れていると考えられる．最初の <span class="math inline">\(m\)</span> の進む向きを正として <span class="math inline">\(x\)</span> 軸を設け， <span class="math inline">\(x,\:X\)</span> を両物体の位置として， <span class="math inline">\(r=X-x\)</span> とおく．この時，重心運動方程式は（ア），相対運動方程式は（イ）と立式することができる．これによって，この系の重心は（ウ）であることがわかる．また，（イ）を直接解かなくとも，両辺に <span class="math inline">\(\dot{r}\)</span> をかけることによって，両辺とも，ある関数の時間微分であるとすることができる．式を整理すれば， <span class="math inline">\(\dv{t}(\text{エ})=0\)</span> とすることができる．つまり，（エ）は時間によらず一定である（保存している）ことがわかるのだ．</li>
+</ul></li>
+<li>両物体が最も近づいた時の距離を求めよ．</li>
+<li><span class="math inline">\(v_1,\:V_1\)</span> を <span class="math inline">\(m,\:M,\:v_0\)</span> を用いて表せ．</li>
+<li>系全体の運動エネルギーははじめと，両物体が等速運動するようになった時とで保存しているか．保存している場合はその理由を，保存していない場合はその変化分を答えよ．</li>
+</ol></li>
+</ol>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<ol type="1">
+<li><ol type="1">
+<li>一覧にすると， <span class="math display">\[\begin{align*}
+K_1&amp;=\frac{1}{2}mv_0^2\\
+K_2&amp;=0\\
+K_G&amp;=\frac{1}{2}\frac{m^2}{m+M}v_0^2\\
+K_{in}&amp;=\frac{1}{2}\frac{mM}{m+m}v_0^2
+\end{align*}\]</span></li>
+<li>まず力が働くまでは簡単であり， <span class="math inline">\(t_0=L-l/v_0\)</span> として， <span class="math display">\[v=v_0,\:V=0\;(t=0 \sim t_0)\]</span> 続いては，重心運動と重心から見た運動をわけて考える．相対運動方程式が <span class="math display">\[\mu \dot{v_r}=-F\]</span> であることから，相対加速度は <span class="math inline">\(-F/\mu\)</span> であり，相対速さは <span class="math inline">\(v_0-F(t-t_0)/\mu\)</span> となる．そして，外力が働かないため重心速度は常に <span class="math inline">\(\frac{m}{m+M}v_0\)</span> なので， <span class="math inline">\(v_i=v_G+v_{iG}\)</span> と， <span class="math inline">\(v_{iG}\)</span> が質量の逆比であることなどを使えば， <span class="math display">\[\begin{align*}
+v&amp;=\frac{m}{m+M}v_0-\frac{M}{m+M}\left(v_0-\frac{F}{\mu}(t-t_0)\right)\\
+V&amp;=\frac{m}{m+M}v_0+\frac{m}{m+M}\left(v_0-\frac{F}{\mu}(t-t_0)\right)
+\end{align*}\]</span> ただしこれが当てはまる時間は，物体間の距離が <span class="math inline">\(l\)</span> に戻るまで，つまり，等加速度運動の特徴を考えれば，相対速度が反転するまでであり，ゆえに <span class="math inline">\(t=t_0 \sim t_0 + 2\mu v_0/F\)</span> である．最後に <span class="math inline">\(t \geq t_0 + 2\mu v_0/F\)</span> の時はどうなるかというと，常に等速運動をすることになり， <span class="math inline">\(v=-v_1,\: V=V_1\)</span> となる． <span class="math inline">\(v_1,\:V_1\)</span> の値は，先ほどの考え方を進めることによって簡単に決まり， <span class="math display">\[\begin{align*}
+v&amp;=\frac{m}{m+M}v_0-\frac{M}{m+M}v_0\\
+V&amp;=\frac{m}{m+M}v_0+\frac{m}{m+M}v_0
+\end{align*}\]</span> となる．</li>
+<li>外力がないので，重心速度も運動量も不変であり，それぞれ， <span class="math display">\[\begin{align*}
+v_G&amp;=\frac{m}{m+M}v_0\\
+P&amp;=mv_0
+\end{align*}\]</span></li>
+<li>外力がないので，重心運動エネルギーは不変であり， <span class="math display">\[\begin{align*}
+K_G&amp;=\frac{1}{2}\frac{m^2}{m+M}v_0^2
+\end{align*}\]</span></li>
+</ol></li>
+</ol>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>地面に物体 <span class="math inline">\(M\)</span> と，その上に物体 <span class="math inline">\(m\)</span> を載せている．最初物体 <span class="math inline">\(m\)</span> は右向きに速さ <span class="math inline">\(v\)</span> を持っている．ある程度時間がたつと，物体 <span class="math inline">\(m\)</span> は坂を上り切って，飛び出した．この時， <span class="math inline">\(m\)</span> は最初の高さに比べて，どれほど高さまで飛んだか．ただし，摩擦はすべて無視せよ．</p>
+<p><img src="images/energy/energy1.png" class="img-fluid"></p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p>物体 <span class="math inline">\(m\)</span> の右向きの速さが <span class="math inline">\(M\)</span> の右向きの速さより大きいと，飛び出すことができないし，逆はあり得ないので，飛び出す際の <span class="math inline">\(m,M\)</span> の右の速さは同じであり，それを <span class="math inline">\(v_x\)</span> とする． <span class="math display">\[v_x=\frac{m}{m+M}v\]</span> ここで，飛び出す瞬間の <span class="math inline">\(m\)</span> の上向の速さを <span class="math inline">\(v_y\)</span> にすると， <span class="math display">\[\frac{1}{2}mv^2=\frac{1}{2}(m+M)v_x^2+\frac{1}{2}mv_y^2+mgh_1\]</span> <span class="math inline">\(h_1\)</span> は飛び出す地点の高さである．さらに，飛び出す地点から <span class="math inline">\(m\)</span> が到達する最高地点までの鉛直距離 <span class="math inline">\(h_2\)</span> は <span class="math display">\[v_y^2=2gh_2\]</span> と表せるので，全ての指揮を整理して連立すれば， <span class="math display">\[h_1+h_2=\frac{M}{M+m}\frac{v^2}{2g}\]</span> とわかる．</p>
+<p>だがこの問題を一瞬で解決する方法もある．</p>
+<p>この問題は，重心運動エネルギーが不変であるため，外部への仕事は全て内部運動エネルギーによってなされる．そして，物体 <span class="math inline">\(m\)</span> が最も高く飛び上がった瞬間，両物体の相対速さは0となるので，内部運動エネルギーは全て物体 <span class="math inline">\(m\)</span> の飛び上がりに使われたとして考えられるので，さらに２体問題であることを考慮して，換算質量を <span class="math inline">\(\mu\)</span> とすれば， <span class="math display">\[\frac{1}{2}\mu v^2=mgh\]</span> <span class="math display">\[h=\frac{M}{M+m}\frac{v^2}{2g}\]</span> とわかる．</p>
+</details>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../source/newton-mechanics.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ニュートンの法則</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../source/database.html" class="pagination-link">
+        <span class="nav-page-text">Preface</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

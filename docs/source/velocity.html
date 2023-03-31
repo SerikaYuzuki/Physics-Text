@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Physics Text - 2&nbsp; 位置，速度，加速度</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../source/newton-mechanics.html" rel="next">
+<link href="../source/intro.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">位置，速度，加速度</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Physics Text</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../source/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">数学的準備</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../source/velocity.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">位置，速度，加速度</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../source/newton-mechanics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ニュートンの法則</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../source/database.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#難問パート" id="toc-難問パート" class="nav-link active" data-scroll-target="#難問パート"><span class="toc-section-number">2.0.1</span>  難問パート</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">位置，速度，加速度</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><span class="math inline">\(\require{physics}\)</span></p>
+<p>この章では主に速度とか速度についてお話しさせていただきます．</p>
+<p>まず，物理の話を始める際において，物理は何かということを明らかにしなければなりません．ところが物理とは何かという問題はあまりに大雑把で，人によってその定義が変わるものだし，専門とする分野によっても大きく姿を変えることでしょう．ですが，それらを全てまとめ上げ，最大公約数的な解答を一つ提示できるとすれば，私たちの身の回りで起きている，現象について語る学問だということになるのではないかと思います．</p>
+<p>例えば，皆さんがこの本をパソコン越しでみているとします．その時，パソコンに映る表示映像というのも何らかの現象でしょう．ではその現象を観察し，何か語れるものがあるのかと考えてみましょう．例えば，「あ」という文字と「あ」という文字は全くもって同じ形をしているという法則が見つけられるかもしれません．マウスホイールを回すとテキストが流れていくという法則も見えてくるでしょう．</p>
+<p>ところが現象とざっくり言ってしまっては，どの現象をどの角度から見ることになるかがはっきりしてきません．では，私たちがこれから学ぶ物理学の，ひとまず注視することとなる現象を考えることから始めましょう．その現象とは，動く物体です．</p>
+<p>ここでは話がわかりやすくイメージできるように，とあるパチンコ玉を考えてみましょう．そのパチンコ玉は机の上に置かれていて，手で弾いてやると机の上をまっすぐ転がっていき，やがて机の淵から落ちて地面と衝突し，数度バウンスしたのちに床で止まりました．</p>
+<p>さて，この現象を語るのに今は日本語という言葉を使いましたが，これでパチンコ玉の運動の仔細は語り尽くされたのでしょうか．弾き飛ばされたパチンコ玉がどれくらい早く動き，机に対してどんな角度で転がって，机の淵までどれくらいの時間で辿り着き，バウンスによってどれだけの高さに跳ね上がり，どの場所でその動きを止めたのか．少なくともこれらの情報がなければ，現象を語られた人が同一の現象を想定することは不可能でしょう．また，これらの情報を渡されたところで，全く同じ現象を想定するのも難しいに違いありません．そしてその再現度こそが，現象を語り尽くすことの根幹なのではないでしょうか．</p>
+<p>では，どうすれば，パチンコ玉の運動を語り尽くせるのでしょうか．その時に使われるのが，数学の力なのです．</p>
+<p>パチンコ玉の中心点の座標 <span class="math inline">\(\boldsymbol{r}\)</span> を，時間 <span class="math inline">\(t\)</span> ごとに追っていって，その全ての時間に対して解析を行い，時間の関数となる <span class="math inline">\(\boldsymbol{r}(t)\)</span> を書き上げれば，上に書かれたすべての疑問に対して回答することができ，さらには現象を語り尽くすことができるのではないでしょうか．もっと具体的に言えば，パチンコ玉の回転なども考慮すべきでしょうが，今の所，それは無視することにします．</p>
+<p>では，今，私たちはパチンコ玉の運動を語り尽くす手段を知りました．では，その運動の様相をどのようにして解析するのかを考える段階に入りましょう．確かに，パチンコ玉は <span class="math inline">\(\boldsymbol{r}(t)\)</span> に従って動いていますが，我々の直感として「動いている」と感じることのできる指標である「速さ」が必要になるでしょう．動いているか，動いていないかの判別にも使えるし，動いている様相の説明にも使えるでしょう．</p>
+<p>また，物理学という学問の性質上，古の巨人が築き上げた知識を引き継ぐことが大いにありますが，ニュートンの語るところによれば，物体の運動において大きな役割を持つ指標が加速度であるので，それも合わせて定義していくことにします．</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+定義
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>とある物体の時刻 <span class="math inline">\(t\)</span> における位置ベクトルを <span class="math inline">\(\boldsymbol{r}(t)\)</span> とした時、</p>
+<p>その物体の速度を <span class="math display">\[\boldsymbol{v}(t)=\frac{d\boldsymbol{r}}{dt}=\dot{\boldsymbol{r}}\]</span></p>
+<p>加速度を <span class="math display">\[\boldsymbol{a}(t)=\frac{d^2\boldsymbol{r}}{dt^2}=\ddot{\boldsymbol{r}}=\dot{\boldsymbol{v}}\]</span></p>
+<p>と定義する。また、 <span class="math display">\[\boldsymbol{r}(0),\boldsymbol{v}(0)\]</span> をそれぞれ初期位置、初速度と呼び，速度の絶対値を速さと呼ぶ．</p>
+</div>
+</div>
+<p>速度とは，わずかな時間における時間あたりの位置の変化です．つまり，そのわずかな時間をかけてやることによって，わずかな時間に起きた位置の変化を求めることができ，さらに，そのわずかな時間に起きた位置の変化を全て足し合わせることによって，位置を求めることができるのです．</p>
+<p>ここで， <span class="math inline">\(t=0\)</span> から <span class="math inline">\(t=T\)</span> までの時間を <span class="math inline">\(n\)</span> 個に区切り，その一区切りの時間の長さを <span class="math inline">\(\Delta t\)</span> ， <span class="math inline">\(i\)</span> 区切り目の時刻を <span class="math inline">\(t_i\)</span> としてやれば，</p>
+<p><span class="math display">\[\boldsymbol{r}(t)\approx\sum_{i=0}^n \boldsymbol{v}(t_i)\Delta t\]</span></p>
+<p>とすることができ，極限をとってあげることによって</p>
+<p><span class="math display">\[\boldsymbol{r}(t)= \lim_{\Delta t \to 0}\sum_{i=0}^n \boldsymbol{v}(t_i)\Delta t=\int \boldsymbol{v}(t_i)\dd t\]</span></p>
+<p>となるわけです．同様の話が加速度についても言えます．では，これからは実際に例題を用いて，今までの知識を深めていきましょう．</p>
+<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+例題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(x\)</span> 方向への一次元で，速度が一定 <span class="math inline">\(v\)</span> の物体の運動を考える．最初物体は <span class="math inline">\(x=x_0\)</span> にあったとして，時刻が <span class="math inline">\(t=T\)</span> になった時の位置を求めよ．</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p>まず， <span class="math inline">\(x=x_0\)</span> から <span class="math inline">\(t=T\)</span> だけ経った時に物体がどれだけ動いたか考えると</p>
+<p><span class="math display">\[\int_0^T v \dd t=vT\]</span></p>
+<p>なので， <span class="math inline">\(x_0+vT\)</span> が答えになる．</p>
+<p>次に別の方法を考えると，</p>
+<p><span class="math display">\[x=\int v \dd t = vt+C\]</span></p>
+<p>であるので，初期条件の <span class="math inline">\(t=0,\; x=x_0\)</span> を代入すると</p>
+<p><span class="math display">\[x = vt + x_0\]</span></p>
+<p>ここで，積分が定積分ではなく，不定積分であることに注目せよ．定積分でない理由は，この場合， <span class="math inline">\(x\)</span> を求めるのに，微分の逆演算をしているに過ぎず，ある定まった区間での積分として考えていない．</p>
+</details>
+<p>次の問題では，一次元の等加速度運動を全てまとめているものになります．</p>
+<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+例題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(x\)</span> 方向への一次元で，加速度が一定 <span class="math inline">\(a\)</span> の物体の運動を考える．時刻 <span class="math inline">\(t=t_0\)</span> 物体は <span class="math inline">\(x=x_0,\; v=v_0\)</span> だったとして，時刻が <span class="math inline">\(t\)</span> になった時の位置を求めよ．</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p>前の問題の結果を使えば，</p>
+<p><span class="math display">\[v=v_0+\int_{t_0}^{t}v\dd t = v_0 + a(t-t_0)\]</span></p>
+<p>この解答は <span class="math inline">\((t-t_o)\)</span> を一塊としてみて，先の問題の <span class="math inline">\(T\)</span> のように扱っている．塊として考えればこれからの問題も比較的楽に解決される．ここでは <span class="math inline">\(T=t-t_0\)</span> とすれば，</p>
+<p><span class="math display">\[v=v_0 + aT\]</span></p>
+<p><span class="math display">\[x-x_0=\int_{0}^{T}v\dd t =\frac{1}{2}aT^2+v_0T\]</span></p>
+<p><span class="math display">\[x = \frac{1}{2}aT^2+v_0T + x_0\]</span></p>
+<p>このように扱うことができるわけだが，読者が問題解決の際には <span class="math inline">\(T\)</span> をわざわざ定義しなくとも，塊のまま見てあげることによって，</p>
+<p><span class="math display">\[x = \frac{1}{2}a(t-t_0)^2+v_0(t-t_0) + x_0\]</span></p>
+<p>としてあげれば良い．</p>
+</details>
+<p>では，先述した，加速度が物理において重要な役割を持つ理由について少し話しましょう．</p>
+<p>地上において，支えをなくした物体が自由落下するという現象について，人類は長い間色々な議論を作り上げました．その中でもおそらく最も正確に現象に忠実な解釈は「自由落下する物体は常に鉛直方法下向きに一定の加速度を持つ」というものでしょう．その加速度の大きさは重力加速度といわれ， <span class="math inline">\(g=9.8\:\text{m}/\text{s}^2\)</span> と測定されています．この本ではこれから特に断りなく <span class="math inline">\(g\)</span> を重力加速度として扱っていくのでご注意ください．</p>
+<p>簡単な例として，鉛直上向きに <span class="math inline">\(y\)</span> 軸を設定し，初期位置が <span class="math inline">\(y=y_0\)</span> である物体の自由落下を記述してみましょう．</p>
+<p><span class="math display">\[\ddot{y}=-g\]</span> <span class="math display">\[\dot{y}=-gt\]</span> <span class="math display">\[y=y_0-\frac{1}{2}gt^2\]</span></p>
+<p>次に，相対位置の定義だけ少し説明します．ベクトルになれた読者の方にとって，あまり難しい概念ではないので，定義だけ載せます．</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+定義
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>とある２つの物体の位置ベクトルを <span class="math inline">\(\boldsymbol{r_1},\;\boldsymbol{r_2}\)</span> とした時、</p>
+<p>物体2の，物体1から見た相対位置ベクトルを</p>
+<p><span class="math display">\[\boldsymbol{r_{21}}=\boldsymbol{r_2}-\boldsymbol{r_1}\]</span></p>
+<p>と定義し，相対速度，相対加速度も同様にして定義する．</p>
+</div>
+</div>
+<p>では，実際の問題を解きながら，加速度と速度について慣れていきましょう．</p>
+<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+例題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><img src="images/velocity/mondai2.png" class="img-fluid"></p>
+<p>図の通り <span class="math inline">\(O,A\)</span> に物体 <span class="math inline">\(o,a\)</span> があり、それらをそれぞれ違う速度で同時に射出する機構がある。全ての物体が鉛直下向きに大きさ <span class="math inline">\(g\)</span> の加速度を受ける状態にある。物体 <span class="math inline">\(o\)</span> を初速度の大きさ <span class="math inline">\(v_0\)</span> で射出し、射出される角度を水平方向から見て上方向に <span class="math inline">\(\theta\)</span> とする時、次の問いに答えよ。</p>
+<ol type="1">
+<li><p>物体 <span class="math inline">\(o\)</span> の軌跡を求めよ．</p></li>
+<li><p>物体 <span class="math inline">\(o\)</span> がはじめと同じ高さの地点を通過する際、最も水平方向遠方へと射出される <span class="math inline">\(\theta\)</span> の条件を求めよ。</p></li>
+<li><p>物体 <span class="math inline">\(a\)</span> が初速度0で射出された場合、物体 <span class="math inline">\(a\)</span> の物体 <span class="math inline">\(0\)</span> から見た相対位置ベクトルはどうなるか。</p></li>
+<li><p>物体 <span class="math inline">\(a\)</span> が初速度0で射出された場合、2物体が衝突する <span class="math inline">\(\theta\)</span> の条件を求めよ。</p></li>
+<li><p>物体 <span class="math inline">\(a\)</span> が鉛直下向きに大きさ <span class="math inline">\(v_1\)</span> 初速度で射出された場合、2物体が衝突する <span class="math inline">\(\theta\)</span> の条件を求めよ。</p></li>
+<li><p>全ての物体が鉛直下向きに大きさ <span class="math inline">\(g\)</span> の加速度を受ける状態にあるとして今までの問題を解いてきたが、その条件を取り払い、代わりに、全ての物体が水平右向きに大きさ<span class="math inline">\(h\)</span>の加速度を受ける状態にあるとすると、問題2,3の結果はどうなるか。</p></li>
+</ol>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<ol type="1">
+<li><p>時刻<span class="math inline">\(t\)</span>における物体 <span class="math inline">\(o\)</span> の加速度は <span class="math inline">\((0,-g)\)</span> となるので、これを積分すれば速度がもとまる．ベクトルの積分は各要素それぞれに対して行えばいいだけなので、 <span class="math inline">\(\boldsymbol{v}(t)=(C_1,C_2-gt)\)</span> となる。ここで積分定数である <span class="math inline">\(C_1,C_2\)</span> を決めていくこととなる．<span class="math display">\[ \]</span> 数学では不定積分は積分定数を放置したままやっていたことが多いと思われるが、物理では積分定数を決めなければならないことが多い。その理由は、数学では微分をすることによって元の関数に戻る関数群を求めていたと言う作業をしていたが、物理ではそのような関数群のうち、現実を記述していると思われる一つの関数を定めるからである。同時に二つ以上の速度を持つ物体というものは存在しないのだ。<span class="math display">\[ \]</span> では、どのようにして積分定数を求めていくかというと、前の0台と同じく，与えられた条件を代入すれば良い。同時に二つ以上の速度を持たない物体なのであれば、任意の時刻において一つの速度を持つはずである。この問題の場合、射出時に <span class="math inline">\((v_0\cos \theta, v_0 \sin \theta)\)</span> の速度を持つことが与えられた条件で，このときの時刻を <span class="math inline">\(t_0\)</span> とでもおいてやれば、 <span class="math inline">\(\boldsymbol{v}(t_0)=(v_0\cos \theta, v_0 \sin \theta)\)</span> という方程式になる。これによって <span class="math inline">\(\boldsymbol{v}(t_0)=(v_0\cos \theta, v_0 \sin \theta-g(t-t_0))\)</span> ともとまる。<span class="math display">\[ \]</span> 賢明な読者の方は開始時刻を　<span class="math inline">\(t_0\)</span> と置くのはエレファントな考え方であるというかもしれない。その通りである。開始時刻を <span class="math inline">\(0\)</span> にすればもっと単純な式になる。だが，せっかくの例題なので，あえて面倒な方で解いても解けることをまず示しておこうと思う．<span class="math display">\[ \]</span> さて、解答の続きに戻ると、<span class="math inline">\(\boldsymbol{v}\)</span> によって物体 <span class="math inline">\(o\)</span> の座標 <span class="math inline">\(\boldsymbol{r}\)</span> を求めないことには話は始まらない。ならば、 <span class="math inline">\(\boldsymbol{v}\)</span> を再び <span class="math inline">\(t\)</span> で積分してやって、時刻 <span class="math inline">\(t_0\)</span> における物体 <span class="math inline">\(o\)</span> の座標 <span class="math inline">\((x_0,y_0)\)</span> でもって積分定数を求めてやれと、そう考えるのが先の発想であった。ここでは <span class="math inline">\(t-t_0\)</span> という塊で考える。そうすれば自然と次が求める物体 <span class="math inline">\(o\)</span> の座標になるわけである． <span class="math display">\[\boldsymbol{r}(t)=(x_0+v_0\cos \theta (t-t_0), y_0+v_0 \sin \theta (t-t_0)-\frac{1}{2}g(t-t_0)^2)\]</span> 同様に， <span class="math inline">\(t-t_0\)</span> を塊としてみて，計算を続ければ軌跡は <span class="math display">\[y=y_0+(x-x_0)\tan\theta-\frac{g}{2}\frac{(x-x_0)^2}{v_0^2\cos^2\theta}\]</span> と，求まる．</p></li>
+<li><p>結論を言えば、 <span class="math inline">\(r_y=y_0\)</span> となる <span class="math inline">\(t\)</span> は　<span class="math inline">\(t-t_0=0,\frac{2v_o\sin\theta}{g}\)</span>　で、後者を　<span class="math inline">\(r_x\)</span>　に代入し、 <span class="math display">\[r_x=x_0+\frac{2v_0^2}{g}\sin \theta \cos \theta=x_0+\frac{v_0^2}{g}\sin 2\theta\]</span> となることから、求める条件は<span class="math inline">\(\theta = \pi /4\)</span>となる．とても直感にあった結果となったと思う．</p></li>
+<li><p>この問題の作業は問題1と同じなので、略解のみを書く。求めるベクトルは <span class="math inline">\(T=t-t_0\)</span> として， <span class="math display">\[\boldsymbol{r}_r=(x_1-x_0-v_0\cos\theta T,y_1-y_0-v_0\sin\theta T)\]</span></p></li>
+<li><p><span class="math inline">\(\boldsymbol{r}_r=\boldsymbol{0}\)</span> となる <span class="math inline">\(T\)</span> が存在することが条件なので、 <span class="math display">\[\theta = \tan ^{-1} \frac{y_1-y_0}{x_1-x_0}\]</span> すなわち、最初から物体 <span class="math inline">\(o\)</span> を物体 <span class="math inline">\(a\)</span> に向けて発射さえすれば良いというのが、結論である。この次の問題である問題2をやれば、この問題を相対運動で見てやればただの等速運動問題であるとわかっていただけるだろう．</p></li>
+<li><p>この場合の相対速度が <span class="math display">\[\boldsymbol{r}_r=(x_1-x_0-v_0\cos\theta T,y_1-y_0-(v_0\sin\theta +v_1) T)\]</span> であることは、容易にわかるではないかと思う。なので求める条件は <span class="math display">\[\frac{\sin\theta + v_1/v_0}{\cos\theta} = \frac{y_1-y_0}{x_1-x_0}\]</span> となります。</p></li>
+<li><p>実際に各物体の座標を計算してみるのもいいが、両物体の座標が共通して持つ項は、相対位置ベクトルを計算する際に相殺されてしまう．例えばこの問題で言えば、両物体がどの方向であろうとも、同じような加速度を受ける状態なんであれば、 <span class="math display">\[\boldsymbol{r}_r=(x_1-x_0-v_0\cos\theta T,y_1-y_0-v_0\sin\theta T)\]</span> は変わらないです。ゆえに結果は変わりはない。加速度のみならず、速度や変位に関しても同じことが言えることにも注意せよ。</p></li>
+</ol>
+<p>最後に放物運動についての重要な性質をいくつか書いておく．</p>
+<ul>
+<li>放物開始点から最高点に達するまでの時間と，最高点から下の高さまで戻る時間は等しい</li>
+<li>同じ高さでは同じ速さとなる</li>
+</ul>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ある車が静止から加速度 <span class="math inline">\(a\)</span> で動き出した．同時に，同じ開始地点に速さ <span class="math inline">\(v\)</span> のトラックが通過した．この時次の問を答えよ．</p>
+<ol type="1">
+<li><p>車とトラックが再びすれ違うまで，どれだけの時間がかかったか</p></li>
+<li><p>車とトラックが再びすれ違うまで，車はどれほど進んだか</p></li>
+<li><p>車とトラックが再びすれ違う際の車の速度はいかほどか</p></li>
+</ol>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p>車とトラックの原点から見た位置をそれぞれ <span class="math inline">\(x_1,\: x_2\)</span> とした時，次の式が成り立つ．</p>
+<p><span class="math display">\[x_1=\frac{1}{2}at^2,\;x_2=vt\]</span></p>
+<p>車とトラックがすれ違う時間は <span class="math inline">\(x_1=x_2\)</span> で求まるので， <span class="math display">\[\underline{t=\frac{2v}{a}}\]</span> 次に進んだ距離 <span class="math inline">\(s\)</span> は <span class="math display">\[s=\frac{2v^2}{a}\]</span> 車の速さ <span class="math inline">\(V\)</span> は <span class="math display">\[V=2v\]</span> となる．</p>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>次の等式を示せ．</li>
+</ol>
+<p><span class="math display">\[\int \ddot{x} dx = \frac{1}{2}v^2 + C\]</span> 特に <span class="math inline">\(\ddot{x}=a\)</span> と加速度が一定の際，初速度 <span class="math inline">\(v_0\)</span> から運動を始めて <span class="math inline">\(x\)</span> だけ進んだ物体の速さを <span class="math inline">\(V\)</span> として， <span class="math display">\[v^2-v_0^2=2ax\]</span> が成り立つことを示せ．</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p><span class="math display">\[\int　a\dd x=\int　\dot{v}\dv{x}{t}\dd t = \int　\dot{v}v\dd t=\frac{1}{2}v^2 +C\]</span> 問題後半については， <span class="math display">\[\int_{0}^{x}a\dd x=\int_{0}^{T}\dot{v}\dv{x}{t}\dd t = \int_{0}^{T}\dot{v}v\dd t=\left[\frac{1}{2}v^2\right]_{0}^{T}=\frac{1}{2}(V^2-v_0^2)\]</span> <span class="math display">\[\int_{0}^{x}a\dd x=ax\]</span> から導き出される．</p>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題 (アデレード大)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>鉛直上向き正の <span class="math inline">\(y\)</span> 軸の原点から<strong>下に離れた位置</strong>から，鉛直上向きにある物体を投げ上げた時，その物体の高さ <span class="math inline">\(y=-h\)</span> の時の速さが，高さ <span class="math inline">\(y=h\)</span> の時の速さの2倍になったという．この時，この物体の最高到達位置を求めよ．</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p>高さ <span class="math inline">\(y=0,\:h\)</span> の時の速さをそれぞれ <span class="math inline">\(u,v\)</span> とした時，次の式が成り立つ <span class="math display">\[v^2-u^2=-2gh\]</span> <span class="math display">\[(2v)^2-u^2=2gh\]</span> この式から <span class="math inline">\(v\)</span> を消すことによって次の式が成り立つ <span class="math display">\[u^2=\frac{10}{3}gh\]</span> 最後にこの物体がたどり着ける最高点の高さを <span class="math inline">\(H\)</span> とした時， <span class="math display">\[H=\frac{u^2}{2g}=\frac{5}{3}h\]</span> となることがわかる．</p>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ある粒子が下の図のような加速度で移動したとする．初速を <span class="math inline">\(v_0\)</span> とした時， <span class="math inline">\(x=3x_0\)</span> の時の速さを求めよ．<strong>ただし，横軸が時間ではなく座標であることに注意せよ．</strong></p>
+<p><img src="../images/velocity/mondai1-re.png" class="img-fluid"></p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p><span class="math display">\[\int_{0}^{3x_0}a\dd x=\int_{0}^{T}\dot{v}\dv{x}{t}\dd t = \int_{0}^{T}\dot{v}v\dd t=\left[\frac{1}{2}v^2\right]_{0}^{T}=\frac{1}{2}(V^2-v_0^2)\]</span></p>
+<p>また，台形の面積により，</p>
+<p><span class="math display">\[\int_{0}^{3x_0}a\dd x = 2a_0x_0\]</span></p>
+<p><span class="math display">\[V=\sqrt{v_0^2+4a_0x_0}\]</span></p>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>幅が<span class="math inline">\(L\)</span>で、ある地点から河岸までの両距離を <span class="math inline">\(\delta_1,\delta_2\)</span> とした時、その地点での流速が <span class="math inline">\(k\delta_1\delta_2\)</span> となる川があり、それを速さ <span class="math inline">\(v\)</span> の船で横断することを考える。船首は常に対岸に真っ直ぐ向いているとして、この船が描く軌跡はどうなるか。適当に座標を設定して答えよ。</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p>川の流れる方向を <span class="math inline">\(y\)</span> 軸，船の進む方向を <span class="math inline">\(x\)</span> 軸，船の最初いる場所を原点として、 <span class="math inline">\(xy\)</span> 座標を考える。船のいる座標は <span class="math inline">\(\boldsymbol{r}=(x,y)\)</span> である時、川の流れは <span class="math inline">\(kx(L-x)\)</span> となるので、 <span class="math inline">\(\boldsymbol{v}=(v,kx(L-x))\)</span> となる。ここで、 <span class="math inline">\(x=vt\)</span> から、 <span class="math inline">\(v_y=kvt(L-vt)\)</span> となり、実際に積分計算をしてやると、 <span class="math inline">\(y=kvL\frac{t^2}{2}-kv^2\frac{t^3}{3}\)</span> となり、軌跡を出さないといけないので <span class="math inline">\(t\)</span> を代入をしてやれば、 <span class="math display">\[y=\frac{kL}{2v}x^2-\frac{k}{3v}x^3\]</span> が答えになる。</p>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>2輌の燃料タンクが積まれた車A,Bがあり、それぞれ2種類のエンジンを搭載している。これらのエンジンの効率などを計測するために、2輌の車を同じ長さのテストコースで走らせる。Aは丁度コースの半分まで加速し続け、その後は等速でコースを走り去った。Bはコースの最後まで加速し続けた。奇しくもA,Bは同時刻に発射し、同時刻にゴールに達した。A,Bの加速度の比と、ゴール時の速度の比を求めよ。</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p>コースの長さを <span class="math inline">\(L\)</span> 、それぞれの車の加速度を <span class="math inline">\(a_A,a_B\)</span> 、最大速度に達する時間を <span class="math inline">\(t,T\)</span> とおくと次のような方程式が成り立つ． <span class="math display">\[L=\frac{1}{2}a_At^2+a_At(T-t)\]</span> <span class="math display">\[L=\frac{1}{2}a_BT^2\]</span> <span class="math display">\[\frac{1}{2}L=\frac{1}{2}a_At^2\]</span> これらの方程式は未知数が5つあるので、一見解決は無理そうに見えますが、全ての式が <span class="math inline">\(L\)</span> だけの変数を持つ左辺を持つ事実と、右辺の字数が全て揃っているところから解決が可能である。実際、1,2番目の式を3番目の式で割ってやれば、 <span class="math inline">\(a_A/a_B,T/t\)</span> の二つを未知数と見立てた方程式が出来上がり、実際に計算してやると、 <span class="math display">\[\frac{a_A}{a_B}=\frac{9}{8},\;\frac{a_At}{a_BT}=\frac{3}{4}\]</span> が求める比になる。</p>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>一定の流速の川でモーターボートとイカダが動いている．モーターボートは川の流速に対して一定の速度を保ちながら動いており，また，イカダは動力を持たずに川に流されているものとする．</p>
+<p>モーターボートはある地点Aでイカダを通り越し，それから時間 <span class="math inline">\(t\)</span> 後に地点Bで引き返し，再び地点Cでイカダとすれ違った．地点Aと地点Bの距離は <span class="math inline">\(l\)</span> であるとして，この川の流速を求めよ．</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p>流速とともに動く座標系で考える（もしこの考え方に馴染みがなければ，最初は飛ばしても良い）．この時，イカダは常に止まっており，モーターボードのみがイカダから離れては戻ってくる運動をする．この時，行きと戻りは，同じ距離を同じ速さで動いているので，ともに同じ時間 <span class="math inline">\(t\)</span> だけかかり，合計 <span class="math inline">\(2t\)</span> だけかかったことになる．ここで川に対してとまっている，地面に対して静止している座標系で考えた時，イカダは <span class="math inline">\(l\)</span> だけ動いたことになる．つまり，イカダは <span class="math inline">\(2t\)</span> の時間で <span class="math inline">\(l\)</span> だけ動いたことになり，流速は <span class="math inline">\(l/2t\)</span> と求まる．</p>
+<p>次に少しだけだが煩雑な考え方をする． <span class="math inline">\(AB=BC+l\)</span> なので，モーターボートが引き返したのちにイカダとすれ違うまでの時間を <span class="math inline">\(t'\)</span> ,ボートのかわに対する速さを <span class="math inline">\(V\)</span> とすると <span class="math display">\[(V+v)t=l+(V-v)t'\]</span> また，イカダは時間 <span class="math inline">\(t'\)</span> の間に <span class="math inline">\(l\)</span> だけ進んでいるので， <span class="math display">\[vt'=l\]</span> これらを連立することによって <span class="math display">\[v=\frac{l}{2t}\]</span> とわかる．</p>
+</details>
+<section id="難問パート" class="level3" data-number="2.0.1">
+<h3 data-number="2.0.1" class="anchored" data-anchor-id="難問パート"><span class="header-section-number">2.0.1</span> 難問パート</h3>
+<p>これからの問題に対する直感的な解決法は問題の解答の後半にあるので、前半の記述が難しいと感じられたのであれば、スキップしてお読みいただければ嬉しいです。</p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(x=0\)</span> で固定された長さが最初 <span class="math inline">\(x=L\)</span> まである鉄板の端に車輪が立っており、鉄板は <span class="math inline">\(x\)</span> 軸プラス方向に無限に、均等に伸び続ける。また、車輪は鉄板に対して一定の速さ <span class="math inline">\(v\)</span> で <span class="math inline">\(x\)</span> 軸マイナス方向に進み続ける。この時、車輪が <span class="math inline">\(x=0\)</span> にまで辿り着く条件はどうなるか？</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p>鉄板と車輪の速さを <span class="math inline">\(v,c\)</span> とする。まず鉄板上を無数の点があると考える。鉄板が伸びるというのは、これらの無数の点の間隔が伸びることを意味する。次に、時刻 <span class="math inline">\(t\)</span> の時を考える。伸びる前における座標 <span class="math inline">\(x\)</span> の点上から座標 <span class="math inline">\(x-\dd x\)</span> の点まで、車輪がマイナス方向に転がる時間が <span class="math inline">\(\dd t\)</span> であるとする。二つの点の距離は鉄板の伸びから <span class="math inline">\(\frac{L+vt}{L}\dd x\)</span> で、これを <span class="math inline">\(\dd t\)</span> の時間で進むので、 <span class="math inline">\(c\dd t\)</span> となり、次の式が成り立つ。 <span class="math display">\[\frac{L+vt}{L}\dd x=c\dd t\]</span> <span class="math display">\[\dd x=\frac{c}{1+vt/L}\dd t\]</span> 両辺を <span class="math inline">\(0\)</span> から <span class="math inline">\(T\)</span> 積分してやれば <span class="math display">\[x=\frac{Lc}{v}\ln \frac{L+vT}{L}\]</span> ここで求めた <span class="math inline">\(x\)</span> とは、時間 <span class="math inline">\(T\)</span> までに車輪が進んだ距離の、伸びる前における座標の換算になります。つまり、 <span class="math inline">\(x=L\)</span> を代入して、求めた <span class="math inline">\(T\)</span> の <span class="math display">\[T=\frac{L}{v}(e^{\frac{v}{c}}-1)\]</span> が端にまで辿り着く時間となる。つまり、問題の答えとしては、伸びる速さがどれほどはやくとも、車輪がどれほどノロノロしていようと、鉄板が最初どれほど長かろうとも、有限の時間で絶対に車輪は端にたどり着くということである。\ 一見不思議な結果のように思われるかもしないが、実は少しだけ考え方を変えてやれば簡単に解決する。\</p>
+<p><strong>後半部分</strong></p>
+<p>車輪は常に <span class="math inline">\(x\)</span> 軸マイナス方向に進み続けているのだが、鉄板が伸びる速さがどれほどのものとなろうとも、伸びる前換算でプラス方向に進むことはあり得ない。なぜなら、車輪は常に鉄板に対して、その伸びる方向と逆方向に速さを持っているからである。なので、いつか絶対に端にたどり着くのだ。</p>
+</details>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+問題
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>一辺100メートルの正方形の各頂点に人A ,B ,C,Dが立っている。時刻0に秒速1メートルでAはBに向かい、BはC、CはD、DはAに向かって歩き始める。歩いている間は各々は自分が向かっていた相手を目指し続けて歩くとする。人を質点として考えるとき、彼らは出会うことはあるか。もしも出会うなら、彼らは何秒で出会い、どれだけの距離を歩き、最終地点の周りを何回周ったことになるか。また，正方形ではなく，正三角形だった場合はどうなるか．</p>
+</div>
+</div>
+<details>
+<summary>
+解答
+</summary>
+<p>具体的にそれぞれの人の歩く軌跡をデカルト座標で考えていくとすれば非常な困難に立ちはだかることが予想される。では、人の動き方が、対称性から四人が常に四角形を成す位置にあり、ぐるぐる周っていくことから、極座標での解決の仕方はどうだろうか。 <img src="images/velocity/mondai3.png" class="img-fluid"> 以上の図によって、おおよそ人のいつ場所と速度を考えることができる。ここで、時間を追って <span class="math inline">\(r,\theta\)</span> がどのように動くかを考えてみると、次の図のようになる。 <img src="images/velocity/mondai4.png" class="img-fluid"> <span class="math inline">\(r,v\)</span> の作る角度などから、次の2つの式を求めることができる． <span class="math display">\[dr=-v\cos 45^\circ dt\]</span> <span class="math display">\[\tan 45 ^\circ = \frac{rd\theta}{dr}\]</span> <span class="math inline">\(t=0\)</span>の時、<span class="math inline">\(r=R,\theta=0\)</span>として、微分方程式を解いていくことによって、 <span class="math display">\[r=R-\frac{v}{\sqrt{2}}t\]</span> <span class="math display">\[d\theta=\frac{dr}{r}\]</span> <span class="math display">\[r=Re^{-\theta}\]</span> <span class="math display">\[\theta = \ln \frac{R}{R-\frac{v}{\sqrt{2}}t}\]</span> のように <span class="math inline">\(r,\theta\)</span> を <span class="math inline">\(t\)</span> の関数で表すことができる。これらの式からA ,B ,C,Dが出会う時刻は　<span class="math inline">\(\sqrt{2}R/v\)</span>　となり、無限回最終地点の周りを周ったことになる。では、彼らがどれだけ歩いたことになるのだろうか。この問題は次のように解決される。 <span class="math display">\[\int_0^\infty \sqrt{r^2+(\frac{dr}{d\theta})^2} d\theta=\sqrt{2}R\]</span> 正三角形の場合も似たような議論が可能であるが，省略する．</p>
+<p><strong>後半部分</strong></p>
+<p>Bから見たAの相対速さは，AとBの速度が常に垂直なので， <span class="math inline">\(1\)</span> メートル毎秒となり、 <span class="math inline">\(100\)</span> 秒後に <span class="math inline">\(100\)</span> メートルに歩いて出会うことになる。対称性から無限回回転するか、一回も回転しないかどちらかで、明らかに後者ではないということもわかる。</p>
+<p>正三角形の場合は別の考え方をする．</p>
+<p><img src="images/velocity/mondai5.png" class="img-fluid"></p>
+<p>図のようにAは常に三角形の中心に向かって <span class="math inline">\(\sqrt{3}v/2\)</span> の速さで進むことになる．三角形の中心からAまでの最初の距離は <span class="math inline">\(100/\sqrt{3}\)</span> メートルなので，かかる時間は <span class="math inline">\(200/3\)</span> 秒である．また，お互いに向かって歩いている割合は図からわかるように <span class="math inline">\(1:2\)</span> なので，進む距離は <span class="math inline">\(100\times 2/3=200/3\)</span> mである．</p>
+</details>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../source/intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">数学的準備</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../source/newton-mechanics.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ニュートンの法則</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
