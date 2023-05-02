@@ -2,16 +2,13 @@
 
 ## 運動量
 
-$\require{physics}$
 運動方程式はそれ単体でかなりの現象を説明するものですが，世の中にはあまりにも多くの粒子が複雑に互いに力を及ぼし合っているので，解析し切ることができることが難しいことが多いです．
 
 そんな中で，前章でも述べた通り，多粒子を考える方法はあり，これからはその方法の一つを考えることにしましょう．
 
 まず，言葉の定義として，運動量について紹介します．
 
-::: {.callout-note icon=false}
-
-## 定義
+::: {.Dbox data-latex="{定義}"}
 
 とある物体が質量 $m$ ，速度 $\boldsymbol{v}$ を持っている時，その物体の運動量 $\boldsymbol{p}$ を次のように定義する．
 
@@ -41,9 +38,7 @@ $$\dot{\boldsymbol{p}}=\boldsymbol{F}$$
 \end{align*}
 このような結果が得られるわけです．このようにある値が定数であり続けることを，値が保存していると呼ばれます．また，全運動量の合計は，全質量と重心速度の積によって表すことができることもわかりました．以上をまとめると，
 
-::: {.callout-note icon=false}
-
-## 定理
+{.Tbox data-latex="{定理}"}
 
 外力の働かない系では，全運動量が保存する．また，系の全運動量 $\vb*{P}$ は
 
@@ -59,28 +54,24 @@ $$\vb*{P}=M_{\text{tot}}\boldsymbol{v}_{\text{G}} $$
 
 ここで， $\vb*{P}_{\text{in}}$ 重心から見た物体内部の全運動量ということで，内部運動量と呼ばれています．つまり，
 
-::: {.callout-note icon=false}
-
-## 定理
+::: {.Tbox data-latex="{定理}"} 定理
 
 任意の系を，重心を原点とする座標系で見れば，全運動量は $\boldsymbol{0}$ となる．別の言い方をすれば，内部運動量は常に $\boldsymbol{0}$ となる．
 
 :::
 
-::: {.callout-caution icon="false"}
-
-## 例題
+::: {.Rbox data-latex="{例題}"}
 
 宇宙の外力の及ばない場所に星がひとつあった．その星の中で何らかの現象が起き，その結果，二つの星が出来上がり，片方は質量 $m_1$ で速度 $\boldsymbol{v_1}$ だった．もう片方の質量が $m_2$ だった時の速度を求めよ．
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 $$m_1\boldsymbol{v_1}+m_2\boldsymbol{v_2}=\boldsymbol{0}$$
 $$\boldsymbol{v_2}=-\frac{m_1}{m_2}\boldsymbol{v_1}$$
 
-</details>
+
 
 ## 運動エネルギー
 
@@ -100,9 +91,7 @@ $$\dv{t}\left(\frac{1}{2}mv^2\right)=\boldsymbol{F}\cdot\vb*{v}$$
 \end{align*}
 この式の右辺は仕事と呼ばれています．以上のことをまとめると次のようになります．
 
-::: {.callout-note icon=false}
-
-## 法則
+::: {.Tbox data-latex="{定理}"} 法則
 
 \begin{align*}
 \frac{1}{2}mv_1^2-\frac{1}{2}mv_2^2&=\int_{\vb*{r}_0}^{\vb*{r}_1}\boldsymbol{F}\cdot \dd{\vb*{r}}
@@ -113,22 +102,20 @@ $$\dv{t}\left(\frac{1}{2}mv^2\right)=\boldsymbol{F}\cdot\vb*{v}$$
 
 では，実際にこの法則に従って，問題を解いてみることにしましょう．
 
-::: {.callout-caution icon="false"}
-
-## 例題
+::: {.Rbox data-latex="{例題}"}
 
 鉛直下向きに速さ $v_1$ の物体が，高さ $d$ だけ落下した．この時の物体の速さを求めよ．
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 \begin{align*}
 \frac{1}{2}mv_1^2-\frac{1}{2}mv_2^2&=\int_{y_0}^{y_1}mg \dd{y} = mg(y_1-y_0) = mgd\\
 v_2=\sqrt{v_1^2+2gd}
 \end{align*}
 
-</details>
+
 
 この問題は，運動方程式を解いてやれば解決するものです．ですが，その場合，物体の座標を時間の関数で表すことになるので，労力は大きく変わるでしょう．
 $$v^2-v_0^2=2\int a \dd{x}$$
@@ -156,9 +143,7 @@ $$
 
 この詳細については２体運動を説明する際に深掘り，再びこのトピックに戻って語ることになるので，今は法則としてだけまとめることとします．
 
-::: {.callout-note icon=false}
-
-## 法則
+::: {.Tbox data-latex="{定理}"} 法則
 
 $$\dot{K}=\sum_{i<j}\boldsymbol{F}_{ij}\cdot\boldsymbol{v}_{ij}$$
 
@@ -236,11 +221,11 @@ $$
 
 この数式において，未知数はどれだけあるでしょうか．当然ですが，各粒子の加速度と位置なので， $6n$ 個あるわけです．ですが，方程式の数は $3n$ 個しかないのです．なので，  $n$ 個の粒子に対しての運動方程式を解き切ることが昔から知られています．
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 物事は実はこんなに簡単なわけではなく，解析力学などの知識を駆使して初めてわかるものです．ここではこれ以上深く立ち入らないために，誤魔化した話し方をしています．気になるからは，自ら調べてみるといいかもしれません．
 
-</details>
+
 
 ところが，１体問題は単純な微分方程式であり，ゆえに高校で学ぶ程度の解析学の知識を使えばどうにかなる問題が多かったですね．実は２体問題に対しても，同じことが言えるのです．それは，２体問題の持つ数学的な特性によるものが大きく，３体問題に対しては使うことができないものです．
 
@@ -300,9 +285,7 @@ M_{\text{tot}} \ddot{\boldsymbol{r}_{\text{G}}} = \boldsymbol{F}_{1\text{out}}+\
 
 ![](images/energy/energy2.png)
 
-::: {.callout-note icon=false}
-
-## 法則
+::: {.Tbox data-latex="{定理}"} 法則
 
 重心系から見た２物体までの距離は質量の逆比で決まり，速さについても同じである．
 
@@ -321,9 +304,7 @@ $$\Delta K_{\text{all}} = \int \boldsymbol{F}_{12}\cdot\boldsymbol{v}_{12}\dd t 
  
 とわかるでしょう．ではこれらの事実を確認するために，問題を解いていきましょう．
 
-::: {.callout-caution icon="false"}
-
-## 例題
+::: {.Rbox data-latex="{例題}"}
 
 ![](images/energy/energy3.png)
 
@@ -350,7 +331,7 @@ $$\Delta K_{\text{all}} = \int \boldsymbol{F}_{12}\cdot\boldsymbol{v}_{12}\dd t 
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 1. 
     1. 一覧にすると，
@@ -385,12 +366,10 @@ $$\Delta K_{\text{all}} = \int \boldsymbol{F}_{12}\cdot\boldsymbol{v}_{12}\dd t 
     K_G&=\frac{1}{2}\frac{m^2}{m+M}v_0^2
     \end{align*}
 
-</details>
 
 
-::: {.callout-tip icon=false}
 
-## 問題
+::: {.Qbox data-latex="{問題}"}
 
 地面に物体 $M$ と，その上に物体 $m$ を載せている．最初物体 $m$ は右向きに速さ $v$ を持っている．ある程度時間がたつと，物体 $m$ は坂を上り切って，飛び出した．この時， $m$ は最初の高さに比べて，どれほど高さまで飛んだか．ただし，摩擦はすべて無視せよ．
 
@@ -398,7 +377,7 @@ $$\Delta K_{\text{all}} = \int \boldsymbol{F}_{12}\cdot\boldsymbol{v}_{12}\dd t 
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 物体 $m$ の右向きの速さが $M$ の右向きの速さより大きいと，飛び出すことができないし，逆はあり得ないので，飛び出す際の $m,M$ の右の速さは同じであり，それを $v_x$ とする．
 $$v_x=\frac{m}{m+M}v$$
@@ -417,21 +396,19 @@ $$\frac{1}{2}\mu v^2=mgh$$
 $$h=\frac{M}{M+m}\frac{v^2}{2g}$$
 とわかる．
 
-</details>
 
-::: {.callout-tip icon=false}
 
-## 問題(東京大)
+::: {.Qbox data-latex="{問題(東京大)}"}
 
 物体を手のひらにのせ,手をゆっくり上げても物体は手のひらから離れな いが,手を急激に上げ静止させると物体は手のひらから離れてとび上がる。この ような現象を模型的に考察してみよう。
-図1で示すように,水平面上に平らな台Aがあり,この台の上に質量 $m$ の物体Bをのせる。台を水平に保ったまま,図2に示す速度 $v_A$ で台を鉛直上方に持ち上げる。台が動きはじめてからの時間を $T$ とする。台および物体の鉛直方向の移動距離をそれぞれ $y_A,y_B$ とし,重力加速度を $g$ とする。物体には空気の抵抗力は働かないものとして,以下の設間に答えよ。
+図1で示すように,水平面上に平らな台Aがあり,この台の上に質量 $m$ の物体Bをのせる。台を水平に保ったまま,図2に示す速度 $v_A$ で台を鉛直上方に持ち上げる。台が動きはじめてからの時間を $T$ とする。台および物体の鉛直方向の移動距離をそれぞれ $y_A,y_B$ とし,重力加速度を $g$ とする。物体には空気の抵抗力は働かないものとして,以下の設間に答えよ。a
 
 ![](images/energy/energy1.png)
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 
 
-</details>
+

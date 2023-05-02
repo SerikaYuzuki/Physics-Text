@@ -1,6 +1,5 @@
 # ニュートンの法則
 
-$\require{physics}$
 これまでの章で皆さんが学んだ内容は運動学と呼ばれますが、運動学は物体の動き方（速度と加速度）を説明する学問です。
 
 これから皆さんが学ぶことになる力学は、力が物体や系の運動にどのように影響するかを研究する学問となります。力学の基礎は、アイザック・ニュートンによって法則としてまとめ上げられました。この法則は非常にシンプルなのにも関わらず、自然界をかなりの精度と範囲で記述することができています。また，この法則は、地球のみならず，惑星の動きなど，宇宙空間の状況に適用されるという点で、普遍的な法則でもあります。
@@ -15,9 +14,7 @@ $\require{physics}$
 
 では，この洞察を次のようにまとめることはできないでしょうか．
 
-::: {.callout-note icon=false}
-
-## ニュートンの第２法則（半分）
+::: {.Tbox data-latex="{定理}"} ニュートンの第２法則（半分）
 
 物体に力が働く時，その物体は加速度を持つ．
 :::
@@ -28,9 +25,8 @@ $\require{physics}$
 \end{align*}
 と言う関数 $f$ が存在すると言うことである．この関数の形を知ることができれば，私たちは力学の根本の大きな部分を理解することになるのですが，これについては偉大なる先人たちが導き出してくれました．なんとこの関数は一次関数だったのです．そして，その比例係数の逆数を，質量と呼ぶようになりました．
 
-::: {.callout-note icon=false}
-
-## ニュートンの第２法則(運動方程式)
+::: {.Tbox data-latex="{定理}"}
+ ニュートンの第２法則(運動方程式)
 
 物体の質量を $m$ ，物体の位置を $\boldsymbol{r}$ ，物体に働く力を $\boldsymbol{F}$ とした時，次の式が成り立つ．
 
@@ -40,7 +36,7 @@ $$\ddot{\boldsymbol{r}}=\frac{1}{m}\boldsymbol{F}$$
 ここで，$$m\ddot{\boldsymbol{r}}=\boldsymbol{F},\;\boldsymbol{F}=m\ddot{\boldsymbol{r}}$$ どちらがいいのかとか言う問題には立ち入らないことにします．式の順番に意義があると思われる方は自らの信念に従っていただければ嬉しいです．
 <details>
 筆者の考えるところでは，とある視点に基づいて考えるよりかは，色々な視点で持って数式は見るべきであり，数式に意味を持たせるべきと言う意見よりも，数式に意味を見出すべきだと言う意見を採用したいと思っています．
-</details>
+
 
 例えば次のような簡単な例を考えてみましょう．
 
@@ -57,9 +53,8 @@ a&=g
 
 では，運動方程式から推察できる簡単な事実を考えましょう．すなわち，力の働いていない物体はどのような運動をするのか，です．これは非常に簡単で $m\ddot{\boldsymbol{r}}=\boldsymbol{0},\;\dot{\boldsymbol{r}}=(\text{一定})$ と言う非常にシンプルな結果となるわけです．つまり，次のようにまとめられるわけです．
 
-::: {.callout-note icon=false}
-
-## ニュートンの第1法則(慣性の法則)
+::: {.Tbox data-latex="{定理}"}
+ ニュートンの第1法則(慣性の法則)
 
 力の働いていない物体は，常にその速度を保つ．
 
@@ -67,9 +62,8 @@ a&=g
 
 そして最後に，力の持つ性質を述べようと思います．それは，作用反作用の法則と呼ばれるものです．
 
-::: {.callout-note icon=false}
-
-## ニュートンの第３法則(作用反作用の法則)
+::: {.Tbox data-latex="{定理}"}
+ ニュートンの第３法則(作用反作用の法則)
 
 物体に働く力は，常にある２つの物体の間で及ぼしあうように働く．物体Aが物体Bに及ぼす力を $\boldsymbol{F_{BA}}$ ，物体Bが物体Aに及ぼす力を $\boldsymbol{F_{AB}}$ とした時，次の式が成り立つ．
 $$\boldsymbol{F_{BA}}+\boldsymbol{F_{AB}}=\boldsymbol{0}$$
@@ -90,7 +84,7 @@ $$\boldsymbol{F_{BA}}+\boldsymbol{F_{AB}}=\boldsymbol{0}$$
 
 このアイデアを次の状態で理解することにしましょう．
 
-![](/images/newton/newton1.png)
+![](images/newton/newton1.png)
 
 地面に立っている人間を考えてみましょう．この人間に働く力は基本的に２種類しかなく，それは万有引力と電磁気力です．まず，地球からの万有引力である重力の $mg$ があり，次に足と地面との距離が十分小さいために起きる電磁気力である反発力 $R$ があります．この時， $R$ がどのような値を取るのかというのは，この時点ではまだわかりません．なぜなら，地面と人間の足の境界には $10^{23}$ 個程度以上の原子の周りの電子が複雑に運動しており，その様相を語り尽くすことはとてもじゃないができないからです．ですが，この人間が加速度を持っていないという前提をつけてあげることによって $R$ の特定ができるわけです．問題を解決しやすくするために図のように $R$ を $N,F$ に分解して，それぞれの方向に対して運動方程式を立ててやることによって
 
@@ -105,9 +99,7 @@ $$\boldsymbol{F_{BA}}+\boldsymbol{F_{AB}}=\boldsymbol{0}$$
 
 では，これらの法則を実際にどのようにして問題に応用するべきでしょうか．これからは実際に問題を解いていくことによって，それらを明らかにしていこうと思います．
 
-::: {.callout-caution icon="false"}
-
-## 例題
+::: {.Rbox data-latex="{例題}"}
 
 下の図のように仰角 $\theta$ の斜面に物体を置いている．摩擦力がない時，この物体の持つ加速度はどうなるか．
 
@@ -115,7 +107,7 @@ $$\boldsymbol{F_{BA}}+\boldsymbol{F_{AB}}=\boldsymbol{0}$$
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 ![](images/newton/newton4.png)
 
@@ -135,7 +127,7 @@ N &= mg \cos \theta
 
 故に加速度の大きさは $\sqrt{\ddot{x}^2+\ddot{y}^2}=g \sin \theta$ で，方向は坂道の滑り落ちる方向である．
 
-</details>
+
 
 ニュートンの運動の法則は粒子に対して成り立つものであり，残念ながらある程度以上の粒子が集まっている「物体」については説明されていません．ですが，それでも，運動方程式から得られる情報はたくさんあります．例えば，とある場所に $n$ 個の粒子があり，それらが互いに力を及ぼしながら，外からも力を受けているとしましょう．その時， $i$ 番目の粒子の運動方程式は
 
@@ -161,9 +153,7 @@ M_{\text{tot}}\ddot{\boldsymbol{r}_\text{G}} = \sum_i\boldsymbol{F}_{i\text{out}
 
 以上の作業をしてみることでわかることですが，実は何に注目して運動方程式を立てるべきか，という問題に対して，内力が全て打ち消しあって，一様な外力が働いている，任意の粒子の集合部分が答えになります．何を塊として，運動方程式を立てるか，それは問題を解く人が一番やりやすい方法を選べばいいというわけですね．
 
-::: {.callout-caution icon="false"}
-
-## 例題
+::: {.Rbox data-latex="{例題}"}
 
 下の図のように紐に繋がれた２つの物体があり，右側の物体を引っ張っている．紐は物体とくっついていて離れず，故に物体と紐の間には引きつけあう電磁気力である，張力が働くことに注意して，次の問いに答えよ．ただし，重力は無視し，台座は動かないものとせよ．
 
@@ -175,7 +165,7 @@ M_{\text{tot}}\ddot{\boldsymbol{r}_\text{G}} = \sum_i\boldsymbol{F}_{i\text{out}
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 ![](images/newton/newton6.png)
 
@@ -201,11 +191,10 @@ T_1=T_2
 \end{align*}
 という関係がわかる．この関係は，今後も使うので注意すべし．ただし，紐の質量が無視できる場合に限ることを注意せよ．
 
-</details>
 
-::: {.callout-tip icon=false}
 
-## 問題
+::: {.Qbox data-latex="{問題}"}
+
 
 下の図のように紐に繋がれた２つの物体があり，物体間には滑車がある．次の問いに答えよ．ただし，紐の質量と摩擦は無視せよ．
 
@@ -216,7 +205,7 @@ T_1=T_2
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 $m_1,m_2$ それぞれに働く張力の大きさを $T_1,T_2$ とする．右側を正としてそれぞれの斜面に沿った加速度を $a_1,a_2$ として，運動方程式を立てると
 \begin{align*}
@@ -235,13 +224,11 @@ T=\frac{m_1m_2}{m_1+m_2}(\sin \theta_1+\sin \theta_2)g
 とわかる．この問題については，脳内で次のように変換すると楽かもしれない．
 ![](images/newton/newton8.png)
 
-</details>
+
 
 今までの問題でも扱ってきたのですが，束縛条件にフォーカスを当てたような問題をやってみましょう．
 
-::: {.callout-caution icon="false"}
-
-## 例題
+::: {.Rbox data-latex="{例題}"}
 
 下の図のように紐と滑車に繋がれた２つの物体がある．滑車の質量と摩擦力を無視して次の問題を答えよ．
 
@@ -252,7 +239,7 @@ T=\frac{m_1m_2}{m_1+m_2}(\sin \theta_1+\sin \theta_2)g
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 ![](images/newton/newton10.png)
 
@@ -274,11 +261,10 @@ T=\frac{3m_1m_2}{m_1+4m_2}g
 \end{align*}
 
 
-</details>
 
-::: {.callout-tip icon=false}
 
-## 問題
+::: {.Qbox data-latex="{問題}"}
+
 
 下の図のように紐に繋がれた２つの物体があり，物体間には滑車がある．次の問いに答えよ．ただし，紐の質量と摩擦は無視し，３つの物体は離れないものとする．
 
@@ -289,7 +275,7 @@ T=\frac{3m_1m_2}{m_1+4m_2}g
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 $m_1,m_2$ に働く垂直抗力を $N_1,N_2$ として，張力を $T$ とする．また水平方向右を正とする $x$ 軸，鉛直上方向を正とする $y$ 軸を設定して運動方程式を立てる．
 \begin{align*}
@@ -311,11 +297,10 @@ T&=\left\{\frac{1}{M+m_2}+\frac{1}{m_1}+\frac{1}{m_2}\right\}^{-1}g\\
 \ddot{y_2}&=\left\{\frac{1}{M+m_2}+\frac{1}{m_1}+\frac{1}{m_2}\right\}^{-1}\frac{g}{m_2}-g
 \end{align*}
 
-</details>
 
-::: {.callout-tip icon=false}
 
-## 問題
+::: {.Qbox data-latex="{問題}"}
+
 
 下の図のように紐に繋がれた３つの物体があり，物体間には滑車がある．$m_2$ に働く張力を求めよ．ただし，紐の質量と摩擦は無視し，紐は弛まないとする．
 
@@ -323,7 +308,7 @@ T&=\left\{\frac{1}{M+m_2}+\frac{1}{m_1}+\frac{1}{m_2}\right\}^{-1}g\\
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 張力を $T$ とする．鉛直下方向を正として運動方程式を立てる．
 \begin{align*}
@@ -340,11 +325,10 @@ m_3a_3&=m_3g-T
 T=\left(\frac{4}{m_1}+\frac{1}{m_2}+\frac{1}{m_3}\right)^{-1}4g
 \end{align*}
 
-</details>
 
-::: {.callout-tip icon=false}
 
-## 問題(滋賀医大)
+::: {.Qbox data-latex="{問題}"}
+(滋賀医大)
 
 下の図のように２つの物体がある． $m,M$ ともに摩擦なく動くので， $m$ の滑り落ちる地面への角度は $\theta$ ではなく， $\phi$ であるという．この時， $\tan \phi$ を求めよ．
 
@@ -352,7 +336,7 @@ T=\left(\frac{4}{m_1}+\frac{1}{m_2}+\frac{1}{m_3}\right)^{-1}4g
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 ![](images/newton/newton15.png)
 
@@ -372,7 +356,7 @@ N&=\frac{mg}{1+\frac{m}{M}\sin ^2 \theta}\cos \theta\\
 \tan \phi = \frac{\ddot{y}}{\ddot{x}}&=-\left(1+\frac{m}{M}\right)\tan \theta
 \end{align*}
 ここで，なぜ答えの値はマイナスになっているかというと，上の図のように考えているからであって， $\dd x$ が右向き正だからであり，左向き正であればプラスの値が答えになる．
-</details>
+
 
 次に摩擦力について考えましょう．
 
@@ -399,9 +383,7 @@ mg \sin \theta=\mu N
 
 では，実際の問題で練習をしていきましょう．
 
-::: {.callout-caution icon="false"}
-
-## 例題
+::: {.Rbox data-latex="{例題}"}
 
 下の図のように２つの物体がある．$M$ と床，及び $m,M$ の間には摩擦があり， $M$ は右向きに大きさ $F$ の力を受けている．この時， $m,M$ が共に動く $F$ と$M$ と床，及び $m,M$ の間の静止摩擦係数，動摩擦係数の条件を求めよ．
 
@@ -409,7 +391,7 @@ mg \sin \theta=\mu N
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 ![](images/newton/newton15.png)
 
@@ -432,13 +414,12 @@ R_2&<\mu_2N_2
 \end{align*}
 であるので，それらを $F$ についてまとめると次のようになる．
 $$\mu_1(m_1+m+2)g<F \leq (\mu_1'+\mu_2)(m_1+m_2)g$$ 
-また，ここまでの議論は $R_2&<\mu_2N_2$ を使い，それまでは具体的に $R_2$ を設定せずに進めたが， $R_2=\nu_2 N_2$ などとおいて計算を進め，最終的に $\nu_2<\mu_2$ とすることでも構わない．これからはどちらの方法も用いるので，混乱のないようにお願いしたい．
+また，ここまでの議論は $R_2<\mu_2N_2$ を使い，それまでは具体的に $R_2$ を設定せずに進めたが， $R_2=\nu_2 N_2$ などとおいて計算を進め，最終的に $\nu_2<\mu_2$ とすることでも構わない．これからはどちらの方法も用いるので，混乱のないようにお願いしたい．
 
-</details>
 
-::: {.callout-tip icon=false}
 
-## 問題
+::: {.Qbox data-latex="{問題}"}
+
 
 地面の上をなめらかに動くことのできる質量 $m_1$ の台車がある。この台車の上に，質量 $m_2$ のおもりを載せ，図のようにおもりに結んだロープを引いて，水平な地面上を直線コースに沿って走るレースを考える。ロープに働く張力を $T$ , ロープと地面のなす角を $\theta$ , 重力加速度を $g$ として，以下の設問に答えよ。ただし、 $\theta$ は与えられたものとする．
 
@@ -451,7 +432,7 @@ $$\mu_1(m_1+m+2)g<F \leq (\mu_1'+\mu_2)(m_1+m_2)g$$
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 ![](images/newton/newton18.png)
 
@@ -484,11 +465,10 @@ a\leq \frac{\mu_0m_2g}{m_1+\mu_0(m_1+m_2)\tan \theta}
 a=a_0,\;v=a_0t,\;s=\frac{1}{2}a_0t^2\;(0\leq t \leq t_0) \\
 a=0,\;v=v_0,\;s=\frac{v_0^2}{2a_0} + v_0(t-t_0)\;(t_0\leq t \leq t_1)
 \end{align*}
-</details>
 
-::: {.callout-tip icon=false}
 
-## 問題
+::: {.Qbox data-latex="{問題}"}
+
 
 下の図のように動かない角度が $\theta$ の斜面に，２つの **互いに接している** 物体がある．両物体と斜面の静止摩擦係数，動摩擦係数はそれぞれ等しく，それぞれ $m_1,\:m_2$ に関して $\mu _1,\:\mu _2$ となっている．ただし $\mu_1>\mu_2$ である．この時
 
@@ -499,7 +479,7 @@ a=0,\;v=v_0,\;s=\frac{v_0^2}{2a_0} + v_0(t-t_0)\;(t_0\leq t \leq t_1)
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 斜面下向きに沿った座標軸を考え，物体の加速度を $a$ ，物体同士に働く抗力の大きさを $N$ ，とした時次のようになる．
 \begin{align*}
@@ -516,11 +496,10 @@ N&=\frac{m_1m_2}{m_1+m_2}(\mu_1-\mu_2)g\cos\theta
 \tan \theta = \frac{\mu_1m_1+\mu_2m_2}{m_1+m_2}
 \end{align*}
 というのが滑らない限界の大きさの角である．
-</details>
 
-::: {.callout-tip icon=false}
 
-## 問題（東京大）
+::: {.Qbox data-latex="{問題}"}
+（東京大）
 
 下図のように水平面に対して $45^{\circ}$ の角度をなす斜面上に質量 $M$ の直角二等辺三角形の物体Aを斜辺の面が斜面と接するように置く．直角二等辺三角形の等しい2辺の長さをdとする．Aの上面に質量 $m$ で，大きさの無視できる小さな物体Bを置く。斜面上に原点 $O$ をとり，水平右向きに $x$ 軸,鉛直下向きに $y$ 軸をとる．はじめ，Aは上面が $y=0$ となる位置にあり，BはAの上面の右端，すなわち $(x,\:y)=(d,\:0)$ の位置にある．空気の抵抗および斜面とAの間の摩擦は無視できるものとし，重力加速度を $g$ とする。
 
@@ -545,7 +524,7 @@ I AとBの間の摩擦も無視できる場合に以下の問いに答えよ．
 語群：等速，等加速度
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 I 
 
@@ -586,17 +565,16 @@ ma_y&=mg-N
 上の結果と合わせれば $R/N=1=\mu_0$ とわかる．
 1. 点Pを境にその前では(ア)等加速度運動であり，その後は(イ)等速運動である．
 
-</details>
 
-::: {.callout-tip icon=false}
 
-## 問題
+::: {.Qbox data-latex="{問題}"}
+
 
 質量 $m$ の物体が重力と抵抗力を受けて鉛直下向きに速度 $v$ で落下している．抵抗力の大きさは物体の速さに比例すると仮定し，比例定数を $k$ とする．また，速度とか速度は鉛直下向きを正にとる．物体の位置を $x$ とすると，この物体の運動方程式はどうなるか．また，物体の速さを時間の関数として求め，十分時間経った時の速さ（終端速度）を求めよ．
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 \begin{align*}
 m\ddot{x}&=mg-k\dot{x}\\
@@ -604,5 +582,5 @@ m\ddot{x}&=mg-k\dot{x}\\
 \end{align*}
 終端速度は $mg/k$ である．
 
-</details>
+
 

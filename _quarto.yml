@@ -21,8 +21,83 @@ format:
     theme:
       light: flatly
       dark: darkly
+    include-in-header: 
+      - text: |
+          $\require{physics}$
   pdf:
-    documentclass: scrreprt
+    keep-tex: true
+    papersize: b4paper
+    code-line-numbers: true
+    highlight-style: github
+    code-block-border-left: false
+    code-block-bg: dedfe0
+    include-in-header:
+      - text: |
+          \usepackage{xcolor}
+          \definecolor{cmykc}{cmyk}{0.09,0.02,0,0.02}
+          \definecolor{cmykb}{cmyk}{0.96,0.42,0,0.03}          
+          \definecolor{cmyko}{cmyk}{0,0.07,0.28,0}
+          \usepackage{physics}
+          \usepackage{marginnote}
+          \newcounter{marginparcnt}[chapter]
+          \newcommand{\theMarginparcnt}{$\dagger$\arabic{marginparcnt}}
+          \newcommand{\Marginpar}[2][-20pt]{%
+            \stepcounter{marginparcnt}%
+            \textcolor{red}{\textsuperscript{\theMarginparcnt}}%
+            \protect\marginpar{\vskip#1\footnotesize\color{blue}%
+              \textsuperscript{\theMarginparcnt}
+              {#2}\par}}
+          \setlength\marginparwidth{95pt}
+          \usepackage{varwidth}
+    include-before-body: 
+      - text: |
+          \everymath{\displaystyle}
+          \newtcolorbox{Qbox}[1]{title=#1, enhanced, colback=cmykc, colframe=cmykc, drop fuzzy shadow, coltitle=black, fonttitle=\bfseries\large, attach boxed title to top left= {xshift=-3pt, yshift*=-5pt}, boxed title style={sharp corners, drop shadow=cmykb, colback=cmykc, colframe=cmykc, shrink tight, extrude by=3pt}}
+          \newtcolorbox{Rbox}[1]{title=#1, enhanced, colback=cmyko, colframe=cmyko, drop fuzzy shadow, coltitle=black, fonttitle=\bfseries, attach boxed title to top left= {xshift=-3pt, yshift*=-5pt}, boxed title style={sharp corners, drop shadow=Goldenrod, colback=cmyko, colframe=cmyko, shrink tight, extrude by=3pt}}
+          \newtcolorbox{Tbox}[1]{enhanced,
+            before skip=2mm,after skip=2mm, colback=black!5,colframe=black!50,boxrule=0.2mm,
+            attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight}, varwidth boxed title*=-3cm,
+            boxed title style={frame code={
+            \path[fill=tcbcolback!30!black]
+              ([yshift=-1mm,xshift=-1mm]frame.north west)
+                arc[start angle=0,end angle=180,radius=1mm]
+              ([yshift=-1mm,xshift=1mm]frame.north east)
+                arc[start angle=180,end angle=0,radius=1mm];
+            \path[left color=tcbcolback!60!black,right color=tcbcolback!60!black,
+              middle color=tcbcolback!80!black]
+              ([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+              [rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+              -- (frame.south east) -- (frame.south west)
+              -- ([xshift=-1mm,yshift=-1mm]frame.north west)
+              [sharp corners]-- cycle;
+            },interior engine=empty,
+          },
+          fonttitle=\bfseries,
+          title={#1},colbacktitle=LimeGreen}
+          \newtcolorbox{Dbox}[1]{enhanced,
+            before skip=2mm,after skip=2mm, colback=black!5,colframe=black!50,boxrule=0.2mm,
+            attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight}, varwidth boxed title*=-3cm,
+            boxed title style={frame code={
+            \path[fill=tcbcolback!30!black]
+              ([yshift=-1mm,xshift=-1mm]frame.north west)
+                arc[start angle=0,end angle=180,radius=1mm]
+              ([yshift=-1mm,xshift=1mm]frame.north east)
+                arc[start angle=180,end angle=0,radius=1mm];
+            \path[left color=tcbcolback!60!black,right color=tcbcolback!60!black,
+              middle color=tcbcolback!80!black]
+              ([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+              [rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+              -- (frame.south east) -- (frame.south west)
+              -- ([xshift=-1mm,yshift=-1mm]frame.north west)
+              [sharp corners]-- cycle;
+            },interior engine=empty,
+          },
+          fonttitle=\bfseries,
+          title={#1},colbacktitle=SkyBlue}
+pdf-engine: xelatex
+documentclass: bxjsbook
+classoption: xelatex,ja=standard
+editor: visual
 
 
 

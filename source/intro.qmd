@@ -3,7 +3,6 @@
 ## 前説
 
 この章では物理の世界に入る前に知っておかなければならないことを説明します．
-$\require{physics}$
 
 物理学を始める際にして、初学者の方にはどうしてもある程度の数学の素養が求められます。物理学の発展と数学は決して離すことのできない物であり、例えばみなさんがこれかあら学ぶ力学の分野は、微分と積分の関係性を発見し、それを基礎にしてニュートンが発展させた分野です。
 
@@ -15,9 +14,7 @@ $\require{physics}$
 
 ですが，すでに一通り数学をやっている方ならば，この章を飛ばしていただいても構いません．そのための指標として，まずはこの章におけるゴールを一通り書いておきます．次の表に載せてあることを理解できるようになれば，ひとまずこの章は学び終えたという判定で考えてもらって構いません．
 
-::: {.callout-note icon=false}
-
-## 数学の公式
+::: {.Tbox data-latex="{数学の公式}"}
 
 |||
 |-|---|
@@ -58,9 +55,7 @@ $$ \lim_{x\to -0}\frac{1}{x}=-\infty$$
 
 以上の話をまとめると次のようになります．
 
-::: {.callout-note icon=false}
-
-## 定理
+::: {.Tbox data-latex="{定理}"}
 
 分数の分子が $0$ でない定数の時，分母の絶対値が大きくなると分数の値は $0$ に限りなく近づき，分母が $0$ に近づくと分数の絶対値は限りなく大きくなる．
 :::
@@ -85,9 +80,8 @@ $$ \lim_{x\to 1}f(x)=2$$
 
 このことをまとめ上げると次のようになります．
 
-::: {.callout-note icon=false}
-
-## 定義
+::: {.Dbox data-latex="{定義}"}
+ 
 
 $f(x)$ が $x=a$ の近くで定義されている関数で， $x$ が $a$ に近づく時，$f(x)$ が限りなく $\alpha$ に近づく時，次のように書く．
 
@@ -99,9 +93,8 @@ $$ \lim_{x\to a}f(x)=\alpha$$
 
 以上の知識を持って，実際に問題を解いてみましょう．
 
-::: {.callout-tip icon=false}
+::: {.Qbox data-latex="{問題}"}
 
-## 問題
 
 |||
 |---|---|
@@ -110,18 +103,17 @@ $$ \lim_{x\to a}f(x)=\alpha$$
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 |||
 |---|---|
 |$$\frac{1}{3}$$|$$2\sqrt{2}$$|
 |$$a=5,\;b=-\frac{1}{4}$$|$$a=1,\;b=-1$$|
 
-</details>
 
-::: {.callout-tip icon=false}
 
-## 問題
+::: {.Qbox data-latex="{問題}"}
+
 
 $$f(x)=\frac{2ax^2-(a-2)x-1}{ax^2-(a^2-1)x-a}$$
 と定義された関数があり，次の式が成り立つように $a$ の値を定めよ．
@@ -129,7 +121,7 @@ $$\lim_{x \to 1}f(x)=\frac{1}{2}$$
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 $$f(x)=\frac{(2x-1)(ax+1)}{(x-a)(ax+1)}=\frac{2x-1}{x-a}$$
 となっているので，極限を計算すると
@@ -138,7 +130,7 @@ $$a=-1$$
 
 とわかる．
 
-</details>
+
 
 ## 商微分
 
@@ -204,16 +196,14 @@ $$\dv{y}{x} = 2a$$
 
 実際に問題を解いてみましょう．
 
-::: {.callout-warning icon=false}
-
-## 例題
+::: {.Rbox data-latex="{例題}"}
 
 次の関数の導関数を求めよ．
 $$f(x)=x^3+x+1$$
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
  $a=x,\;b=a+\Delta x$ とする．
 $$\Delta y = \frac{f(b)-f(a)}{b-a}\Delta x$$
@@ -222,15 +212,14 @@ $$= \frac{3x^2\Delta x + 3x\Delta x^2 + \Delta x ^3 + \Delta x}{\Delta x}$$
 $$=3x^2+ 3x\Delta x + \Delta x ^2 + 1 \to_{\Delta x \to 0} 3x^2+1$$
 $$\dv{y}{x}=3x^2+1$$
 
-</details>
+
 
 ここで注目して欲しいのは， $\Delta y$ を表す式の中で， $\Delta x$ の2次以上の項が消えていることです．導関数を求める極限の計算では完全に消滅しますが， $\Delta x$ が $0$ に比較的に近いだけの値を考えている時の近似計算でも同様に無視したりします．このことを一次近似と呼んでいます．具体的な問題は後半にあるので，手を動かしてやってみましょう．
 
 次に導関数に慣れてもらうために問題を置いておきます．
 
-::: {.callout-tip icon=false}
+::: {.Qbox data-latex="{問題}"}
 
-## 問題
 
 次の関数の導関数を求めよ．
 
@@ -242,7 +231,7 @@ $$\dv{y}{x}=3x^2+1$$
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 |||
 |---|---|
@@ -250,11 +239,10 @@ $$\dv{y}{x}=3x^2+1$$
 | $$2x+3$$ | $$-\frac{1}{x^2}$$ |
 | $$\frac{3}{2}\sqrt{x}$$ | $$6x^5+5x^4+4x^3$$ |
 
-</details>
 
-::: {.callout-tip icon=false}
 
-## 問題
+::: {.Qbox data-latex="{問題}"}
+
 
 次の極限値を $f,f'$ を用いて表せ．
 
@@ -262,15 +250,14 @@ $$\lim_{x\to a}\frac{x^nf(x)-a^nf(a)}{x^n-a^n}$$
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 $$f(a)+\frac{a}{n}f'(a)$$
 
-</details>
 
-::: {.callout-tip icon=false}
 
-## 問題
+::: {.Qbox data-latex="{問題}"}
+
 
 次の値を近似して解け．
 
@@ -278,7 +265,7 @@ $$1024^2,\; \sqrt{74}$$
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 $f(x)=x^2$ とする．
 $$f(x+a) \approx f(x) + f'(x) \times a$$
@@ -290,12 +277,10 @@ $$1000^2 + 1000 \times 24 \approx 10024000$$
 後半の問題も同じく， $f(x)=\sqrt{x},\; x=64,\; a=10$ とおいて解けば，
 $$\sqrt{64+10} \approx \sqrt{64} + \frac{1}{2\sqrt{64}} \times 10 \approx 8.6 $$
 
-</details>
 
 
-::: {.callout-tip icon=false}
 
-## 問題
+::: {.Qbox data-latex="{問題}"}
 
 次の事実を証明せよ．
 
@@ -311,7 +296,7 @@ $$\dv{x} x^n = nx^{n-1}$$
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 $(f+g)'=f'+g'$ は自力でせよ．
 
@@ -326,7 +311,7 @@ $$\frac{f(x+\Delta x)g(x+\Delta x)-f(x)g(x)}{\Delta x} = f'(x)g(x)+f(x)g'(x)$$
 後半の問題は有名問題であり，今までの知識を使って自力で解決せよ．
 
 最後の問題については二項定理を用いて自ら解決せよ．なおこの定理は $n$ が整数の時だけでなく，実数のときにも成り立つが，その証明は難しいのでここでは省略する．ただし，これからは使っていくので，知っておくこと．
-</details>
+
 
 ここで，このテキストの特徴として，詳しい解答を書いていないことが多々あることでしょう．これは，特定の問題までの内容を理解した人ならば違和感なく解ける問題や，有名すぎるあまりにわざわざ書くこともないだろうと思われる問題について当てはまることになります．ただし，ぜひともこの考え方を習得してもらいたいと思われる際には，詳しい解答を書くように心がけています．
 
@@ -336,9 +321,8 @@ $$\frac{f(x+\Delta x)g(x+\Delta x)-f(x)g(x)}{\Delta x} = f'(x)g(x)+f(x)g'(x)$$
 
 次に次の問題を考えてみましょう．
 
-::: {.callout-tip icon=false}
+::: {.Qbox data-latex="{問題}"}
 
-## 問題
 
 次の事実を証明せよ．
 
@@ -352,9 +336,7 @@ $$\dv{y}{x}=2x+1,\; \dv{z}{y}=3y^2$$
 
 $$\dv{z}{x}=3y^2(2x+1)=3(2x+1)(x^2+x)^2$$
 
-::: {.callout-note icon=false}
-
-## 定理
+::: {.Tbox data-latex="{定理}"}
 
 $$\dv{y}{x}\cdot \dv{z}{y}=\dv{z}{x}$$
 
@@ -375,26 +357,22 @@ $z=(x^2+x)^3+1$ の導関数を求めよ．
 
 では，この定理を使って問題を解いていきましょう．
 
-::: {.callout-warning icon=false}
-
-## 例題
+::: {.Rbox data-latex="{例題}"}
 
 次の関数の導関数を求めよ．
 $$f(x)=\sqrt[3]{\frac{x^2}{1-x}}$$
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 $y=f(x),\; u=\frac{x^2}{1-x}$ とする．この時 $y=\sqrt[3]{u}$ となるため
 
 $$\dv{y}{x}=\dv{y}{u}\dv{u}{x}=\frac{1}{3u^{2/3}}\frac{2x-x^2}{(1-x)^2}=\frac{1}{3}\left(\frac{1-x}{x^2}\right)^{2/3}\frac{2x-x^2}{(1-x)^2}$$
 
-</details>
 
-::: {.callout-tip icon=false}
 
-## 問題
+::: {.Qbox data-latex="{問題}"}
 
 次の関数の導関数を求めよ．
 
@@ -407,7 +385,7 @@ $x=y\sqrt{y+1}$ の時， $\dv{y}{x}$ を求めよ．
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 |||
 |---|---|
@@ -425,15 +403,13 @@ $$\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x \to 0}\frac{1}{\
 
 を考えれば明らかである．ただしこの証明は連続性などの過程を飛ばした直感的なものに過ぎず，厳密な証明はここではしない．
 
-</details>
+
 
 ## 増減
 
 まず，定理から述べようと思います．
 
-::: {.callout-note icon=false}
-
-## 定理
+::: {.Tbox data-latex="{定理}"}
 
 とある区間において，
 
@@ -444,16 +420,14 @@ $$\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x \to 0}\frac{1}{\
 
 この定理については，ある区間の内で接戦の傾きが常に正ならば，関数は増加し続ける，また逆も然りということを述べているわけです．この定理がどのように使われるかは，次の問題で話すことにしましょう．
 
-::: {.callout-warning icon=false}
-
-## 例題
+::: {.Rbox data-latex="{例題}"}
 
 次の関数のグラフの概形を描け．
 $$f(x)=x^3-3x+1$$
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 $$f'(x)=3(x+1)(x-1)$$
 
@@ -469,7 +443,7 @@ $$f'(x)=3(x+1)(x-1)$$
 
 また， $x=-1,\; x=1$ の場所は増減が変化する点であり，この点のことを極大点，極小点などと呼んでいる．
 
-</details>
+
 
 
 ## 面積と区分求積法
@@ -492,9 +466,7 @@ $$f'(x)=3(x+1)(x-1)$$
 $$\displaystyle\lim_{n\to\infty} \displaystyle\sum_{k=1}^{n}\displaystyle\frac{b-a}{n}f(x_k)$$
 を， $y=f(x)$ のグラフと，直線$x=a,x=b$で囲まれる領域の面積 $S$ であると定めることにします．この考え方は，は区分求積法と呼ばれています．
 
-::: {.callout-note icon=false}
-
-## 定義
+::: {.Dbox data-latex="{定義}"}
 
 $y=f(x)$ のグラフと，直線$x=a,x=b$で囲まれる領域の面積 $S$を 
 $$\displaystyle\lim_{n\to\infty} \displaystyle\sum_{k=1}^{n}\displaystyle\frac{b-a}{n}f(x_k)$$
@@ -508,18 +480,17 @@ $$\displaystyle\int_{a}^{b}f(x)dx$$
 
 ここで述べた面積（ついては積分）の定義は，正確なものではありませんが，少なくとも連続関数についてはこの定義で問題を生じないので，このまま進めることにします．
 
-</details>
 
-::: {.callout-tip icon="false"}
 
-## 問題
+::: {.Qbox data-latex="{問題}"}
+
 
 次の値を求めよ．ただし，代表点$x_k$は$\displaystyle\frac{k}{n}$とせよ．
 
 $$\displaystyle\int_{0}^{1} x^2dx$$
 
 :::
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 \begin{align*}
 \displaystyle\int_{0}^{1} x^2dx　&= \displaystyle\lim_{n\to\infty} \displaystyle\sum_{k=1}^{n}\displaystyle\frac{1}{n}\cdot \left(\displaystyle\frac{k}{n}\right)^2\\
@@ -528,7 +499,7 @@ $$\displaystyle\int_{0}^{1} x^2dx$$
 &=\displaystyle\frac{1}{3}
 \end{align*}
 
-</details>
+
 
 ## 微分積分学の基本定理
 
@@ -540,9 +511,8 @@ $$\displaystyle\int_{a}^{x}f(t)dt$$
 
 さて，次の定理は微分積分学の基本定理と呼ばれており，微分と積分を繋ぐ重要な事実です．
 
-::: {.callout-note icon="false"}
+::: {.Tbox data-latex="{定理}"}
 
-## 定理
 
 $$\displaystyle\frac{d}{dx}\displaystyle\int_{a}^{x}f(t)dt=f(x)$$
 
@@ -550,28 +520,25 @@ $$\displaystyle\frac{d}{dx}\displaystyle\int_{a}^{x}f(t)dt=f(x)$$
 
 これは，積分したものを微分すると元に戻る，ということを述べている定理です．この事実を使えば，わざわざ定義からいちいち積分をしなくても，「微分すると $f(x)$ になる関数」（これを原始関数といいます）を見つけられれば $f(x)$ の積分が求められる，ということになります．今後， $f(x)$ の不定積分は $\displaystyle\int_{}^{}f(x)dx$ とかくことにします．
 
-::: {.callout-caution icon="false"}
-
-## 例題
+::: {.Rbox data-latex="{例題}"}
 次の不定積分を求めよ．
 $$\displaystyle\int_{}^{}x\ dx $$
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 微分の知識を思い出せば， $\displaystyle\frac{1}{2}x^2$ の微分が $x$ になることはすぐにわかる．しかし，同様に $\displaystyle\frac{1}{2}x^2+1$ も，$\displaystyle\frac{1}{2}x^2-99$ も，
 $\displaystyle\frac{1}{2}x^2+\pi$ も， $\displaystyle\frac{1}{2}x^2$ に定数を足したものはすべて微分すれば$x$になる．これらをまとめて， $\displaystyle\frac{1}{2}x^2+C$とかき，$C$を積分定数という．もとの例題に対する答えは， 
 $$\displaystyle\int_{}^{}x\ dx =\displaystyle\frac{1}{2}x^2+C~\mbox{($C$は積分定数)}$$
 である．
 
-</details>
+
 
 上の例題のように，不定積分の結果には積分定数がつくことになります．都度但し書きを書くのは煩雑なので，積分の説明の間は「 $C$ は積分定数」という説明は添えないことにします．
 
-::: {.callout-tip icon="false"}
+::: {.Qbox data-latex="{問題}"}
 
-## 問題
 次の不定積分を求めよ．
 
 ||||
@@ -583,15 +550,14 @@ $$\displaystyle\int_{}^{}x\ dx =\displaystyle\frac{1}{2}x^2+C~\mbox{($C$は積�
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
-</details>
+
 
 前の説で述べた定積分の値については，不定積分を用いて計算することができます．
 
-::: {.callout-note icon="false"}
+::: {.Tbox data-latex="{定理}"}
 
-## 定理
 $F(x)$ を $f(x)$ の不定積分とすると
 $$\displaystyle\int_{a}^{b}f(x)\ dx=F(b)-F(a)$$
 また，簡単のため $F(b)-F(a)$ のことを $\left[F(x)\right]_{a}^{b}$ とかく．
@@ -600,21 +566,18 @@ $$\displaystyle\int_{a}^{b}f(x)\ dx=F(b)-F(a)$$
 
 ここで，不定積分は積分定数がついていたことを思い出します．実は上の計算をするときは，積分定数の値について考慮する必要はなく，好きなもの(通常は0でしょう)を使って問題ありません．なぜなら，$F(x)$ の代わりに $F(x)+C$ を使って右辺の計算をすると，引き算で結局 $C$ が消えてしまうからです．
 
-::: {.callout-caution icon="false"}
-
-## 例題
+::: {.Rbox data-latex="{例題}"}
 次の定積分を求めよ．
 $$\displaystyle\int_{0}^{8}x\ dx $$
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 $$\displaystyle\int_{}^{}x\ dx = \left[\displaystyle\frac{1}{2}x^2\right]_{0}^{8}=32-0=0$$
-</details>
 
-::: {.callout-tip icon="false"}
 
-## 問題
+::: {.Qbox data-latex="{問題}"}
+
 次の定積分を求めよ．
 
 ||||
@@ -626,17 +589,16 @@ $$\displaystyle\int_{}^{}x\ dx = \left[\displaystyle\frac{1}{2}x^2\right]_{0}^{8
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
-</details>
+
 
 ## 積分の種々の性質
 
 この節では，不定積分や定積分の計算をする上で役に立つ色々な性質について説明し，それを使う練習をしていきます．
 
-::: {.callout-note icon="false"}
+::: {.Tbox data-latex="{定理}"}
 
-## 定理
 $F(x)$ を $f(x)$ の不定積分，$G(x)$ を $g(x)$ の不定積分とし，$a,b$ は定数とする．このとき，
 
 $$\displaystyle\int_{}^{}(af(x)+bg(x))\ dx=aF(x)+bG(x)+C$$
@@ -647,13 +609,12 @@ $$\displaystyle\int_{}^{}(af(x)+bg(x))\ dx=a\displaystyle\int_{}^{}f(x)\ dx+b\di
 
 ともかける．
 :::
-::: {.callout-caution icon="false"}
-## 例題
+::: {.Rbox data-latex="{例題}"}
 次の定積分を求めよ．
 $$\displaystyle\int_{}^{}(2x+3x^2)\ dx $$
 
 :::
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 \begin{align*}\displaystyle\int_{}^{}(2x+3x^2)\ dx &=2\displaystyle\int_{}^{}x\ dx+3\displaystyle\int_{}^{}x^2\ dx\\
 &=x^2+x^3+C
@@ -661,13 +622,12 @@ $$\displaystyle\int_{}^{}(2x+3x^2)\ dx $$
 
 このとき，2つの不定積分の和では積分定数は $C$ だけでよく，2つつける必要はない．2つの不定積分から出てくる積分定数の和を改めて定数としておいてしまえばよいからである．
 
-</details>
+
 
 定積分についても，同様の公式が成り立つ．
 
-::: {.callout-tip icon="false"}
+::: {.Qbox data-latex="{問題}"}
 
-## 問題
 次の不定積分や定積分を求めよ．現在ある問題は仮です．
 
 ||||
@@ -679,6 +639,6 @@ $$\displaystyle\int_{}^{}(2x+3x^2)\ dx $$
 
 :::
 
-<details><summary>解答</summary>
+\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
-</details>
+
