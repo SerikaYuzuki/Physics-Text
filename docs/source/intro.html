@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.326">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -63,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
@@ -71,11 +72,16 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">数学的準備</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../source/intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">数学的準備</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -83,70 +89,77 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Physics Text</a> 
         <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../source/intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">数学的準備</span></a>
+  <a href="../source/intro.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">数学的準備</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../source/velocity.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">位置，速度，加速度</span></a>
+  <a href="../source/velocity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">位置，速度，加速度</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../source/newton-mechanics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ニュートンの法則</span></a>
+  <a href="../source/newton-mechanics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ニュートンの法則</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../source/energy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">運動量，エネルギー，２体問題</span></a>
+  <a href="../source/energy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">運動量，エネルギー，２体問題</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../source/database.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="../source/database.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#前説" id="toc-前説" class="nav-link active" data-scroll-target="#前説"><span class="toc-section-number">1.1</span>  前説</a></li>
-  <li><a href="#極限" id="toc-極限" class="nav-link" data-scroll-target="#極限"><span class="toc-section-number">1.2</span>  極限</a></li>
-  <li><a href="#収束" id="toc-収束" class="nav-link" data-scroll-target="#収束"><span class="toc-section-number">1.3</span>  収束</a></li>
-  <li><a href="#商微分" id="toc-商微分" class="nav-link" data-scroll-target="#商微分"><span class="toc-section-number">1.4</span>  商微分</a></li>
-  <li><a href="#合成関数の微分法" id="toc-合成関数の微分法" class="nav-link" data-scroll-target="#合成関数の微分法"><span class="toc-section-number">1.5</span>  合成関数の微分法</a></li>
-  <li><a href="#増減" id="toc-増減" class="nav-link" data-scroll-target="#増減"><span class="toc-section-number">1.6</span>  増減</a></li>
-  <li><a href="#面積と区分求積法" id="toc-面積と区分求積法" class="nav-link" data-scroll-target="#面積と区分求積法"><span class="toc-section-number">1.7</span>  面積と区分求積法</a></li>
-  <li><a href="#微分積分学の基本定理" id="toc-微分積分学の基本定理" class="nav-link" data-scroll-target="#微分積分学の基本定理"><span class="toc-section-number">1.8</span>  微分積分学の基本定理</a></li>
-  <li><a href="#積分の種々の性質" id="toc-積分の種々の性質" class="nav-link" data-scroll-target="#積分の種々の性質"><span class="toc-section-number">1.9</span>  積分の種々の性質</a></li>
+  <li><a href="#前説" id="toc-前説" class="nav-link active" data-scroll-target="#前説"><span class="header-section-number">1.1</span> 前説</a></li>
+  <li><a href="#極限" id="toc-極限" class="nav-link" data-scroll-target="#極限"><span class="header-section-number">1.2</span> 極限</a></li>
+  <li><a href="#収束" id="toc-収束" class="nav-link" data-scroll-target="#収束"><span class="header-section-number">1.3</span> 収束</a></li>
+  <li><a href="#商微分" id="toc-商微分" class="nav-link" data-scroll-target="#商微分"><span class="header-section-number">1.4</span> 商微分</a></li>
+  <li><a href="#合成関数の微分法" id="toc-合成関数の微分法" class="nav-link" data-scroll-target="#合成関数の微分法"><span class="header-section-number">1.5</span> 合成関数の微分法</a></li>
+  <li><a href="#増減" id="toc-増減" class="nav-link" data-scroll-target="#増減"><span class="header-section-number">1.6</span> 増減</a></li>
+  <li><a href="#面積と区分求積法" id="toc-面積と区分求積法" class="nav-link" data-scroll-target="#面積と区分求積法"><span class="header-section-number">1.7</span> 面積と区分求積法</a></li>
+  <li><a href="#微分積分学の基本定理" id="toc-微分積分学の基本定理" class="nav-link" data-scroll-target="#微分積分学の基本定理"><span class="header-section-number">1.8</span> 微分積分学の基本定理</a></li>
+  <li><a href="#積分の種々の性質" id="toc-積分の種々の性質" class="nav-link" data-scroll-target="#積分の種々の性質"><span class="header-section-number">1.9</span> 積分の種々の性質</a></li>
   </ul>
 </nav>
     </div>
@@ -155,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">数学的準備</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">数学的準備</span></h1>
 </div>
 
 
@@ -178,12 +191,12 @@ ul.task-list li input[type="checkbox"] {
 <p>なので，この章では読者が高校2年生の途中くらいから読み始めているものだと想定して，数学について少しずつ勉強を進めながら，物理を始められるところまでやっていこうと思います．関数の定義や三角関数については流石にもう慣れてきたのではないかという時期ですね．もしもまだそこがあやふやであるのならば，まずは数学の教科書をある程度進ませてからこの本を読んでいただければ幸いと思っています．</p>
 <p>また，初学者の方でもある程度は学びを進められるように配慮はしてありますが，もしもこの本の記述が難しい，ついていけないように感じられるのであれば，高等学校の教科書や市販の参考書などとともに読み進めていただくと良いかもしれません．</p>
 <p>ですが，すでに一通り数学をやっている方ならば，この章を飛ばしていただいても構いません．そのための指標として，まずはこの章におけるゴールを一通り書いておきます．次の表に載せてあることを理解できるようになれば，ひとまずこの章は学び終えたという判定で考えてもらって構いません．</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 数学の公式
 </div>
 </div>
@@ -230,12 +243,12 @@ ul.task-list li input[type="checkbox"] {
 <p>最後に分母の値である <span class="math inline">\(x\)</span> が <span class="math inline">\(-1,-0.1,-0.01,...\)</span> と負の値を保ちつつ小さくなるにつれて，関数の値は <span class="math inline">\(-1,-10,-100,...\)</span> と限りなく小さくなることが確認できます．このような状態も次のように書く記すことにします．</p>
 <p><span class="math display">\[ \lim_{x\to -0}\frac{1}{x}=-\infty\]</span></p>
 <p>以上の話をまとめると次のようになります．</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 定理
 </div>
 </div>
@@ -255,12 +268,12 @@ ul.task-list li input[type="checkbox"] {
 <p>と式変形することができ， <span class="math inline">\(x+1\)</span> の値は <span class="math inline">\(x\)</span> が限りなく <span class="math inline">\(1\)</span> に近づく際には， <span class="math inline">\(2\)</span> に限りなく近づくことになります．この状態のことを次のように書き表します．</p>
 <p><span class="math display">\[ \lim_{x\to 1}f(x)=2\]</span></p>
 <p>このことをまとめ上げると次のようになります．</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 定義
 </div>
 </div>
@@ -271,12 +284,12 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>以上の知識を持って，実際に問題を解いてみましょう．</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -316,12 +329,12 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -370,12 +383,12 @@ ul.task-list li input[type="checkbox"] {
 <p>ここで注目して欲しいのは， <span class="math inline">\(\dd y\)</span> を表す式の中で， <span class="math inline">\(\dd x\)</span> の一次以上の項が消えていることです．これは極限を取ると消えてしまうからですね．</p>
 <p>以上述べたように，微分を考える理由とは，接線で曲線を近似してみようという試みであり，また，曲線を非常に小さな部分で見てあげれば直線になると考えていることになります．</p>
 <p>実際に問題を解いてみましょう．</p>
-<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 例題
 </div>
 </div>
@@ -391,12 +404,12 @@ ul.task-list li input[type="checkbox"] {
 </details>
 <p>ここで注目して欲しいのは， <span class="math inline">\(\Delta y\)</span> を表す式の中で， <span class="math inline">\(\Delta x\)</span> の2次以上の項が消えていることです．導関数を求める極限の計算では完全に消滅しますが， <span class="math inline">\(\Delta x\)</span> が <span class="math inline">\(0\)</span> に比較的に近いだけの値を考えている時の近似計算でも同様に無視したりします．このことを一次近似と呼んでいます．具体的な問題は後半にあるので，手を動かしてやってみましょう．</p>
 <p>次に導関数に慣れてもらうために問題を置いておきます．</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -445,12 +458,12 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -465,12 +478,12 @@ ul.task-list li input[type="checkbox"] {
 </summary>
 <p><span class="math display">\[f(a)+\frac{a}{n}f'(a)\]</span></p>
 </details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -487,12 +500,12 @@ ul.task-list li input[type="checkbox"] {
 <p>と近似できる．</p>
 <p>後半の問題も同じく， <span class="math inline">\(f(x)=\sqrt{x},\; x=64,\; a=10\)</span> とおいて解けば， <span class="math display">\[\sqrt{64+10} \approx \sqrt{64} + \frac{1}{2\sqrt{64}} \times 10 \approx 8.6 \]</span></p>
 </details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -522,12 +535,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="合成関数の微分法" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="合成関数の微分法"><span class="header-section-number">1.5</span> 合成関数の微分法</h2>
 <p>次に次の問題を考えてみましょう．</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -538,12 +551,12 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p><span class="math display">\[\dv{y}{x}=2x+1,\; \dv{z}{y}=3y^2\]</span> これら二つは簡単でしょう．では， <span class="math inline">\(\dv{z}{x}\)</span> はどうしたらいいでしょうか．分数と同様にするべきでしょうか．はい，その通りです．</p>
 <p><span class="math display">\[\dv{z}{x}=3y^2(2x+1)=3(2x+1)(x^2+x)^2\]</span></p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 定理
 </div>
 </div>
@@ -558,12 +571,12 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="math inline">\(z=(x^2+x)^3+1\)</span> の導関数を求めよ．</p>
 <p>これを合成関数の微分法と呼ばれるもので，賢そうな人たちがチェーンルールと呼んでいるものです．</p>
 <p>では，この定理を使って問題を解いていきましょう．</p>
-<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 例題
 </div>
 </div>
@@ -578,12 +591,12 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="math inline">\(y=f(x),\; u=\frac{x^2}{1-x}\)</span> とする．この時 <span class="math inline">\(y=\sqrt[3]{u}\)</span> となるため</p>
 <p><span class="math display">\[\dv{y}{x}=\dv{y}{u}\dv{u}{x}=\frac{1}{3u^{2/3}}\frac{2x-x^2}{(1-x)^2}=\frac{1}{3}\left(\frac{1-x}{x^2}\right)^{2/3}\frac{2x-x^2}{(1-x)^2}\]</span></p>
 </details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -638,12 +651,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="増減" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="増減"><span class="header-section-number">1.6</span> 増減</h2>
 <p>まず，定理から述べようと思います．</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 定理
 </div>
 </div>
@@ -656,12 +669,12 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>この定理については，ある区間の内で接戦の傾きが常に正ならば，関数は増加し続ける，また逆も然りということを述べているわけです．この定理がどのように使われるかは，次の問題で話すことにしましょう．</p>
-<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 例題
 </div>
 </div>
@@ -692,12 +705,12 @@ ul.task-list li input[type="checkbox"] {
 <p>（図）</p>
 <p>そして，この分割をどんどん細かくしたとき，すなわち<span class="math inline">\(n\to\infty\)</span>のとき，<span class="math inline">\(\displaystyle\sum_{k=1}^{n}\displaystyle\frac{M_k}{n}\)</span>および，<span class="math inline">\(\displaystyle\sum_{k=1}^{n}\displaystyle\frac{m_k}{n}\)</span> は <span class="math inline">\(S\)</span> に限りなく近づくと考えられます．</p>
 <p>上では各区間における <span class="math inline">\(f(x)\)</span> の最大値，最小値をとって考えましたが，実は区間 <span class="math inline">\(\left[a+\displaystyle\frac{k-1}{n}(b-a),a+\displaystyle\frac{k}{n}(b-a)\right]\)</span> ごとに好きな代表点 <span class="math inline">\(x_k\)</span> をとって， <span class="math inline">\(M_k,m_k\)</span> の代わりに <span class="math inline">\(f(x_k)\)</span> を考えても問題ありません．以上を踏まえて， <span class="math display">\[\displaystyle\lim_{n\to\infty} \displaystyle\sum_{k=1}^{n}\displaystyle\frac{b-a}{n}f(x_k)\]</span> を， <span class="math inline">\(y=f(x)\)</span> のグラフと，直線<span class="math inline">\(x=a,x=b\)</span>で囲まれる領域の面積 <span class="math inline">\(S\)</span> であると定めることにします．この考え方は，は区分求積法と呼ばれています．</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 定義
 </div>
 </div>
@@ -711,12 +724,12 @@ ul.task-list li input[type="checkbox"] {
 </summary>
 <p>ここで述べた面積（ついては積分）の定義は，正確なものではありませんが，少なくとも連続関数についてはこの定義で問題を生じないので，このまま進めることにします．</p>
 </details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -742,12 +755,12 @@ ul.task-list li input[type="checkbox"] {
 <p>1.7でみたように，面積の値を定積分として定めました．ここで，<span class="math inline">\(x\)</span>を変数とした <span class="math display">\[\displaystyle\int_{a}^{x}f(t)dt\]</span> は，<span class="math inline">\(x\)</span>の関数だと考えることができます．これを<span class="math inline">\(f(x)\)</span>の不定積分と呼びます．</p>
 <p>よく言われるように，微分と積分というのは互いに逆演算になっています．しかし，先の積分の項を読んだ方は，定積分の定義のどこにも微分が登場していない，ということにお気づきだと思います．実は微分と積分はそれぞれ独立して成立した分野で，後になって実は互いに関わりあっているということが分かったのです．</p>
 <p>さて，次の定理は微分積分学の基本定理と呼ばれており，微分と積分を繋ぐ重要な事実です．</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 定理
 </div>
 </div>
@@ -756,12 +769,12 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>これは，積分したものを微分すると元に戻る，ということを述べている定理です．この事実を使えば，わざわざ定義からいちいち積分をしなくても，「微分すると <span class="math inline">\(f(x)\)</span> になる関数」（これを原始関数といいます）を見つけられれば <span class="math inline">\(f(x)\)</span> の積分が求められる，ということになります．今後， <span class="math inline">\(f(x)\)</span> の不定積分は <span class="math inline">\(\displaystyle\int_{}^{}f(x)dx\)</span> とかくことにします．</p>
-<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 例題
 </div>
 </div>
@@ -776,12 +789,12 @@ ul.task-list li input[type="checkbox"] {
 <p>微分の知識を思い出せば， <span class="math inline">\(\displaystyle\frac{1}{2}x^2\)</span> の微分が <span class="math inline">\(x\)</span> になることはすぐにわかる．しかし，同様に <span class="math inline">\(\displaystyle\frac{1}{2}x^2+1\)</span> も，<span class="math inline">\(\displaystyle\frac{1}{2}x^2-99\)</span> も， <span class="math inline">\(\displaystyle\frac{1}{2}x^2+\pi\)</span> も， <span class="math inline">\(\displaystyle\frac{1}{2}x^2\)</span> に定数を足したものはすべて微分すれば<span class="math inline">\(x\)</span>になる．これらをまとめて， <span class="math inline">\(\displaystyle\frac{1}{2}x^2+C\)</span>とかき，<span class="math inline">\(C\)</span>を積分定数という．もとの例題に対する答えは， <span class="math display">\[\displaystyle\int_{}^{}x\ dx =\displaystyle\frac{1}{2}x^2+C~\mbox{($C$は積分定数)}\]</span> である．</p>
 </details>
 <p>上の例題のように，不定積分の結果には積分定数がつくことになります．都度但し書きを書くのは煩雑なので，積分の説明の間は「 <span class="math inline">\(C\)</span> は積分定数」という説明は添えないことにします．</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -815,12 +828,12 @@ ul.task-list li input[type="checkbox"] {
 </summary>
 </details>
 <p>前の説で述べた定積分の値については，不定積分を用いて計算することができます．</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 定理
 </div>
 </div>
@@ -829,12 +842,12 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>ここで，不定積分は積分定数がついていたことを思い出します．実は上の計算をするときは，積分定数の値について考慮する必要はなく，好きなもの(通常は0でしょう)を使って問題ありません．なぜなら，<span class="math inline">\(F(x)\)</span> の代わりに <span class="math inline">\(F(x)+C\)</span> を使って右辺の計算をすると，引き算で結局 <span class="math inline">\(C\)</span> が消えてしまうからです．</p>
-<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 例題
 </div>
 </div>
@@ -848,12 +861,12 @@ ul.task-list li input[type="checkbox"] {
 </summary>
 <span class="math display">\[\displaystyle\int_{}^{}x\ dx = \left[\displaystyle\frac{1}{2}x^2\right]_{0}^{8}=32-0=0\]</span>
 </details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -890,12 +903,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="積分の種々の性質" class="level2" data-number="1.9">
 <h2 data-number="1.9" class="anchored" data-anchor-id="積分の種々の性質"><span class="header-section-number">1.9</span> 積分の種々の性質</h2>
 <p>この節では，不定積分や定積分の計算をする上で役に立つ色々な性質について説明し，それを使う練習をしていきます．</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 定理
 </div>
 </div>
@@ -907,12 +920,12 @@ ul.task-list li input[type="checkbox"] {
 <p>ともかける．</p>
 </div>
 </div>
-<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 例題
 </div>
 </div>
@@ -930,12 +943,12 @@ ul.task-list li input[type="checkbox"] {
 <p>このとき，2つの不定積分の和では積分定数は <span class="math inline">\(C\)</span> だけでよく，2つつける必要はない．2つの不定積分から出てくる積分定数の和を改めて定数としておいてしまえばよいからである．</p>
 </details>
 <p>定積分についても，同様の公式が成り立つ．</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -1115,9 +1128,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1182,6 +1209,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

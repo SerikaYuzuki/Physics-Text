@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.326">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -63,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
@@ -71,11 +72,16 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">位置，速度，加速度</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../source/velocity.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">位置，速度，加速度</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -83,57 +89,69 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Physics Text</a> 
         <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../source/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">数学的準備</span></a>
+  <a href="../source/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">数学的準備</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../source/velocity.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">位置，速度，加速度</span></a>
+  <a href="../source/velocity.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">位置，速度，加速度</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../source/newton-mechanics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ニュートンの法則</span></a>
+  <a href="../source/newton-mechanics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ニュートンの法則</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../source/database.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="../source/energy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">運動量，運動エネルギーと仕事，２体問題</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../source/database.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DataBase</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#難問パート" id="toc-難問パート" class="nav-link active" data-scroll-target="#難問パート"><span class="toc-section-number">2.0.1</span>  難問パート</a></li>
+  <li><a href="#難問パート" id="toc-難問パート" class="nav-link active" data-scroll-target="#難問パート"><span class="header-section-number">2.0.1</span> 難問パート</a></li>
   </ul>
 </nav>
     </div>
@@ -142,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">位置，速度，加速度</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">位置，速度，加速度</span></h1>
 </div>
 
 
@@ -168,12 +186,12 @@ ul.task-list li input[type="checkbox"] {
 <p>パチンコ玉の中心点の座標 <span class="math inline">\(\boldsymbol{r}\)</span> を，時間 <span class="math inline">\(t\)</span> ごとに追っていって，その全ての時間に対して解析を行い，時間の関数となる <span class="math inline">\(\boldsymbol{r}(t)\)</span> を書き上げれば，上に書かれたすべての疑問に対して回答することができ，さらには現象を語り尽くすことができるのではないでしょうか．もっと具体的に言えば，パチンコ玉の回転なども考慮すべきでしょうが，今の所，それは無視することにします．</p>
 <p>では，今，私たちはパチンコ玉の運動を語り尽くす手段を知りました．では，その運動の様相をどのようにして解析するのかを考える段階に入りましょう．確かに，パチンコ玉は <span class="math inline">\(\boldsymbol{r}(t)\)</span> に従って動いていますが，我々の直感として「動いている」と感じることのできる指標である「速さ」が必要になるでしょう．動いているか，動いていないかの判別にも使えるし，動いている様相の説明にも使えるでしょう．</p>
 <p>また，物理学という学問の性質上，古の巨人が築き上げた知識を引き継ぐことが大いにありますが，ニュートンの語るところによれば，物体の運動において大きな役割を持つ指標が加速度であるので，それも合わせて定義していくことにします．</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 定義
 </div>
 </div>
@@ -190,12 +208,12 @@ ul.task-list li input[type="checkbox"] {
 <p>とすることができ，極限をとってあげることによって</p>
 <p><span class="math display">\[\boldsymbol{r}(t)= \lim_{\Delta t \to 0}\sum_{i=0}^n \boldsymbol{v}(t_i)\Delta t=\int \boldsymbol{v}(t_i)\dd t\]</span></p>
 <p>となるわけです．同様の話が加速度についても言えます．では，これからは実際に例題を用いて，今までの知識を深めていきましょう．</p>
-<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 例題
 </div>
 </div>
@@ -217,12 +235,12 @@ ul.task-list li input[type="checkbox"] {
 <p>ここで，積分が定積分ではなく，不定積分であることに注目せよ．定積分でない理由は，この場合， <span class="math inline">\(x\)</span> を求めるのに，微分の逆演算をしているに過ぎず，ある定まった区間での積分として考えていない．</p>
 </details>
 <p>次の問題では，一次元の等加速度運動を全てまとめているものになります．</p>
-<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 例題
 </div>
 </div>
@@ -249,12 +267,12 @@ ul.task-list li input[type="checkbox"] {
 <p>簡単な例として，鉛直上向きに <span class="math inline">\(y\)</span> 軸を設定し，初期位置が <span class="math inline">\(y=y_0\)</span> である物体の自由落下を記述してみましょう．</p>
 <p><span class="math display">\[\ddot{y}=-g\]</span> <span class="math display">\[\dot{y}=-gt\]</span> <span class="math display">\[y=y_0-\frac{1}{2}gt^2\]</span></p>
 <p>次に，相対位置の定義だけ少し説明します．ベクトルになれた読者の方にとって，あまり難しい概念ではないので，定義だけ載せます．</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 定義
 </div>
 </div>
@@ -265,13 +283,15 @@ ul.task-list li input[type="checkbox"] {
 <p>と定義し，相対速度，相対加速度も同様にして定義する．</p>
 </div>
 </div>
+<p>ここで，相対速度があれば，絶対速度というものも存在するのではないかという疑問が湧くことかと思います．</p>
+<p>//TODO 絶対速度のないことと，系についての説明</p>
 <p>では，実際の問題を解きながら，加速度と速度について慣れていきましょう．</p>
-<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 例題
 </div>
 </div>
@@ -306,12 +326,12 @@ ul.task-list li input[type="checkbox"] {
 <li>同じ高さでは同じ速さとなる</li>
 </ul>
 </details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -332,12 +352,12 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="math display">\[x_1=\frac{1}{2}at^2,\;x_2=vt\]</span></p>
 <p>車とトラックがすれ違う時間は <span class="math inline">\(x_1=x_2\)</span> で求まるので， <span class="math display">\[\underline{t=\frac{2v}{a}}\]</span> 次に進んだ距離 <span class="math inline">\(s\)</span> は <span class="math display">\[s=\frac{2v^2}{a}\]</span> 車の速さ <span class="math inline">\(V\)</span> は <span class="math display">\[V=2v\]</span> となる．</p>
 </details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -354,12 +374,12 @@ ul.task-list li input[type="checkbox"] {
 </summary>
 <p><span class="math display">\[\int　a\dd x=\int　\dot{v}\dv{x}{t}\dd t = \int　\dot{v}v\dd t=\frac{1}{2}v^2 +C\]</span> 問題後半については， <span class="math display">\[\int_{0}^{x}a\dd x=\int_{0}^{T}\dot{v}\dv{x}{t}\dd t = \int_{0}^{T}\dot{v}v\dd t=\left[\frac{1}{2}v^2\right]_{0}^{T}=\frac{1}{2}(V^2-v_0^2)\]</span> <span class="math display">\[\int_{0}^{x}a\dd x=ax\]</span> から導き出される．</p>
 </details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題 (アデレード大)
 </div>
 </div>
@@ -373,12 +393,12 @@ ul.task-list li input[type="checkbox"] {
 </summary>
 <p>高さ <span class="math inline">\(y=0,\:h\)</span> の時の速さをそれぞれ <span class="math inline">\(u,v\)</span> とした時，次の式が成り立つ <span class="math display">\[v^2-u^2=-2gh\]</span> <span class="math display">\[(2v)^2-u^2=2gh\]</span> この式から <span class="math inline">\(v\)</span> を消すことによって次の式が成り立つ <span class="math display">\[u^2=\frac{10}{3}gh\]</span> 最後にこの物体がたどり着ける最高点の高さを <span class="math inline">\(H\)</span> とした時， <span class="math display">\[H=\frac{u^2}{2g}=\frac{5}{3}h\]</span> となることがわかる．</p>
 </details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -396,12 +416,12 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="math display">\[\int_{0}^{3x_0}a\dd x = 2a_0x_0\]</span></p>
 <p><span class="math display">\[V=\sqrt{v_0^2+4a_0x_0}\]</span></p>
 </details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -415,12 +435,12 @@ ul.task-list li input[type="checkbox"] {
 </summary>
 <p>川の流れる方向を <span class="math inline">\(y\)</span> 軸，船の進む方向を <span class="math inline">\(x\)</span> 軸，船の最初いる場所を原点として、 <span class="math inline">\(xy\)</span> 座標を考える。船のいる座標は <span class="math inline">\(\boldsymbol{r}=(x,y)\)</span> である時、川の流れは <span class="math inline">\(kx(L-x)\)</span> となるので、 <span class="math inline">\(\boldsymbol{v}=(v,kx(L-x))\)</span> となる。ここで、 <span class="math inline">\(x=vt\)</span> から、 <span class="math inline">\(v_y=kvt(L-vt)\)</span> となり、実際に積分計算をしてやると、 <span class="math inline">\(y=kvL\frac{t^2}{2}-kv^2\frac{t^3}{3}\)</span> となり、軌跡を出さないといけないので <span class="math inline">\(t\)</span> を代入をしてやれば、 <span class="math display">\[y=\frac{kL}{2v}x^2-\frac{k}{3v}x^3\]</span> が答えになる。</p>
 </details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -434,12 +454,12 @@ ul.task-list li input[type="checkbox"] {
 </summary>
 <p>コースの長さを <span class="math inline">\(L\)</span> 、それぞれの車の加速度を <span class="math inline">\(a_A,a_B\)</span> 、最大速度に達する時間を <span class="math inline">\(t,T\)</span> とおくと次のような方程式が成り立つ． <span class="math display">\[L=\frac{1}{2}a_At^2+a_At(T-t)\]</span> <span class="math display">\[L=\frac{1}{2}a_BT^2\]</span> <span class="math display">\[\frac{1}{2}L=\frac{1}{2}a_At^2\]</span> これらの方程式は未知数が5つあるので、一見解決は無理そうに見えますが、全ての式が <span class="math inline">\(L\)</span> だけの変数を持つ左辺を持つ事実と、右辺の字数が全て揃っているところから解決が可能である。実際、1,2番目の式を3番目の式で割ってやれば、 <span class="math inline">\(a_A/a_B,T/t\)</span> の二つを未知数と見立てた方程式が出来上がり、実際に計算してやると、 <span class="math display">\[\frac{a_A}{a_B}=\frac{9}{8},\;\frac{a_At}{a_BT}=\frac{3}{4}\]</span> が求める比になる。</p>
 </details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -458,12 +478,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="難問パート" class="level3" data-number="2.0.1">
 <h3 data-number="2.0.1" class="anchored" data-anchor-id="難問パート"><span class="header-section-number">2.0.1</span> 難問パート</h3>
 <p>これからの問題に対する直感的な解決法は問題の解答の後半にあるので、前半の記述が難しいと感じられたのであれば、スキップしてお読みいただければ嬉しいです。</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -479,12 +499,12 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>後半部分</strong></p>
 <p>車輪は常に <span class="math inline">\(x\)</span> 軸マイナス方向に進み続けているのだが、鉄板が伸びる速さがどれほどのものとなろうとも、伸びる前換算でプラス方向に進むことはあり得ない。なぜなら、車輪は常に鉄板に対して、その伸びる方向と逆方向に速さを持っているからである。なので、いつか絶対に端にたどり着くのだ。</p>
 </details>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 問題
 </div>
 </div>
@@ -650,9 +670,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -717,6 +751,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
