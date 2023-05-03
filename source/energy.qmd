@@ -38,7 +38,7 @@ $$\dot{\boldsymbol{p}}=\boldsymbol{F}$$
 \end{align*}
 このような結果が得られるわけです．このようにある値が定数であり続けることを，値が保存していると呼ばれます．また，全運動量の合計は，全質量と重心速度の積によって表すことができることもわかりました．以上をまとめると，
 
-{.Tbox data-latex="{定理}"}
+::: {.Tbox data-latex="{定理}"}
 
 外力の働かない系では，全運動量が保存する．また，系の全運動量 $\vb*{P}$ は
 
@@ -66,12 +66,12 @@ $$\vb*{P}=M_{\text{tot}}\boldsymbol{v}_{\text{G}} $$
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 $$m_1\boldsymbol{v_1}+m_2\boldsymbol{v_2}=\boldsymbol{0}$$
 $$\boldsymbol{v_2}=-\frac{m_1}{m_2}\boldsymbol{v_1}$$
 
-
+:::
 
 ## 運動エネルギー
 
@@ -108,14 +108,14 @@ $$\dv{t}\left(\frac{1}{2}mv^2\right)=\boldsymbol{F}\cdot\vb*{v}$$
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 \begin{align*}
 \frac{1}{2}mv_1^2-\frac{1}{2}mv_2^2&=\int_{y_0}^{y_1}mg \dd{y} = mg(y_1-y_0) = mgd\\
 v_2=\sqrt{v_1^2+2gd}
 \end{align*}
 
-
+:::
 
 この問題は，運動方程式を解いてやれば解決するものです．ですが，その場合，物体の座標を時間の関数で表すことになるので，労力は大きく変わるでしょう．
 $$v^2-v_0^2=2\int a \dd{x}$$
@@ -285,7 +285,7 @@ M_{\text{tot}} \ddot{\boldsymbol{r}_{\text{G}}} = \boldsymbol{F}_{1\text{out}}+\
 
 ![](images/energy/energy2.png)
 
-::: {.Tbox data-latex="{定理}"} 法則
+::: {.Tbox data-latex="{法則}"} 
 
 重心系から見た２物体までの距離は質量の逆比で決まり，速さについても同じである．
 
@@ -331,7 +331,7 @@ $$\Delta K_{\text{all}} = \int \boldsymbol{F}_{12}\cdot\boldsymbol{v}_{12}\dd t 
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 1. 
     1. 一覧にすると，
@@ -366,7 +366,7 @@ $$\Delta K_{\text{all}} = \int \boldsymbol{F}_{12}\cdot\boldsymbol{v}_{12}\dd t 
     K_G&=\frac{1}{2}\frac{m^2}{m+M}v_0^2
     \end{align*}
 
-
+:::
 
 
 ::: {.Qbox data-latex="{問題}"}
@@ -377,7 +377,7 @@ $$\Delta K_{\text{all}} = \int \boldsymbol{F}_{12}\cdot\boldsymbol{v}_{12}\dd t 
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 物体 $m$ の右向きの速さが $M$ の右向きの速さより大きいと，飛び出すことができないし，逆はあり得ないので，飛び出す際の $m,M$ の右の速さは同じであり，それを $v_x$ とする．
 $$v_x=\frac{m}{m+M}v$$
@@ -396,7 +396,7 @@ $$\frac{1}{2}\mu v^2=mgh$$
 $$h=\frac{M}{M+m}\frac{v^2}{2g}$$
 とわかる．
 
-
+:::
 
 ::: {.Qbox data-latex="{問題(東京大)}"}
 
@@ -406,8 +406,6 @@ $$h=\frac{M}{M+m}\frac{v^2}{2g}$$
 ![](images/energy/energy1.png)
 
 :::
-
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
 
 
 

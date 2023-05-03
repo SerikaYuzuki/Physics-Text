@@ -1,10 +1,19 @@
-project:
+project: 
   type: book
   output-dir: docs
+  
+bibliography: references.bib
 
 book:
-  title: "Physics Text"
-  author: "Serika Yuzuki, Akina"
+  title: 基礎物理
+  subtitle: 微積分などを勉強して高校物理を履修する方のために
+  author:
+    - name: Serika Yuzuki
+      affiliations:
+        - name: University of Tokyo
+    - name: Akina
+      affiliations: 
+        - name: Hokkaido University
   date: "3/2/2023"
   chapters:
     - index.qmd
@@ -14,47 +23,54 @@ book:
     - source/energy.qmd
     - source/database.qmd
 
-bibliography: references.bib
-
-format:
-  html:
-    theme:
-      light: flatly
-      dark: darkly
-    include-in-header: 
-      - text: |
-          $\require{physics}$
-  pdf:
-    keep-tex: true
-    papersize: b4paper
-    code-line-numbers: true
-    highlight-style: github
-    code-block-border-left: false
-    code-block-bg: dedfe0
+format: 
+  titlepage-pdf:
+    documentclass: bxjsbook
+    classoption: xelatex,ja=standard
+    number-sections: true
+    toc: true
+    titlepage: "bg-image"
+    titlepage-bg-image: "img/corner-bg.png"
+    titlepage-logo: "img/logo.png"
+    titlepage-header: "The Publisher"
+    titlepage-footer: |
+      [https://github.com/SerikaYuzuki](https://github.com/SerikaYuzuki)
+    coverpage-include-file:
+      - tex/copyright.tex
+    titlepage-include-file:
+      - tex/dedication.tex
+    coverpage: "great-wave"
+    coverpage-title: "基礎物理"
+    coverpage-footer: "Serika Yuzuki, Akina"
     include-in-header:
-      - text: |
-          \usepackage{xcolor}
-          \definecolor{cmykc}{cmyk}{0.09,0.02,0,0.02}
-          \definecolor{cmykb}{cmyk}{0.96,0.42,0,0.03}          
-          \definecolor{cmyko}{cmyk}{0,0.07,0.28,0}
-          \usepackage{physics}
-          \usepackage{marginnote}
-          \newcounter{marginparcnt}[chapter]
-          \newcommand{\theMarginparcnt}{$\dagger$\arabic{marginparcnt}}
-          \newcommand{\Marginpar}[2][-20pt]{%
-            \stepcounter{marginparcnt}%
-            \textcolor{red}{\textsuperscript{\theMarginparcnt}}%
-            \protect\marginpar{\vskip#1\footnotesize\color{blue}%
-              \textsuperscript{\theMarginparcnt}
-              {#2}\par}}
-          \setlength\marginparwidth{95pt}
-          \usepackage{varwidth}
+      text: |
+        % delete. this is for the example w CZ diacritics
+        \usepackage{babel}
+        \babelprovide[import]{czech}
+        \usepackage[most]{tcolorbox}
+        \usepackage{xcolor}
+        \definecolor{cmykc}{cmyk}{0.09,0.02,0,0.02}
+        \definecolor{cmykb}{cmyk}{0.96,0.42,0,0.03}
+        \definecolor{cmyko}{cmyk}{0,0.07,0.28,0}
+        \usepackage{physics}
+        \usepackage{marginnote}
+        \newcounter{marginparcnt}[chapter]
+        \newcommand{\theMarginparcnt}{$\dagger$\arabic{marginparcnt}}
+        \newcommand{\Marginpar}[2][-20pt]{%
+        \stepcounter{marginparcnt}%
+        \textcolor{red}{\textsuperscript{\theMarginparcnt}}%
+        \protect\marginpar{\vskip#1\footnotesize\color{blue}%
+            \textsuperscript{\theMarginparcnt}
+            {#2}\par}}
+        \setlength\marginparwidth{95pt}
+        \usepackage{varwidth}
     include-before-body: 
-      - text: |
-          \everymath{\displaystyle}
-          \newtcolorbox{Qbox}[1]{title=#1, enhanced, colback=cmykc, colframe=cmykc, drop fuzzy shadow, coltitle=black, fonttitle=\bfseries\large, attach boxed title to top left= {xshift=-3pt, yshift*=-5pt}, boxed title style={sharp corners, drop shadow=cmykb, colback=cmykc, colframe=cmykc, shrink tight, extrude by=3pt}}
-          \newtcolorbox{Rbox}[1]{title=#1, enhanced, colback=cmyko, colframe=cmyko, drop fuzzy shadow, coltitle=black, fonttitle=\bfseries, attach boxed title to top left= {xshift=-3pt, yshift*=-5pt}, boxed title style={sharp corners, drop shadow=Goldenrod, colback=cmyko, colframe=cmyko, shrink tight, extrude by=3pt}}
-          \newtcolorbox{Tbox}[1]{enhanced,
+      text: |
+        %press
+        \everymath{\displaystyle}
+          \newtcolorbox{Qbox}[1]{title=#1, breakable, enhanced, colback=cmykc, colframe=cmykc, drop fuzzy shadow, coltitle=black, fonttitle=\bfseries\large, attach boxed title to top left= {xshift=-3pt, yshift*=-5pt}, boxed title style={sharp corners, drop shadow=cmykb, colback=cmykc, colframe=cmykc, shrink tight, extrude by=3pt}}
+          \newtcolorbox{Rbox}[1]{title=#1, breakable, enhanced, colback=cmyko, colframe=cmyko, drop fuzzy shadow, coltitle=black, fonttitle=\bfseries, attach boxed title to top left= {xshift=-3pt, yshift*=-5pt}, boxed title style={sharp corners, drop shadow=Goldenrod, colback=cmyko, colframe=cmyko, shrink tight, extrude by=3pt}}
+          \newtcolorbox{Tbox}[1]{enhanced, breakable,
             before skip=2mm,after skip=2mm, colback=black!5,colframe=black!50,boxrule=0.2mm,
             attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight}, varwidth boxed title*=-3cm,
             boxed title style={frame code={
@@ -74,7 +90,7 @@ format:
           },
           fonttitle=\bfseries,
           title={#1},colbacktitle=LimeGreen}
-          \newtcolorbox{Dbox}[1]{enhanced,
+          \newtcolorbox{Dbox}[1]{enhanced, breakable,
             before skip=2mm,after skip=2mm, colback=black!5,colframe=black!50,boxrule=0.2mm,
             attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight}, varwidth boxed title*=-3cm,
             boxed title style={frame code={
@@ -94,10 +110,16 @@ format:
           },
           fonttitle=\bfseries,
           title={#1},colbacktitle=SkyBlue}
-pdf-engine: xelatex
-documentclass: bxjsbook
-classoption: xelatex,ja=standard
-editor: visual
-
-
-
+          \newtcolorbox{Abox}[2][]{breakable, skin=enhancedlast jigsaw,interior hidden, boxsep=0pt,top=0pt,colframe=SkyBlue,coltitle=SkyBlue!50!black, fonttitle=\bfseries\sffamily,
+            attach boxed title to bottom center,
+              boxed title style={empty,boxrule=0.5mm},
+              varwidth boxed title=0.5\linewidth,
+              underlay boxed title={
+            \draw[white,line width=0.5mm] ([xshift=0.3mm-\tcboxedtitleheight*2,yshift=0.3mm]title.north west) --([xshift=-0.3mm+\tcboxedtitleheight*2,yshift=0.3mm]title.north east);
+            \path[draw=SkyBlue,top color=white,bottom color=SkyBlue!50!white,line width=0.5mm] ([xshift=0.25mm-\tcboxedtitleheight*2,yshift=0.25mm]title.north west)
+            cos +(\tcboxedtitleheight,-\tcboxedtitleheight/2)
+            sin +(\tcboxedtitleheight,-\tcboxedtitleheight/2)
+            -- ([xshift=0.25mm,yshift=0.25mm]title.south west) -- ([yshift=0.25mm]title.south east)
+            cos +(\tcboxedtitleheight,\tcboxedtitleheight/2)
+            sin +(\tcboxedtitleheight,\tcboxedtitleheight/2); },
+              title={#2},#1}

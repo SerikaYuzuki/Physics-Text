@@ -107,7 +107,7 @@ $$\boldsymbol{F_{BA}}+\boldsymbol{F_{AB}}=\boldsymbol{0}$$
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 ![](images/newton/newton4.png)
 
@@ -127,7 +127,7 @@ N &= mg \cos \theta
 
 故に加速度の大きさは $\sqrt{\ddot{x}^2+\ddot{y}^2}=g \sin \theta$ で，方向は坂道の滑り落ちる方向である．
 
-
+:::
 
 ニュートンの運動の法則は粒子に対して成り立つものであり，残念ながらある程度以上の粒子が集まっている「物体」については説明されていません．ですが，それでも，運動方程式から得られる情報はたくさんあります．例えば，とある場所に $n$ 個の粒子があり，それらが互いに力を及ぼしながら，外からも力を受けているとしましょう．その時， $i$ 番目の粒子の運動方程式は
 
@@ -165,7 +165,7 @@ M_{\text{tot}}\ddot{\boldsymbol{r}_\text{G}} = \sum_i\boldsymbol{F}_{i\text{out}
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 ![](images/newton/newton6.png)
 
@@ -191,7 +191,7 @@ T_1=T_2
 \end{align*}
 という関係がわかる．この関係は，今後も使うので注意すべし．ただし，紐の質量が無視できる場合に限ることを注意せよ．
 
-
+:::
 
 ::: {.Qbox data-latex="{問題}"}
 
@@ -205,7 +205,7 @@ T_1=T_2
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 $m_1,m_2$ それぞれに働く張力の大きさを $T_1,T_2$ とする．右側を正としてそれぞれの斜面に沿った加速度を $a_1,a_2$ として，運動方程式を立てると
 \begin{align*}
@@ -224,7 +224,7 @@ T=\frac{m_1m_2}{m_1+m_2}(\sin \theta_1+\sin \theta_2)g
 とわかる．この問題については，脳内で次のように変換すると楽かもしれない．
 ![](images/newton/newton8.png)
 
-
+:::
 
 今までの問題でも扱ってきたのですが，束縛条件にフォーカスを当てたような問題をやってみましょう．
 
@@ -239,7 +239,7 @@ T=\frac{m_1m_2}{m_1+m_2}(\sin \theta_1+\sin \theta_2)g
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 ![](images/newton/newton10.png)
 
@@ -260,7 +260,7 @@ m_2\ddot{x_2} &= m_2g-T
 T=\frac{3m_1m_2}{m_1+4m_2}g
 \end{align*}
 
-
+:::
 
 
 ::: {.Qbox data-latex="{問題}"}
@@ -275,7 +275,7 @@ T=\frac{3m_1m_2}{m_1+4m_2}g
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 $m_1,m_2$ に働く垂直抗力を $N_1,N_2$ として，張力を $T$ とする．また水平方向右を正とする $x$ 軸，鉛直上方向を正とする $y$ 軸を設定して運動方程式を立てる．
 \begin{align*}
@@ -297,7 +297,7 @@ T&=\left\{\frac{1}{M+m_2}+\frac{1}{m_1}+\frac{1}{m_2}\right\}^{-1}g\\
 \ddot{y_2}&=\left\{\frac{1}{M+m_2}+\frac{1}{m_1}+\frac{1}{m_2}\right\}^{-1}\frac{g}{m_2}-g
 \end{align*}
 
-
+:::
 
 ::: {.Qbox data-latex="{問題}"}
 
@@ -308,7 +308,7 @@ T&=\left\{\frac{1}{M+m_2}+\frac{1}{m_1}+\frac{1}{m_2}\right\}^{-1}g\\
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 張力を $T$ とする．鉛直下方向を正として運動方程式を立てる．
 \begin{align*}
@@ -325,7 +325,7 @@ m_3a_3&=m_3g-T
 T=\left(\frac{4}{m_1}+\frac{1}{m_2}+\frac{1}{m_3}\right)^{-1}4g
 \end{align*}
 
-
+:::
 
 ::: {.Qbox data-latex="{問題}"}
 (滋賀医大)
@@ -336,7 +336,7 @@ T=\left(\frac{4}{m_1}+\frac{1}{m_2}+\frac{1}{m_3}\right)^{-1}4g
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 ![](images/newton/newton15.png)
 
@@ -357,6 +357,7 @@ N&=\frac{mg}{1+\frac{m}{M}\sin ^2 \theta}\cos \theta\\
 \end{align*}
 ここで，なぜ答えの値はマイナスになっているかというと，上の図のように考えているからであって， $\dd x$ が右向き正だからであり，左向き正であればプラスの値が答えになる．
 
+:::
 
 次に摩擦力について考えましょう．
 
@@ -391,7 +392,7 @@ mg \sin \theta=\mu N
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 ![](images/newton/newton15.png)
 
@@ -416,7 +417,7 @@ R_2&<\mu_2N_2
 $$\mu_1(m_1+m+2)g<F \leq (\mu_1'+\mu_2)(m_1+m_2)g$$ 
 また，ここまでの議論は $R_2<\mu_2N_2$ を使い，それまでは具体的に $R_2$ を設定せずに進めたが， $R_2=\nu_2 N_2$ などとおいて計算を進め，最終的に $\nu_2<\mu_2$ とすることでも構わない．これからはどちらの方法も用いるので，混乱のないようにお願いしたい．
 
-
+:::
 
 ::: {.Qbox data-latex="{問題}"}
 
@@ -432,7 +433,7 @@ $$\mu_1(m_1+m+2)g<F \leq (\mu_1'+\mu_2)(m_1+m_2)g$$
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 ![](images/newton/newton18.png)
 
@@ -466,6 +467,7 @@ a=a_0,\;v=a_0t,\;s=\frac{1}{2}a_0t^2\;(0\leq t \leq t_0) \\
 a=0,\;v=v_0,\;s=\frac{v_0^2}{2a_0} + v_0(t-t_0)\;(t_0\leq t \leq t_1)
 \end{align*}
 
+:::
 
 ::: {.Qbox data-latex="{問題}"}
 
@@ -479,7 +481,7 @@ a=0,\;v=v_0,\;s=\frac{v_0^2}{2a_0} + v_0(t-t_0)\;(t_0\leq t \leq t_1)
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 斜面下向きに沿った座標軸を考え，物体の加速度を $a$ ，物体同士に働く抗力の大きさを $N$ ，とした時次のようになる．
 \begin{align*}
@@ -497,6 +499,7 @@ N&=\frac{m_1m_2}{m_1+m_2}(\mu_1-\mu_2)g\cos\theta
 \end{align*}
 というのが滑らない限界の大きさの角である．
 
+:::
 
 ::: {.Qbox data-latex="{問題}"}
 （東京大）
@@ -524,7 +527,7 @@ I AとBの間の摩擦も無視できる場合に以下の問いに答えよ．
 語群：等速，等加速度
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 I 
 
@@ -565,7 +568,7 @@ ma_y&=mg-N
 上の結果と合わせれば $R/N=1=\mu_0$ とわかる．
 1. 点Pを境にその前では(ア)等加速度運動であり，その後は(イ)等速運動である．
 
-
+:::
 
 ::: {.Qbox data-latex="{問題}"}
 
@@ -574,7 +577,7 @@ ma_y&=mg-N
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 \begin{align*}
 m\ddot{x}&=mg-k\dot{x}\\
@@ -582,5 +585,5 @@ m\ddot{x}&=mg-k\dot{x}\\
 \end{align*}
 終端速度は $mg/k$ である．
 
-
+:::
 
