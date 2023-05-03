@@ -103,14 +103,14 @@ $$ \lim_{x\to a}f(x)=\alpha$$
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 |||
 |---|---|
 |$$\frac{1}{3}$$|$$2\sqrt{2}$$|
 |$$a=5,\;b=-\frac{1}{4}$$|$$a=1,\;b=-1$$|
 
-
+:::
 
 ::: {.Qbox data-latex="{問題}"}
 
@@ -121,7 +121,7 @@ $$\lim_{x \to 1}f(x)=\frac{1}{2}$$
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 $$f(x)=\frac{(2x-1)(ax+1)}{(x-a)(ax+1)}=\frac{2x-1}{x-a}$$
 となっているので，極限を計算すると
@@ -130,7 +130,7 @@ $$a=-1$$
 
 とわかる．
 
-
+:::
 
 ## 商微分
 
@@ -203,7 +203,7 @@ $$f(x)=x^3+x+1$$
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
  $a=x,\;b=a+\Delta x$ とする．
 $$\Delta y = \frac{f(b)-f(a)}{b-a}\Delta x$$
@@ -212,7 +212,7 @@ $$= \frac{3x^2\Delta x + 3x\Delta x^2 + \Delta x ^3 + \Delta x}{\Delta x}$$
 $$=3x^2+ 3x\Delta x + \Delta x ^2 + 1 \to_{\Delta x \to 0} 3x^2+1$$
 $$\dv{y}{x}=3x^2+1$$
 
-
+:::
 
 ここで注目して欲しいのは， $\Delta y$ を表す式の中で， $\Delta x$ の2次以上の項が消えていることです．導関数を求める極限の計算では完全に消滅しますが， $\Delta x$ が $0$ に比較的に近いだけの値を考えている時の近似計算でも同様に無視したりします．このことを一次近似と呼んでいます．具体的な問題は後半にあるので，手を動かしてやってみましょう．
 
@@ -231,7 +231,7 @@ $$\dv{y}{x}=3x^2+1$$
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 |||
 |---|---|
@@ -239,7 +239,7 @@ $$\dv{y}{x}=3x^2+1$$
 | $$2x+3$$ | $$-\frac{1}{x^2}$$ |
 | $$\frac{3}{2}\sqrt{x}$$ | $$6x^5+5x^4+4x^3$$ |
 
-
+:::
 
 ::: {.Qbox data-latex="{問題}"}
 
@@ -250,11 +250,11 @@ $$\lim_{x\to a}\frac{x^nf(x)-a^nf(a)}{x^n-a^n}$$
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 $$f(a)+\frac{a}{n}f'(a)$$
 
-
+:::
 
 ::: {.Qbox data-latex="{問題}"}
 
@@ -265,7 +265,7 @@ $$1024^2,\; \sqrt{74}$$
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 $f(x)=x^2$ とする．
 $$f(x+a) \approx f(x) + f'(x) \times a$$
@@ -277,7 +277,7 @@ $$1000^2 + 1000 \times 24 \approx 10024000$$
 後半の問題も同じく， $f(x)=\sqrt{x},\; x=64,\; a=10$ とおいて解けば，
 $$\sqrt{64+10} \approx \sqrt{64} + \frac{1}{2\sqrt{64}} \times 10 \approx 8.6 $$
 
-
+:::
 
 
 ::: {.Qbox data-latex="{問題}"}
@@ -296,7 +296,7 @@ $$\dv{x} x^n = nx^{n-1}$$
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 $(f+g)'=f'+g'$ は自力でせよ．
 
@@ -312,6 +312,7 @@ $$\frac{f(x+\Delta x)g(x+\Delta x)-f(x)g(x)}{\Delta x} = f'(x)g(x)+f(x)g'(x)$$
 
 最後の問題については二項定理を用いて自ら解決せよ．なおこの定理は $n$ が整数の時だけでなく，実数のときにも成り立つが，その証明は難しいのでここでは省略する．ただし，これからは使っていくので，知っておくこと．
 
+:::
 
 ここで，このテキストの特徴として，詳しい解答を書いていないことが多々あることでしょう．これは，特定の問題までの内容を理解した人ならば違和感なく解ける問題や，有名すぎるあまりにわざわざ書くこともないだろうと思われる問題について当てはまることになります．ただし，ぜひともこの考え方を習得してもらいたいと思われる際には，詳しい解答を書くように心がけています．
 
@@ -364,13 +365,13 @@ $$f(x)=\sqrt[3]{\frac{x^2}{1-x}}$$
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 $y=f(x),\; u=\frac{x^2}{1-x}$ とする．この時 $y=\sqrt[3]{u}$ となるため
 
 $$\dv{y}{x}=\dv{y}{u}\dv{u}{x}=\frac{1}{3u^{2/3}}\frac{2x-x^2}{(1-x)^2}=\frac{1}{3}\left(\frac{1-x}{x^2}\right)^{2/3}\frac{2x-x^2}{(1-x)^2}$$
 
-
+:::
 
 ::: {.Qbox data-latex="{問題}"}
 
@@ -385,7 +386,7 @@ $x=y\sqrt{y+1}$ の時， $\dv{y}{x}$ を求めよ．
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 |||
 |---|---|
@@ -403,7 +404,7 @@ $$\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x \to 0}\frac{1}{\
 
 を考えれば明らかである．ただしこの証明は連続性などの過程を飛ばした直感的なものに過ぎず，厳密な証明はここではしない．
 
-
+:::
 
 ## 増減
 
@@ -427,7 +428,7 @@ $$f(x)=x^3-3x+1$$
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 $$f'(x)=3(x+1)(x-1)$$
 
@@ -443,7 +444,7 @@ $$f'(x)=3(x+1)(x-1)$$
 
 また， $x=-1,\; x=1$ の場所は増減が変化する点であり，この点のことを極大点，極小点などと呼んでいる．
 
-
+:::
 
 
 ## 面積と区分求積法
@@ -490,7 +491,7 @@ $$\displaystyle\int_{a}^{b}f(x)dx$$
 $$\displaystyle\int_{0}^{1} x^2dx$$
 
 :::
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 \begin{align*}
 \displaystyle\int_{0}^{1} x^2dx　&= \displaystyle\lim_{n\to\infty} \displaystyle\sum_{k=1}^{n}\displaystyle\frac{1}{n}\cdot \left(\displaystyle\frac{k}{n}\right)^2\\
@@ -499,7 +500,7 @@ $$\displaystyle\int_{0}^{1} x^2dx$$
 &=\displaystyle\frac{1}{3}
 \end{align*}
 
-
+:::
 
 ## 微分積分学の基本定理
 
@@ -526,14 +527,14 @@ $$\displaystyle\int_{}^{}x\ dx $$
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
 微分の知識を思い出せば， $\displaystyle\frac{1}{2}x^2$ の微分が $x$ になることはすぐにわかる．しかし，同様に $\displaystyle\frac{1}{2}x^2+1$ も，$\displaystyle\frac{1}{2}x^2-99$ も，
 $\displaystyle\frac{1}{2}x^2+\pi$ も， $\displaystyle\frac{1}{2}x^2$ に定数を足したものはすべて微分すれば$x$になる．これらをまとめて， $\displaystyle\frac{1}{2}x^2+C$とかき，$C$を積分定数という．もとの例題に対する答えは， 
 $$\displaystyle\int_{}^{}x\ dx =\displaystyle\frac{1}{2}x^2+C~\mbox{($C$は積分定数)}$$
 である．
 
-
+:::
 
 上の例題のように，不定積分の結果には積分定数がつくことになります．都度但し書きを書くのは煩雑なので，積分の説明の間は「 $C$ は積分定数」という説明は添えないことにします．
 
@@ -550,8 +551,11 @@ $$\displaystyle\int_{}^{}x\ dx =\displaystyle\frac{1}{2}x^2+C~\mbox{($C$は積�
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
+//TODO
+
+:::
 
 
 前の説で述べた定積分の値については，不定積分を用いて計算することができます．
@@ -572,9 +576,11 @@ $$\displaystyle\int_{0}^{8}x\ dx $$
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
+
 $$\displaystyle\int_{}^{}x\ dx = \left[\displaystyle\frac{1}{2}x^2\right]_{0}^{8}=32-0=0$$
 
+:::
 
 ::: {.Qbox data-latex="{問題}"}
 
@@ -589,8 +595,11 @@ $$\displaystyle\int_{}^{}x\ dx = \left[\displaystyle\frac{1}{2}x^2\right]_{0}^{8
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
+//TODO
+
+:::
 
 
 ## 積分の種々の性質
@@ -614,11 +623,14 @@ $$\displaystyle\int_{}^{}(af(x)+bg(x))\ dx=a\displaystyle\int_{}^{}f(x)\ dx+b\di
 $$\displaystyle\int_{}^{}(2x+3x^2)\ dx $$
 
 :::
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+
+::: {.Abox data-latex="{解答}"}
 
 \begin{align*}\displaystyle\int_{}^{}(2x+3x^2)\ dx &=2\displaystyle\int_{}^{}x\ dx+3\displaystyle\int_{}^{}x^2\ dx\\
 &=x^2+x^3+C
 \end{align*}
+
+:::
 
 このとき，2つの不定積分の和では積分定数は $C$ だけでよく，2つつける必要はない．2つの不定積分から出てくる積分定数の和を改めて定数としておいてしまえばよいからである．
 
@@ -639,6 +651,9 @@ $$\displaystyle\int_{}^{}(2x+3x^2)\ dx $$
 
 :::
 
-\tcbox[arc is angular, shrink tight, extrude by=4pt]{解答}
+::: {.Abox data-latex="{解答}"}
 
+//TODO
+
+:::
 
