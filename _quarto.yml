@@ -25,6 +25,7 @@ book:
 
 format: 
   titlepage-pdf:
+    latex-engine: xelatex
     documentclass: bxjsbook
     classoption: xelatex,ja=standard
     number-sections: true
@@ -59,10 +60,12 @@ format:
         \newcommand{\Marginpar}[2][-20pt]{%
         \stepcounter{marginparcnt}%
         \textcolor{red}{\textsuperscript{\theMarginparcnt}}%
-        \protect\marginpar{\vskip#1\footnotesize\color{blue}%
+        \protect\marginnote{\vskip#1\footnotesize\color{blue}%
             \textsuperscript{\theMarginparcnt}
             {#2}\par}}
         \setlength\marginparwidth{95pt}
+        \renewcommand*{\raggedleftmarginnote}{\raggedright}
+        \renewcommand*{\raggedrightmarginnote}{\raggedright}
         \usepackage{varwidth}
     include-before-body: 
       text: |
@@ -123,3 +126,4 @@ format:
             cos +(\tcboxedtitleheight,\tcboxedtitleheight/2)
             sin +(\tcboxedtitleheight,\tcboxedtitleheight/2); },
               title={#2},#1}
+                    \newcommand{\bm}{\symbfit}
