@@ -3,8 +3,9 @@ project:
 
 format: 
   pdf:
+    pdf-engine: lualatex
     documentclass: bxjsbook
-    classoption: xelatex,ja=standard
+    classoption: lualatex,ja=standard
     include-in-header:
       text: |
         % delete. this is for the example w CZ diacritics
@@ -23,10 +24,12 @@ format:
         \newcommand{\Marginpar}[2][-20pt]{%
         \stepcounter{marginparcnt}%
         \textcolor{red}{\textsuperscript{\theMarginparcnt}}%
-        \protect\marginpar{\vskip#1\footnotesize\color{blue}%
+        \protect\marginnote{\vskip#1\footnotesize\color{blue}%
             \textsuperscript{\theMarginparcnt}
             {#2}\par}}
         \setlength\marginparwidth{95pt}
+        \renewcommand*{\raggedleftmarginnote}{\raggedright}
+        \renewcommand*{\raggedrightmarginnote}{\raggedright}
         \usepackage{varwidth}
     include-before-body: 
       text: |
@@ -87,3 +90,6 @@ format:
             cos +(\tcboxedtitleheight,\tcboxedtitleheight/2)
             sin +(\tcboxedtitleheight,\tcboxedtitleheight/2); },
               title={#2},#1}
+          \newcommand{\bm}{\symbfit}
+
+

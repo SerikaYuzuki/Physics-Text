@@ -19,21 +19,21 @@
 物体に力が働く時，その物体は加速度を持つ．
 :::
 
-では，この関係性はどのようになっているのでしょうか．つまり物体に働く力を $\boldsymbol{F}$ ，物体の位置を $\boldsymbol{r}$ として，
+では，この関係性はどのようになっているのでしょうか．つまり物体に働く力を $\symbfit{F}$ ，物体の位置を $\symbfit{r}$ として，
 \begin{align*}
-    \boldsymbol{F} = f(\ddot{\boldsymbol{r}})
+    \symbfit{F} = f(\ddot{\symbfit{r}})
 \end{align*}
 と言う関数 $f$ が存在すると言うことである．この関数の形を知ることができれば，私たちは力学の根本の大きな部分を理解することになるのですが，これについては偉大なる先人たちが導き出してくれました．なんとこの関数は一次関数だったのです．そして，その比例係数の逆数を，質量と呼ぶようになりました．
 
 ::: {.Tbox data-latex="{定理}"}
  ニュートンの第２法則(運動方程式)
 
-物体の質量を $m$ ，物体の位置を $\boldsymbol{r}$ ，物体に働く力を $\boldsymbol{F}$ とした時，次の式が成り立つ．
+物体の質量を $m$ ，物体の位置を $\symbfit{r}$ ，物体に働く力を $\symbfit{F}$ とした時，次の式が成り立つ．
 
-$$\ddot{\boldsymbol{r}}=\frac{1}{m}\boldsymbol{F}$$
+$$\ddot{\symbfit{r}}=\frac{1}{m}\symbfit{F}$$
 :::
 
-ここで，$$m\ddot{\boldsymbol{r}}=\boldsymbol{F},\;\boldsymbol{F}=m\ddot{\boldsymbol{r}}$$ どちらがいいのかとか言う問題には立ち入らないことにします．式の順番に意義があると思われる方は自らの信念に従っていただければ嬉しいです．
+ここで，$$m\ddot{\symbfit{r}}=\symbfit{F},\;\symbfit{F}=m\ddot{\symbfit{r}}$$ どちらがいいのかとか言う問題には立ち入らないことにします．式の順番に意義があると思われる方は自らの信念に従っていただければ嬉しいです．
 <details>
 筆者の考えるところでは，とある視点に基づいて考えるよりかは，色々な視点で持って数式は見るべきであり，数式に意味を持たせるべきと言う意見よりも，数式に意味を見出すべきだと言う意見を採用したいと思っています．
 
@@ -51,7 +51,7 @@ a&=g
 
 というように，前の章で練習した内容と矛盾のない結果になるわけです．
 
-では，運動方程式から推察できる簡単な事実を考えましょう．すなわち，力の働いていない物体はどのような運動をするのか，です．これは非常に簡単で $m\ddot{\boldsymbol{r}}=\boldsymbol{0},\;\dot{\boldsymbol{r}}=(\text{一定})$ と言う非常にシンプルな結果となるわけです．つまり，次のようにまとめられるわけです．
+では，運動方程式から推察できる簡単な事実を考えましょう．すなわち，力の働いていない物体はどのような運動をするのか，です．これは非常に簡単で $m\ddot{\symbfit{r}}=\symbfit{0},\;\dot{\symbfit{r}}=(\text{一定})$ と言う非常にシンプルな結果となるわけです．つまり，次のようにまとめられるわけです．
 
 ::: {.Tbox data-latex="{定理}"}
  ニュートンの第1法則(慣性の法則)
@@ -65,8 +65,8 @@ a&=g
 ::: {.Tbox data-latex="{定理}"}
  ニュートンの第３法則(作用反作用の法則)
 
-物体に働く力は，常にある２つの物体の間で及ぼしあうように働く．物体Aが物体Bに及ぼす力を $\boldsymbol{F_{BA}}$ ，物体Bが物体Aに及ぼす力を $\boldsymbol{F_{AB}}$ とした時，次の式が成り立つ．
-$$\boldsymbol{F_{BA}}+\boldsymbol{F_{AB}}=\boldsymbol{0}$$
+物体に働く力は，常にある２つの物体の間で及ぼしあうように働く．物体Aが物体Bに及ぼす力を $\symbfit{F_{BA}}$ ，物体Bが物体Aに及ぼす力を $\symbfit{F_{AB}}$ とした時，次の式が成り立つ．
+$$\symbfit{F_{BA}}+\symbfit{F_{AB}}=\symbfit{0}$$
 
 :::
 
@@ -132,22 +132,22 @@ N &= mg \cos \theta
 ニュートンの運動の法則は粒子に対して成り立つものであり，残念ながらある程度以上の粒子が集まっている「物体」については説明されていません．ですが，それでも，運動方程式から得られる情報はたくさんあります．例えば，とある場所に $n$ 個の粒子があり，それらが互いに力を及ぼしながら，外からも力を受けているとしましょう．その時， $i$ 番目の粒子の運動方程式は
 
 \begin{align*}
-m_i\ddot{\boldsymbol{r}_i} = \sum_j \boldsymbol{F}_{ij} +  \boldsymbol{F}_{i\text{out}}
+m_i\ddot{\symbfit{r}_i} = \sum_j \symbfit{F}_{ij} +  \symbfit{F}_{i\text{out}}
 \end{align*}
-ここで， $\boldsymbol{F}_{ij}$ は $j$ 番目の粒子が $i$ 番目の粒子に及ぼす力であり， $\boldsymbol{F}_{i\text{out}}$ は $i$ 番目の粒子が受ける外力です．
+ここで， $\symbfit{F}_{ij}$ は $j$ 番目の粒子が $i$ 番目の粒子に及ぼす力であり， $\symbfit{F}_{i\text{out}}$ は $i$ 番目の粒子が受ける外力です．
 
 この $n$ 元微分方程式を解き切ることは絶望的に難しいのは簡単にわかるでしょう．ですが，全ての方程式を足し合わせることによって，
 \begin{align*}
-\sum_i m_i\ddot{\boldsymbol{r}_i} = \sum_i\sum_j \boldsymbol{F}_{ij} +  \sum_i\boldsymbol{F}_{i\text{out}}
+\sum_i m_i\ddot{\symbfit{r}_i} = \sum_i\sum_j \symbfit{F}_{ij} +  \sum_i\symbfit{F}_{i\text{out}}
 \end{align*}
-ここで，作用反作用の法則を考えれば， $\sum_i\sum_j \boldsymbol{F}_{ij}=\boldsymbol{0}$ なので，
+ここで，作用反作用の法則を考えれば， $\sum_i\sum_j \symbfit{F}_{ij}=\symbfit{0}$ なので，
 \begin{align*}
 M_{\text{tot}}&=\sum_i m_i \\
-\boldsymbol{r}_\text{G}&=\frac{\sum_i m_i\ddot{\boldsymbol{r}_i}}{M_{\text{tot}}}
+\symbfit{r}_\text{G}&=\frac{\sum_i m_i\ddot{\symbfit{r}_i}}{M_{\text{tot}}}
 \end{align*}
 と，前半で前重力，後半で加重平均（重心）を定義してやれば，
 \begin{align*}
-M_{\text{tot}}\ddot{\boldsymbol{r}_\text{G}} = \sum_i\boldsymbol{F}_{i\text{out}}
+M_{\text{tot}}\ddot{\symbfit{r}_\text{G}} = \sum_i\symbfit{F}_{i\text{out}}
 \end{align*}
 とすることができます．これは重心(運動)方程式と呼ばれており，先の問題のように大きな物体に対して，あたかも粒子ではない物体に対しても運動方程式が当てはまるように書いているのは，重心方程式を書いているに過ぎないわけです．
 

@@ -26,9 +26,12 @@
 
 このボックスが問題を書くものである
 
-::: {.center data-latex="" width=60%}
-![](./drawio/working.svg)
+::: {.center data-latex=""}
+![](./drawio/working.svg){width=60%}
 :::
+\begin{center}
+\includegraphics[width=0.6\textwidth,height=\textheight]{images/energy/energy6.png}
+\end{center}
 
 
 :::
