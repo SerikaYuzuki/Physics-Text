@@ -25,9 +25,9 @@ book:
 
 format: 
   titlepage-pdf:
-    latex-engine: xelatex
-    documentclass: bxjsbook
-    classoption: xelatex,ja=standard
+    latex-engine: lualatex
+    documentclass: ltjsbook
+    classoption: lualatex,ja=standard
     number-sections: true
     toc: true
     titlepage: "bg-image"

@@ -1,0 +1,37 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{anss}[2026/03/11 Answer stamp commands]
+
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{xparse}
+
+\newtcbox{\stampf}{%
+  on line,
+  nobeforeafter,
+  tcbox raise base,
+  enhanced,
+  boxrule=0pt,
+  arc=2pt,
+  left=2pt,right=2pt,top=-2pt,bottom=-2pt,
+  colback=black!75,
+  colframe=black!75,
+  colupper=white,
+  fontupper=\bfseries\small,
+}
+
+\newtcbox{\stampo}{%
+  on line,
+  nobeforeafter,
+  tcbox raise base,
+  enhanced,
+  boxrule=0.5pt,
+  arc=2pt,
+  left=2pt,right=2pt,top=-2pt,bottom=-2pt,
+  colback=white,
+  colframe=black!75,
+  colupper=black!85,
+  fontupper=\bfseries\small,
+}
+
+\NewDocumentCommand{\anss}{m}{\stampf{#1}}
+\NewDocumentCommand{\ansso}{m}{\stampo{#1}}
+\newcommand{\kaito}{\anss{解\hspace{0.6em}答}}

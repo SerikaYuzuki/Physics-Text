@@ -22,17 +22,20 @@
 
 :::
 
-::: {.Qbox data-latex="{問題}"}
+::: {.Qbox data-latex="{斜面付きばねの問題}{2}{東京大}"}
 
 このボックスが問題を書くものである
 
-::: {.center data-latex=""}
-![](./drawio/working.svg){width=60%}
-:::
-\begin{center}
-\includegraphics[width=0.6\textwidth,height=\textheight]{images/energy/energy6.png}
-\end{center}
+\begin{tikzpicture}
+\draw[->] (0,0) -- (0,-4);
+\draw (0,0) -- (2,0);
+\draw (2,0) -- (2,-4);
 
+\draw[decorate,decoration={coil}] (1,0) -- (1,-3);
+
+\node[left] at (0,-2) {$y$};
+\node[right] at (2,-2) {$\epsilon(y)+y$};
+\end{tikzpicture}
 
 :::
 
@@ -42,4 +45,3 @@
 このボックスが解答を書くものである
 
 :::
-
