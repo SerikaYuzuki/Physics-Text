@@ -1,0 +1,81 @@
+::: {.Qbox data-latex="{問題}"}
+
+以下のような衝突が起きたと考える．
+
+\begin{center}
+\begin{tikzpicture}[>=stealth]
+
+% --- BEFORE 側 ---
+\fill (-3,  1.2) circle (2.5pt) node[above left=2pt] {$m_1$};
+\draw[->, thick] (-3,1.2) -- (-2.1,0.6) node[midway, above] {$v_1$};
+
+\fill (-3, -0.2) circle (2.5pt) node[below left=2pt] {$m_2$};
+\draw[->, thick] (-3,-0.2) -- (-2.1,0.4) node[midway, below] {$v_2$};
+
+\node at (-3,-1.0) {\small BEFORE};
+
+% --- 中央の COLLISION ---
+\node[font=\large] at (0,0.4) {\boxed{\text{COLLISION}}};
+
+% --- AFTER 側 ---
+\fill (3, 0.7) circle (2.5pt) node[above left=2pt] {$m_3$};
+\draw[->, thick] (3,0.7) -- (3.9,1.3) node[midway, above] {$v_3$};
+
+\fill (3,-0.2) circle (2.5pt) node[below left=2pt] {$m_4$};
+\draw[->, thick] (3,-0.2) -- (3.9,-0.8) node[midway, below] {$v_4$};
+
+\node at (3,-1.0) {\small AFTER};
+
+\end{tikzpicture}
+\end{center}
+
+この時，衝突前の物体の質量と速さを $m_1, m_2, v_1, v_2$ とし，衝突後の物体の質量と速さを $m_3, m_4, v_3, v_4$ として，衝突前後の相対運動エネルギー（重心に対する相対運動のエネルギー）を $K_\mathrm{in}, K_\mathrm{in}'$ ，換算質量を $m_r, m_r'$ とする．
+
+また，重心系から見たそれぞれの物体の運動量を $\symbfit{p_{1\mathrm{G}}}, \symbfit{p_{2\mathrm{G}}}, \symbfit{p_{3\mathrm{G}}}, \symbfit{p_{4\mathrm{G}}}$ とする．
+
+この時，次のことを示せ．
+
+$$
+\begin{aligned}
+|\symbfit{p_{1\mathrm{G}}}| = |\symbfit{p_{2\mathrm{G}}}| = \sqrt{2m_r K_\mathrm{in}} \\
+|\symbfit{p_{3\mathrm{G}}}| = |\symbfit{p_{4\mathrm{G}}}| = \sqrt{2m_r' K_\mathrm{in}'}
+\end{aligned}
+$$
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+運動量保存則によって，
+
+$$
+\begin{aligned}
+\symbfit{p_{1\mathrm{G}}} + \symbfit{p_{2\mathrm{G}}} &= \symbfit{0} \\
+\symbfit{p_{3\mathrm{G}}} + \symbfit{p_{4\mathrm{G}}} &= \symbfit{0}
+\end{aligned}
+$$
+
+である．また，内部運動エネルギーの定義からして，
+
+$$
+\frac{|\symbfit{p_{1\mathrm{G}}}|^2}{2m_1} + \frac{|\symbfit{p_{2\mathrm{G}}}|^2}{2m_2} = K_\mathrm{in}
+$$
+
+求める式は即座に得られる．また，ニュートンダイアグラムからして，
+
+$$
+\begin{aligned}
+\symbfit{v_{1\mathrm{G}}} &= \frac{m_2}{m_1 + m_2} v_{12} \\
+\symbfit{v_{2\mathrm{G}}} &= -\frac{m_1}{m_1 + m_2} v_{12}
+\end{aligned}
+$$
+
+であり，内部運動エネルギーは
+
+$$
+K_\mathrm{in} = \frac{1}{2} m_r v_{12}^2
+$$
+
+である事実からも，求める式が得られる．
+
+:::

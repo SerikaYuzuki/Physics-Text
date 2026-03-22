@@ -1,0 +1,239 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{boxes}[2026/03/11 Box definitions for physics text]
+
+% Required packages for box styling and drawing.
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{xcolor}
+\RequirePackage{varwidth}
+\RequirePackage{physics}
+\RequirePackage{xparse}
+
+% Custom CMYK colors used by box themes.
+\definecolor{cmykc}{cmyk}{0.09,0.02,0,0.02}
+\definecolor{cmykb}{cmyk}{0.96,0.42,0,0.03}
+\definecolor{cmyko}{cmyk}{0,0.07,0.28,0}
+
+% Qbox styling is split into small pieces so it can be retuned later.
+\colorlet{QboxAccent}{black!65}
+\newlength{\QboxRuleThickness}
+\setlength{\QboxRuleThickness}{0.5pt}
+\newlength{\QboxRuleRaise}
+\setlength{\QboxRuleRaise}{0.65ex}
+
+\newtcbox{\QboxTitleBadge}{%
+  on line,
+  nobeforeafter,
+  tcbox raise base,
+  enhanced,
+  boxrule=0.6pt,
+  arc=0pt,
+  boxsep=0pt,
+  left=2pt,right=2pt,top=0pt,bottom=0pt,
+  colback=white,
+  colframe=black,
+  colupper=black,
+  fontupper=\mcfamily\bfseries\small,
+}
+
+\ExplSyntaxOn
+\cs_new:Npn \qbox_difficulty_stars:n #1
+  {
+    \int_case:nnF {#1}
+      {
+        {0}{☆☆☆☆☆}
+        {1}{★☆☆☆☆}
+        {2}{★★☆☆☆}
+        {3}{★★★☆☆}
+        {4}{★★★★☆}
+        {5}{★★★★★}
+      }
+      {★★★★★}
+  }
+\cs_new:Npn \QboxDifficultyStars #1
+  {
+    \qbox_difficulty_stars:n {#1}
+  }
+\ExplSyntaxOff
+
+\newcommand{\QboxRule}{%
+  \leaders\hbox{\rule[\QboxRuleRaise]{1.2em}{\QboxRuleThickness}}\hfill\kern0pt%
+}
+\newcommand{\QboxTitleFormat}[1]{\QboxTitleBadge{\strut #1}}
+\newcommand{\QboxDifficultyText}[1]{難易度\ \QboxDifficultyStars{#1}}
+\newcommand{\QboxDifficultyFormat}[1]{{\fontsize{8}{9.6}\selectfont \strut #1}}
+\newcommand{\QboxUniversityFormat}[1]{{\mcfamily\fontsize{8}{9.6}\selectfont \strut #1}}
+
+\newcommand{\QboxHeader}[2]{%
+  \par\noindent
+  \hbox to \linewidth{%
+    \QboxTitleFormat{#1}%
+    \hspace{0.1em}%
+    \QboxRule
+    \IfNoValueF{#2}{%
+      \IfBlankTF{#2}{}{%
+        \hspace{0.1em}%
+        \QboxDifficultyFormat{(}\QboxDifficultyFormat{\QboxDifficultyText{#2}}\QboxDifficultyFormat{)}%
+      }%
+    }%
+  }\par
+  \par\smallskip
+}
+
+\newcommand{\QboxFooter}[1]{%
+  \par\smallskip\noindent
+  \IfNoValueTF{#1}{%
+    \hbox to \linewidth{\QboxRule}%
+  }{%
+    \IfBlankTF{#1}{%
+      \hbox to \linewidth{\QboxRule}%
+    }{%
+      \hbox to \linewidth{%
+        \QboxRule
+        \hspace{0.1em}%
+        \QboxUniversityFormat{(#1)}%
+      }%
+    }%
+  }%
+}
+
+\NewDocumentEnvironment{Qbox}{m g g}
+  {%
+    \begin{tcolorbox}[
+      breakable,
+      enhanced,
+      sharp corners,
+      boxrule=0pt,
+      frame hidden,
+      colback=white,
+      left=0pt,
+      right=-4pt,
+      top=0pt,
+      bottom=0pt,
+    ]%
+    \QboxHeader{#1}{#2}%
+    \ignorespaces
+  }
+  {%
+    \QboxFooter{#3}%
+    \end{tcolorbox}%
+  }
+
+\newcommand{\RboxTitleFormat}[1]{\QboxTitleBadge{\strut #1}}
+\newcommand{\RboxHeader}[1]{%
+  \par\noindent
+  \hbox to \linewidth{%
+    \RboxTitleFormat{#1}%
+    \hspace{0.3em}%
+    \QboxRule
+  }\par
+  \par\smallskip
+}
+
+\newcommand{\RboxFooter}{%
+  \par\smallskip\noindent
+  \hbox to \linewidth{\QboxRule}%
+}
+
+\NewDocumentEnvironment{Rbox}{m}
+  {%
+    \begin{tcolorbox}[
+      breakable,
+      enhanced,
+      sharp corners,
+      boxrule=0pt,
+      frame hidden,
+      colback=white,
+      left=0pt,
+      right=0pt,
+      top=0pt,
+      bottom=0pt,
+      before skip=4mm,
+      after skip=4mm,
+    ]%
+    \RboxHeader{#1}%
+    \ignorespaces
+  }
+  {%
+    \RboxFooter
+    \end{tcolorbox}%
+  }
+
+\newtcolorbox{Tbox}[1]{
+  enhanced,
+  breakable,
+  before skip=2mm,
+  after skip=2mm,
+  sharp corners,
+  colback=white,
+  colframe=black,
+  boxrule=0.5pt,
+  title={#1},
+  colbacktitle=white,
+  coltitle=black,
+  fonttitle=\mcfamily\bfseries\small,
+  attach boxed title to top left={xshift=2mm,yshift*=-\tcboxedtitleheight/2},
+  boxed title style={
+    sharp corners,
+    boxrule=0.6pt,
+    colback=white,
+    colframe=black,
+    left=2pt,
+    right=2pt,
+    top=0pt,
+    bottom=0pt,
+  }
+}
+
+\newtcolorbox{Dbox}[1]{
+  enhanced,
+  breakable,
+  before skip=2mm,
+  after skip=2mm,
+  sharp corners,
+  colback=white,
+  colframe=black,
+  boxrule=0.5pt,
+  title={#1},
+  colbacktitle=white,
+  coltitle=black,
+  fonttitle=\mcfamily\bfseries\small,
+  attach boxed title to top left={xshift=2mm,yshift*=-\tcboxedtitleheight/2},
+  boxed title style={
+    sharp corners,
+    boxrule=0.6pt,
+    colback=white,
+    colframe=black,
+    left=2pt,
+    right=2pt,
+    top=0pt,
+    bottom=0pt,
+  }
+}
+
+\NewDocumentEnvironment{Abox}{O{} m}
+  {%
+    \begin{tcolorbox}[
+      enhanced,
+      breakable,
+      sharp corners,
+      boxrule=0pt,
+      frame hidden,
+      colback=white,
+      left=3mm,
+      right=3mm,
+      top=1mm,
+      bottom=1mm,
+      before skip=4mm,
+      after skip=4mm,
+      borderline west={0.5pt}{0pt}{black!45},
+      borderline east={0.5pt}{0pt}{black!45},
+      borderline south={0.5pt}{0pt}{black!45},
+    ]%
+    \kaito \hspace{0.9em}
+  }
+  {%
+    \end{tcolorbox}%
+  }
+
+% Short alias for bold math symbols.
+\newcommand{\bm}{\symbfit}

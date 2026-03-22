@@ -1,0 +1,27 @@
+::: {.Qbox data-latex="{問題}"}
+
+
+下の図のように紐に繋がれた３つの物体があり，物体間には滑車がある．$m_2$ に働く張力を求めよ．ただし，紐の質量と摩擦は無視し，紐は弛まないとする．
+
+![](images/newton/newton13.png)
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+張力を $T$ とする．鉛直下方向を正として運動方程式を立てる．
+\begin{align*}
+m_1a_1&=m_1g-2T\\
+m_2a_2&=m_2g-T\\
+m_3a_3&=m_3g-T
+\end{align*}
+また，束縛条件は
+\begin{align*}
+\ddot{x_2}+\ddot{x_3}&=-2\ddot{x_1}
+\end{align*}
+かなりの計算を経ることによって次のようになるとわかる．
+\begin{align*}
+T=\left(\frac{4}{m_1}+\frac{1}{m_2}+\frac{1}{m_3}\right)^{-1}4g
+\end{align*}
+
+:::

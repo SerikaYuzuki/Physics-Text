@@ -1,0 +1,32 @@
+::: {.Qbox data-latex="{問題}"}
+
+次の関数の導関数を求めよ．
+
+|||
+|---|---|
+| $$\sqrt{a^2-x^2}$$ | $$x+\sqrt{x^2-1}$$ |
+| $$\frac{x}{\sqrt{x^2+1}}$$ | $$\frac{\sqrt{a^2+x^2}-\sqrt{a^2-x^2}}{\sqrt{a^2+x^2}+\sqrt{a^2-x^2}}$$ |
+
+$x=y\sqrt{y+1}$ の時， $\dv{y}{x}$ を求めよ．
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+|||
+|---|---|
+| $$-\frac{x}{\sqrt{a^2-x^2}}$$ | $$1+\frac{x}{\sqrt{x^2-1}}$$ |
+| $$\frac{1}{(x^2+1)\sqrt{x^2+1}}$$ | $$\frac{2a^2(a^2-\sqrt{a^4-x^4})}{x^3\sqrt{a^4-x^4}}$$ |
+
+次の問題については，
+
+$$\dv{x}{y}=\frac{3y+2}{2\sqrt{y+1}}$$
+$$\dv{y}{x}=\frac{2\sqrt{y+1}}{3y+2}$$
+
+これは逆関数の微分法と呼ばれるものだが，
+
+$$\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x \to 0}\frac{1}{\frac{\Delta y}{\Delta x}}$$
+
+を考えれば明らかである．ただしこの証明は連続性などの過程を飛ばした直感的なものに過ぎず，厳密な証明はここではしない．
+
+:::

@@ -1,0 +1,35 @@
+::: {.Qbox data-latex="{問題}"}
+
+
+下の図のように紐に繋がれた２つの物体があり，物体間には滑車がある．次の問いに答えよ．ただし，紐の質量と摩擦は無視し，３つの物体は離れないものとする．
+
+![](images/newton/newton11.png)
+
+1. 各物体の加速度を求めよ．
+1. 張力の大きさを求めよ．
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+$m_1,m_2$ に働く垂直抗力を $N_1,N_2$ として，張力を $T$ とする．また水平方向右を正とする $x$ 軸，鉛直上方向を正とする $y$ 軸を設定して運動方程式を立てる．
+\begin{align*}
+M\ddot{X}&=-N_2-T\\
+m_1\ddot{x_1} &= T \\
+N_1&=m_1g\\
+m_2\ddot{x_2} &= N_2\\
+m_2\ddot{y_2} &=T-m_2g
+\end{align*}
+また，束縛条件は
+\begin{align*}
+\ddot{X}&=\ddot{x_2}\\
+\ddot{x_1}-\ddot{X}&=-\ddot{y_2}
+\end{align*}
+かなりの計算を経ることによって次のようになるとわかる．
+\begin{align*}
+T&=\left\{\frac{1}{M+m_2}+\frac{1}{m_1}+\frac{1}{m_2}\right\}^{-1}g\\
+\ddot{X}=\ddot{x_2}&=\left\{\frac{1}{M+m_2}+\frac{1}{m_1}+\frac{1}{m_2}\right\}^{-1}\frac{g}{m_1}\\
+\ddot{y_2}&=\left\{\frac{1}{M+m_2}+\frac{1}{m_1}+\frac{1}{m_2}\right\}^{-1}\frac{g}{m_2}-g
+\end{align*}
+
+:::

@@ -1,0 +1,33 @@
+::: {.Qbox data-latex="{問題}"}
+
+次の事実を証明せよ．
+
+$$(f+g)'=f'+g'$$
+
+$$ (fg)' = f'g+fg'$$
+
+$$\dv{x}\frac{1}{g}=-\frac{g'(x)}{\{g(x)\}^2}$$
+
+$$\left\{ \frac{f}{g} \right\} ' = \frac{f'g-fg'}{g^2}$$
+
+$$\dv{x} x^n = nx^{n-1}$$
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+$(f+g)'=f'+g'$ は自力でせよ．
+
+$ (fg)' = f'g+fg'$ は厳密な証明ではなく，一次近似を駆使して説明する．厳密な証明は自ら調べよ．
+
+$$f(x+\Delta x)g(x+\Delta x) \approx (f(x)+f'(x)\Delta x)(g(x)+g'(x)\Delta x)$$
+
+ここで二次以上の変化量( $\Delta$ 付きの値)は無視されるので，
+$$f(x+\Delta x)g(x+\Delta x) \approx f(x)g(x) + f'(x)g(x)\Delta x + f(x)g'(x)\Delta x$$
+$$\frac{f(x+\Delta x)g(x+\Delta x)-f(x)g(x)}{\Delta x} = f'(x)g(x)+f(x)g'(x)$$
+
+後半の問題は有名問題であり，今までの知識を使って自力で解決せよ．
+
+最後の問題については二項定理を用いて自ら解決せよ．なおこの定理は $n$ が整数の時だけでなく，実数のときにも成り立つが，その証明は難しいのでここでは省略する．ただし，これからは使っていくので，知っておくこと．
+
+:::

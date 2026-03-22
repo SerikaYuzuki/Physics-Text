@@ -1,0 +1,122 @@
+::: {.Qbox data-latex="{単振動}{2}{東京大}"}
+
+```{=tex}
+\begin{center}
+\begin{tikzpicture}[>=stealth, font=\small]
+
+    % --- 設定 ---
+    \def\r{2.0}           % 半円の半径
+    \def\outerh{2.5}      % 台の全体の高さ
+    \def\outerw{3.0}      % 台の片側の幅（中心から）
+    \def\shadowh{1.0}     % 影の高さ
+
+    % --- 座標定義 ---
+    % 中心（原点）、Cは中心
+    \coordinate (C) at (0, \outerh);
+    % 最下点P、原点O
+    \coordinate (P) at (0, \outerh-\r); 
+    \coordinate (O) at (-0.3, 0); % OはPより少し左にある
+
+    % --- 1. 机（影） ---
+    % 影の領域全体を描画
+    \fill[gray!40] (-4.5, -\shadowh) rectangle (4.5, 0);
+    % 台が乗る太線
+    \draw[very thick] (-4.0, 0) -- (4.0, 0);
+    % x軸の矢印とラベル
+    \draw[->, thick] (-4.0, 0) -- (4.3, 0) node[right, shift={(0, 0.1)}] {\large $x$};
+    % 左下の「机」ラベル
+    \node[anchor=south west, text width=1em, align=left] at (-4.4, -\shadowh+0.1) {\large 机};
+
+    % --- 2. 台 ---
+    % 台の本体（外枠）を描画（角を丸く）
+    \draw[very thick, rounded corners=5pt, pattern=north east lines] 
+        (-\outerw, 0) -- (\outerw, 0) -- 
+        (\outerw, \outerh) -- 
+        % 半円部分をくり抜くためのパス（右から左へ）
+        ({\r}, \outerh) arc(0:-180:{\r}) -- 
+        (-\outerw, \outerh) -- cycle;
+    
+    % 台の外枠（角丸）を再描画して線をきれいに
+    \draw[thick, rounded corners=5pt] (-\outerw, 0) -- (-\outerw, \outerh) -- (-\outerw, \outerh) -- cycle;
+
+    % 左側の「台」ラベル
+    \node[anchor=south west] at (-\outerw+0.1, 0.8) {\large 台};
+
+    % --- 3. 点とラベル ---
+    % 点C（中心）、P（最下点）、O（原点）
+    \fill (C) circle (2pt) node[anchor=west, shift={(0.1, 0)}] {\large C};
+    \fill (P) circle (1.5pt) node[anchor=south east, shift={(-0.1, 0)}] {\large P};
+
+    % --- 4. 補助線と座標 ---
+    % CからPへの点線
+    \draw[dashed, thin] (C) -- (P);
+    
+    % Pの垂線（x2へ）
+    \draw[dashed, thin] (P) -- (0, 0);
+    % x2の短い縦線とラベル
+    \draw[thin] (0, 0.1) -- (0, -0.1) node[below] {$x_2$};
+
+    % --- 5. 小球 ---
+    % 小球の位置（角度で指定、Pから右へ）
+    \def\ballangle{-75} % 90度（右端）〜-90度（左端）
+    \coordinate (BallPos) at ($(C) + (\ballangle:{\r})$);
+    
+    % 小球（白丸）
+    \draw[thick, fill=white] (BallPos) circle (3pt);
+
+    % 小球の位置からの垂線
+    \pgfmathsetmacro{\ballx}{\r * cos(\ballangle)}
+    \draw[dashed, thin] (BallPos) -- (\ballx, 0);
+    % x1の短い縦線とラベル
+    \draw[thin] (\ballx, 0.1) -- (\ballx, -0.1) node[below] {$x_1$};
+
+\end{tikzpicture}
+\end{center}
+```
+
+上図のように，摩擦のない水平面上に台が置いてある．台の上には半径 $r$ の半円があり，その上を小球が転がっている．小球と台の質量をそれぞれ $m_1$，$m_2$ とする．小球を台の中心からわずかに離れた位置から静かに手を離すと，小球は単振動をした．その周期を求めよ．
+
+:::
+
+
+::: {.Abox data-latex="{解答}"}
+
+二体問題なので，相対運動だけで考えて良い．
+
+実際，小球の台の中心からのズレの角度を $\theta$ とすると，２物体の運動方程式は次のようになる．
+
+$$
+\begin{aligned}
+m_1 \ddot{x}_1 &= -N \sin \theta \\
+m_2 \ddot{x}_2 &= N \sin \theta
+\end{aligned}
+$$
+
+ここで，$x = x_1 - x_2$ として，二体の相対運動を考えると，次のようになる．
+
+$$
+\mu \ddot{x} = -N \sin \theta
+$$
+
+ここで $N$ の値は，垂直方向の運動方程式から求める．
+
+$$
+\begin{aligned}
+m_1 \ddot{y}_1 &= N \cos \theta - m_1 g \\
+y_1 &= r(1 - \cos \theta)
+\end{aligned}
+$$
+
+問題全体が一次近似によって成り立っているため(なぜならそうでなければ単振動にならない)， $N = m_1 g$ として良い．
+
+したがって，単振動の周期は
+
+$$
+T = 2\pi \sqrt{\frac{\mu}{m_1 g / r}} = 2\pi \sqrt{\frac{m_2}{m_1 + m_2}\frac{r}{g}}
+$$
+
+
+:::
+
+
+

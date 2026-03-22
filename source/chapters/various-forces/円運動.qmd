@@ -1,0 +1,174 @@
+## 円運動
+
+ここで円運動について少し話します．円運動は，物体が円を描いて運動することを指します．例えば，地球が太陽の周りを回る運動や，車がカーブを曲がるときの運動などが円運動の例です．
+
+実際には，完全に綺麗な円を描いて運動することは少ないですが，円運動の概念は物理学において非常に重要です．
+
+その際，物体の運動方程式は極座標を用いて表されるのが自然なことが多いでしょう．
+
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[>=Latex, line cap=round, line join=round, thick]
+
+  % 点
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (35:4.8);
+  \coordinate (Q) at ($(P)+(125:3.4)$);
+
+  % 軸
+  \draw[->] (-0.2,0) -- (6.2,0) node[right] {$x$};
+  \draw[->] (0,-0.2) -- (0,5.7) node[above] {$y$};
+  
+  % ベクトル
+  \draw[->] (O) -- (P) node[midway, above left=1pt] {$\hat{\mathbfit{r}}$};
+  \draw[->] (P) -- (Q) node[midway, right=3pt] {$\hat{\mathbfit{\theta}}$};
+  \draw (0.95,0) arc[start angle=0, end angle=33, radius=0.95];
+  \node at (1.45,0.42) {$\theta$};
+  \draw
+    ($(P)-(35:0.45)$)
+      -- ($(P)-(35:0.45)+(125:0.45)$)
+      -- ($(P)+(125:0.45)$);
+  \node[below left=2pt] at (O) {$\mathrm O$};
+\end{tikzpicture}
+\end{center}
+```
+
+このように，点 $P$ の位置を表すために，原点 $O$ からの距離 $r$ と，原点からの角度 $\theta$ を用います．このとき，$\hat{\mathbfit{r}}$ は点 $P$ から原点 $O$ に向かう単位ベクトルであり，$\hat{\mathbfit{\theta}}$ は点 $P$ の接線方向に沿った単位ベクトルです．
+
+$$
+\mathbfit{r} = r \hat{\mathbfit{r}}
+$$
+
+このベクトルを次々に時間微分していけば，物体の速度や加速度を求めることができます．
+
+このとき，それぞれの単位ベクトルは次のように示されます．
+
+$$
+\begin{aligned}
+\hat{\mathbfit{r}} &= \begin{pmatrix} \cos \theta \\ \sin \theta \end{pmatrix} \\
+\hat{\mathbfit{\theta}} &= \begin{pmatrix} -\sin \theta \\ \cos \theta \end{pmatrix}
+\end{aligned}
+$$
+
+これらの時間微分は，
+
+$$
+\begin{aligned}
+\dv{\hat{\mathbfit{r}}}{t} &= \dot{\theta} \begin{pmatrix} -\sin \theta \\ \cos \theta \end{pmatrix} = \dot{\theta} \hat{\mathbfit{\theta}} \\
+\dv{\hat{\mathbfit{\theta}}}{t} &= \dot{\theta} \begin{pmatrix} -\cos \theta \\ -\sin \theta \end{pmatrix} = -\dot{\theta} \hat{\mathbfit{r}}
+\end{aligned}
+$$
+
+これらを使用することによって，
+
+$$
+\begin{aligned}
+\dot{\mathbfit{r}} &= \dv{t} (r \hat{\mathbfit{r}}) = \dot{r} \hat{\mathbfit{r}} + r \dot{\theta} \hat{\mathbfit{\theta}} \\
+\ddot{\mathbfit{r}} &= \dv{t} \left(\dot{r} \hat{\mathbfit{r}} + r \dot{\theta} \hat{\mathbfit{\theta}} \right) = (\ddot{r} - r \dot{\theta}^2) \hat{\mathbfit{r}} + (r \ddot{\theta} + 2 \dot{r} \dot{\theta}) \hat{\mathbfit{\theta}}
+\end{aligned}
+$$
+
+ここで， $\hat{\mathbfit{r}}$ を遠心方向， $\hat{\mathbfit{\theta}}$ を回転方向と呼びます．遠心方向以上に， $-\hat{\mathbfit{r}}$ という向心方向が使われることも多いです．
+
+以上をまとめると，
+
+::: {.Tbox data-latex="{運動方程式の極座標表示}"}
+
+運動方程式の極座標表示は次のようになる．
+
+$$
+\begin{aligned}
+m (\ddot{r} - r \dot{\theta}^2) &= F_r \\
+m (r \ddot{\theta} + 2 \dot{r} \dot{\theta}) &= m\frac{1}{r} \dv{t} r^2 \dot{\theta} = F_\theta
+\end{aligned}
+$$
+
+:::
+
+また，特に $r$ が一定である場合には， $\dot{r} = \ddot{r} = 0$ であるため，
+
+$$
+\begin{aligned}
+v &= r \dot{\theta} \\
+m (- r \dot{\theta}^2) = -m \frac{v^2}{r} &= F_r \\
+m (r \ddot{\theta}) = m \dot{v} &= F_\theta
+\end{aligned}
+$$
+
+以上の知識を実際に使ってみましょう．
+
+\newpage
+
+::: {.Rbox data-latex="{例題}"}
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[>=Latex, line cap=round, line join=round, thick]
+  \def\R{2.4}
+  \def\ang{-35}
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (\ang:\R);
+  % ループ
+  \draw[line width=1.1pt] (O) circle (\R);
+  \node[above right=1pt] at (O) {$\mathrm O$};
+  % 小球
+  \filldraw[fill=white] (P) circle (0.09);
+  % 半径方向
+  \draw[densely dashed] (P) -- (O);
+  % 垂直抗力（中心向き）
+  \draw[->] (P) -- ($(P)!0.42!(O)$) node[midway, above right=1pt] {$N$};
+  % 重力
+  \draw[->] (P) -- ++(0,-1.4) node[right] {$mg$};
+  \draw[dashdotted] (O) -- (0, -2.4);
+  % dasheddottedからdensely dashedへの角度表示
+  \draw
+    (0, -0.95) arc[start angle=-90, end angle=-35, radius=0.95];
+  \node at (0.32, -0.42) {$\theta$};
+  
+\end{tikzpicture}
+\end{center}
+```
+
+上図のように，完全に円を描くジェットコースターが，レールから落ちないための $\theta = 0$ における入射速度 $v_0$ を求めよ．
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+物体の運動方程式は次のようになる．
+
+$$
+\begin{aligned}
+m (\ddot{r} - r \dot{\theta}^2) &= mg \cos \theta - N \\
+m (r \ddot{\theta} + 2 \dot{r} \dot{\theta}) &= -mg \sin \theta
+\end{aligned}
+$$
+
+ここで， $r$ は常に一定であるため， $\dot{r} = \ddot{r} = 0$ である．
+
+$$
+\begin{aligned}
+- m r \dot{\theta}^2 &= mg \cos \theta - N \\
+m r \ddot{\theta} &= -mg \sin \theta
+\end{aligned}
+$$
+
+またもや，解析が難しい微分方程式である．こういった際はエネルギー積分を用いると便利である．
+
+$$
+\begin{aligned}
+\frac{1}{2} m r^2 \dot{\theta}^2 - mg r \cos \theta &= \text{Const.} \\
+&= \frac{1}{2} mv_0^2 - mg r \\
+\dot{\theta}^2 &= \frac{v_0^2}{r^2} - \frac{2g}{r} (1 - \cos \theta) \\
+N = m r \dot{\theta}^2 - mg \cos \theta &= m \frac{v_0^2}{r} - 2mg (1 - \cos \theta) - mg \cos \theta \\
+&= m \frac{v_0^2}{r} - mg \qty(2 - 3 \cos \theta)
+\end{aligned} 
+$$
+
+これによって，求める条件とはいかなる $\theta$ においても $N \geq 0$ であるため， $\theta = \pi$ を代入すれば， $v_0 \geq 5\sqrt{g r}$ を得る．
+
+
+:::
+
+

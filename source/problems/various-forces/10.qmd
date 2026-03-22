@@ -1,0 +1,72 @@
+::: {.Qbox data-latex="{Vis-viva Equation}{3}"}
+
+宇宙に質量 $m_1, \ m_2$ の天体がある．それらの相対速度を $v$ とし，それらの距離を $r$ とする．このとき，次の式が成り立つ．
+
+$$
+v^2 = G(m_1 + m_2) \left( \frac{2}{r} - \frac{1}{a} \right)
+$$
+
+ここで，$a$ は天体の軌道の長半径である．この式(Vis-viva Equation)を示すために，天体の運動エネルギーと位置エネルギーを考える．
+
+まず，完全な円軌道を回る場合，系の全エネルギーを求めよ．
+
+次に，楕円軌道を回る場合の全エネルギーを求めよ．
+
+最後に，これらのエネルギーの関係から Vis-viva Equation を導出せよ．
+
+:::
+
+
+::: {.Abox data-latex="{解答}"}
+
+まずは円軌道から考える．
+
+$$
+\begin{aligned}
+\mu \frac{v^2}{a} &= \frac{G m_1 m_2}{a^2} \\
+K &= \frac{1}{2} \mu v^2 = \frac{1}{2} \mu \cdot \frac{G m_1 m_2}{a} = \frac{G m_1 m_2}{2a} \\
+U &= -\frac{G m_1 m_2}{a} \\
+E &= K + U = -\frac{G m_1 m_2}{2a}
+\end{aligned}
+$$
+
+次に楕円軌道を考える．まずは幾何的な関係から，近日点と遠日点の距離を $r_p, \ r_a$ とすると，次の式が成り立つ．
+
+$$
+r_p = a(1-e), \quad r_a = a(1+e)
+$$
+
+次に，角運動量保存則から，
+
+$$
+\begin{aligned}
+\mu v_p r_p &= \mu v_a r_a \\
+v_a = v_p \frac{r_p}{r_a} &= v_p \frac{1-e}{1+e}
+\end{aligned}
+$$
+
+また，エネルギー保存則から，
+
+$$
+\begin{aligned}
+E &= \frac{1}{2} \mu v_a^2 - \frac{G m_1 m_2}{r_a} = \frac{1}{2} \mu v_p^2 - \frac{G m_1 m_2}{r_p} \\
+v_p^2 &= \frac{G m_1 m_2}{a} \cdot \frac{1+e}{1-e} \\
+E = \frac{1}{2} \mu v_p^2 - \frac{G m_1 m_2}{r_p} &= \frac{G m_1 m_2}{2a} \cdot \frac{1+e}{1-e} - \frac{G m_1 m_2}{a(1-e)} = -\frac{G m_1 m_2}{2a}
+\end{aligned}
+$$
+
+したがって，円軌道と楕円軌道のエネルギーは同じである．
+
+最後に，エネルギー保存則から，
+
+$$
+\begin{aligned}
+E &= \frac{1}{2} \mu v^2 - \frac{G m_1 m_2}{r} = -\frac{G m_1 m_2}{2a} \\
+v^2 &= G(m_1 + m_2) \left( \frac{2}{r} - \frac{1}{a} \right)
+\end{aligned}
+$$
+
+となり，Vis-viva Equation が導出された．
+
+:::
+

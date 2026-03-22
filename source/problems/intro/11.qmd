@@ -1,0 +1,19 @@
+::: {.Qbox data-latex="{問題}"}
+
+次の不定積分や定積分を求めよ．
+
+||||
+|---|---|
+| $$\displaystyle\int_{1}^{4}2+4x\ dx$$ | $$\displaystyle\int_{0}^{\pi}(\sin x+\cos x)\ dx$$ |
+
+
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+||||
+|---|---|
+| $$36$$ | $$2$$ |
+
+:::

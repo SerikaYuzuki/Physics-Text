@@ -1,0 +1,49 @@
+::: {.Qbox data-latex="{問題}{1}"}
+
+
+ある粒子が下の図のような加速度で移動したとする．初速を $v_0$ とした時， $x=3x_0$ の時の速さを求めよ．**ただし，横軸が時間ではなく座標であることに注意せよ．**
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[>=stealth]
+
+    % 設定: 軸の長さやグラフの高さ
+    \def\xmax{5.0}  % x軸の最大値
+    \def\ymax{3.5}
+    \def\xone{1.5}  % x0 の位置
+    \def\xtwo{3.0}  % 2x0 の位置
+    \def\xthree{4.5}% 3x0 の位置
+    \def\ah{2.5}    % a0 の高さ
+
+    % 座標軸の描画
+    \draw[->] (0,0) -- (\xmax,0) node[above] {$x$};
+    \draw[->] (0,0) -- (0,\ymax) node[left] {$a$};
+
+    % 台形グラフの描画
+    \draw[thick] (0,0) -- (\xone,\ah) -- (\xtwo,\ah) -- (\xthree,0);
+
+    % 補助線（点線）
+    \draw[dashed] (0,\ah) node[left] {$a_0$} -- (\xone,\ah);
+    \draw[dashed] (\xone,\ah) -- (\xone,0) node[below=5pt] {$x_0$};
+    \draw[dashed] (\xtwo,\ah) -- (\xtwo,0) node[below=5pt] {$2x_0$};
+    
+    % 3x0 のラベル
+    \node[below=5pt] at (\xthree,0) {$3x_0$};
+
+\end{tikzpicture}
+\end{center}
+```
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+$$\int_{0}^{3x_0}a\dd x=\int_{0}^{T}\dot{v}\dv{x}{t}\dd t = \int_{0}^{T}\dot{v}v\dd t=\left[\frac{1}{2}v^2\right]_{0}^{T}=\frac{1}{2}(V^2-v_0^2)$$
+
+また，台形の面積により，
+
+$$\int_{0}^{3x_0}a\dd x = 2a_0x_0$$
+
+$$V=\sqrt{v_0^2+4a_0x_0}$$
+
+:::

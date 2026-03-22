@@ -4,5 +4,8 @@
   },
   "template.qmd": {
     "template.tex": "3c80fd5e"
+  },
+  "tex/text.qmd": {
+    "text.tex": "eb2a8922"
   }
 }

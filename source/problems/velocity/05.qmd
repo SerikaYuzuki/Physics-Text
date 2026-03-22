@@ -1,0 +1,81 @@
+::: {.Qbox data-latex="{問題}{2}"}
+
+
+幅が$L$で、ある地点から河岸までの両距離を $\delta_1,\delta_2$ とした時、その地点での流速が $k\delta_1\delta_2$ となる川があり、それを速さ $v$ の船で横断することを考える。船首は常に対岸に真っ直ぐ向いているとして、この船が描く軌跡はどうなるか。適当に座標を設定して答えよ。
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[>=stealth]
+
+    % パラメータ
+    \def\L{4}     % 川の幅
+    \def\ch{2.5}  % 川の表示高さ
+    \def\py{1.0}  % 船/地点のy座標
+    
+    % 河岸（太めの線）
+    \draw[very thick] (0,0) -- (0,\ch);
+    \draw[very thick] (\L,0) -- (\L,\ch);
+
+    % 幅 L の表示
+    \draw[<->] (0,-0.3) -- node[fill=white, yshift=-1pt] {$L$} (\L,-0.3);
+
+    % 対象となる地点（点P）
+    \coordinate (P) at (1.6, \py); % delta1=1.6, delta2=2.4
+    \filldraw (P) circle (2pt);
+
+    % 距離 delta1, delta2 の表示
+    \draw[| <-> |] (0, \py) -- node[above, font=\small] {$\delta_1$} (P);
+    \draw[| <-> |] (P) -- node[above, font=\small] {$\delta_2$} (\L, \py);
+
+    % 船の速度ベクトル v (対岸向き)
+    \draw[->, red, very thick] (P) -- ++(0, 1.0) node[right, font=\small] {$v=k\delta_1\delta_2$};
+    \node[below, font=\small] at (P) {船};
+
+\end{tikzpicture}
+\end{center}
+```
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+川の流れる方向を $y$ 軸，船の進む方向を $x$ 軸，船の最初いる場所を原点として、 $xy$ 座標を考える。船のいる座標は $\symbfit{r}=(x,y)$ である時、川の流れは $kx(L-x)$ となるので、 $\symbfit{v}=(v,kx(L-x))$ となる。ここで、 $x=vt$ から、 $v_y=kvt(L-vt)$ となり、実際に積分計算をしてやると、 $y=kvL\frac{t^2}{2}-kv^2\frac{t^3}{3}$ となり、軌跡を出さないといけないので $t$ を代入をしてやれば、
+$$y=\frac{kL}{2v}x^2-\frac{k}{3v}x^3$$
+が答えになる。
+
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[>=stealth]
+    % パラメータ設定 (見栄えのために調整)
+    % y = 1.5*x^2 - 0.5*x^3 のような係数で描画
+    \def\L{3}
+    
+    % 座標軸
+    \draw[->] (-0.5,0) -- (4,0) node[right] {$x$};
+    \draw[->] (0,-0.5) -- (0,3) node[above] {$y$};
+    \node[below left] at (0,0) {O};
+
+    % 対岸のライン (x = L)
+    \draw[dashed] (\L, 0) -- (\L, 3) node[above] {$x=L$};
+    \node[below] at (\L, 0) {$L$};
+
+    % 軌跡の描画: y = (kL/2v)x^2 - (k/3v)x^3
+    % ここでは k/v = 1 と仮定してプロット
+    \draw[thick, domain=0:\L, smooth, variable=\x, blue] 
+        plot ({\x}, {0.5*\L*\x*\x/2 - \x*\x*\x/6}); 
+    
+    % 速度ベクトルの成分表示 (ある一点 P)
+    \def\px{1.2}
+    \def\py{0.32} % 0.5*3*1.2^2/2 - 1.2^3/6 = 1.08 - 0.288 = 0.792
+    % 数値は適宜調整
+    \filldraw (\px, 0.79) circle (1.5pt) node[left] {$\symbfit{r}(x,y)$};
+    \draw[->, red, thick] (\px, 0.79) -- ++(0.8, 0) node[below] {$v_x=v$};
+    \draw[->, green!60!black, thick] (\px, 0.79) -- ++(0, 0.6) node[left] {$v_y$};
+    \draw[->, purple, thick] (\px, 0.79) -- ++(0.8, 0.6) node[above right] {$\symbfit{v}$};
+
+\end{tikzpicture}
+\end{center}
+```
+
+:::

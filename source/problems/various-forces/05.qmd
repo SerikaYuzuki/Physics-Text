@@ -1,0 +1,162 @@
+::: {.Qbox data-latex="{ポテンシャルエネルギーと角振動数}{3}{福井大, 東京科大}"}
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[>=Latex, thick]
+
+  % 座標
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (0,3);
+  \coordinate (P) at (2.2,0);
+
+  % X軸
+  \draw[->] (-2.2,0) -- (4.5,0) node[right] {$x$};
+
+  % OからAへの点線
+  \draw[dashed] (A) -- (O);
+
+  % バネ
+  \draw[
+    decorate,
+    decoration={coil, aspect=0.45, segment length=5pt, amplitude=3.5pt}
+  ] (A) -- (P);
+
+  % 点
+  \fill (A) circle (2pt);
+  \fill (P) circle (2pt);
+
+  % ラベル
+  \node[above] at (A) {$A$};
+  \node[below] at (O) {$O$};
+  \node[below right] at (P) {$P$};
+  \node[left] at ($(A)!0.5!(O)$) {$d$};
+  \node[below] at ($(O)!0.5!(P)$) {$x$};
+
+\end{tikzpicture}
+\end{center}
+```
+
+上図のように，$x$ 軸の棒に固定された質量 $m$ の小球にバネ定数 $k$ のバネがついているとする．このとき，小球は $x$ 軸に沿って運動する．
+
+この際の小球の運動を記述せよ．ただし，バネの自然長 $L$ と $d$ の大小関係に従って場合わけせよ．
+
+:::
+
+
+::: {.Abox data-latex="{解答}"}
+
+小球の運動方程式は，
+
+$$
+\begin{aligned}
+m \ddot{x} &= -k \left( \sqrt{x^2 + d^2} - L \right) \frac{x}{\sqrt{x^2 + d^2}} \\
+&= -k x + k L \frac{x}{\sqrt{x^2 + d^2}}
+\end{aligned}
+$$
+
+この形の微分方程式は解くのが困難なので，エネルギー積分を行う．
+
+$$
+\begin{aligned}
+m \ddot{x} \dot{x} &= -k x \dot{x} + k L \frac{x}{\sqrt{x^2 + d^2}} \dot{x} \\
+\dv{t} \left( \frac{1}{2} m \dot{x^2} \right) &= \dv{t} \left( - \frac{1}{2} k x^2 + k L \sqrt{x^2 + d^2} \right) \\
+0 &= \dv{t} \left( \frac{1}{2} m \dot{x^2} + \frac{1}{2} k x^2 - k L \sqrt{x^2 + d^2} \right) \\
+U &= \frac{1}{2} k x^2 - k L \sqrt{x^2 + d^2}
+\end{aligned}
+$$
+
+この式から導き出されるグラフの形は，数学Ⅲの問題なので深く立ち入らないが，このグラフの形から運動の様子を知ることができる．
+
+```{=latex}
+\begin{tikzpicture}
+\begin{scope}[xshift=0cm]
+  \begin{axis}[
+    axis lines = middle,
+    xlabel = {$x$},
+    ylabel = {$U(x)$},
+    domain = -4:4,
+    samples = 200,
+    width = 6cm,
+    height = 8cm,
+  ]
+    % parameter values
+    \def\k{3}
+    \def\L{2}
+    \def\d{1}
+
+    \addplot[
+      blue,
+      thick,
+    ]
+    {0.5*\k*x^2 - \k*\L*sqrt(x^2 + \d^2)};
+
+    \addplot[
+      red,
+      thin,
+    ]
+    {0.5*\k*x^2};
+
+    \addplot[
+      red,
+      thin,
+    ]
+    {- \k*\L*sqrt(x^2 + \d^2)};
+  \end{axis}
+\end{scope}
+\begin{scope}[xshift=7cm]
+  \begin{axis}[
+    axis lines = middle,
+    xlabel = {$x$},
+    ylabel = {$U(x)$},
+    domain = -4:4,
+    samples = 200,
+    width = 6cm,
+    height = 8cm,
+  ]
+    % parameter values
+    \def\k{3}
+    \def\L{1}
+    \def\d{2}
+
+    \addplot[
+      blue,
+      thick,
+    ]
+    {0.5*\k*x^2 - \k*\L*sqrt(x^2 + \d^2)};
+
+    \addplot[
+      red,
+      thin,
+    ]
+    {0.5*\k*x^2};
+
+    \addplot[
+      red,
+      thin,
+    ]
+    {- \k*\L*sqrt(x^2 + \d^2)};
+  \end{axis}
+\end{scope}
+\end{tikzpicture}
+```
+
+特に $L < d$ のときは，安定した平衡座標が二つ存在する．その際の角振動数は，
+
+$$
+\begin{aligned}
+\omega &= \sqrt{\frac{1}{m} \dv[2]{U}{x} \qty(\sqrt{L^2 - d^2})} \\
+&= \sqrt{\frac{k}{m} \qty(1 - \frac{d^2}{L^2})}
+\end{aligned}
+$$
+
+また，$L > d$ のときは，安定した平衡座標が一つ存在する．その際の角振動数は，
+
+$$
+\begin{aligned}
+\omega &= \sqrt{\frac{1}{m} \dv[2]{U}{x}\qty(0)} \\
+&= \sqrt{\frac{k}{m} \qty(1 - \frac{L}{d})}
+\end{aligned}
+$$
+
+:::
+

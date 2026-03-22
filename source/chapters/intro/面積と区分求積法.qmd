@@ -1,0 +1,29 @@
+## 面積と区分求積法
+
+小学校以来，何となく扱ってきた「面積」というものについて，少し詳しく述べていきます．
+
+まず，長方形の面積は「縦$\times$横」と決めましょう．このことについては特に異論はないと思います．この長方形の面積を手がかりに，いろいろな図形の面積，特にグラフと軸で囲われた部分の面積を考えていくことにしましょう．
+
+ $xy$ 平面上で， $y=f(x)$ のグラフと，直線$x=a,x=b$で囲まれる領域の面積$S$を考えます．ここでは $f(x)$ は区間 $[a,b]$ で連続な関数であるとします．
+
+区間 $[a,b]$ を $n$ 分割し，区間 $\left[a+\displaystyle\frac{k-1}{n}(b-a),a+\displaystyle\frac{k}{n}(b-a)\right]$ における $f(x)$の最大値を$M_k$ ，最小値を $m_k$ とします．このとき， $\displaystyle\sum_{k=1}^{n}\displaystyle\frac{M_k}{n}$ は $S$ より少し大きく， $\displaystyle\sum_{k=1}^{n}\displaystyle\frac{m_k}{n}$ は $S$ より少し小さくなります。
+
+そして，この分割をどんどん細かくしたとき，すなわち$n\to\infty$のとき，$\displaystyle\sum_{k=1}^{n}\displaystyle\frac{M_k}{n}$および，$\displaystyle\sum_{k=1}^{n}\displaystyle\frac{m_k}{n}$ は $S$ に限りなく近づくと考えられます．
+
+上では各区間における $f(x)$ の最大値，最小値をとって考えましたが，実は区間 $\left[a+\displaystyle\frac{k-1}{n}(b-a),a+\displaystyle\frac{k}{n}(b-a)\right]$ ごとに好きな代表点 $x_k$ をとって， $M_k,m_k$ の代わりに $f(x_k)$ を考えても問題ありません．以上を踏まえて，
+$$\displaystyle\lim_{n\to\infty} \displaystyle\sum_{k=1}^{n}\displaystyle\frac{b-a}{n}f(x_k)$$
+を， $y=f(x)$ のグラフと，直線$x=a,x=b$で囲まれる領域の面積 $S$ であると定めることにします．この考え方は，は区分求積法と呼ばれています．
+
+::: {.Dbox data-latex="{定義}"}
+
+$y=f(x)$ のグラフと，直線$x=a,x=b$で囲まれる領域の面積 $S$を 
+$$\displaystyle\lim_{n\to\infty} \displaystyle\sum_{k=1}^{n}\displaystyle\frac{b-a}{n}f(x_k)$$
+で定め，これを
+$$\displaystyle\int_{a}^{b}f(x)dx$$
+とかく．
+:::
+
+
+<details><summary>補足</summary>
+
+ここで述べた面積（ついては積分）の定義は，正確なものではありませんが，少なくとも連続関数についてはこの定義で問題を生じないので，このまま進めることにします．

@@ -1,0 +1,34 @@
+::: {.Qbox data-latex="{単振動}{1}"}
+
+単振動している粒子の，変位 $x_1$ および $x_2$ における速度がそれぞれ $v_1$ および $v_2$ であるとき，この振動の振幅と角振動数を求めよ， 
+
+:::
+
+
+::: {.Abox data-latex="{解答}"}
+
+エネルギー保存則により，
+
+$$
+\begin{aligned}
+\frac{1}{2}mv_1^2 + \frac{1}{2}kx_1^2 = \frac{1}{2}mv_2^2 + \frac{1}{2}kx_2^2 &= \frac{1}{2} kA^2 \\
+\frac{1}{2}v_1^2 + \frac{1}{2}\omega^2 x_1^2 = \frac{1}{2}v_2^2 + \frac{1}{2}\omega^2 x_2^2 &= \frac{1}{2} \omega^2 A^2
+\end{aligned}
+$$
+
+この式を変形して，
+
+$$
+\begin{aligned}
+\frac{v_1^2}{v_2^2}
+&= \frac{\omega^2 A^2 - \omega^2 x_1^2}{\omega^2 A^2 - \omega^2 x_2^2} \\
+&= \frac{A^2 - x_1^2}{A^2 - x_2^2} \\
+A &= \sqrt{\frac{v_1^2x_2^2 - v_2^2x_1^2}{v_1^2 - v_2^2}} \\
+\omega &= \sqrt{\frac{v_1^2 - v_2^2}{x_2^2 - x_1^2}}
+\end{aligned}
+$$
+
+このような比を用いる計算法は物理ではよく使われる手法の一つである．
+
+:::
+

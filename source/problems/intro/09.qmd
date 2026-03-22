@@ -1,0 +1,22 @@
+::: {.Qbox data-latex="{問題}"}
+
+次の不定積分を求めよ．
+
+||||
+|---|---|
+| $$\displaystyle\int_{}^{}1\ dx$$ | $$\displaystyle\int_{}^{}x^k\ dx\ \ \  ( k\neq -1 )$$ | 
+| $$\displaystyle\int_{}^{}\displaystyle\frac{1}{x}\ dx$$ |  $$\displaystyle\int_{}^{} \sin x\ dx$$ |
+| $$\displaystyle\int_{}^{}\cos x\ dx$$ |  $$\displaystyle\int_{}^{} e^x\ dx$$ |
+
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+||||
+|---|---|
+| $$x+C$$ | $$\displaystyle\frac{1}{k+1}x^{k+1}$$ | 
+| $$\ln x+C$$ |  $$-\cos x+C$$ |
+| $$\sin x+C$$ |  $$e^x$$ |
+
+:::

@@ -1,0 +1,46 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{physdiag}[2026/03/12 Physics diagram helpers]
+
+\RequirePackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+
+\tikzset{
+  phys/particle/.style={
+    draw,
+    circle,
+    minimum size=1.8cm,
+    inner sep=0pt,
+    thick
+  },
+  phys/force/.style={
+    -{Latex[length=4mm,width=2.5mm]},
+    line width=1.2pt,
+    red!75!black
+  },
+  phys/vector/.style={
+    -{Latex[length=3.5mm,width=2.2mm]},
+    line width=1pt,
+    black
+  },
+  phys/label/.style={
+    font=\normalsize
+  }
+}
+
+\newcommand{\particle}[4][]{%
+  \node[phys/particle,#1] (#2) at #3 {$#4$};
+}
+
+\newcommand{\forcefrom}[5][]{%
+  \draw[phys/force,#1] (#2) -- ++(#3,#4)
+    node[pos=0.7,right,phys/label] {$#5$};
+}
+
+\newcommand{\vectorfrom}[5][]{%
+  \draw[phys/vector,#1] (#2) -- ++(#3,#4)
+    node[pos=0.6,above,phys/label] {$#5$};
+}
+
+\newcommand{\gravity}[3][]{%
+  \forcefrom[#1]{#2.center}{0}{-#3}{mg}
+}

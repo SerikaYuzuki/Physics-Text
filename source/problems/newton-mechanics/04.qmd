@@ -1,0 +1,31 @@
+::: {.Qbox data-latex="{問題}"}
+(滋賀医大)
+
+下の図のように２つの物体がある． $m,M$ ともに摩擦なく動くので， $m$ の滑り落ちる地面への角度は $\theta$ ではなく， $\phi$ であるという．この時， $\tan \phi$ を求めよ．
+
+![](images/newton/newton14.png)
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+![](images/newton/newton15.png)
+
+図のように考えれば
+\begin{align*}
+m\ddot{x}&=-N\sin\theta\\
+m\ddot{y}&=mg+N\cos\theta\\
+M\ddot{X}&=N\sin\theta
+\end{align*}
+また，束縛条件は
+\begin{align*}
+\ddot{y}=(\ddot{X}-\ddot{x})\tan\theta
+\end{align*}
+かなりの計算を経ることによって次のようになるとわかる．
+\begin{align*}
+N&=\frac{mg}{1+\frac{m}{M}\sin ^2 \theta}\cos \theta\\
+\tan \phi = \frac{\ddot{y}}{\ddot{x}}&=-\left(1+\frac{m}{M}\right)\tan \theta
+\end{align*}
+ここで，なぜ答えの値はマイナスになっているかというと，上の図のように考えているからであって， $\dd x$ が右向き正だからであり，左向き正であればプラスの値が答えになる．
+
+:::

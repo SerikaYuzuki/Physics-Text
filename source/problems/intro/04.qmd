@@ -1,0 +1,14 @@
+::: {.Qbox data-latex="{問題}"}
+
+
+次の極限値を $f,f'$ を用いて表せ．
+
+$$\lim_{x\to a}\frac{x^nf(x)-a^nf(a)}{x^n-a^n}$$
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+$$f(a)+\frac{a}{n}f'(a)$$
+
+:::

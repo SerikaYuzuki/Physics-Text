@@ -1,0 +1,31 @@
+::: {.Qbox data-latex="{問題}"}
+
+
+下の図のように動かない角度が $\theta$ の斜面に，２つの **互いに接している** 物体がある．両物体と斜面の静止摩擦係数，動摩擦係数はそれぞれ等しく，それぞれ $m_1,\:m_2$ に関して $\mu _1,\:\mu _2$ となっている．ただし $\mu_1>\mu_2$ である．この時
+
+1. 両物体が共に滑り落ちている時，物体間に働く抗力の大きさを求めよ．
+1. 両物体が滑らないで済む斜面の角度の最大値を求めよ．
+
+![](images/newton/newton19.png)
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+斜面下向きに沿った座標軸を考え，物体の加速度を $a$ ，物体同士に働く抗力の大きさを $N$ ，とした時次のようになる．
+\begin{align*}
+m_1a&=m_1g\sin \theta -\mu_1m_1g\cos \theta +N\\
+m_2a&=m_2g\sin \theta -\mu_1m_1g\cos \theta -N
+\end{align*}
+連立方程式を解くことによって次のようになるとわかる．
+\begin{align*}
+a&=g\sin \theta - g \cos \theta \frac{\mu_1m_1+\mu_2m_2}{m_1+m_2}
+N&=\frac{m_1m_2}{m_1+m_2}(\mu_1-\mu_2)g\cos\theta
+\end{align*}
+ここで滑らないで済むということは $a=0$ ということなので，
+\begin{align*}
+\tan \theta = \frac{\mu_1m_1+\mu_2m_2}{m_1+m_2}
+\end{align*}
+というのが滑らない限界の大きさの角である．
+
+:::

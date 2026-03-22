@@ -1,0 +1,54 @@
+::: {.Qbox data-latex="{ばねの衝突}{1}"}
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[>=Latex, thick]
+
+  % 壁
+  \draw[fill=gray!20] (-0.3,-1) rectangle (0,1);
+  \draw[thick] (0,-1) -- (0,1);
+
+  % バネ
+  \draw[decorate, decoration={coil, segment length=4pt, amplitude=4pt}]
+    (0,0) -- (3,0);
+  \draw [-] (3,0.4) -- (3,-0.4);
+
+  % 質点
+  \draw[fill=blue!10] (4,-0.5) rectangle (5.2,0.5);
+  \node at (4.6,0) {$m$};
+  \draw [->] (4.8, 0.7) -- (4.4, 0.7);
+  \node at (4.6, 0.93) {$v$};
+
+  % 床線
+  \draw [->] (0,-0.5) -- (6.5,-0.5) node[right] {$x$};
+
+  % 原点
+  \draw (3,-0.5) node[below] {$0$};
+
+\end{tikzpicture}
+\end{center}
+```
+
+上図のように，質量 $m$ の物体が速さ $v$ でバネにぶつかる．物体の速さが $0$ になる場所を求めよ．
+
+:::
+
+
+::: {.Abox data-latex="{解答}"}
+
+振幅を求めればいいとわかる．この物体の，バネと接触している際の運動方程式は，
+
+$$
+m \dv[2]{x}{t} = -kx
+$$
+
+なので，この物体は単振動をする．この単振動の振幅 $A$ は，初期条件から求めることができる．初期条件は，$t=0$ のとき $x=0$ で $v=\frac{dx}{dt}=v$ である．この条件を満たす単振動の解は，
+
+$$
+x(t) = v \sqrt{\frac{m}{k}} \sin\left(\sqrt{\frac{k}{m}} t\right)
+$$
+
+故に，振幅は $A = v \sqrt{\frac{m}{k}}$ である．物体の速さが $0$ になる場所は，振幅 $x = -A$ のときである．
+
+:::
+

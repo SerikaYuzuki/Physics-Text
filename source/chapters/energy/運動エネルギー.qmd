@@ -1,0 +1,165 @@
+## 運動エネルギー
+
+運動方程式の両辺に $\symbfit{v}$ を内積でかけてやることによって，
+$$m\dot{\symbfit{v}}\cdot \symbfit{v}=\symbfit{F}\cdot\symbfit{v}$$
+この左辺は，
+$$m\dot{\symbfit{v}}\cdot \symbfit{v}=\dv{t}\left(\frac{1}{2}m\symbfit{v}\cdot \symbfit{v}\right)=\dv{t}\left(\frac{1}{2}mv^2\right)$$
+と計算されるので，
+$$\dv{t}\left(\frac{1}{2}mv^2\right)=\symbfit{F}\cdot\symbfit{v}$$
+ここで，左辺の被微分部分の $mv^2/2$ は物体の運動エネルギーと呼ばれ，右辺は仕事率と呼ばれています．
+
+両辺を $t=t_0$ から $t=t_1$ で積分してやれば，それぞれの時刻における速度や位置を $\symbfit{v_0},\:\symbfit{v_1},\:\symbfit{r_0},\:\symbfit{r_1}$ などとおけば，
+$$
+\begin{aligned}
+\frac{1}{2}mv_1^2-\frac{1}{2}mv_2^2&=\int_{t_0}^{t_1}\symbfit{F}\cdot\symbfit{v}\dd{t}\\
+&=\int_{t_0}^{t_1}\symbfit{F}\cdot\dv{\symbfit{r}}{t}\dd{t}\\
+&=\int_{\symbfit{r}_0}^{\symbfit{r}_1}\symbfit{F}\cdot \dd{\symbfit{r}}
+\end{aligned}
+$$
+この式の右辺は仕事と呼ばれています．以上のことをまとめると次のようになります．
+
+::: {.Tbox data-latex="{法則}"} 
+
+$$
+\begin{aligned}
+\frac{1}{2}mv_1^2-\frac{1}{2}mv_2^2&=\int_{\symbfit{r}_0}^{\symbfit{r}_1}\symbfit{F}\cdot \dd{\symbfit{r}}
+\end{aligned}
+$$
+上式の示す通り，運動エネルギーの変化の値は，仕事の値と等しい．
+
+:::
+
+単位について軽くまとめると、
+
+$$
+\mathrm{kg} \ \mathrm{m}^2 \ \mathrm{s}^{-2} = \mathrm{N} \ \mathrm{m} = \mathrm{J}
+$$
+
+では，実際にこの法則に従って，問題を解いてみることにしましょう．
+
+::: {.Rbox data-latex="{例題}"}
+
+鉛直下向きに速さ $v_1$ の物体が，高さ $d$ だけ落下した．この時の物体の速さを求めよ．
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+$$
+\begin{aligned}
+\frac{1}{2}mv_1^2-\frac{1}{2}mv_2^2&=\int_{y_0}^{y_1}mg \dd{y} = mg(y_1-y_0) = mgd\\
+v_2=\sqrt{v_1^2+2gd}
+\end{aligned}
+$$
+
+:::
+
+この問題は，運動方程式を解いてやれば解決するものです．ですが，その場合，物体の座標を時間の関数で表すことになるので，労力は大きく変わるでしょう．
+$$v^2-v_0^2=2\int a \dd{x}$$
+この式を使うと似たようなことができると気付いた方もいらっしゃるかもしれません．ですがこの式は実質的にエネルギーの式と同等なのです．前に導出した時と導出方法は少しばかり違うのですが，どちらの方法もできるようになりましょう．
+
+
+
+では，運動量と同様に多粒子系での運動エネルギーの様相を見てみましょう．
+
+$$\dv{t}\left(\frac{1}{2}mv_i^2\right)=\dv{K_i}{t}=\dot{K}_i=\sum_j \symbfit{F}_{ij}\cdot\symbfit{v}_i+\symbfit{F}_{i\text{out}}\cdot\symbfit{v}_i$$
+$$\sum_i \dot{K}_i=\sum_i\sum_j \symbfit{F}_{ij}\cdot\symbfit{v}_i(=P_{\text{in}})+\sum_i\symbfit{F}_{i\text{out}}\cdot\symbfit{v}_i(=P_{\text{out}})$$
+ここで， $P_{\text{in}},\:P_{\text{out}}$ はそれぞれ，内力による仕事率と外力による仕事率です．仕事率(Power)は運動量とは違うので注意してください．
+$$
+\begin{aligned}
+P_{\text{in}}=\sum_i\sum_j \symbfit{F}_{ij}\cdot\symbfit{v}_i
+\end{aligned}
+$$
+$$
+\begin{aligned}
+\symbfit{F}_{ij}\cdot\symbfit{v}_i+\symbfit{F}_{ji}\cdot\symbfit{v}_j&=\symbfit{F}_{ij}\cdot\symbfit{v}_i-\symbfit{F}_{ij}\cdot\symbfit{v}_j\\
+&=\symbfit{F}_{ij}\cdot(\symbfit{v}_{i}-\symbfit{v}_{j})=\symbfit{F}_{ij}\cdot\symbfit{v}_{ij}
+\end{aligned}
+$$
+なので，
+$$
+P_{\text{in}}=\sum_i\sum_j \symbfit{F}_{ij}\cdot\symbfit{v}_i=\sum_{i<j}\symbfit{F}_{ij}\cdot\symbfit{v}_{ij}
+$$
+この時， $P_{\text{out}}=0$ つまり，外力が仕事をしなければ，粒子間の相互作用の力による仕事率は，それらの相対運動で求めたものとなるのです．
+
+同時に，粒子間の相互作用による力，つまり，内力によっては重心速度が変わらないことは，運動量の
+
+この詳細については２体運動を説明する際に深掘り，再びこのトピックに戻って語ることになるので，今は法則としてだけまとめることとします．
+
+::: {.Tbox data-latex="{定理}"} 法則
+
+$$\dot{K}=\sum_{i<j}\symbfit{F}_{ij}\cdot\symbfit{v}_{ij}$$
+
+系全体の運動エネルギー変化は，外力の仕事が $0$ の場合，粒子間の相互作用の力による仕事のみによって決定され，それらの相対運動で求めたものとなる．
+
+:::
+
+ここで注意しなければならないのは，系の内部運動は系の重心運動に対して影響を与えないことです．それは，系の全運動量は外力によってのみ変化し，全運動量の式 
+$$\symbfit{P}=M_{\text{tot}}\symbfit{v}_{\text{G}} $$
+を考えれば，重心速度の変化はないことから理解されます．
+
+次に $P_{\text{out}}$ について考察すると，これはシンプルに外力が重心運動に対してなす仕事率と重心から見た内部運動に対してなす仕事率によって分解することができます．
+
+$$
+\begin{aligned}
+P_{\text{out}} &= \sum_i\symbfit{F}_{i\text{out}}\cdot\symbfit{v}_i\\
+&= \sum_i\symbfit{F}_{i\text{out}}\cdot(\symbfit{v}_{\text{G}}+\symbfit{v}_{i\text{G}})\\
+&=\sum_i\symbfit{F}_{i\text{out}}\cdot\symbfit{v}_{\text{G}}+\sum_i\symbfit{F}_{i\text{out}}\cdot\symbfit{v}_{i\text{G}}
+\end{aligned}
+$$
+
+この分解の意味は，全運動エネルギー変化の $\sum_i \dot{K}_i$ の分解によって意味が生まれます．
+
+$$
+\begin{aligned}
+K&=\sum_i K_i=\sum_i\left(\frac{1}{2} m_iv_i^2\right)=\sum_i\left(\frac{1}{2} m_i|\symbfit{v}_{\text{G}}+\symbfit{v}_{i\text{G}}|^2\right)\\
+&= \frac{1}{2}\left(\sum_im_i\right)v_{\text{G}}^2+\sum_i\left(\frac{1}{2} m_iv_{i\text{G}}^2\right)+\sum_im_i\symbfit{v}_{\text{G}}\cdot \symbfit{v}_{i\text{G}}
+\end{aligned}
+$$
+
+ここで前に法則とした， $\sum_i m_i\symbfit{r}_{i\text{G}}=\symbfit{0}$ を考えれば，
+
+$$
+\begin{aligned}
+K&=\frac{1}{2}M_{\text{tot}}v_{\text{G}}^2+\sum_i\left(\frac{1}{2} m_iv_{i\text{G}}^2\right)\\
+&=K_{\text{G}}+K_{\text{in}}
+\end{aligned}
+$$
+
+と分解ができます．前の項を重心運動エネルギー，後ろの項を内部運動エネルギーと呼びます．ここで，
+
+$$
+\begin{aligned}
+\dot{\symbfit{P}}=\sum_i \dot{\symbfit{p}_i} &= \sum_i\symbfit{F}_{i\text{out}}\\
+&=M_{\text{tot}}\symbfit{v}_{\text{G}} 
+\end{aligned}
+$$
+と言う式を思い出していただければ，
+$$
+\begin{aligned}
+M_{\text{tot}}\dot{\symbfit{v}}_{\text{G}}&=\sum_i\symbfit{F}_{i\text{out}}\\
+M_{\text{tot}}\dot{\symbfit{v}}_{\text{G}}\cdot \symbfit{v}_{\text{G}}&=\sum_i\symbfit{F}_{i\text{out}}\cdot \symbfit{v}_{\text{G}}\\
+\dv{t}\left(\frac{1}{2}M_{\text{tot}}v_{\text{G}}^2 \right)&=\sum_i\symbfit{F}_{i\text{out}}\cdot \symbfit{v}_{\text{G}}\\
+\dot{K_{\text{G}}}&=\sum_i\symbfit{F}_{i\text{out}}\cdot \symbfit{v}_{\text{G}}
+\end{aligned}
+$$
+
+この式の表す意味とは，重心運動エネルギーを変化させているのは，外力のみであり，内力は重心運動エネルギーを変化させないことです．つまり，ある系，例えば宇宙で孤立している星などを考えれば，内部でどんな大爆発が起きて粉々に砕け散ろうとも，重心運動エネルギーは変化しないのです．逆に，
+
+$$
+\dot{K_{\text{in}}}=\sum_{i<j}\symbfit{F}_{ij}\cdot\symbfit{v}_{ij}+\sum_i\symbfit{F}_{i\text{out}}\cdot\symbfit{v}_{i\text{G}}
+$$
+
+となるために，内部運動エネルギーは内力の影響のみならず，外力からの影響を受けることになるわけです．
+
+これまでの事実をまとめると以下のようになるわけです．
+
+|状態|全部運動量|内部運動量|重心運動エネルギー|内部運動エネルギー|
+|---|---|---|---|---|
+|立式|$$\symbfit{P}=M_{\text{tot}}\symbfit{v}_{\text{G}} $$|$$\symbfit{P}_{\text{in}}=\sum_i m_i \symbfit{r}_{i\text{G}}(=\symbfit{0})$$|$$K_{\text{G}}=\frac{1}{2}M_{\text{tot}}v_{\text{G}}^2$$|$$K_{\text{in}}=\sum_i\left(\frac{1}{2} m_iv_{i\text{G}}^2\right)$$|
+|外力が働く|$$\dot{\symbfit{P}}=\sum_i\symbfit{F}_{i\text{out}}$$|$$\dot{\symbfit{P}}_{\text{in}}=\symbfit{0}$$|$$\dot{K}_{\text{G}}=\sum_i\symbfit{F}_{i\text{out}}\cdot \symbfit{v}_{\text{G}}$$|$$\dot{K}_{\text{in}}=\sum_{i<j}\symbfit{F}_{ij}\cdot\symbfit{v}_{ij}+\sum_i\symbfit{F}_{i\text{out}}\cdot\symbfit{v}_{i\text{G}}$$|
+|説明|運動方程式をすべて足し合わせただけである|内部運動量は常に $\symbfit{0}$ であり，ゆえに重心速度も同じである|内部運動は重心運動エネルギーに働きかけないので，外力による仕事率のみ考えている|相対運動の仕事率と，外力による内部運動エネルギーへ働きかける仕事率を考えなければならない|
+|外力が働かない|$$\dot{\symbfit{P}}=\symbfit{0}$$|$$\dot{\symbfit{P}}_{\text{in}}=\symbfit{0}$$|$$\dot{K}_{\text{G}}=0$$|$$\dot{K}_{\text{in}}=\sum_{i<j}\symbfit{F}_{ij}\cdot\symbfit{v}_{ij}$$|
+|説明|外力が働かないので，運動方程式から明らかに変化がない|内部運動量は常に $\symbfit{0}$|外力が働かないので，重心に働きかける仕事率がない|外力が働かない時は全運動エネルギーは内部運動エネルギーのみであり，その変化は相対運動の仕事率によって決定される|
+
+以上の事実は角運動量に対しても整理しておくと良いのですが，それは後に回すことにしましょう．まずは，これらの事実をふんだんに使う高校物理の花形である２体問題について考え，それに慣れましょう．まだまだ説明が続きますが，もう少しの辛抱です！

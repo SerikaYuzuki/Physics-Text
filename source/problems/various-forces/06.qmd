@@ -1,0 +1,68 @@
+::: {.Qbox data-latex="{跳ね返るばねの問題}{2}{有名問題}"}
+
+```{=tex}
+\begin{center}
+\begin{tikzpicture}
+
+    % --- 設定 ---
+    \def\groundy{0}      % 地面の高さ
+    \def\boxh{0.6}       % 物体の高さ
+    \def\boxw{1.0}       % 物体の幅
+    
+    % --- 地面 ---
+    \draw[thick] (-1, \groundy) -- (7, \groundy);
+    \fill[pattern=north east lines] (-1, \groundy-0.2) rectangle (7, \groundy);
+
+    % --- 物体 A と バネ ---
+    \begin{scope}[shift={(0,0)}]
+        % 物体 A
+        \draw[thick] (0, \groundy) rectangle (\boxw, \boxh) node[midway] {\Large \text{A}};
+        % 速度ベクトル v_A
+        \draw[->, >=stealth, thick] (0.5*\boxw, \boxh+0.3) -- (1.5*\boxw, \boxh+0.3) node[midway, above] {$v_{\text{A}}$};
+        % バネ
+        \draw[thick, decoration={aspect=0.4, segment length=2mm, amplitude=1.5mm, coil}, decorate] 
+            (\boxw, 0.5*\boxh) -- (\boxw+1.2, 0.5*\boxh);
+    \end{scope}
+
+    % --- 物体 B ---
+    \begin{scope}[shift={(4,0)}]
+        % 物体 B
+        \draw[thick] (0, \groundy) rectangle (\boxw, \boxh) node[midway] {\Large \text{B}};
+        % 速度ベクトル v_B
+        \draw[->, >=stealth, thick] (0.5*\boxw, \boxh+0.3) -- (1.5*\boxw, \boxh+0.3) node[midway, above] {$v_{\text{B}}$};
+    \end{scope}
+
+\end{tikzpicture}
+\end{center}
+```
+
+上図のように，バネを挟んだ物体A, Bがそれぞれ速さ $v_{\text{A}}$，$v_{\text{B}}$で地面に向かって運動している．物体Aは質量 $m_{\text{A}}$，物体Bは質量 $m_{\text{B}}$ である．バネ定数は$k$である． $v_{\text{A}} > v_{\text{B}}$ であるとき，両物体の運動を記述せよ
+
+:::
+
+
+::: {.Abox data-latex="{解答}"}
+
+二体問題なので，重心運動と相対運動で分ける．
+
+$$
+\begin{cases}
+\text{重心運動} & : M \ddot{X} = 0 \\
+\text{相対運動} & : \mu \ddot{x} = -kx
+\end{cases}
+$$
+
+これによって，重心は等速運動をする．また，相対運動は単振動をする．
+
+重心の位置を $X$，相対位置を $x$ とすると，物体A, Bの位置はそれぞれ
+
+$$
+\begin{cases}
+x_{\text{A}} = X + \frac{m_{\text{B}}}{M} x \\
+x_{\text{B}} = X - \frac{m_{\text{A}}}{M} x
+\end{cases}
+$$
+
+これ以降は初期条件を入れて解いていけばよいだけなので，省略する．
+
+:::

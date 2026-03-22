@@ -1,0 +1,22 @@
+::: {.Qbox data-latex="{問題}"}
+
+
+次の関数の導関数を求めよ．
+
+|||
+|---|---|
+| $$x^2$$ | $$\sqrt{x}$$ |
+| $$(x+1)(x+2)$$ | $$\frac{1}{x}$$ |
+| $$x\sqrt{x}$$ | $$x^6+x^5+x^4$$ |
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+|||
+|---|---|
+| $$2x$$ | $$\frac{\sqrt{x+\Delta x}-\sqrt{x}}{\sqrt{x}}=\frac{\Delta x}{\Delta x (\sqrt{x+\Delta x}+\sqrt{x})}$$ $$\frac{1}{2\sqrt{x}}$$ |
+| $$2x+3$$ | $$-\frac{1}{x^2}$$ |
+| $$\frac{3}{2}\sqrt{x}$$ | $$6x^5+5x^4+4x^3$$ |
+
+:::

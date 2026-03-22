@@ -1,0 +1,236 @@
+## 万有引力
+
+さて，力学の金字塔，ニュートンの万有引力の法則を見てみましょう．
+
+数式としては非常にシンプルな形となります．
+
+::: {.Tbox data-latex="{ニュートンの万有引力の法則}"}
+
+ある質量 $m$ の物体とある質量 $M$ の物体が距離 $r$ だけ離れているとき，両者は互いに引力を及ぼしあう．この引力の大きさは次の式で表される．
+
+$$
+F = G \frac{mM}{r^2}
+$$
+
+ここで $G$ は万有引力定数と呼ばれる定数である．
+
+:::
+
+では，二体問題でこの式の適応をしてみましょう．
+
+::: {.Rbox data-latex="{例題}"}
+
+ある質量 $m$ の物体とある質量 $M$ の物体が距離 $r$ だけ離れているとき，力学的エネルギーはどのように表されるか．
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+$$
+\mu \ddot{r} = -G \frac{mM}{r^2}
+$$
+
+この両辺に $\dot{r}$ をかけると
+
+$$
+\begin{aligned}
+\mu \dot{r} \ddot{r} &= -G \frac{mM}{r^2} \dot{r} \\
+\frac{1}{2} \mu \frac{d}{dt} (\dot{r}^2) &= -G \dv{t} \left( - \frac{mM}{r} \right) \\
+\frac{d}{dt} \left( \boxed{ \frac{1}{2} \mu \dot{r}^2 - G \frac{mM}{r} } \right) &= 0
+\end{aligned}
+$$
+
+:::
+
+## 角運動量
+
+次に，新しい保存量について考えていきます．前までは $\dot{\mathbfit{r}} \cdot \dot{\mathbfit{p}}$ という演算によって保存量を見つけていましたが，今回は $\mathbfit{r} \times \dot{\mathbfit{p}}$ という演算によって保存量を見つけてみましょう．
+
+少しばかり面倒な計算になりますが，やってみましょう．
+
+まず，エネルギー積分と同じように，
+
+$$
+\dv{t} (\mathbfit{r} \times \mathbfit{p}) = \dot{\mathbfit{r}} \times \mathbfit{p} + \mathbfit{r} \times \dot{\mathbfit{p}}
+$$
+
+ここで， $\dot{\mathbfit{r}} \times \mathbfit{p} = \mathbfit{0}$ であることから，
+
+$$
+\dv{t} (\mathbfit{r} \times \mathbfit{p}) = \mathbfit{r} \times \dot{\mathbfit{p}}
+$$
+
+ここで，$\mathbfit{L} = \mathbfit{r} \times \mathbfit{p}$ を角運動量と呼ばれます．
+
+エネルギーや運動量と同様に，この角運動量も多体系で重心と相対運動に分けることができます．
+
+$$
+\begin{aligned}
+\mathbfit{L} &= \sum \mathbfit{L}_i \\
+&= \sum \mathbfit{r}_i \times \mathbfit{p}_i \\
+&= \sum \qty{ (\mathbfit{r}_\mathrm{G} + \mathbfit{r}_{i\mathrm{G}} ) \times (\mathbfit{p}_\mathrm{G} + \mathbfit{p}_{i\mathrm{G}} ) } \\
+&= \sum \qty{ \mathbfit{r}_\mathrm{G} \times \mathbfit{p}_\mathrm{G} + \boxed{\mathbfit{r}_\mathrm{G} \times \mathbfit{p}_{i\mathrm{G}}} + \boxed{\mathbfit{r}_{i\mathrm{G}} \times \mathbfit{p}_\mathrm{G}} + \mathbfit{r}_{i\mathrm{G}} \times \mathbfit{p}_{i\mathrm{G}} }
+\end{aligned}
+$$
+
+ここで，内部運動量は常に $\mathbfit{0}$ であることを思い出しましょう．これは，重心の定義を考えれば明らかです．
+
+故に， $\sum \mathbfit{r}_\mathrm{G} \times \mathbfit{p}_{i\mathrm{G}} = \sum \mathbfit{r}_{i\mathrm{G}} \times \mathbfit{p}_\mathrm{G} = \mathbfit{0}$ であることから，
+
+$$
+\begin{aligned}
+\mathbfit{L} &= \underbrace{\sum \mathbfit{r}_\mathrm{G} \times \mathbfit{p}_\mathrm{G}}_{ = \mathbfit{L}_\mathrm{G}} + \underbrace{\sum \mathbfit{r}_{i\mathrm{G}} \times \mathbfit{p}_{i\mathrm{G}}}_{ = \mathbfit{L}_{i\mathrm{G}} } \\
+\end{aligned}
+$$
+
+また，これらは
+
+$$
+\begin{aligned}
+\dv{\mathbfit{L}_\mathrm{G}}{t} &= \sum \mathbfit{r}_\mathrm{G} \times \mathbfit{F}_\mathrm{G} \\
+\dv{\mathbfit{L}_{i\mathrm{G}}}{t} &= \sum \mathbfit{r}_{i\mathrm{G}} \times \mathbfit{F}_{i\mathrm{G}}
+\end{aligned}
+$$
+
+とまとめ上げることが可能です．
+
+これらの式を使うことによって，例えば $\mathbfit{F} \propto \mathbfit{r}$ のような力学系において，角運動量が保存することを示すことができます．このような状態では $\mathbfit{F}_\mathrm{G} = \mathbfit{0}$ であることから，
+
+$$
+\begin{aligned}
+\dv{\mathbfit{L}}{t} &= \sum \mathbfit{r} \times \mathbfit{F} \\
+&= \sum \mathbfit{r} \times \qty{ - k \mathbfit{r} } \\
+&= \mathbfit{0}
+\end{aligned}
+$$
+
+このように，角運動量が保存することがわかります．
+
+では，実際の万有引力の法則において，角運動量が保存することを示してみましょう．
+
+::: {.Rbox data-latex="{例題}"}
+
+ある質量 $m_1$ の物体とある質量 $m_2$ の物体が距離 $r$ だけ離れているとき，角運動量保存則はどのように表されるか．
+
+また，系における角運動量を $\mathbfit{L}$ とするとき，$\mathbfit{L}$ をそれぞれの物体の位置ベクトル $\mathbfit{r}_1,\ \mathbfit{r}_2$ と運動量ベクトル $\mathbfit{p}_1,\ \mathbfit{p}_2$ を用いて表せ．
+
+その後，系の重心位置ベクトル $\mathbfit{r}_\mathrm{G}$ と相対位置ベクトル $\mathbfit{r}_{12}$ を用いて $\mathbfit{L}$ を表せ．
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+まずは，角運動量保存則を示す．
+
+$$
+\begin{aligned}
+\dv{\mathbfit{L}}{t} &= \sum \mathbfit{r} \times \mathbfit{F} \\
+&= \sum \mathbfit{r} \times \qty{ - G \frac{m_1 m_2}{r^2} \hat{\mathbfit{r}} } \\
+&= \mathbfit{0}
+\end{aligned}
+$$
+
+次に，系の角運動量は，
+
+$$
+\begin{aligned}
+\mathbfit{L} &= \sum \mathbfit{r}_i \times \mathbfit{p}_i \\
+&= \mathbfit{r}_1 \times \mathbfit{p}_1 + \mathbfit{r}_2 \times \mathbfit{p}_2
+\end{aligned}
+$$
+
+と示される．これを重心系と，相対系で表すと，
+
+$$
+\begin{aligned}
+\mathbfit{L} &= m_1 \qty(\mathbfit{r}_\mathrm{G} + \frac{m_2}{m_1 + m_2} \mathbfit{r}_{12} ) \times \qty( \dot{\mathbfit{r}}_\mathrm{G} + \frac{m_2}{m_1 + m_2} \dot{\mathbfit{r}}_{12} ) + m_2 \qty( \mathbfit{r}_\mathrm{G} - \frac{m_1}{m_1 + m_2} \mathbfit{r}_{12} ) \times \qty( \dot{\mathbfit{r}}_\mathrm{G} - \frac{m_1}{m_1 + m_2} \dot{\mathbfit{r}}_{12} ) \\
+&= (m_1 + m_2) \mathbfit{r}_\mathrm{G} \times \dot{\mathbfit{r}}_\mathrm{G} + \frac{m_1 m_2}{m_1 + m_2} \mathbfit{r}_{12} \times \dot{\mathbfit{r}}_{12} \\
+&= \mathbfit{L}_\mathrm{G} + \mathbfit{L}_{12}  
+\end{aligned}
+$$
+
+:::
+
+上の問題でわかるように，二体問題においては，角運動量も重心の運動と相対運動に分けることができます．
+
+次に，有名なケプラーの法則を示していきましょう．まず，ケプラーの法則について説明していきます．
+
+::: {.Tbox data-latex="{ケプラーの法則}"}
+
+第一法則：　惑星は太陽を焦点の一つとする楕円軌道を描く．
+
+第二法則：　惑星と太陽を結ぶ線分は等しい時間で等しい面積を掃く．
+
+第三法則：　惑星の公転周期の二乗は軌道長半径の三乗に比例する．
+
+:::
+
+では，これらの法則を示していきましょう．ここから先は，惑星の質量を $m$ とし，太陽の質量を $M$ とします．
+
+まずは，第二法則を示していきましょう． $\mathbfit{r}=\mathbfit{r}_1 - \mathbfit{r}_2$ として，角運動量保存則を考えれば，
+
+$$
+\begin{aligned}
+\dv{\mathbfit{L}}{t} &= \mathbfit{r} \times m\mathbfit{v} = \mathbfit{0} \\
+\end{aligned}
+$$
+
+これによって示されます．ここで面積速度は $\frac{1}{2} r^2 \dot{\theta}$ であることから，面積速度が一定であることがわかります．
+
+
+次に，第一法則を示していきましょう．これは，極座標での運動方程式を考えれば，
+
+$$
+\begin{aligned}
+\mu (\ddot{r} - r \dot{\theta}^2) &= - G \frac{mM}{r^2} \\
+\mu \frac{1}{r} \dv{t} (r^2 \dot{\theta}) &= 0
+\end{aligned}
+$$
+
+ここで第２式が角運動量保存則を表していることに注意してください． $L = \mu r^2 \dot{\theta}$ とおいて，第一式を変形すれば，
+
+$$
+\begin{aligned}
+\ddot{r} - \frac{L^2}{\mu^2 r^3} &= - G \frac{mM}{\mu r^2} \\
+\ddot{r} - \frac{L^2}{\mu^2 r^3} + G \frac{mM}{\mu r^2} &= 0
+\end{aligned}
+$$
+
+ここで，$u = 1/r$ とおいて，時間微分を角度微分に変換すれば，
+
+$$
+\begin{aligned}
+\dv[2]{u}{\theta} + u &= \frac{G m M \mu}{L^2} \\
+\dv[2]{u}{\theta} + u &= \frac{1}{p} \\
+u = \frac{1}{r} &= C \cos (\theta - \theta_0) + \frac{1}{p} \\
+r &= \frac{p}{1 + e \cos (\theta - \theta_0)}
+\end{aligned}
+$$
+
+このようにして， $r$ の式の形から，惑星の軌道が離心率 $e$ の楕円であることがわかります．
+
+最後に，第三法則を示していきましょう．まず，惑星の軌道が楕円であることから，軌道長半径 $a$ と軌道短半径 $b$ は周期 $T$ を用いて次のように表される
+
+$$
+\begin{aligned}
+\pi a b &= \frac{1}{2} r^2 \dot{\theta} T = \frac{L}{2m} T \\
+T &= \frac{2 \pi a b m}{L} \\
+\end{aligned}
+$$
+
+ここで，軌道長半径 $a$ と軌道短半径 $b$ は離心率 $e=\sqrt{1 - \frac{b^2}{a^2}}$ を用いて次のように表される
+
+$$
+\begin{aligned}
+a &= \frac{p}{1 - e^2} \\
+b &= \frac{p}{\sqrt{1 - e^2}}
+\end{aligned}
+$$
+
+これらを組み合わせることによって，
+
+$$
+\frac{T^2}{a^3} = \frac{4 \pi^2}{G(M + m)}
+$$
+
+と導き出される．

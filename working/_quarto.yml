@@ -15,14 +15,21 @@ format:
           % カスタムなスタイルファイルを読み込む
           \usepackage{sty/boxes}
           \usepackage{sty/anss}
+          \usepackage{sty/physdiag}
 
           % 物理学の数式を簡単に書くためのパッケージ
           \usepackage{physics}
 
           \usepackage{tikz}
-          \usetikzlibrary { decorations.pathmorphing, decorations.pathreplacing, decorations.shapes, }
+          \usetikzlibrary { decorations.pathmorphing, decorations.pathreplacing, decorations.shapes, quotes, angles, patterns, calc, arrows.meta, angles, quotes }
+          \usepackage{pgfplots}
+          \pgfplotsset{compat=1.18}
 
           % すべての数式をディスプレイスタイルで表示する
           \everymath{\displaystyle}
+
+          % 図をテキストの周りに配置するためのパッケージ
+          \usepackage{wrapfig}
+
           
                     

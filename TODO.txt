@@ -1,0 +1,1 @@
+ペンデュラムの問題の順番． /source/problems/newton-mechanics/09.qmd

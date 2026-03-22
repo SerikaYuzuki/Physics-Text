@@ -1,0 +1,20 @@
+::: {.Qbox data-latex="{問題}{1}"}
+
+
+1. 次の等式を示せ．
+$$\int \ddot{x} dx = \frac{1}{2}v^2 + C$$
+特に $\ddot{x}=a$ と加速度が一定の際，初速度 $v_0$ から運動を始めて $x$ だけ進んだ物体の速さを $V$ として，
+$$v^2-v_0^2=2ax$$
+が成り立つことを示せ．
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+$$\int　a\dd x=\int　\dot{v}\dv{x}{t}\dd t = \int　\dot{v}v\dd t=\frac{1}{2}v^2 +C$$
+問題後半については，
+$$\int_{0}^{x}a\dd x=\int_{0}^{T}\dot{v}\dv{x}{t}\dd t = \int_{0}^{T}\dot{v}v\dd t=\left[\frac{1}{2}v^2\right]_{0}^{T}=\frac{1}{2}(V^2-v_0^2)$$
+$$\int_{0}^{x}a\dd x=ax$$
+から導き出される．
+
+:::

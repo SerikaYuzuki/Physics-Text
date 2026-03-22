@@ -1,0 +1,97 @@
+::: {.Qbox data-latex="{ペンデュラム}{1}"}
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+    % pivots
+    \coordinate (O) at (0,0);
+    \def\L{2} % length of string
+    \def\angA{30} % angle of A
+    \def\r{0.2} % radius of mass
+
+    % ceiling
+    \draw[thick] (-0.5,0) -- (0.5,0);
+
+    % masses
+    \coordinate (A) at ({\L*sin(\angA)},{-\L*cos(\angA)});
+
+    % dashed extension
+    \draw[densely dashed] (O) -- (0,-\L);
+
+    % strings
+    \draw[thick] (O) -- (A);
+
+    % pivot supports
+    \fill (O) circle (1.2pt);
+
+    % masses
+    \filldraw[fill=white, thick] (A) circle (\r) node {$A$};
+
+    % angle for A
+    \draw (0,-0.7) arc[start angle=-90,end angle={-90+\angA},radius=0.7];
+    \node at (0.25,-0.9) {$\theta_0$};
+\end{tikzpicture}
+\end{center}
+```
+
+上図のように，質量 $m$ のペンデュラムをがある．このペンデュラムの運動を解析せよ．ただし， $\theta_0$ は非常に小さく，一次近似が可能とする．
+
+:::
+
+
+::: {.Abox data-latex="{解答}"}
+
+鉛直上方向を正に $y$ 軸とする．このときの運動方程式は次のようになる．
+
+$$
+\begin{aligned}
+m\ddot{x} &= T\sin\theta  \\
+m\ddot{y} &= -mg + T\cos \theta
+\end{aligned}
+$$
+
+さらに，このペンデュラムが紐についたまま運動することから，次の制約条件がある．
+
+$$
+\begin{aligned}
+x &= L\sin\theta \\
+y &= -L\cos\theta
+\end{aligned}
+$$
+
+これらの式を代数的に処理する方法は非常に難しく，我々の能力を超えているのだが， $\theta$ が非常に小さいときには， $\sin\theta \approx \theta$ および $\cos\theta \approx 1$ と近似できる．この近似を用いると，運動方程式は次のようになる．
+
+$$
+\begin{aligned}
+m\ddot{x} = mL\ddot{\theta} &\approx T\theta  \\
+m\ddot{y} = 0 &\approx -mg + T
+\end{aligned}
+$$
+
+この式から， $T \approx mg$ であることがわかる．これを最初の式に代入すると，次のようになる．
+
+$$
+\begin{aligned}
+mL\ddot{\theta} &= mg\theta \\
+\ddot{\theta} &= \frac{g}{L}\theta
+\end{aligned}
+$$
+
+これに初期条件を適用すると，この運動方程式の解は次のようになる．
+
+$$
+\begin{aligned}
+\theta &= \theta_0 \cos\qty(\sqrt{\frac{g}{L}}t)
+\end{aligned}
+$$
+
+ゆえに，
+
+$$
+\begin{aligned}
+x &= L\sin\theta \approx L\theta_0 \cos\qty(\sqrt{\frac{g}{L}}t) \\
+y &= -L\cos\theta \approx -L
+\end{aligned}
+$$
+
+:::

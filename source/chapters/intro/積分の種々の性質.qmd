@@ -1,0 +1,91 @@
+## 積分の種々の性質
+
+この節では，不定積分や定積分の計算をする上で役に立つ色々な性質について説明し，それを使う練習をしていきます．
+
+::: {.Tbox data-latex="{定理}"}
+
+$F(x)$ を $f(x)$ の不定積分，$G(x)$ を $g(x)$ の不定積分とし，$a,b$ は定数とする．このとき，
+
+$$\displaystyle\int_{}^{}(af(x)+bg(x))\ dx=aF(x)+bG(x)+C$$
+
+これを積分の線形性という．
+
+$$\displaystyle\int_{}^{}(af(x)+bg(x))\ dx=a\displaystyle\int_{}^{}f(x)\ dx+b\displaystyle\int_{}^{}g(x)\ dx$$ 
+
+ともかける．
+:::
+::: {.Rbox data-latex="{例題}"}
+次の定積分を求めよ．
+$$\displaystyle\int_{}^{}(2x+3x^2)\ dx $$
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+\begin{align*}\displaystyle\int_{}^{}(2x+3x^2)\ dx &=2\displaystyle\int_{}^{}x\ dx+3\displaystyle\int_{}^{}x^2\ dx\\
+&=x^2+x^3+C
+\end{align*}
+
+:::
+
+このとき，2つの不定積分の和では積分定数は $C$ だけでよく，2つつける必要はありません．2つの不定積分から出てくる積分定数の和を改めて定数としておいてしまえばよいからです．
+
+
+
+定積分についても，同様の公式が成り立ちます．
+
+{{< include problems/intro/11.qmd >}}
+
+次に，少し複雑な積分を計算するテクニックである置換積分と部分積分について説明します。まずは置換積分です。
+
+::: {.Tbox data-latex="{定理}"}
+$\displaystyle\int f(x)\ dx=F(x)$ とする。
+$$\displaystyle\int f(g(x))g^{\prime}(x)\ dx=F(g(x))$$
+
+が成り立つ。
+:::
+この事実は，合成関数の微分の逆と捉えることができます。要するに，合成関数の微分と同じようにかたまりで捉えて積分しよう，ということです。
+
+
+::: {.Rbox data-latex="{例題}"}
+次の不定積分を求めよ．
+$$\displaystyle\int_{}^{}\sin^{9}x\cos x\ dx $$
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+\begin{align*}
+    \displaystyle\int_{}^{}\sin^{9}x\cos x\ dx&= \displaystyle\int_{}^{}\sin^{9}x(\sin x)^{\prime}\ dx\\
+    &= \displaystyle\frac{1}{10}\sin^{10} x
+\end{align*}
+
+:::
+
+続いて部分積分について説明します。部分積分は，積の微分法の公式から導かれる定理です。
+
+::: {.Tbox data-latex="{定理}"}
+$\displaystyle\int f(x)\ dx=F(x)$ とする。
+$$\displaystyle\int_{}^{} f(x)g(x)\ dx=F(x)g(x)-\displaystyle\int_{}^{} F(x)g^{\prime}(x)\ dx$$
+
+が成り立つ。
+:::
+
+被積分関数が積の形になっているとき，一部の因数だけを積分することで元の積分を求めるので，部分積分といいます。特に $\ln x$ は微分すると $\displaystyle\frac{1}{x}$ になるので，特にこれを含む積分では有効なことが多いです。
+
+::: {.Rbox data-latex="{例題}"}
+次の不定積分を求めよ．
+$$\displaystyle\int_{}^{}\ln x \ dx $$
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+\begin{align*}
+    \displaystyle\int_{}^{}\ln x\ dx&= \int (x)^{\prime}\ln x\ dx\\
+    &=x\ln x-\displaystyle\int_{}^{} x\cdot \displaystyle\frac{1}{x}\ dx\\
+    &=x\ln x-x+C
+\end{align*}
+
+:::
+上の例題の結果はよく使うので，覚えておくとよい。

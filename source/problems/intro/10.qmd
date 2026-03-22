@@ -1,0 +1,22 @@
+::: {.Qbox data-latex="{問題}"}
+
+次の定積分を求めよ．
+
+||||
+|---|---|
+| $$\displaystyle\int_{1}^{4}1\ dx$$ | $$\displaystyle\int_{0}^{1}x^k\ dx\ \ \  ( k\neq -1 )$$ | 
+| $$\displaystyle\int_{1}^{e^2}\displaystyle\frac{1}{x}\ dx$$ |  $$\displaystyle\int_{0}^{\pi} \sin x\ dx$$ |
+| $$\displaystyle\int_{-\frac{\pi}{3}}^{0}\cos x\ dx$$ |  $$\displaystyle\int_{-1}^{1} e^x\ dx$$ |
+
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+||||
+|---|---|
+| $$3$$ | $$\displaystyle\frac{1}{k+1}$$ | 
+| $$2$$ |  $$2$$ |
+| $$\displaystyle\frac{\sqrt{3}}{2}$$ |  $$e-\displaystyle\frac{1}{e}$$ |
+
+:::

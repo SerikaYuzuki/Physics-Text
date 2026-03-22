@@ -1,0 +1,170 @@
+## 保存力
+
+この問題では，物体の運動方程式，およびその完全解を求めました．
+
+ですが，この問題の別の解決法を示してみましょう．
+
+$$
+m \dv[2]{x}{t} = -kx
+$$
+
+与えられた運動方程式を，前の章で紹介した運動エネルギーへと変換してみましょう．
+
+$$
+\begin{aligned}
+m \ddot{x} \dot{x} &= -kx \dot{x} \\
+\dv{t} \left( \frac{1}{2} m \dot{x^2} \right) &= \dv{t} \left( - \frac{1}{2} k x^2 \right) \\
+\dv{t} \left( \frac{1}{2} m \dot{x^2} + \frac{1}{2} k x^2 \right) &= 0 \\
+\frac{1}{2} m \dot{x^2} + \frac{1}{2} k x^2 &= \mathrm{Const.}
+\end{aligned}
+$$
+
+この式に従えば， $\dot{x} = v,\ x = 0$ のとき，定数は $\frac{1}{2} m v^2$ です．次に， $\dot{x} = 0$ のとき， $x$ は振幅 $A$ となります．このとき，定数は $\frac{1}{2} k A^2$ です．
+
+この二つの定数は同じでなければならないので，
+
+$$
+\begin{aligned}
+\frac{1}{2} m v^2 &= \frac{1}{2} k A^2 \\
+A &= v \sqrt{\frac{m}{k}}
+\end{aligned}
+$$
+
+このようにして，振幅 $A$ を求めることができるのです．
+
+以上の議論の枠組みをもう少し広げていきましょう．
+
+一般の運動方程式は，
+
+$$
+m \dv[2]{\mathbfit{r}}{t} = \mathbfit{F}
+$$
+
+で表すことができます．この式を，運動エネルギーの式へと変換してみましょう．
+
+$$
+\begin{aligned}
+m \ddot{\mathbfit{r}} \cdot \dot{\mathbfit{r}} &= \mathbfit{F} \cdot \dot{\mathbfit{r}} \\
+\dv{t} \left( \frac{1}{2} m \dot{r}^2 \right) &= \mathbfit{F} \cdot \dot{\mathbfit{r}} 
+\end{aligned}
+$$
+
+ここで，この式の右辺，つまり $\mathbfit{F} \cdot \dot{\mathbfit{r}}$ が， $\dv{t}\boxed{\text{関数}}$ の形であるとなれば，この式から保存量を見つけることができます．
+
+後々移項することを考えて， $\mathbfit{F} \cdot \dot{\mathbfit{r}} = -\dv{t} U(\mathbfit{r})$ と書いてみましょう．このとき，この式は，
+
+$$
+\begin{aligned}
+\dv{t} \left( \frac{1}{2} m \dot{r}^2 \right) &= \dv{t} \left( - U(\mathbfit{r}) \right) \\
+\dv{t} \left( \frac{1}{2} m \dot{r}^2 + U(\mathbfit{r}) \right) &= 0 \\
+\frac{1}{2} m \dot{r}^2 + U(\mathbfit{r}) &= \mathrm{Const.}
+\end{aligned}
+$$
+
+となるわけです．このときの $U$ は位置エネルギー，ポテンシャルエネルギー(P.E.)と呼ばれます．このようにして，運動方程式から保存量を見つけることができるのです．このような作業のことを，エネルギー積分と呼びます．
+
+また，以上のような保存量を見つけることができる力を，保存力と呼びます．保存力のみが働く世界では，運動エネルギー(K.E.)とP.E.の和が常に一定であることになります．この和を，力学的エネルギーと呼びます．
+
+::: {.Tbox data-latex="{力学的エネルギー}"}
+
+保存力のみが働く世界では，力学的エネルギーが保存する．
+
+$$
+\frac{1}{2} m \dot{r}^2 + U(\mathbfit{r}) = \mathrm{Const.}
+$$
+
+:::
+
+さて，もう少しだけ $U$ の性質について考えてみましょう． 
+
+$$
+\begin{aligned}
+\mathbfit{F} \cdot \dot{\mathbfit{r}} &= -\dv{t} U(\mathbfit{r}) \\
+\int \mathbfit{F} \cdot \dv{\mathbfit{r}}{t} \dd t &= -\int \dv{t} U(\mathbfit{r}) \dd t \\
+\int \mathbfit{F} \cdot \mathrm{d} \mathbfit{r} &= -\int \mathrm{d} U(\mathbfit{r})
+\end{aligned}
+$$ 
+
+最後の式からわかるように，保存力の経路に従ってなされた仕事 $W = \int \mathbfit{F} \cdot \mathrm{d} \mathbfit{r}$ は，ある2点の位置エネルギーの差 $U(\mathbfit{r}_1) - U(\mathbfit{r}_2)$ に等しいことになります．
+
+また，一次元の保存力に関して考えてみましょう．
+
+$$
+\begin{aligned}
+\int F \dd x &= -\int \mathrm{d} U(x) \\
+\dv{x} \int F \dd x &= -\dv{x} \int \mathrm{d} U(x) \\
+F &= -\dv{U}{x}(x) 
+\end{aligned}
+$$
+
+以上からわかるように，保存力は位置エネルギーの微分で表すことができます．
+
+模式図として，以下のような図を描いてみましょう．
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10cm,
+    height=7cm,
+    xlabel={$x$},
+    ylabel={$U$},
+    xmin=-2.2, xmax=2.2,
+    ymin=-0.2, ymax=2.6,
+    axis lines=left,
+    domain=-2:2,
+    samples=200,
+    minor tick num=1
+]
+
+% ポテンシャル U = kx^2/2 （ここでは k=1 として描画）
+\addplot[thick, blue] {x^2/2};
+
+% 小球の位置
+\pgfmathsetmacro{\xball}{1.2}
+\pgfmathsetmacro{\uball}{(\xball)^2/2}
+
+% 小球
+\fill[orange] (axis cs:\xball,\uball) circle[radius=2.5pt];
+\draw[orange!80!black, thick] (axis cs:\xball,\uball) circle[radius=2.5pt];
+
+% 補助線
+\node[right] at (axis cs:\xball,\uball) {$m$};
+\draw[orange, line width=0.5mm, -{Stealth[length=4mm, open, round]}] (axis cs:\xball,\uball) -- (axis cs:\xball - 0.6,\uball - 0.65);
+
+% 式ラベル
+\node[above left, blue] at (axis cs:1.8,1.62) {$U=\dfrac{1}{2}kx^2$};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+```
+
+このグラフのようなP.E.が働いているような状況があったとして，小球がオレンジの場所にあるとしましょう．このとき，小球はこのP.E.のグラフの傾きに従って動くことになります．この傾きが大きいほど，小球は速く動くことになります．
+
+このグラフの場合，傾きが $+$ なので，小球は $-$ 方向に動くわけです．
+
+運動の概要を知りたい！　という状況においては，このようなP.E.のグラフを描くことが多いです．身近な例では，高校化学では分子の結合の強さを表すために，このようなグラフを描いていることでしょう．
+
+上図のように，P.E.のグラフが下に凸なお椀型をしているとき，その底の部分が平衡座標になります．このような平衡座標のことを，安定な平衡座標と呼びます．そうではなく，上に凸な山型をしているとき，その頂点の部分が平衡座標になります．この場合は，不安定な平衡座標と呼ばれます．
+
+これを三次元に拡張した式は次のようになります．少しばかり数学的に新しい概念が入ってきますが，その説明はすぐにします．また，その練習は物理の問題を解きながら行っていきましょう．
+
+::: {.Tbox data-latex="{ポテンシャルエネルギー}"}
+
+保存力と，ポテンシャルエネルギーには以下の関係が成り立つ．
+
+$$
+\begin{aligned}
+\mathbfit{F} &= - \nabla U \\
+&= - \left( \pdv{U}{x}, \pdv{U}{y}, \pdv{U}{z} \right)
+\end{aligned}
+$$
+
+:::
+
+ここで $\nabla$ は，ナブラと呼ばれるベクトル微分演算子で， $\nabla = \left( \pdv{}{x}, \pdv{}{y}, \pdv{}{z} \right)$ と定義されます．また， $\partial$ は偏微分を表す記号で， $\pdv{U}{x}$ は $U$ を $x$ で偏微分したものを表します．
+
+偏微分とは，ある関数が複数の変数を持っているときに，その関数を特定の変数で微分することを指します．例えば， $U(x,y,z)$ という関数があるとき， $\pdv{U}{x}$ は $U$ を $x$ で微分したものを表します．このとき， $y$ と $z$ は定数として扱われます．
+
+具体的に， $U = \frac{1}{2} k (x^2 + y^2 + z^2)$ という関数があるとき， $\pdv{U}{x} = kx$ となります．同様に， $\pdv{U}{y} = ky$ ， $\pdv{U}{z} = kz$ となります．このとき， $\nabla U = (kx, ky, kz)$ となります． $\dv{U}{x} = kx + ky\dv{y}{x} + kz\dv{z}{x}$ となることに注意してください．

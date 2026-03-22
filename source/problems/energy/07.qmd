@@ -1,0 +1,91 @@
+::: {.Qbox data-latex="{弾性衝突の散乱角}{2}"}
+
+下図のように質量がそれぞれ $m_1$ と $m_2$ の二つの振り子 $A, \; B$ を用意する．振り子Aは初め $\theta_0$ の角度で，振り子Bは $0$ の角度で静止している．振り子 $A$ を放すと，衝突後に振り子 $B$ が $\phi$ の角度まで振れる．このとき，二つの物体の弾性定数 $e$ を求めよ．
+
+\begin{center}
+\begin{tikzpicture}[scale=1.1, >=Stealth, every node/.style={font=\small}]
+  %----------------------------
+  % parameters
+  %----------------------------
+  \def\L{3.0}          % 振り子の長さ
+  \def\angA{-35}        % 左図でのAの初期角
+  \def\angB{32}        % 右図でのBの振れ角
+  \def\r{0.2}         % おもり半径
+
+  %============================
+  % Left: before collision
+  %============================
+  \begin{scope}[xshift=0cm]
+    % pivots
+    \coordinate (O) at (0,0);
+
+    % masses
+    \coordinate (A1) at ({\L*sin(\angA)},{-\L*cos(\angA)});
+    \coordinate (B1) at (0,-\L);
+
+    % strings
+    \draw[thick] (O) -- (A1);
+    \draw[thick] (O) -- (B1);
+
+    % pivot supports
+    \fill (O) circle (1.2pt);
+
+    % masses
+    \filldraw[fill=white, thick] (A1) circle (\r) node {$A$};
+    \filldraw[fill=white, thick] (B1) circle (\r) node {$B$};
+
+    % initial angle mark
+    \draw (0,-0.7) arc[start angle=-90,end angle=-125,radius=0.7];
+    \node at (-0.35,-0.95) {$\theta_0$};
+
+    % caption
+    \node at (0,0.55) {衝突前};
+  \end{scope}
+
+  %============================
+  % Right: after collision
+  %============================
+  \begin{scope}[xshift=4cm]
+    % pivots
+    \coordinate (O) at (0,0);
+
+    % masses
+    \coordinate (B2) at ({\L*sin(\angB)},{-\L*cos(\angB)});
+
+    % dashed extension
+    \draw[densely dashed] (O) -- (0,-\L);
+
+    % strings
+    \draw[thick] (O) -- (B2);
+
+    % pivot supports
+    \fill (O) circle (1.2pt);
+
+    % masses
+    \filldraw[fill=white, thick] (B2) circle (\r) node {$B$};
+
+    % angle for B
+    \draw (0,-0.7) arc[start angle=-90,end angle={-90+\angB},radius=0.7];
+    \node at (0.25,-0.9) {$\phi$};
+
+    % caption
+    \node at (0.8,0.55) {衝突後};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+衝突直前の $m_1$ の速さを $v_1$ とし，衝突後の $m_2$ の速さを $v_2$ とすると，
+
+$$
+\begin{aligned}
+  v_1 &= \sqrt{2gL(1-\cos\theta_0)} \\
+  v_2 &= \sqrt{2gL(1-\cos\phi)} = (1 - e) \frac{m_1}{m_1 + m_2} v_1 \\
+  e &= 1 - \qty(1 + \frac{m_2}{m_1}) \sqrt{\frac{1-\cos\phi}{1-\cos\theta_0}}
+\end{aligned}
+$$
+
+:::

@@ -1,0 +1,32 @@
+::: {.Qbox data-latex="{問題}"}
+
+
+下の図のように紐に繋がれた２つの物体があり，物体間には滑車がある．次の問いに答えよ．ただし，紐の質量と摩擦は無視せよ．
+
+![](images/newton/newton7.png)
+
+1. 各物体の加速度を求めよ．
+1. 張力の大きさを求めよ．
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+$m_1,m_2$ それぞれに働く張力の大きさを $T_1,T_2$ とする．右側を正としてそれぞれの斜面に沿った加速度を $a_1,a_2$ として，運動方程式を立てると
+\begin{align*}
+m_1a_1=T-m_1g\sin \theta_1\\
+m_2a_2=m_2g\sin \theta_2-T
+\end{align*}
+束縛条件は
+\begin{align*}
+a_1=a_2
+\end{align*}
+解いてやれば
+\begin{align*}
+a_1=a_2=\frac{-m_1\sin \theta_1+m_2\sin \theta_2}{m_1+m_2}g\\
+T=\frac{m_1m_2}{m_1+m_2}(\sin \theta_1+\sin \theta_2)g
+\end{align*}
+とわかる．この問題については，脳内で次のように変換すると楽かもしれない．
+![](images/newton/newton8.png)
+
+:::
