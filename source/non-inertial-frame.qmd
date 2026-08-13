@@ -1,0 +1,9 @@
+# 非慣性系
+
+{{< include chapters/non-inertial-frame/慣性力.qmd >}}
+
+\newpage
+
+{{< include problems/non-inertial-frame/01.qmd >}}
+
+\newpage

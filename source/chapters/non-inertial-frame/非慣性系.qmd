@@ -1,0 +1,445 @@
+## 非慣性系とは
+
+今までの議論は全て，慣性系において行われてきました．
+
+慣性系とは，ニュートンの運動の法則が成り立つ座標系のことです．つまり，慣性系においては，物体に力が働いていないときには物体は等速直線運動を続けることになります．
+
+ですが，世界とは常に慣性系から観測されるわけではありません．例えば，この本を見ている読者の小休憩として，その場に立って一周回ってみましょう．このとき，特に力が働いていないにも関わらず，この本，もしくはそれを映すスクリーンは回転しているように見えるでしょう．特に回転するような力が働いていないにも関わらず．
+
+このような観測は，慣性系から観測されているわけではないことを示しています．このような座標系を非慣性系と呼びます．
+
+では，なぜこのような非慣性系からの観測のことを考えるのでしょうか．素直に，慣性系での観測だけを考えればいいのではないでしょうか．
+
+その答えの一つとして，そもそも地球に立っている私たちの観測は非慣性系からの観測であることが挙げられます．地球は自転しているため，地球に立っている私たちの観測は非慣性系からの観測になります．我々がみる地球規模からすれば微視的な現象では，地球の自転の影響は無視できるかもしれませんが，地球規模の現象を考えるときには，地球の自転の影響を考慮する必要があります．
+
+では，そのような，ぐるぐる回ったり，加速したりする非慣性系からの観測を考えていきましょう．
+
+## 並進慣性力
+
+簡単な例として，等加速度運動をしている非慣性系からの観測を考えてみましょう．例えば，電車とともに加速している座標系を考えてみましょう．
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[>=stealth, thick]
+
+    % 電車の車体を描画
+    \draw[rounded corners] (-2,0) rectangle (2,3);
+    \draw[fill=gray!30] (-1.5,-0.2) circle (0.2); % 前輪
+    \draw[fill=gray!30] (1.5,-0.2) circle (0.2);  % 後輪
+
+    % 天井の支点
+    \coordinate (O) at (0,2.8);
+    \fill (O) circle (2pt);
+
+    % 角度の設定 (例: 20度)
+    \def\angle{20}
+    \def\length{1.8}
+
+    % 補助線（鉛直方向）
+    \draw[dashed, gray] (O) -- (0,0.5);
+    \draw (0,2.3) arc (-90:{-90-\angle}:0.5);
+    \node at (-0.2,1.9) {$\theta$};
+
+    % 小球と糸の描画
+    \coordinate (P) at ({-\length*sin(\angle)}, {2.8-\length*cos(\angle)});
+    \draw[very thick] (O) -- (P);
+    \draw[ball color=red] (P) circle (0.15) node[below left=2pt] {$m$};
+
+    % 力のベクトル
+    \draw[->, blue] (P) -- ++(0,-1) node[right] {$mg$}; % 重力
+    % \draw[->, red] (P) -- ++({-\length*tan(\angle)},0) node[above] {$f = ma$}; % 慣性力
+    \draw[->, orange] (P) -- ++({\length*sin(\angle)},{\length*cos(\angle)}) node[below, right] {$T$}; % 張力
+
+    % 電車の進行方向と加速度
+    \draw[->, double, line width=1pt] (2.5,1.5) -- (3.5,1.5) node[right] {$a$ (加速度)};
+
+\end{tikzpicture}
+\end{center}
+```
+
+上のような状況を考えてみましょう．この小球は斜めにぶら下がっているように見えるでしょう．これを今までの通り，慣性系から観測したとして，電車の質量を $M$ とすれば，
+
+$$
+\begin{aligned}
+M\ddot{X} &= - T\sin\theta + \underbrace{F}_{\text{加速のための外部力}} \\
+m\ddot{y} &= T\cos\theta - mg \\
+m\ddot{x} &= T\sin\theta
+\end{aligned}
+$$
+
+これは外力の働く運動なので，簡単に相対運動方程式を立てることができません．
+
+ここで， $\ddot{X} = a$ であることと， $y = -r (1 - \cos\theta),\ x - X = r(\sin\theta)$ という束縛条件を用いて運動方程式を解くことができるわけです．
+
+また，十分時間が経って安定した状態を考えると， $\dot{\theta} = 0$ であることから， $\ddot{y} = 0, \ddot{x} - \ddot{X} = 0$ であることから， $\ddot{x} = a$ であることがわかります．このとき，運動方程式は，
+
+$$
+\begin{aligned}
+0 &= T \cos \theta - mg \\
+ma &= T \sin \theta
+\end{aligned}
+$$
+
+これによって，
+
+$$
+\begin{aligned}
+T &= m \sqrt{a^2 + g^2} \\
+\theta &= \tan^{-1} \left( \frac{a}{g} \right)
+\end{aligned}
+$$
+
+とわかるわけです．
+
+これを最初から座標変換して考えてみましょう． $s = x - X$ として，上の式を書き換えましょう．
+
+$$
+\begin{aligned}
+m\ddot{y} &= T\cos\theta - mg \\
+m\ddot{s} &= T\sin\theta \boxed{- ma}
+\end{aligned}
+$$
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[>=stealth, thick]
+
+    % 電車の車体を描画
+    \draw[rounded corners] (-2,0) rectangle (2,3);
+    \draw[fill=gray!30] (-1.5,-0.2) circle (0.2); % 前輪
+    \draw[fill=gray!30] (1.5,-0.2) circle (0.2);  % 後輪
+
+    % 天井の支点
+    \coordinate (O) at (0,2.8);
+    \fill (O) circle (2pt);
+
+    % 角度の設定 (例: 20度)
+    \def\angle{20}
+    \def\length{1.8}
+
+    % 補助線（鉛直方向）
+    \draw[dashed, gray] (O) -- (0,0.5);
+    \draw (0,2.3) arc (-90:{-90-\angle}:0.5);
+    \node at (-0.2,1.9) {$\theta$};
+
+    % 小球と糸の描画
+    \coordinate (P) at ({-\length*sin(\angle)}, {2.8-\length*cos(\angle)});
+    \draw[very thick] (O) -- (P);
+    \draw[ball color=red] (P) circle (0.15) node[below left=2pt] {$m$};
+
+    % 力のベクトル
+    \draw[->, blue] (P) -- ++(0,-1) node[right] {$mg$}; % 重力
+    \draw[->, red] (P) -- ++({-\length*tan(\angle)},0) node[above] {$f = ma$}; % 慣性力
+    \draw[->, orange] (P) -- ++({\length*sin(\angle)},{\length*cos(\angle)}) node[below, right] {$T$}; % 張力
+
+    % 電車の進行方向と加速度
+    \draw[->, double, line width=1pt] (2.5,1.5) -- (3.5,1.5) node[right] {$a$ (加速度)};
+
+\end{tikzpicture}
+\end{center}
+```
+
+このように，下の式に本来は存在ないはずの $-ma$ という項が現れます．この項は，非慣性系からの観測において現れる**慣性力**と呼ばれる項になります．
+
+::: {.Tbox data-latex="{慣性力}"}
+
+非慣性系からの観測において現れる，物体に働いている力とは別の力を慣性力と呼ぶ．
+
+特に，並進運動をしている非慣性系からの観測において現れる慣性力を並進慣性力と呼び，その大きさは非慣性系の加速度を $\mathbfit{a}$ とすれば， $-m\mathbfit{a}$ である．
+
+:::
+
+では簡単な問題を考えてみましょう．
+
+::: {.Rbox data-latex="{例題}"}
+
+エレベーター内で重量計に立っている人がいる．エレベーターが上向きに加速しているとき，この人の体重の計測値はどのように変わるか．
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+まず，重量計の仕組みを考える．
+
+世に流通している重量計の多くは，ロードセル式と呼ばれるものである．これは金属素材にかかる力によってフックの法則に従って変形し，その変形量に従って変化する歪みゲージと呼ばれる電気抵抗を測定することで，物体の重さを測定するものである．
+
+このため，重量計の計測値は，重量計にかかる力の大きさに比例することになる．
+
+エレベーターに乗っている人の運動方程式を立てる．
+
+$$
+\begin{aligned}
+m\ddot{y} &= N - mg - ma \\
+\ddot{y} &= 0
+\end{aligned}
+$$
+
+ゆえに，重量計の計測値は， $N = m(g + a)$ となる．つまり，エレベーターが上向きに加速しているとき，この人の体重の計測値は，実際の体重よりも大きくなる．
+
+:::
+
+## 回転慣性力
+
+これからの話はかなり数学的に複雑になるが，練習問題を通じて慣れていけるようにしていきます．
+
+まず，任意の座標系の運動は，ある一点の並進運動と，その点を中心とする回転運動の組み合わせで表すことができる，という事実，シャールの定理があります．これは具体的な証明をするのは非常に難しいので，その事実を認めた状態で話を進めていきましょう．
+
+まず，世界にあるベクトル $\mathbfit{A}$ を考えましょう．このベクトルをふたつの座標系で表すことを考えましょう．ひとつは，慣性系，もうひとつは，非慣性系です．
+
+$$
+\begin{aligned}
+\mathbfit{A} &= A_x \hat{\mathbfit{x}} + A_y \hat{\mathbfit{y}} + A_z \hat{\mathbfit{z}} \quad &\text{(慣性系)}\\
+&= A_x' \hat{\mathbfit{x}}' + A_y' \hat{\mathbfit{y}}' + A_z' \hat{\mathbfit{z}}' \quad &\text{(非慣性系)}
+\end{aligned}
+$$
+
+で，ここでは非慣性系で考えましょう．その状態でのベクトル $\mathbfit{A}$ の時間変化を考えましょう．
+
+$$
+\begin{aligned}
+\qty(\dv{\mathbfit{A}}{t})_{\text{慣性系}} &= \left( \dv{A_x'}{t} \hat{\mathbfit{x}}' + \dv{A_y'}{t} \hat{\mathbfit{y}}' + \dv{A_z'}{t} \hat{\mathbfit{z}}' \right) + \left( A_x' \dv{\hat{\mathbfit{x}}'}{t} + A_y' \dv{\hat{\mathbfit{y}}'}{t} + A_z' \dv{\hat{\mathbfit{z}}'}{t} \right) \\
+&= \sum \dv{A_i'}{t} \hat{\mathbfit{e}}_i' + \sum A_i' \dv{\hat{\mathbfit{e}}_i'}{t} \\
+&= \qty(\dv{\mathbfit{A}}{t})_{\text{非慣性系}} + \sum A_i' \dv{\hat{\mathbfit{e}}_i'}{t}
+\end{aligned}
+$$
+
+この式の説明をします．まず， $\qty(\dv{\mathbfit{A}}{t})_{\text{慣性系}}$ は，ベクトル $\mathbfit{A}$ の時間変化を慣性系で考えたときの値です．なので，慣性系では基底ベクトルが時間に従って変化します．
+
+次に， $\qty(\dv{\mathbfit{A}}{t})_{\text{非慣性系}}$ は，ベクトル $\mathbfit{A}$ の時間変化を非慣性系で考えたときの値です．非慣性系では，基底ベクトルが時間的に変化しないのです．
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[>=Stealth, line width=0.6pt]
+
+    % 座標の設定
+    \coordinate (O) at (0,0);
+    \coordinate (Top) at (0,8);
+    \coordinate (A) at (2.4,4.8);   % ベクトルaの終点
+    \coordinate (dA) at (2.4,5.2); % 微小変化後の終点
+    \coordinate (Center) at (0,5); % 回転円の中心
+
+    % 1. 回転軸 (omega)
+    \draw[->, thick] (0,0) -- (Top) node[above] {$\mathbfit{\Omega}$};
+    
+    % 2. ベクトル a
+    \draw[->, very thick] (O) -- (A) node[midway, right, xshift=2pt] {$\hat{\mathbfit{e}}_i$};
+    \node[below] at (O) {$O$};
+
+    % 3. 回転の円道 (楕円で表現)
+    \draw (Center) ellipse (2.5cm and 0.8cm);
+    
+    % 4. ベクトルの変化 da
+    \draw[->, very thick] (A) -- (dA) node[right, yshift=-2pt] {$\mathrm{d}\hat{\mathbfit{e}}_i$};
+
+    % 5. 補助線: 中心からAへの半径
+    \draw (Center) -- (A);
+    \draw (Center) -- (dA);
+
+    % 6. 直角記号
+    \draw (0, 5.2) -- (0.2, 5.2) -- (0.2, 5);
+
+    % 7. 角度 theta
+    \coordinate (Z) at (0,2);
+    \pic [draw, "$\theta$", angle eccentricity=1.5, angle radius=1cm] {angle = A--O--Center};
+
+    % 8. 角度 omega dt
+    \pic [draw, "$\mathbfit{\Omega} dt$", angle eccentricity=1.8, angle radius=0.7cm] {angle = A--Center--dA};
+
+    % 11. 回転の矢印（軸の周り）
+    \draw[->] (-0.3, 6.8) arc (160:400:0.4cm and 0.15cm);
+
+\end{tikzpicture}
+\end{center}
+```
+
+ここで，回転軸向きに，大きさが回転角速度 $\mathbfit{\Omega}$ というベクトルを考えれば，
+
+$$
+\mathrm{d} \hat{\mathbfit{e}}_i = \mathbfit{\Omega} \times \hat{\mathbfit{e}}_i \mathrm{d}t
+$$
+
+となるので，
+
+$$
+\begin{aligned}
+\sum A_i' \dv{\hat{\mathbfit{e}}_i'}{t} &= \sum A_i' \qty( \mathbfit{\Omega} \times \hat{\mathbfit{e}}_i' ) = \mathbfit{\Omega} \times \mathbfit{A} \\
+\qty(\dv{\mathbfit{A}}{t})_{\text{慣性系}} &= \qty(\dv{\mathbfit{A}}{t})_{\text{非慣性系}} + \mathbfit{\Omega} \times \mathbfit{A}
+\end{aligned}
+$$
+
+これが任意のベクトル $\mathbfit{A}$ に対して成り立つ式になります．この式は，回転する非慣性系からの観測において，慣性系からの観測と非慣性系からの観測の関係を表す式になります．
+
+では，実際に速度と加速度を考えていきましょう．
+
+$$
+\begin{aligned}
+\mathbfit{v} &= \qty(\dv{\mathbfit{r}}{t})_{\text{慣性系}} = \qty(\dv{\mathbfit{r}}{t})_{\text{非慣性系}} + \mathbfit{\Omega} \times \mathbfit{r} \\
+\mathbfit{a} &= \qty(\dv[2]{\mathbfit{r}}{t})_{\text{慣性系}} = \qty(\dv[2]{\mathbfit{r}}{t})_{\text{非慣性系}} + 2\mathbfit{\Omega} \times \qty(\dv{\mathbfit{r}}{t})_{\text{非慣性系}} + \dot{\Omega} \times \mathbfit{r} + \mathbfit{\Omega} \times \qty(\mathbfit{\Omega} \times \mathbfit{r})
+\end{aligned}
+$$
+
+ここで大事なのは， $\mathbfit{r}$ 回転座標系の原点からの位置ベクトルであることです．この回転座標系の原点とは，回転の中心です．
+
+また，時間の変化によって回転軸の向きや大きさが変化することもあるので， $\dot{\Omega}$ という項も出てきます．
+
+この式を運動方程式に代入してみましょう．
+
+$$
+\begin{aligned}
+m\qty(\dv[2]{\mathbfit{r}}{t})_{\text{慣性系}} &= \mathbfit{F} \\
+m\qty(\dv[2]{\mathbfit{r}}{t})_{\text{非慣性系}} &= \mathbfit{F} - \underbrace{\boxed{2m\mathbfit{\Omega} \times \qty(\dv{\mathbfit{r}}{t})_{\text{非慣性系}}}}_{\text{コリオリ力}} - \underbrace{\boxed{m\dot{\Omega} \times \mathbfit{r}}}_{\text{角加速度による力}} - \underbrace{\boxed{m\mathbfit{\Omega} \times \qty(\mathbfit{\Omega} \times \mathbfit{r})}}_{\text{遠心力}}
+\end{aligned}
+$$
+
+ここまでは，回転座標系のみを考えていたのですが，これに並進運動も加えると，
+
+$$
+\begin{aligned}
+m\qty(\dv[2]{\mathbfit{r}}{t})_{\text{非慣性系}} = \mathbfit{F} - \underbrace{\boxed{m\mathbfit{a}_{\text{並進}}}}_{\text{並進加速度による力}} - \underbrace{\boxed{2m\mathbfit{\Omega} \times \qty(\dv{\mathbfit{r}}{t})_{\text{非慣性系}}}}_{\text{コリオリ力}} \\
+- \underbrace{\boxed{m\dot{\Omega} \times \mathbfit{r}}}_{\text{角加速度による力}} - \underbrace{\boxed{m\mathbfit{\Omega} \times \qty(\mathbfit{\Omega} \times \mathbfit{r})}}_{\text{遠心力}}
+\end{aligned}
+$$
+
+となるわけです．
+
+まずは，遠心力について考えていきましょう．
+
+\newpage
+
+::: {.Qbox data-latex="{例題}{2}"}
+
+図のように，半径が $R$ の円形の針金に質量 $m$ の小さな物体が通してある。針金上の A 点には，直径 PA に沿った方向に，この針金を回転させるための腕がついている。円形針金を下にし，腕を鉛直方向にとって，これを回転軸として角速度 $\omega$ で針金を回転させる．針金と小物体との間には摩擦はないものとし，重力加速度を $g$ とする．
+
+この時，物体が針金の上の点 A, P 以外で静止できるための条件と，その時の $\theta$ を求めよ．
+
+次に，**点 P** での釣り合いの状態からわずかに $\theta$ が大きくなったときの物体の振動の周期を求めよ．
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[>=Stealth, font=\small]
+
+    % 定数設定
+    \def\R{2.5}     % 円の半径
+    \def\angle{310} % 小物体Qの位置（真下を270度として、そこから40度右へ）
+
+    % 中心軸（点線）
+    \draw[dashed] (0, \R+1) -- (0, -\R);
+    
+    % 円形の針金
+    \draw[thick] (0,0) circle (\R);
+
+    % 腕（上部の棒）
+    \draw[thick] (0, \R) -- (0, \R+1.5) node[right] {腕};
+
+    % 回転の矢印とomega
+    \draw[->] (0.8, \R+0.8) arc (0:330:0.8 and 0.2);
+    \node at (1.2, \R+0.8) {$\omega$};
+
+    % 各点の描画
+    \fill (0, \R) circle (1.5pt) node[above left] {A};
+    \fill (0, 0) circle (1.5pt) node[left] {O};
+    \fill (0, -\R) circle (1.5pt) node[below] {P};
+
+    % 小物体Qへの線と角度 theta
+    \draw[dashed] (0,0) -- (\angle:\R);
+    \draw (0, -0.6) arc (270:\angle:0.6);
+    \node at (290:0.8) {$\theta$};
+
+    % 小物体Q
+    \fill (\angle:\R) circle (3pt) node[below right] {Q};
+    \node[above=3pt] at (\angle:\R) {$m$};
+
+\end{tikzpicture}
+\end{center}
+```
+
+:::
+
+::: {.Abox data-latex="{解答}"}
+
+次の図のように $\mathbfit{r},\ \mathbfit{\omega}$ をとる．そうすることによって，遠心力 $\mathbfit{\Omega} \times \qty(\mathbfit{\Omega} \times \mathbfit{r})$ の向きがわかりやすくなる．
+
+ここで注意して欲しいのは， $\mathbfit{r}$ は回転座標系の中心からの位置ベクトルであることだが，始点自体は直線AP上にあればどれでも構わないが，計算して得られるベクトルは全て同じになる．その理由は， $\mathbfit{r}$ を $\mathbfit{\omega}$ に平行な成分とそうでない成分で分ければ明らかだろう．
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[>=Stealth, font=\small]
+
+    % 定数設定
+    \def\R{2.5}     % 円の半径
+    \def\angle{310} % 小物体Qの位置（真下を270度として、そこから40度右へ）
+
+    % 中心軸（点線）
+    \draw[dashed] (0, \R+1) -- (0, -\R);
+    
+    % 円形の針金
+    \draw[thick] (0,0) circle (\R);
+
+    % 回転の矢印とomega
+    \draw[->] (0, 2.5) -- (0, 4) node[right] {$\mathbfit{\omega}$};
+
+    % 各点の描画
+    \fill (0, \R) circle (1.5pt) node[above left] {A};
+    \fill (0, 0) circle (1.5pt) node[left] {O};
+    \fill (0, -\R) circle (1.5pt) node[below] {P};
+
+    % 小物体Qへの線と角度 theta
+    \draw[dashed] (0,0) -- (\angle:\R);
+    \draw (0, -0.6) arc (270:\angle:0.6);
+    \node at (290:0.8) {$\theta$};
+
+    % 小物体Q
+    \fill (\angle:\R) circle (3pt) node[below right] {Q};
+    \node[above=3pt] at (\angle:\R) {$m$};
+    \draw[->] (\angle:\R) -- ++(1,0) node[above] {$mr\omega^2$}; 
+    \draw[->] (\angle:\R) -- ++(0,-1) node[right] {$mg$};
+
+    % 水平方向のrベクトル
+    \draw[->] (0, {\R*sin(\angle)}) -- (\angle:\R) node[midway, above] {$\mathbfit{r}$};
+
+\end{tikzpicture}
+\end{center}
+```
+
+ゆえに，針金が常に動かないように見える座標系での運動方程式は，
+
+$$
+\begin{aligned}
+m\ddot{x} = mr\omega^2 \sin \theta - N \sin\theta \\
+m\ddot{y} = mg - N \cos\theta
+\end{aligned}
+$$
+
+束縛条件は，
+
+$$
+\begin{aligned}
+\frac{x}{y} &= \tan\theta \quad \text{(針金上にあること)} \\
+\dot{\theta} &= 0 \quad \text{(静止していること)}
+\end{aligned}
+$$
+
+これによって， $N = mr\omega^2,\ \cos \theta = \frac{g}{r\omega^2}$ であることがわかる．以上より，求める条件は， $r\omega^2 > g$ である．
+
+ところが，この求め方は非常に面倒な上，これから求める振動の周期を求めるときにひどく面倒になる．なので，極座標を用いる．
+
+$$
+\begin{aligned}
+m\qty(\ddot{r} - r\dot{\theta}^2) &= mr\omega^2 \sin \theta - N + mg\cos\theta \\
+m\frac{1}{r} \dv{t} \qty(r^2\dot{\theta}) &= mg \sin \theta - mr\omega^2 \sin \theta \cos \theta 
+\end{aligned}
+$$
+
+これを使って， $\dot{\theta} = 0$ であることから上の条件はすぐに導き出せる．
+
+$$
+\begin{aligned}
+mr\ddot{\theta} &= mg \sin \theta - mr\omega^2 \sin \theta \cos \theta \\
+&= mg \theta - mr\omega^2 \theta \\
+&= - m(r\omega^2 - g) \theta \\
+T &= 2\pi \sqrt{\frac{r}{r\omega^2 - g}}
+\end{aligned}
+$$
+
+
+:::
